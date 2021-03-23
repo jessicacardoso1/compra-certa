@@ -1,2 +1,2 @@
 # compra-certa
-## Disciplina Linguagem de Programação III
+## Disciplina: Linguagem de Programação III
