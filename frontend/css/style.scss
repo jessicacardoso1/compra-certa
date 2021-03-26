@@ -94,17 +94,38 @@ body{
 
 // BOOTSTRAP COMPONENTS
 
-.navbar-brand{
-    img{
-        width: 300px;
-        margin: -40px -50px -15px -50px;
-    }
+.navbar-brand img{
+	width: 300px;
+	margin: -40px auto -15px 200px;
+	//margin-left: 20%;
+}
+
+.container, .search-navbar, .input-group, .form-outline{
+	margin-left: auto;
+	width: 85%;
+}
+
+.container, .search-navbar, .input-group, .form-outline input{
+	height: 45px;
+}
+
+.container, .icons-user-cart{
+	//margin: 0 auto 0 60px;
+	margin: 0 auto 0 60px;
+}
+
+.container, .icons-user-cart p{
+	color: whitesmoke;
+	font-size: 14px;
 }
 
 .nav-tabs{
     width: 50%;
 }
 
+.carousel-control-next, .carousel-control-prev{
+    filter: invert(100%);
+}
 
 // OTHERS COMPONENTS
 
@@ -147,4 +168,43 @@ body{
     text-decoration: none;
 }
 
+.text-field {
+	position: relative;
+	margin: 10px 2.5px 20px 2.5px;
+}
 
+input {
+	width: 100%;
+	display: inline-block;
+	border: thin solid #fafafa;
+	border: solid 1px #999;
+	color: #444;
+	background-color: #fafafa;
+	padding: 10px 10px 10px 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+input:focus {
+	border: thin solid #32cd32;
+	border-bottom: solid medium #32cd32;
+	background-color:#fff;
+}
+
+label {
+	color: #999;
+	position: absolute;
+	pointer-events: none;
+	left: 10px;
+	top: 10px;
+	transition: 0.2s;
+}
+
+input:focus ~ label, input:valid ~ label {
+	top: -10px;
+	left: 15px;
+	font-size: small;
+	color: #32cd32;
+	background-color:#fff;
+	padding:0 5px 0 5px;
+}

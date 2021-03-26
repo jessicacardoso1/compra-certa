@@ -13,6 +13,8 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   
   <body>
@@ -21,6 +23,30 @@
       <a class="navbar-brand" href="#">
           <img src="img/logo.png" alt="logo">
       </a>
+      
+      <!-- search bar/buttom -->
+      <div class="container search-navbar">
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Encontre aqui as melhores promoções"/>
+          </div>
+          <button type="button" class="btn btn-success">
+            <i class="fa fa-search fa-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- user and cart icons -->
+      <div class="container icons-user-cart">
+        <a class="icon-user" href="#">
+          <i class="fa fa-user fa-3x" style="color: whitesmoke;"></i>
+          <p>Entre ou Cadastre-se</p>
+        </a>
+        <a class="icon-cart" href="#">
+          <i class="fa fa-shopping-cart fa-3x" style="color: whitesmoke;"></i>
+          <p>Meu Carrinho</p>
+        </a>
+      </div>
     </nav>
 
 
@@ -41,10 +67,16 @@
             <h3>Faça login na nossa loja</h3>
             <form>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="CPF" value="" />
+                  <div class="text-field">
+                    <input type="text" id="text_cpf" required>
+                    <label>CPF</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Senha" value="" />
+                  <div class="text-field">
+                    <input type="text" id="text_password" required>
+                    <label>Senha</label>
+                  </div>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btnSubmit" value="Login" />
@@ -61,16 +93,28 @@
             <h3>Cadastre-se na nossa loja</h3>
             <form>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="CPF" value="" />
+                  <div class="text-field">
+                    <input type="text" id="text_cpf" required>
+                    <label>CPF</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" placeholder="E-mail" value="" />
+                  <div class="text-field">
+                    <input type="email" id="text_email" required>
+                    <label>E-mail</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Senha" value="" />
+                    <div class="text-field">
+                      <input type="password" id="text_password" required>
+                      <label>Senha</label>
+                    </div>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Confirme sua senha" value="" />
+                  <div class="text-field">
+                    <input type="password" id="text_password" required>
+                    <label>Confirme sua senha</label>
+                  </div>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btnSubmit" value="Continuar" />
@@ -81,20 +125,19 @@
       </div>
     </div>
     
-    
     <!-- FOOTER -->
     <footer class="bg-dark text-center text-white">
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: #1CA347; width: 100%; position: absolute; bottom: 0;">
         © 2021 Copyright:
         <a class="text-white" href="">Legumes Preciosos</a>
+        <br>
+        Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
       </div>
       <!-- Copyright -->
     </footer>
 
 
- <!--  <h1>My <span style="color: red;">Important</span> Heading</h1>
-    <iframe src="/cadastro.html" title="Produtos em promoção" height="200px" width="1920px"></iframe>-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
