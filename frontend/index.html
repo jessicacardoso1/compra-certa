@@ -1,41 +1,64 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Merccato em Casa</title>
+    <title>Legumes Preciosos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="img/ref_icon.png" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-md navbar-light bg-success">
-            <!-- Brand/logo -->
-            <a class="navbar-brand" href="#">
-                <img src="/frontend/img/logo.png" alt="logo" style="width:300px;">
-            </a>
-            <!-- Links -->
-        </nav>
-    </div>
-    <div class="container">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link" href="login.html">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Cadastre-se</a>
-        </li>
-      </ul>
-    </div>
-    <div>
-        <h1>Teste Tela de Cadastro</h1>
-    </div> 
+    <nav class="navbar navbar-expand-md navbar-static-top navbar-light bg-salmao">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="index.html">
+          <img src="img/logo.png" alt="logo">
+      </a>
+      
+      <!-- search bar/buttom -->
+      <div class="container search-navbar">
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Encontre aqui as melhores promoções"/>
+          </div>
+          <button type="button" class="btn btn-success">
+            <i class="fa fa-search fa-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- user and cart icons -->
+      <div class="container icons-user-cart">
+        <a class="icon-user" href="login_cadastro.html">
+          <i class="fa fa-user fa-3x" style="color: whitesmoke;"></i>
+          <p>Entre ou Cadastre-se</p>
+        </a>
+        <a class="icon-cart" href="#">
+          <i class="fa fa-shopping-cart fa-3x" style="color: whitesmoke;"></i>
+          <p>Meu Carrinho</p>
+        </a>
+      </div>
+    </nav>
     
-      <footer class="footer" >
- 
-      </footer>
+     <!-- FOOTER -->
+    <footer class="bg-dark text-center text-white">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: #ffc0b6; width: 100%; position: absolute; bottom: 0;">
+        © 2021 Copyright:
+        <a class="text-white" href="">Legumes Preciosos</a>
+        <br>
+        Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
+      </div>
+      <!-- Copyright -->
+    </footer>
+    
  <!--  <h1>My <span style="color: red;">Important</span> Heading</h1>
     <iframe src="/cadastro.html" title="Produtos em promoção" height="200px" width="1920px"></iframe>-->
     <!-- Optional JavaScript -->
