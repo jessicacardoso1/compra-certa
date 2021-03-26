@@ -35,9 +35,10 @@ $pink:    #e83e8c !default;
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
-$green:   #1CA347 !default;
+$green:   #0d4920 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
+$salmao: #ffc0b6  !default;
 
 //green_dafault
 //$green:   #1CA347 !default;
@@ -57,7 +58,8 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800
+    "gray-dark":  $gray-800,
+    "salmao":     $salmao
   ),
   $colors
 );
@@ -70,6 +72,7 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
+$salmao:        $salmao !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -81,7 +84,8 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark
+    "dark":       $dark,
+    "salmao":     $salmao
   ),
   $theme-colors
 );
@@ -159,11 +163,11 @@ body{
     margin-top: 10px;
     font-weight: 600;
     color: #fff;
-    background-color: #1CA347;
+    background-color: #0d4920;
 }
 
 .login-form-1 .ForgetPwd{
-    color: #1CA347;
+    color: #0d4920;
     font-weight: 600;
     text-decoration: none;
 }
@@ -204,7 +208,7 @@ input:focus ~ label, input:valid ~ label {
 	top: -10px;
 	left: 15px;
 	font-size: small;
-	color: #32cd32;
+	color: #0d4920;
 	background-color:#fff;
 	padding:0 5px 0 5px;
 }
