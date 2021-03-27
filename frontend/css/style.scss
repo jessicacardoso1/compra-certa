@@ -38,7 +38,7 @@ $yellow:  #ffc107 !default;
 $green:   #0d4920 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
-$salmao: #ffc0b6  !default;
+$salmao:  #ffc0b6  !default;
 
 //green_dafault
 //$green:   #1CA347 !default;
@@ -132,38 +132,10 @@ body{
 }
 
 // OFFS
-@media (max-width: 768px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-    display: flex;
-}
-
-.font-weight-light, .bg-salmao{
-	margin-left: 22%; 
-	width: 100%;
-}
-
-/* display 3 */
-@media (min-width: 768px) {
-    
-    .carousel-inner .carousel-item-right.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(33.333%);
-    }
-    
-    .carousel-inner .carousel-item-left.active, 
-    .carousel-inner .carousel-item-prev {
-      transform: translateX(-33.333%);
-    }
+.col-md-4, .mb-3, .card, img{
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 // OTHERS COMPONENTS
