@@ -28,17 +28,19 @@ $grays: map-merge(
   $grays
 );
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #0d4920 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
-$salmao:  #ffc0b6  !default;
+$blue:        #007bff !default;
+$indigo:      #6610f2 !default;
+$purple:      #6f42c1 !default;
+$pink:        #e83e8c !default;
+$red:         #dc3545 !default;
+$orange:      #fd7e14 !default;
+$yellow:      #ffc107 !default;
+$green:       #0d4920 !default;
+$teal:    	  #20c997 !default;
+$cyan:    	  #17a2b8 !default;
+$salmao:  	  #ffc0b6  !default;
+$salmao-dark: #e79b8f !default;
+$whitesmoke:  #f0f0f0 !default;
 
 //green_dafault
 //$green:   #1CA347 !default;
@@ -46,20 +48,22 @@ $salmao:  #ffc0b6  !default;
 $colors: () !default;
 $colors: map-merge(
   (
-    "blue":       $blue,
-    "indigo":     $indigo,
-    "purple":     $purple,
-    "pink":       $pink,
-    "red":        $red,
-    "orange":     $orange,
-    "yellow":     $yellow,
-    "green":      $green,
-    "teal":       $teal,
-    "cyan":       $cyan,
-    "white":      $white,
-    "gray":       $gray-600,
-    "gray-dark":  $gray-800,
-    "salmao":     $salmao
+    "blue":         $blue,
+    "indigo":       $indigo,
+    "purple":       $purple,
+    "pink":         $pink,
+    "red":          $red,
+    "orange":       $orange,
+    "yellow":       $yellow,
+    "green":        $green,
+    "teal":         $teal,
+    "cyan":         $cyan,
+    "white":        $white,
+    "gray":         $gray-600,
+    "gray-dark":    $gray-800,
+    "salmao":       $salmao,
+	  "salmao-dark":  $salmao-dark,
+	  "whitesmoke":   $whitesmoke
   ),
   $colors
 );
@@ -73,19 +77,23 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 $salmao:        $salmao !default;
+$salmao-dark:   $salmao-dark !default;
+$whitesmoke:    $whitesmoke !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
   (
-    "primary":    $primary,
-    "secondary":  $secondary,
-    "success":    $success,
-    "info":       $info,
-    "warning":    $warning,
-    "danger":     $danger,
-    "light":      $light,
-    "dark":       $dark,
-    "salmao":     $salmao
+    "primary":      $primary,
+    "secondary":    $secondary,
+    "success":      $success,
+    "info":         $info,
+    "warning":      $warning,
+    "danger":       $danger,
+    "light":        $light,
+    "dark":         $dark,
+    "salmao":       $salmao,
+	  "salmao-dark":  $salmao-dark,
+	  "whitesmoke":   $whitesmoke
   ),
   $theme-colors
 );
@@ -219,3 +227,47 @@ input:focus ~ label, input:valid ~ label {
 	background-color:#fff;
 	padding:0 5px 0 5px;
 }
+
+.container, .category{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+.single {
+padding: 30px 15px;
+margin-top: auto;
+background: #fcfcfc;
+border: 1px solid #f0f0f0; }
+.single h3.side-title {
+//margin: 0;
+margin-left: auto;
+margin-bottom: 10px;
+padding: 0;
+font-size: 20px;
+color: #333;
+text-transform: uppercase; }
+.single h3.side-title:after {
+content: '';
+width: 250px;
+height: 1px;
+background: #ff173c;
+display: block;
+margin-top: 6px; }
+
+.single ul {
+margin-bottom: 0; }
+.single li a {
+color: #666;
+font-size: 14px;
+text-transform: uppercase;
+border-bottom: 1px solid #f0f0f0;
+line-height: 50px;
+display: block;
+text-decoration: none; }
+.single li a:hover {
+color: #ff173c; }
+.single li:last-child a {
+border-bottom: 0; }
