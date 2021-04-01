@@ -139,6 +139,16 @@ body{
     filter: invert(100%);
 }
 
+// BANNER
+.banner-img{
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-top: 0;
+
+  width: 100%;
+  height: 420px;
+}
+
 // OFFS
 .col-md-4, .mb-3, .card, img{
 	margin-top: 10px;
@@ -146,11 +156,52 @@ body{
 	margin-right: auto;
 }
 
+.offs-label{
+  color: rgb(121, 121, 121);
+}
+
+.offs-container{
+  margin-top: 50px;
+}
+
+.offs-img-size{
+  width: 200px;
+  height: 270px;
+}
+
+.offs-card-size{
+  height: 350px;
+}
+
+.offs-text-name{
+  text-align: center; 
+  color: chocolate;
+  font-size: 16px;
+}
+
+.offs-text-value{
+  text-align: center; 
+  color: darkgreen;
+  font-size: 20px;
+}
+
+.offs-btn-submit{
+  background-color: #ffc0b6;
+}
+
 // OTHERS COMPONENTS
 
 .login-register{
     width: 50%;
-    margin: 70px 700px;
+    margin-top: 70px;
+
+    //centralizar
+    position: absolute;
+    
+    left: 450px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .login-form-1{

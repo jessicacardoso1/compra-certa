@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass --watch frontend/css/style.scss frontend/css/style.css",
     "sass-min": "node-sass --watch frontend/css/style.scss frontend/css/style.min.css --output-style compressed"
   },
   "repository": {
