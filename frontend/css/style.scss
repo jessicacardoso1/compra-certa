@@ -105,7 +105,7 @@ $theme-colors: map-merge(
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 body{
-    font-family : 'Ubuntu', sans-serif;
+    font-family : 'Tahoma', sans-serif;
 }
 
 // BOOTSTRAP COMPONENTS
@@ -205,7 +205,11 @@ margin-right: 50px;
   background-color: #ffc0b6;
 }
 
+<<<<<<< Updated upstream
 // MY ACCOUNT
+=======
+// NEWS
+>>>>>>> Stashed changes
 
 .my-account-lab h3{
   margin-top: 50px;
@@ -217,6 +221,7 @@ margin-right: 50px;
 .my-account-display{
   margin-top: 50px;
 
+<<<<<<< Updated upstream
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -280,6 +285,14 @@ margin-right: 50px;
   text-align: center;
   color: #333;
 }
+=======
+  font-family: 'Tahoma';
+  font-size: 20px;
+  text-align: center; 
+}
+
+
+>>>>>>> Stashed changes
 
 
 // FOOTER
