@@ -48,37 +48,119 @@
         </a>
       </div>
     </nav>
-    <ul class="list-group list-group-horizontal-md">
-      <li class="list-group-item">
-        <a href="/frontend/index.html">Home > </a>
-      </li>
-      <li class="list-group-item">
-        <a href="#"> Produtos</a>
-      </li>
+
+      <ul class="" style="">
+        <li class="">
+          <a href="/frontend/index.html">Home  > </a>
+        <li class="">
+          <a href="#"> Produtos</a>
+        </li>
       
     </ul>
     <div class="" style="margin-top: 50px;">
       <div class="row">
-          <div class="col sx-2" style="">
-              <h1>Categoria</h1>
-              <h8>
-                Aqui vem as categoriasAqui vem as categoriasAqui vem as categoriasAqui vem as categoriasAqui vem as categoriasAqui vem as categorias
-                
-              </h8>
+          <div class="col-md-2 mb-6 colu card">
+              <div class="row">
+                <h5 style="color: rgb(121, 121, 121);">Ordenar por:</h5>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label for=""></label>
+                  <select class="custom-select" name="" id="">
+                    <option selected>Relevância</option>
+                    <option value="">Nome [A-Z]</option>
+                    <option value="">Nome [Z-A]</option>
+                    <option value="">Preço [Maior]</option>
+                    <option value="">Preço [Menor]</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <h5 style="color: rgb(121, 121, 121);">Filtrar por:</h5>
+              </div>
+              <div class="col-md-10-mb-6 .col-prod">
+                <a class="btnSubmit" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Categoria</a>
+              </div>
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="form-inline">
+                  <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                    <label class="custom-control-label" for="customControlInline">Vegetais</label>
+                  </div>
+                </div>
+                <div class="form-inline">
+                  <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                    <label class="custom-control-label" for="customControlInline">Aves</label>
+                  </div>
+                </div>
+              </div>
+
           </div>
-          <div class="col sx-10">
-            <h1>Produtos</h1>
+          <div class="col-md-7 mb-10 col-prod card" style="margin-left: 0%;">
+            <h3 class="text-h1" style="text-align: center; color: rgb(121, 121, 121);">Todos os produtos</h3>
             <div class="row">
-              <h8>Aqui tem os produtosAqui tem os produtosAqui tem os produtosAqui tem os produtos Aqui tem os produtos</h8>
+              <div class="container-fluid">
+                <div class="produtos d-flex flex-wrap">
+                  <div class="card" style="width: 18rem;">
+                      <img class="card-img-top news-img" src="/frontend/img/itens/soja.jpg" alt="Livros em promoção"
+                       >
+                       <div class="card-body">
+                          <h5 class="card-title fonte-card"> Soja em grãos Orgânicos 500g </h5>
+                          <a href="produtos-detalhes.html" class="btn btn-teal my-account-btn">Comprar</a>
+                        </div>
+                    </div>
+          
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top news-img" src="/frontend/img/itens/aveia.jpg" alt="Livros em promoção"
+                      >
+                      <div class="card-body">
+                          <h5 class="card-title fonte-card">Aveia em flocos Orgânico 500g</h5>
+                          <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />
+                      </div>
+                    </div>
+          
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top news-img" src="/frontend/img/itens/feijao.jpg" alt="Livros em promoção"/>
+                      <div class="card-body">
+                          <h5 class="card-title fonte-card">Feijão carioca Orgânico 500g</h5>
+                         <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />
+                      </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top news-img" src="/frontend/img/itens/soja.jpg" alt="Livros em promoção"/>
+                      <div class="card-body">
+                          <h5 class="card-title fonte-card">Feijão carioca Orgânico 500g</h5>
+                         <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />
+                      </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top news-img" src="/frontend/img/itens/feijao.jpg" alt="Livros em promoção"/>
+                      <div class="card-body">
+                          <h5 class="card-title fonte-card">Feijão carioca Orgânico 500g</h5>
+                         <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />
+                      </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top news-img" src="/frontend/img/itens/feijao.jpg" alt="Livros em promoção"/>
+                      <div class="card-body">
+                          <h5 class="card-title fonte-card">Feijão carioca Orgânico 500g</h5>
+                         <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />
+                      </div>
+                    </div>
+            
+
+                   </div>
+                </div>
             </div>
           </div>
       </div>
   </div>
     
     <!-- FOOTER -->
-    <footer class="bg-dark text-center text-white">
+		<footer class="footer">
       <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: #ffc0b6; width: 100%; position: absolute; bottom: 0;">
+      <div class="text-center p-3" style="background-color: #ffc0b6; width: 100%; margin-top: 500px;">
         © 2021 Copyright:
         <a class="text-white" href="">Legumes Preciosos</a>
         <br>
