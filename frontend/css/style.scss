@@ -36,7 +36,7 @@ $red:         #dc3545 !default;
 $orange:      #fd7e14 !default;
 $yellow:      #ffc107 !default;
 $green:       #0d4920 !default;
-$teal:    	  #20c997 !default;
+$teal:    	  #058d49 !default;
 $cyan:    	  #17a2b8 !default;
 $salmao:  	  #ffc0b6  !default;
 $salmao-dark: #e79b8f !default;
@@ -70,7 +70,7 @@ $colors: map-merge(
 
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
-$success:       $green !default;
+$success:       $teal !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
@@ -79,6 +79,8 @@ $dark:          $gray-800 !default;
 $salmao:        $salmao !default;
 $salmao-dark:   $salmao-dark !default;
 $whitesmoke:    $whitesmoke !default;
+$teal:          $teal !default;
+$red:           $red !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -93,7 +95,9 @@ $theme-colors: map-merge(
     "dark":         $dark,
     "salmao":       $salmao,
 	  "salmao-dark":  $salmao-dark,
-	  "whitesmoke":   $whitesmoke
+	  "whitesmoke":   $whitesmoke,
+    "teal":         $teal,
+    "red":          $red
   ),
   $theme-colors
 );
@@ -156,7 +160,6 @@ body{
 	margin-right: auto;
 }
 
-<<<<<<< Updated upstream
 .offs-label{
   color: rgb(121, 121, 121);
 }
@@ -188,26 +191,94 @@ body{
 
 .offs-btn-submit{
   background-color: #ffc0b6;
-=======
-// NEWS
-
-.news-img {
-  width:200px;
 }
 
-// CARD
-.fonte-card  {
+// MY ACCOUNT
 
-  font-family: 'Tahoma';
-  font-size: 15px;
-  text-align: center; 
+.my-account-lab h3{
+  margin-top: 50px;
+  margin-left: 50px;
+  color: rgb(121, 121, 121);
+  font-size: 40px;
 }
 
-.btnSubmit {
+.my-account-display{
+  margin-top: 50px;
 
-  font-family: 'Tahoma';
->>>>>>> Stashed changes
+  margin-left: 10%;
+  margin-right: 10%;
 }
+
+.my-account-btn{
+  width: 100%;
+
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// MY ADRESS
+
+.my-adress-display{
+  margin-top: 50px;
+
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.my-adress-txt{
+  margin-top: 10px;
+  margin-right: 50px;
+}
+
+.create-edit-adress-display{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 40%;
+
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.my-adress-field{
+	width: 100%;
+	display: inline-block;
+	border: thin solid #fafafa;
+	border: solid 1px #999;
+	color: #444;
+	background-color: #fafafa;
+	padding: 10px 10px 10px 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.my-adress-field-aling-three-elements{
+  width: 32.3%;
+}
+
+.my-adress-field-aling-two-elements{
+  width: 49%;
+}
+
+.create-edit-adress-display h3{
+  margin-top: -40px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #333;
+}
+
+
+// FOOTER
+
+.footer{
+  background-color: #ffc0b6; 
+  width: 100%; 
+
+  margin-top: 200px;
+}
+
 
 // OTHERS COMPONENTS
 
@@ -228,6 +299,7 @@ body{
     padding: 5%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
+
 .login-form-1 h3{
     text-align: center;
     color: #333;
@@ -261,6 +333,15 @@ body{
 .text-field {
 	position: relative;
 	margin: 10px 2.5px 20px 2.5px;
+}
+
+.aling-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.txt-color-grey{
+  color: rgb(121, 121, 121);
 }
 
 input {
