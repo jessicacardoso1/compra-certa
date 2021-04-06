@@ -293,6 +293,36 @@ margin-right: 50px;
 
 // OTHERS COMPONENTS
 
+
+.menu {
+  margin-top: 20px;
+  margin-left: 110px;
+}
+
+li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.menuLink:link, .menuLink:visited{
+  text-decoration: none;
+  color: darkgreen;
+  font-size: 90%;
+
+}
+.menuLink:hover{
+  text-decoration: none; 
+	color: salmon;
+}
+.menuLink:active {
+	text-decoration: none;
+  color: rgb(0, 49, 0);
+}
+.likAtivo{
+  font-weight: bold;
+}
+
+
 .login-register{
     width: 50%;
     margin-top: 70px;
