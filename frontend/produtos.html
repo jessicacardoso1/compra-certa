@@ -61,14 +61,14 @@
 
     <div class="" style="margin-top: 50px;">
       <div class="row">
-          <div class="col-md-2 mb-6 colu card">
+          <div class="col-md-2 mb-6 colu card card-size">
               <div class="row">
-                <h5 style="color: rgb(121, 121, 121);">Ordenar por:</h5>
+                <h6 class = "titulo">Ordenar por:</h6>
               </div>
               <div class="row">
                 <div class="form-group">
                   <label for=""></label>
-                  <select class="custom-select" name="" id="">
+                  <select class="form-control select" aria-label="Default select example" name="" id="">
                     <option selected>Relevância</option>
                     <option value="">Nome [A-Z]</option>
                     <option value="">Nome [Z-A]</option>
@@ -78,25 +78,53 @@
                 </div>
               </div>
               <div class="row">
-                <h5 style="color: rgb(121, 121, 121);">Filtrar por:</h5>
+                <h6 class = "titulo" >Filtrar:</h6>
               </div>
-              <div class="col-md-10-mb-6 .col-prod">
-                <a class="btnSubmit" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Categoria</a>
-              </div>
-              <div class="collapse multi-collapse" id="multiCollapseExample1">
-                <div class="form-inline">
-                  <div class="custom-control custom-checkbox my-1 mr-sm-2">
-                    <input type="checkbox" class="custom-control-input" id="customControlInline">
-                    <label class="custom-control-label" for="customControlInline">Vegetais</label>
+              <div>
+                <div class="col-md-10-mb-6 .col-prod filtro">
+                  <a class="btnSubmit filtro" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Categoria</a>
+                  <i class="fa fa-plus filtro cor-icone" aria-hidden="true"></i>
+                </div>
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                  <div class="card card-body">
+                    <div class="form-inline">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input adjust adjust-checkbox-collapse"  name="customCheck" id="customControlInline1">
+                        <label class="custom-control-label" for="customControlInline1">Vegetais</label>
+                      </div>
+                    </div>
+                    <div class="form-inline">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input adjust-checkbox-collapse" name="customCheck" id="customControlInline2">
+                        <label class="custom-control-label" for="defaultCheck">Aves</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="form-inline">
-                  <div class="custom-control custom-checkbox my-1 mr-sm-2">
-                    <input type="checkbox" class="custom-control-input" id="customControlInline">
-                    <label class="custom-control-label" for="customControlInline">Aves</label>
+             </div>
+             <div>
+              <div class="col-md-10-mb-6 .col-prod filtro">
+                <a class="btnSubmit filtro marca" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Marca</a>
+                <i class="fa fa-plus filtro cor-icone" aria-hidden="true"></i>
+              </div>
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="card card-body">
+                  <div class="form-inline">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input adjust adjust-checkbox-collapse"  name="customCheck" id="customControlInline1">
+                      <label class="custom-control-label" for="customControlInline1">Vegetais</label>
+                    </div>
+                  </div>
+                  <div class="form-inline">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input adjust-checkbox-collapse" name="customCheck" id="customControlInline2">
+                      <label class="custom-control-label" for="defaultCheck">Aves</label>
+                    </div>
                   </div>
                 </div>
               </div>
+           </div>
+              
 
           </div>
           <div class="col-md-7 mb-10 col-prod card" style="margin-left: 0%;">
@@ -159,6 +187,7 @@
       </div>
   </div>
     
+  
     <!-- FOOTER -->
 		<footer class="footer">
       <!-- Copyright -->
