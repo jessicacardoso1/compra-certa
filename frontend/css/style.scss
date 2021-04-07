@@ -127,22 +127,22 @@ margin-right: 50px;
 	//margin-left: 20%;
 }
 
-.container, .search-navbar, .input-group, .form-outline{
+.search-navbar, .input-group, .form-outline{
 	margin-left: auto;
 	width: 85%;
 }
 
-.container, .search-navbar, .input-group, .form-outline input{
+.search-navbar, .input-group, .form-outline input{
 	height: 45px;
 }
 
-.container, .icons-user-cart{
+.icons-user-cart{
 	//margin: 0 auto 0 60px;
 	margin: 0 auto 0 60px;
 }
 
-.container, .icons-user-cart p{
-	color: whitesmoke;
+.icons-user-cart p{
+	color: rgb(0, 0, 0);
 	font-size: 14px;
 }
 
@@ -290,6 +290,64 @@ margin-right: 50px;
   margin-top: 200px;
 }
 
+
+.adm-nav-font{
+  text-align: center;
+  margin-top: 40px;
+
+  color: grey;
+  font-size: 30px;
+}
+
+.adm-preparation-container{
+  margin-top: 30px;
+}
+
+.adm-preparation-font{
+  text-align: center;
+  font-size: 25px;
+}
+
+.adm-preparation-card{
+  //background-color: $salmao;
+}
+
+.adm-preparation-card-font-color{
+  color: $teal;
+}
+
+.adm-preparation-btn{
+  margin-top: 20px;
+}
+
+.adm-preparation-search-icon{
+  float: right;
+}
+
+.adm-conf-emb-btn{
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.adm-conf-emb-display{
+  margin-top: 50px;
+  
+  margin-left: 25%;
+  margin-right: auto;
+}
+
+.adm-conf-emb-display-2{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.adm-conf-emb-span{
+  float: right;
+}
 
 // OTHERS COMPONENTS
 
