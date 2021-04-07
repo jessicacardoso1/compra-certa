@@ -142,7 +142,7 @@ margin-right: 50px;
 }
 
 .icons-user-cart p{
-	color: rgb(0, 0, 0);
+	color: whitesmoke;
 	font-size: 14px;
 }
 
@@ -185,7 +185,7 @@ margin-right: 50px;
 }
 
 .offs-card-size{
-  height: 350px;
+  height: 380px;
 }
 
 .offs-text-name{
@@ -201,9 +201,23 @@ margin-right: 50px;
 }
 
 .offs-btn-submit{
-  background-color: #ffc0b6;
+  background-color: $salmao;
 }
 
+.mais-vendidos-card-size{
+  width: 300px;
+  height: 430px;
+}
+
+.mais-vendidos-img-size{
+  width: 200px;
+  height: 270px;
+}
+
+.mais-vendidos-btn-submit{
+  background-color: $salmao;
+  margin-top: 5px;
+}
 
 // PRODUTOS DETALHADOS
 
@@ -622,3 +636,14 @@ text-decoration: none; }
 color: #ff173c; }
 .single li:last-child a {
 border-bottom: 0; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
