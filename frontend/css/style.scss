@@ -196,13 +196,56 @@ margin-right: 50px;
 
 .offs-text-value{
   text-align: center; 
-  color: darkgreen;
+  color: #006400;
   font-size: 20px;
 }
 
 .offs-btn-submit{
   background-color: #ffc0b6;
 }
+
+
+// PRODUTOS DETALHADOS
+
+.forma-texto{
+
+  text-indent: 50px;
+  text-align: justify;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 8px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: #f0cbc552;}
+
+h6.item-titulo{
+
+  text-align: center; 
+  color: rgb(10, 10, 10);
+  font-size: 16px;
+}
+p.item{
+
+  text-align: center; 
+  color: rgb(10, 10, 10);
+  font-size: 25px;
+}
+
+
 
 // MY ACCOUNT
 

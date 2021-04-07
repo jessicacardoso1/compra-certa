@@ -50,85 +50,249 @@
     </nav>
 
       <!--PRODUTO DETALHADO-->
-
-      <div class="container" style="margin-top: 100px; align-items: center; color:black ">
+      
+      <div class="container" style="margin-top: 100px; align-items: center; color:black;">
         <div class="row">
           <div class="col"> 
-          <img class="card-img-top" src="/frontend/img/itens/soja.jpg" alt="Livros em promoção" style="width:300px">
+          <img class="card-img-top" src="/frontend/img/itens/soja.jpg" alt="Livros em promoção" style="width:400px">
         </div>
           <div class="col">
             <div class="row">
             <h3>Soja em grãos Orgânico Importada 500g</h3><br>
-            <br><h4></h4>
+            
           </div>
-          <div class="col">
-            <br><p class="card-title forma-texto" style="text-indent: 50px ; text-align: justify; ">Soja em Grãos Orgânica Certificada rico em proteínas que auxilia na redução dos níveis do colesterol ruim, o LDL, ajuda a elevar os níveis de HDL, o colesterol bom. O alimento também possui isoflavonas, substâncias que ajudam a atenuar os efeitos da menopausa e evitar a perda de massa óssea. Além de ser livre de agrotóxicos e livre de transgênicos, seguindo todas as diretrizes da agricultura orgânica.</p>
-          </div>
+          <hr>
+           <div class="row">
+            <br><p class="card-title forma-texto">Soja em Grãos Orgânica Certificada rico em proteínas que auxilia na redução dos níveis do colesterol ruim (LDL) e ajuda a elevar os níveis do colesterol bom (HDL). O alimento também possui isoflavonas, substâncias que ajudam a atenuar os efeitos da menopausa e evitar a perda de massa óssea. Além de ser livre de agrotóxicos e livre de transgênicos, seguindo todas as diretrizes da agricultura orgânica.</p>
+          </div><hr>
+          <div class="container" style="margin-top: 10px; align-items: center; color: black">
+            <div class="row">
+            <h4 class="card" style="border:solid 1px ; border-radius: 5px; margin-left: 200px; padding: 10px">R$: 8,90/UN</h4><br>
+           </div><br>
+           <div class="row" style="margin-left: 150px;">
+            <button type="button"   class="btn btn-salmao" >-</button>
+            <input type="number-field" class="" style="width: 160px; text-align: center;" placeholder="Quantidade">
+            <button type="button"  class="btn btn-salmao" value=>+</button>
+              </div><br>
+              <div class="row" style="margin-left: 150px; width: 220px;">
+              <input type="submit" class="btnSubmit offs-btn-submit" style="font-size: 20px; color: black;" value="Adcionar ao carrinho"/>
+            </div>
+           </div>
         </div>
       </div>
      </div>
 
+     <!--MAIS DETALHES-->
+     <div class="container-lg" style="margin-top: 50px; align-items: center; color:black">
+     <div class="row">
+       <div class="col">
+      <h2>Detalhes do produto:</h2><br>
+     <div class="row">
+       <div class="col">       
+      <table>
+       <tr>
+      <th>Categoria:</th>
+      <td>Mercearia Orgânica</td>
+      </tr>
+     <tr>
+       <th>Descrição:</th>
+       <td>Soja Orgânica</td>
+      </tr>
+      <tr>
+        <th>Tipo:</th>
+        <td>em grãos</td>
+       </tr>
+    </table>
+    </div>
+    <div class="col">
+      <table>
+       <tr>
+        <th>Marca:</th>
+      <td>OSM</td>
+      </tr>
+      <tr>
+        <th>Embalagem:</th>
+      <td>pacote</td>
+        </tr>
+     
+        <tr>
+          <th>Peso/Quant:</th>
+        <td>500g/1UN</td>
+          </tr>
+       </div>
+      </table>
+       </div>
+       </div>
+      </div>
+    </div>
+  </div>
+  
+
      <!--ITENS PARA VOCÊ-->
 
+     <div class="container offs-container" style="margin-top: 200px;">
+      <div class="row">
+          <div class="col-8">
+              <h3 class="mb-3 text-right offs-label" style="color: black;">Aproveite e veja também:</h3>
+          </div>
+          <div class="col-4 text-right">
+              <a class="btn btn-primary mb-3 mr-1 btn-success" href="#carouselExampleIndicators2" role="button"  data-slide="prev">
+                  <i class="carousel-control-prev-icon"></i>
+              </a>
+              <a class="btn btn-primary mb-3 btn-success" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                  <i class="carousel-control-next-icon"></i>
+              </a>
+          </div>
+          
+          
+     <div class="col-12">
+      <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div class="row">
 
-      <!--<div class="container" style="margin-top: 100px; align-items: center; color:black ">
-        <div class="row">
-            <div class="col md-6">
-                <h3>SOJA EM GRÃOS ORGÂNICA IMPORTADA 500G - OSM</h3>
-                <div class="card">
-                  <div class="row">
-                    <div class="col md-4">
-                      <img class="card-img-top" src="/frontend/img/itens/soja.jpg" alt="Livros em promoção" style="width:200px">
-                    </div>
-                    <div class="col md-10" style="margin-left: 0px;">
-                      <p class="card-title forma-texto"> Soja em Grãos Orgânica Certificada rico em proteínas que auxilia na redução dos níveis do colesterol ruim, o LDL, ajuda a elevar os níveis de HDL, o colesterol bom. O alimento também possui isoflavonas, substâncias que ajudam a atenuar os efeitos da menopausa e evitar a perda de massa óssea. Além de ser livre de agrotóxicos e livre de transgênicos, seguindo todas as diretrizes da agricultura orgânica.</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4 mb-5" ; style="margin-left: 55%;">
-                      <h5 class="card-Text">R$: 8,90</h5>
-                    </div>
-                  </div>
-                    <div class="card-body">
-                        <div class="row">
-                         
-                          <div class="col md-3">
-                            <h6 class="card-Text">Quantidade:</h6>
+                      <div class="col-md-4 mb-3">
+                          <div class="card offs-card-size">
+                              <img class="img-fluid offs-img-size" src="img/itens/castanha-do-brasil-media-organica.jpg">
+                              <div class="card-body">
+                                <div class="form-group">
+                                  <h6 class="card-text item-titulo">Castanha do Brasil média 250g</h6>
+                                  <p class="card-text item">R$ 24,99/UN</p>
+                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                </div>
+                              </div>
+
                           </div>
-                          <div class="col md-3">
-                            <button type="button"   class="btn btn-salmao" >-</button>
-                            <input type="number-field" class="" style="width: 150px;">
-                            <button type="button"  class="btn btn-salmao" value=>+</button>
-                            
+                      </div>
+                      <div class="col-md-4 mb-3">
+                          <div class="card offs-card-size">
+                              <img class="img-fluid offs-img-size" src="img/itens/cravo-da-india-organico.jpg">
+                              <div class="card-body">
+                                <div class="form-group">
+                                  <h6 class="card-text item-titulo">Cravo da Índia 20g</h6>
+                                  <p class="card-text item">R$ 7,90/UN</p>
+                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                </div>
+                              </div>
                           </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                          <div class="card offs-card-size">
+                              <img class="img-fluid offs-img-size" src="img/itens/farinha-de-trigo-especial-organico.jpg">
+                              <div class="card-body">
+                                <div class="form-group">
+                                  <h6 class="card-text item-titulo">Farinha de trigo especial 500g</h6>
+                                  <p class="card-text item">R$ 6,90/UN</p>
+                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="row">
+
+                      <div class="col-md-4 mb-3">
+                        <div class="card offs-card-size">
+                            <img class="img-fluid offs-img-size" src="img/itens/farinha-de-trigo-integral-organico.jpg">
+                            <div class="card-body">
+                              <div class="form-group">
+                                <h6 class="card-text item-titulo">Farinha de trigo integral 500g</h6>
+                                <p class="card-text item">R$ 6,90/UN</p>
+                                <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                              </div>
+                            </div>
                         </div>
-                        <div class="row">
-                          <div class="col md-3">
-                            <h7 class="card-Text"></h7>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card offs-card-size">
+                          <img class="img-fluid offs-img-size" src="img/itens/farinha-flocada-de-mandioca-organica.jpg">
+                          <div class="card-body">
+                            <div class="form-group">
+                              <h6 class="card-text item-titulo">Farinha de mandioca flocada 500g</h6>
+                              <p class="card-text item">R$ 6,90/UN</p>
+                              <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                            </div>
                           </div>
-                          <div class="col md-3">
-                            <input class="btn btn-salmao" style="width: 230px; height: 35px;"type="submit" value="Adicionar ao carrinho">
+                      </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="card offs-card-size">
+                        <img class="img-fluid offs-img-size" src="img/itens/fuba-de-milho.jpg">
+                        <div class="card-body">
+                          <div class="form-group">
+                            <h6 class="card-text item-titulo">Fuba de milho 500g</h6>
+                            <p class="card-text item">R$ 6,90/UN</p>
+                            <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
                           </div>
                         </div>
                     </div>
                 </div>
-            </div>-->
-            
 
-    
-    <!-- FOOTER -->
-    <footer class="bg-dark text-center text-white">
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: #ffc0b6; width: 100%; position: absolute; bottom: 0;">
-        © 2021 Copyright:
-        <a class="text-white" href="">Legumes Preciosos</a>
-        <br>
-        Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
+                  </div>
+              </div>
+                  <div class="carousel-item">
+                      <div class="row">
+
+                        <div class="col-md-4 mb-3">
+                          <div class="card offs-card-size">
+                              <img class="img-fluid offs-img-size" src="img/itens/feijao-preto-organico.jpg">
+                              <div class="card-body">
+                                <div class="form-group">
+                                  <h6 class="card-text item-titulo">Feijão Preto 500g</h6>
+                                  <p class="card-text item">R$ 14,90/UN</p>
+                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <div class="card offs-card-size">
+                            <img class="img-fluid offs-img-size" src="img/itens/tremoco-em-graos-organico.jpg">
+                            <div class="card-body">
+                              <div class="form-group">
+                                <h6 class="card-text item-titulo">Feijão Tremoço 500g</h6>
+                                <p class="card-text item">R$ 8,90/UN</p>
+                                <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <div class="card offs-card-size">
+                              <img class="img-fluid offs-img-size" src="img/itens/acucar-mascavo-organico.jpg">
+                              <div class="card-body">
+                                <div class="form-group">
+                                  <h6 class="card-text item-titulo">Açúcar Mascavo 1kg</h6>
+                                  <p class="card-text item"> R$ 17,90/UN</p>
+                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
       </div>
-      <!-- Copyright -->
-    </footer>
+  </div>
+</div>
+</div>
 
+ <!-- FOOTER -->
+ <footer class="footer">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #ffc0b6; width: 100%; margin-top: 200px;">
+    © 2021 Copyright:
+    <a class="text-white" href="">Legumes Preciosos</a>
+    <br>
+    Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
+  </div>
+  <!-- Copyright -->
+</footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
