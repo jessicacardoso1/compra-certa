@@ -259,6 +259,36 @@ p.item{
   font-size: 25px;
 }
 
+// AVALIAR
+.adjust-click{
+  margin-right: 30px;
+}
+.rating-align{
+  margin-top: 20px;
+  margin-left: 150px;
+  margin-bottom: 50px;
+}
+
+.text-color{
+  text-align: left; 
+  color: rgb(99, 99, 99);
+  
+}
+.aling-left{
+  margin-left: 150px;
+
+}
+
+input.form-control.aling-left{
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+textarea.form-control {
+  height: auto;
+  width: 50%;
+  
+}
 
 
 // MY ACCOUNT
@@ -406,9 +436,6 @@ a.filtro:link, a.filtro:visited{
   font-size: 25px;
 }
 
-.adm-preparation-card{
-  //background-color: $salmao;
-}
 
 .adm-preparation-card-font-color{
   color: $teal;
