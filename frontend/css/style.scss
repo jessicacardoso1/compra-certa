@@ -97,7 +97,8 @@ $theme-colors: map-merge(
 	  "salmao-dark":  $salmao-dark,
 	  "whitesmoke":   $whitesmoke,
     "teal":         $teal,
-    "red":          $red
+    "red":          $red,
+    "blue":         $blue
   ),
   $theme-colors
 );
@@ -472,6 +473,33 @@ a.filtro:link, a.filtro:visited{
 
 .adm-conf-emb-span{
   float: right;
+}
+
+.adm-delivery-display{
+  margin-top: 20px;
+}
+
+.adm-delivery-icon-up-color{
+  color: rgb(60, 30, 141);
+}
+
+.adm-delivery-icon-down-color{
+  color: $blue;
+}
+
+.adm-delivery-icon-right-color{
+  color: $teal;
+}
+
+.adm-delivery-icon-x-color{
+  color: red;
+}
+
+.adm-delivery-container{
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // OTHERS COMPONENTS
