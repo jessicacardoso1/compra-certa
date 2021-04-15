@@ -97,7 +97,8 @@ $theme-colors: map-merge(
 	  "salmao-dark":  $salmao-dark,
 	  "whitesmoke":   $whitesmoke,
     "teal":         $teal,
-    "red":          $red
+    "red":          $red,
+    "blue":         $blue
   ),
   $theme-colors
 );
@@ -142,7 +143,7 @@ margin-right: 50px;
 }
 
 .icons-user-cart p{
-	color: rgb(0, 0, 0);
+	color: whitesmoke;
 	font-size: 14px;
 }
 
@@ -185,7 +186,7 @@ margin-right: 50px;
 }
 
 .offs-card-size{
-  height: 350px;
+  height: 380px;
 }
 
 .offs-text-name{
@@ -201,9 +202,23 @@ margin-right: 50px;
 }
 
 .offs-btn-submit{
-  background-color: #ffc0b6;
+  background-color: $salmao;
 }
 
+.mais-vendidos-card-size{
+  width: 300px;
+  height: 430px;
+}
+
+.mais-vendidos-img-size{
+  width: 200px;
+  height: 270px;
+}
+
+.mais-vendidos-btn-submit{
+  background-color: $salmao;
+  margin-top: 5px;
+}
 
 // PRODUTOS DETALHADOS
 
@@ -253,7 +268,68 @@ p.item{
 
 }
 
+// AVALIAR
+.adjust-click{
+  margin-right: 30px;
+}
+.rating-align{
+  margin-top: 20px;
+  margin-left: 150px;
+  margin-bottom: 50px;
+}
 
+.text-color{
+  text-align: left; 
+  color: rgb(99, 99, 99);
+  
+}
+.aling-left{
+  margin-left: 150px;
+
+}
+
+input.form-control.aling-left{
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+textarea.form-control {
+  height: auto;
+  width: 50%;
+  
+}
+//MINHA CONTA
+.img-compras{
+  width: 5rem;
+}
+
+.align-compras{
+  margin-right: 300px;
+}
+
+//RASTREAR 
+.bs-wizard {margin-top: 40px;}
+
+/*Form Wizard*/
+.bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
+.bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
+.bs-wizard > .bs-wizard-step + .bs-wizard-step {}
+.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #fbe8aa; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #fbbd19; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
+.bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #fbe8aa;}
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+.bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #f5f5f5;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
+.bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+.bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+/*END Form Wizard*/
 
 // MY ACCOUNT
 
@@ -400,9 +476,6 @@ a.filtro:link, a.filtro:visited{
   font-size: 25px;
 }
 
-.adm-preparation-card{
-  //background-color: $salmao;
-}
 
 .adm-preparation-card-font-color{
   color: $teal;
@@ -439,6 +512,37 @@ a.filtro:link, a.filtro:visited{
 
 .adm-conf-emb-span{
   float: right;
+}
+
+.adm-delivery-display{
+  margin-top: 20px;
+}
+
+.adm-delivery-icon-up-color{
+  color: rgb(60, 30, 141);
+}
+
+.adm-delivery-icon-down-color{
+  color: $blue;
+}
+
+.adm-delivery-icon-right-color{
+  color: $teal;
+}
+
+.adm-delivery-icon-x-color{
+  color: red;
+}
+
+.adm-delivery-container{
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.adm-modal-table td{
+  text-align: left;
 }
 
 // OTHERS COMPONENTS
@@ -630,3 +734,14 @@ text-decoration: none; }
 color: #ff173c; }
 .single li:last-child a {
 border-bottom: 0; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
