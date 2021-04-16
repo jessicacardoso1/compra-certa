@@ -304,7 +304,13 @@ textarea.form-control {
 }
 
 .align-compras{
-  margin-right: 300px;
+  align-items: center;
+  border-top: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+}
+.text-compras{
+  color: rgb(121, 121, 121); 
+  font-weight: bold;
 }
 
 //RASTREAR 
@@ -549,6 +555,7 @@ a.filtro:link, a.filtro:visited{
 .card-size{
   height: 70%;
   padding: 20px 30px;
+  margin-left: 500px;
 
 }
 .adjust-checkbox-collapse{
@@ -562,7 +569,7 @@ a.filtro:link, a.filtro:visited{
 }
 .menu {
   margin-top: 20px;
-  margin-left: 110px;
+  margin-left: 200px;
 }
 
 li {
