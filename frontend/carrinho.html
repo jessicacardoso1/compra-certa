@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Legumes Preciosos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+  
+    <link rel="icon" type="image/png" href="img/ref_icon.png" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-md navbar-static-top navbar-light bg-salmao">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="index.html">
+          <img src="img/logo.png" alt="logo">
+      </a>
+      
+      <!-- search bar/buttom -->
+      <div class="container search-navbar">
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Encontre aqui as melhores promoções"/>
+          </div>
+          <button type="button" class="btn btn-success">
+            <i class="fa fa-search fa-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- user and cart icons -->
+      <div class="container icons-user-cart">
+        <a class="icon-user" href="#">
+          <i class="fa fa-user fa-3x" style="color: whitesmoke;"></i>
+          <p>Entre ou Cadastre-se</p>
+        </a>
+        <a class="icon-cart" href="#">
+          <i class="fa fa-shopping-cart fa-3x" style="color: whitesmoke;"></i>
+          <p>Meu Carrinho</p>
+        </a>
+      </div>
+    </nav>
+
+    <!--CARRINHO-->
+
+    <div class="container border pt-3 my-3" style="margin-top: 70px; color:rgb(71, 70, 70); padding: 30px;">
+        <div class="row">
+            <div class="col-md-10">
+         <h3>Carrinho de compras</h3>
+        </div>
+        <div class="col-md-2">
+          <small>Preço</small>
+        </div>
+      </div><hr>
+        <div class="row">
+            <div class="col-md-0.5">
+                <div class="form-check aling_vert">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                </div>
+            </div>
+            <div class="col-md-2.5">
+                <img class="card-img-top" src="/frontend/img/itens/soja.jpg" alt="Livros em promoção" style="width:200px">   
+            </div>
+            <div class="col-md-7">
+            
+               <h5>Soja em grãos Orgânico Importada 500g</h5>
+                <p>Em estoque</p>
+                <form>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch1">
+                    <label class="custom-control-label" for="switch1">Esse item é para presente</label>
+                  </div>
+                </form>
+               <small>Contagem de unidades: 1</small><br>
+               <select>
+                <option>Qtd: 1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+
+              <small><p>Excluir | Salvar para mais tarde</p></small></div>
+              <div class="col-md-2" >
+                  <p style="margin-left: 55px;">R$ 8,90/UN</p>
+            </div>
+                
+          </div> <hr> 
+
+          <!--produto dois-->
+          
+          <div class="row">
+            <div class="col-md-0.5">
+                <div class="form-check aling_vert">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                </div>
+            </div>
+            <div class="col-md-2.5">
+                <img class="card-img-top" src="/frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            </div>
+            <div class="col-md-7">
+            
+               <h5>Castanha do Brasil média 250g</h5>
+                <p>Em estoque</p>
+                <form>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch2">
+                    <label class="custom-control-label" for="switch2">Esse item é para presente</label>
+                  </div>
+                </form>
+               <small>Contagem de unidades: 1</small><br>
+               <select>
+                <option>Qtd: 1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+
+              <small><p>Excluir | Salvar para mais tarde</p></small></div>
+              <div class="col-md-2" >
+                  <p style="margin-left: 55px;">R$ 24,90/UN</p>
+            </div>
+                
+          </div> <hr>
+          <div class="row">
+            <div class="col-md-5">
+
+            </div>
+            <div class="col=md-2">
+              <button type="button" class="btn offs-btn-submit btn-lg">Finalizar compra</button>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-3">
+              <p>Subtotal (item 2) R$ 33,80</p>
+            </div>
+
+          </div>
+            
+        </div>
+
+    </div> 
+    <!--salvos/comprar novamente-->
+
+    <div class="container border pt-3 my-3" style="margin-top: 70px; color:rgb(71, 70, 70); padding: 30px;">
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">Salvos para mais tarde</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Comprar novamente</a>
+        </li>
+      </ul>
+      
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane container active" id="home">
+
+          <div class="row" style="margin-top: 20px;">
+            <div class="col-md-0.5">
+                <div class="form-check aling_vert">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                </div>
+            </div>
+            <div class="col-md-2.5">
+                <img class="card-img-top" src="/frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            </div>
+            <div class="col-md-7">
+            
+               <h5>Castanha do Brasil média 250g</h5>
+                <p>Em estoque</p>
+
+
+                
+               
+              <small><p>Excluir | Adicionar a lista de desejos</p></small>
+              <div class="row">
+                <div class="col-md-5">
+
+                
+                  <button type="button" class="btn offs-btn-submit btn-sm">Mover para o carrinho </button></div>
+
+            </div>
+            
+            </div>
+
+              
+              <div class="col-md-2" >
+                  <p style="margin-left: 55px;">R$ 24,90/UN</p>
+            </div>
+                
+          </div> <hr>
+
+          <!--produto dois salvos-->
+
+          <div class="row" style="margin-top: 20px;">
+            <div class="col-md-0.5">
+                <div class="form-check aling_vert">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                </div>
+            </div>
+            <div class="col-md-2.5">
+                <img class="card-img-top" src="/frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            </div>
+            <div class="col-md-7">
+            
+               <h5>Castanha do Brasil média 250g</h5>
+                <p>Em estoque</p>
+
+
+                
+               
+              <small><p>Excluir | Adicionar a lista de desejos</p></small>
+              <div class="row">
+                <div class="col-md-5">
+
+                
+                  <button type="button" class="btn offs-btn-submit btn-sm">Mover para o carrinho </button></div>
+
+            </div>
+            
+            </div>
+
+              
+              <div class="col-md-2" >
+                  <p style="margin-left: 55px;">R$ 24,90/UN</p>
+            </div>
+                
+          </div> <hr>
+          
+         <!--comprar novamente--> 
+          
+
+        </div>
+        <div class="tab-pane container fade" id="menu1">
+
+          <div class="row" style="margin-top: 20px;">
+            <div class="col-md-0.5">
+                <div class="form-check aling_vert">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                </div>
+            </div>
+            <div class="col-md-2.5">
+                <img class="card-img-top" src="/frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            </div>
+            <div class="col-md-7">
+            
+               <h5>Castanha do Brasil média 250g</h5>
+                <p>Em estoque</p>
+
+
+                
+               
+              
+              <div class="row">
+                <div class="col-md-5">
+
+                
+                  <button type="button" class="btn offs-btn-submit btn-sm">Adicionar ao carrinho </button></div>
+
+            </div>
+            
+            </div>
+
+              
+              <div class="col-md-2" >
+                  <p style="margin-left: 55px;">R$ 24,90/UN</p>
+            </div>
+                
+          </div> <hr>
+
+          <!--produto dois comprar novamente-->
+
+          <div class="row" style="margin-top: 20px;">
+            <div class="col-md-0.5">
+                <div class="form-check aling_vert">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                </div>
+            </div>
+            <div class="col-md-2.5">
+                <img class="card-img-top" src="/frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            </div>
+            <div class="col-md-7">
+            
+               <h5>Castanha do Brasil média 250g</h5>
+                <p>Em estoque</p>
+
+
+                
+               
+              
+              <div class="row">
+                <div class="col-md-5">
+
+                
+                  <button type="button" class="btn offs-btn-submit btn-sm">Adicionar ao carrinho </button></div>
+
+            </div>
+            
+            </div>
+
+              
+              <div class="col-md-2" >
+                  <p style="margin-left: 55px;">R$ 24,90/UN</p>
+            </div>
+                
+          </div> <hr>
+          
+        </div>
+        
+      </div>
+
+    </div>
+
+ <!-- FOOTER -->
+ <footer class="bg-dark text-center text-white">
+  <!-- Copyright -->
+  <div class="text-center p-3 footer">
+    © 2021 Copyright: Legumes Preciosos
+    <br>
+    Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
+  </div>
+  <!-- Copyright -->
+</footer>
+
+ 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

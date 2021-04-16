@@ -260,6 +260,14 @@ p.item{
   font-size: 25px;
 }
 
+// CARRINHO
+
+.aling_vert{
+
+ margin-top: 75px;
+
+}
+
 // AVALIAR
 .adjust-click{
   margin-right: 30px;
@@ -743,4 +751,20 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
+}
+
+.cor-salmao{
+  color: $salmao;
+}
+
+.cor-bg-salmao-dark{
+  background-color: $salmao-dark;
+}
+
+.cor-salmao-dark{
+  color: $salmao-dark;
+}
+
+.cor-bg-teal{
+  background-color: $teal;
 }
