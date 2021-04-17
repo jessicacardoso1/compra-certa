@@ -1,5 +1,4 @@
-// Color system
-
+// ####################### CORES BOOTSTRAP #######################
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -102,6 +101,8 @@ $theme-colors: map-merge(
   ),
   $theme-colors
 );
+// ####################### FIM CORES BOOTSTRAP #######################
+
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
@@ -109,7 +110,8 @@ body{
     font-family : 'Tahoma', sans-serif;
 }
 
-// BOOTSTRAP COMPONENTS
+
+// ####################### BOOTSTRAP COMPONENTS #######################
 .colu {
 width: 20%;
 
@@ -154,8 +156,10 @@ margin-right: 50px;
 .carousel-control-next, .carousel-control-prev{
     filter: invert(100%);
 }
+// ####################### FIM BOOTSTRAP COMPONENTS #######################
 
-// BANNER
+
+// ####################### BANNER #######################
 .banner-img{
   margin-left: auto; 
   margin-right: auto; 
@@ -164,8 +168,10 @@ margin-right: 50px;
   width: 100%;
   height: 420px;
 }
+// ####################### FIM BANNER #######################
 
-// OFFS
+
+// ####################### OFFS #######################
 .col-md-4, .mb-3, .card, img{
 	margin-top: 10px;
 	margin-left: auto;
@@ -219,9 +225,10 @@ margin-right: 50px;
   background-color: $salmao;
   margin-top: 5px;
 }
+// ####################### FIM OFFS #######################
 
-// PRODUTOS DETALHADOS
 
+// ####################### PRODUTOS DETALHADOS #######################
 .forma-texto{
 
   text-indent: 50px;
@@ -259,16 +266,19 @@ p.item{
   color: rgb(10, 10, 10);
   font-size: 25px;
 }
+// ####################### FIM PRODUTOS DETALHADOS #######################
 
-// CARRINHO
 
+// ####################### CARRINHO #######################
 .aling_vert{
 
  margin-top: 75px;
 
 }
+// ####################### FIM CARRINHO #######################
 
-// AVALIAR
+
+// ####################### AVALIAR #######################
 .adjust-click{
   margin-right: 30px;
 }
@@ -298,7 +308,11 @@ textarea.form-control {
   width: 50%;
   
 }
-//MINHA CONTA
+// ####################### FIM AVALIAR #######################
+
+
+
+// ####################### MINHA CONTA #######################
 .img-compras{
   width: 5rem;
 }
@@ -319,9 +333,10 @@ p.text-compras{
 .negrito{
   font-weight: bold;
 }
-//RASTREAR 
+// ####################### FIM MINHA CONTA #######################
 
 
+// ####################### RASTREAR #######################
 .bs-wizard {margin-top: 40px;}
 
 .bs-wizard {margin-top: 40px;}
@@ -345,10 +360,9 @@ p.text-compras{
 .bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
 .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
 .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
-/*END Form Wizard*/
+/* ####################### END Form Wizard ####################### */
 
-// MY ACCOUNT
-
+// ####################### MY ACCOUNT #######################
 .my-account-lab h3{
   margin-top: 50px;
   margin-left: 50px;
@@ -370,9 +384,10 @@ p.text-compras{
   margin-left: auto;
   margin-right: auto;
 }
+// ####################### END MY ACCOUNT #######################
 
-// MY ADRESS
 
+// ####################### MY ADRESS #######################
 .my-adress-display{
   margin-top: 50px;
 
@@ -422,15 +437,17 @@ p.text-compras{
   text-align: center;
   color: #333;
 }
+// ####################### END MY ADRESS #######################
 
 
-// FOOTER
-
+// ####################### FOOTER #######################
 .footer{
   background-color: #ffc0b6; 
   width: 100%; 
   margin-top: 200px;
 }
+// ####################### FIM FOOTER #######################
+
 .marca{
   margin-right: 30px;
 
@@ -475,6 +492,7 @@ a.filtro:link, a.filtro:visited{
   color: rgb(0, 49, 0);
 }
 
+// ####################### ADMINISTRACAO #######################
 .adm-nav-font{
   text-align: center;
   margin-top: 40px;
@@ -491,7 +509,6 @@ a.filtro:link, a.filtro:visited{
   text-align: center;
   font-size: 25px;
 }
-
 
 .adm-preparation-card-font-color{
   color: $teal;
@@ -560,8 +577,9 @@ a.filtro:link, a.filtro:visited{
 .adm-modal-table td{
   text-align: left;
 }
+// ####################### FIM ADMINISTRACAO #######################
 
-// OTHERS COMPONENTS
+// ####################### OTHERS COMPONENTS #######################
 .card-size{
   height: 70%;
   padding: 20px 30px;
@@ -763,6 +781,7 @@ input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
+// ####################### CORES E BG-CORES #######################
 .cor-salmao{
   color: $salmao;
 }
@@ -778,3 +797,25 @@ input[type=number] {
 .cor-bg-teal{
   background-color: $teal;
 }
+// ####################### FIM CORES E BG-CORES #######################
+
+
+// ######################## FINALIZAR COMPRA #######################
+.finalizar-compra-select-parcelas{
+  width: 100%;
+	border: thin solid #fafafa;
+	border: solid 1px #999;
+	color: #444;
+	background-color: #fafafa;
+	padding: 10px 10px 10px 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.finalizar-compra-select-parcelas-label{
+  margin-top: 10px;
+
+  color: rgb(119, 119, 119);
+  font-size: 18px;
+}
+//####################### FIM FINALIZAR COMPRA #######################

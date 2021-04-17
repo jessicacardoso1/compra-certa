@@ -196,10 +196,9 @@
         <!-- LOGIN FORM -->
         <div class="row">
           
-        
-        <div class="col-md-6 login-form-1">
-          <h3>Dados do cartão</h3>
-          <form>
+          <div class="col-md-6 login-form-1">
+            <h3>Dados do cartão</h3>
+            <form>
               <div class="form-group">
                 <div class="text-field">
                   <input type="text" id="n_cartao" required>
@@ -230,33 +229,42 @@
                   <label>CVV</label>
                 </div>
               </div>
-              <form action="/action_page.php">
-                <div class="form-group" >
-                <select class="form-control" style="color: #0d4920" id="sel1" name="sellist1" >
-                    <option>Parcelas</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                  </div>
+              
+              <div class="row">
+                <div class="col-md-3">
+                  <h6 class="finalizar-compra-select-parcelas-label">Parcelas:</h6>
+                </div>
+                <div class="col-md-9">
+                  <form action="">
+                    <select name="form-parcelas" class="form-control finalizar-compra-select-parcelas" id="parcelas">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                    </select>
+                  </form>
+                </div>
+              </div>
 
-                  <div class="row">
-                    <div class="col-md-9">
-                      <h5>Total:</h5>
-                    </div>
-                    <div class="col-md-3">
-                      <h5>R$ XX,XX</h5>
+              <!-- total -->
+              <div class="row" style="margin-top: 20px;">
+                <div class="col-md-9">
+                  <h5>Total:</h5>
+                </div>
+                <div class="col-md-3">
+                  <h5>R$ XX,XX</h5>
+                </div>
+              </div>
 
-                    </div>
-                  </div><br>
               <div class="form-group">
                   <input type="submit" class="btnSubmit" value="Fechar pedido" />
               </div>
              
-          </form>
-      </div>
-      </div>
+            </form>
+          </div>
+        </div>
       </div>
       <div class="tab-pane fade" id="cadastro" role="tabpanel" aria-labelledby="cadastro-tab">
         <!-- REGISTER FORM -->
