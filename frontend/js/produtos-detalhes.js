@@ -1,20 +1,21 @@
-function btnMaisVendidos(id, tipoOperacao){
+function btnCounter(id, tipoOperacao){
     var campo = document.getElementById(id)
-
-    if(campo.value == "")
-        campo.value = 0
+    
+    if(campo.value < 1)
+        setBtnMaisVendidos(id, 1)
 
     if(tipoOperacao == 'sum'){
         setBtnMaisVendidos(id, parseInt(campo.value) + 1)
     }
 
     else if(tipoOperacao == 'sub'){
-        if(campo.value == 1 || campo.value == 0)
-        setBtnMaisVendidos(id, "")
+        if(campo.value == 1){
+            return
+        }
         
         campo.value = parseInt(campo.value) - 1;
     }
-    
+
 }//FIM função
 
 function setBtnMaisVendidos(id, valor){

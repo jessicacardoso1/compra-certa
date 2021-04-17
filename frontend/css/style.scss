@@ -275,6 +275,18 @@ p.item{
  margin-top: 75px;
 
 }
+
+.carrinho-select-qntd{
+  width: 15%;
+	border: thin solid #fafafa;
+	border: solid 1px #999;
+	color: #444;
+	background-color: #fafafa;
+	padding: 10px 10px 10px 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
 // ####################### FIM CARRINHO #######################
 
 
@@ -282,10 +294,18 @@ p.item{
 .adjust-click{
   margin-right: 30px;
 }
+
 .rating-align{
   margin-top: 20px;
   margin-left: 150px;
   margin-bottom: 50px;
+}
+
+.rating-img-star{
+  width: 35px;
+  height: 35px;
+
+  cursor: pointer;
 }
 
 .text-color{

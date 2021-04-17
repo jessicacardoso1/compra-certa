@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="js/produtos-detalhes.js"></script>
   </head>
   
   <body>
@@ -56,7 +58,7 @@
       <div class="container border p-3" style="margin-top: 100px; align-items: center; color:black;">
         <div class="row">
           <div class="col"> 
-          <img class="card-img-top" src="/frontend/img/itens/soja.jpg" alt="Livros em promoção" style="width:400px">
+          <img class="card-img-top" src="img/itens/soja.jpg" alt="Livros em promoção" style="width:400px">
         </div>
           <div class="col">
             <div class="row">
@@ -72,9 +74,11 @@
             <h4 class="card" style="border:solid 0.2px ; border-radius: 5px; margin-left: 200px; padding: 10px">R$: 8,90/UN</h4><br>
            </div><br>
            <div class="row" style="margin-left: 150px;">
-            <button type="button"   class="btn btn-salmao" >-</button>
-            <input type="number-field" class="" style="width: 160px; text-align: center;" placeholder="Quantidade">
-            <button type="button"  class="btn btn-salmao" value=>+</button>
+            <div class="btn-group" role="group" aria-label="Exemplo básico">
+              <button type="button" class="btn btn-salmao" onClick="btnCounter('input-count', 'sub');">-</button>
+              <input id="input-count" type="number" value="1" class="form-control text-center" style="width: 160px;">
+              <button type="button" class="btn btn-salmao" onClick="btnCounter('input-count', 'sum');">+</button>
+            </div>
               </div><br>
               <div class="row" style="margin-left: 150px; width: 220px;">
               <input type="submit" class="btnSubmit offs-btn-submit" style="font-size: 20px; color: black; padding: 10px" value="Adicionar ao carrinho" onClick="location.href='carrinho.html'"/>
@@ -284,17 +288,16 @@
 </div>
 </div>
 
- <!-- FOOTER -->
- <footer class="footer">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: #ffc0b6; width: 100%; margin-top: 200px;">
-    © 2021 Copyright:
-    <a class="text-white" href="">Legumes Preciosos</a>
-    <br>
-    Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
-  </div>
-  <!-- Copyright -->
-</footer>
+  <!-- FOOTER -->
+  <footer class="bg-dark text-center text-white">
+    <!-- Copyright -->
+    <div class="text-center p-3 footer">
+      © 2021 Copyright: Legumes Preciosos
+      <br>
+      Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
+    </div>
+    <!-- Copyright -->
+  </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
