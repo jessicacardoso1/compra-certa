@@ -50,20 +50,7 @@
       </div>
     </nav>
 
-    <!--MENU FIXO-->
-    <ul class="menu">
-      <li class="">
-        <a class="menuLink" href="index.html">Home</a>
-      </li>
-      <li> > </li>
-      <li class="">
-        <a class="menuLink" href="#">Minhas compras</a>
-      </li>
-      <li> > </li>
-      <li>
-        <a class="menuLink likAtivo" href="#"> Avaliar compras</a>
-      </li>    
-    </ul>
+    
 
 
     <!--finalizar compra-->
@@ -165,21 +152,137 @@
         </div>
     </div>
 
-    
-    
-    
-    
-    <!-- FOOTER -->
-		<footer class="footer">
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: #ffc0b6; width: 100%; margin-top: 500px;">
-        © 2021 Copyright:
-        <a class="text-white" href="">Legumes Preciosos</a>
-        <br>
-        Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
+    <!--cupom-->
+  <div class="container border" style="margin-top: 15px; padding: 30px; color: rgb(71, 73, 76);">
+    <div class="row">
+        <div class="col-md-12">
+          
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                  <h4 style="color: #0d4920;">Possui um cupom ou vale?</h4>
+                </a>
+              </div>
+              <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  
+                    <input type="search" id="form1" class="form-control" style="width: 400px; display:inline" placeholder="Digite seu cupom de desconto"/>
+                    <button type="button" class="btn-success" style="display: inline"  value="Aplicar">Aplicar
+                      
+                    </button>
+                  
+              </div>
+            </div>
+         </div>
+       </div>
+     </div>
+  </div>
+   </div> 
+   
+   <!--forma de pagamento-->
+ 
+   <div class="container border" style="padding: 20px; margin-top: 40px;">
+    <ul class="nav nav-tabs" style="align-items: center;" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Cartão de crédito</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#cadastro" role="tab" aria-controls="cadastro" aria-selected="false">Boleto</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+        <!-- LOGIN FORM -->
+        <div class="row">
+          
+        
+        <div class="col-md-6 login-form-1">
+          <h3>Dados do cartão</h3>
+          <form>
+              <div class="form-group">
+                <div class="text-field">
+                  <input type="text" id="n_cartao" required>
+                  <label>Número do cartão</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="text-field">
+                  <input type="text" id="text_password" required>
+                  <label>Nome impresso no cartão</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="text-field">
+                  <input type="text" id="n_cartao" required>
+                  <label>Validade</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="text-field">
+                  <input type="text" id="n_cartao" style="display: inline;" required>
+                  <label>Validade</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="text-field">
+                  <input type="text" id="n_cartao" style="display: inline;" required>
+                  <label>CVV</label>
+                </div>
+              </div>
+              <form action="/action_page.php">
+                <div class="form-group" >
+                <select class="form-control" style="color: #0d4920" id="sel1" name="sellist1" >
+                    <option>Parcelas</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-9">
+                      <h5>Total:</h5>
+                    </div>
+                    <div class="col-md-3">
+                      <h5>R$ XX,XX</h5>
+
+                    </div>
+                  </div><br>
+              <div class="form-group">
+                  <input type="submit" class="btnSubmit" value="Fechar pedido" />
+              </div>
+             
+          </form>
       </div>
-      <!-- Copyright -->
-    </footer>
+      </div>
+      </div>
+      <div class="tab-pane fade" id="cadastro" role="tabpanel" aria-labelledby="cadastro-tab">
+        <!-- REGISTER FORM -->
+        <div class="col-md-6 login-form-1">
+          <h4>Imprima o boleto e pague no banco</h4>
+          <h4>Ou pague pela internet utilizando o código de barras do boleto  </h4>
+         <h4>o prazo de validade do boleto é de 1 dia util</h4>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    
+    
+   <!-- FOOTER -->
+   <footer class="bg-dark text-center text-white" style="margin-top: 700px;">
+    <!-- Copyright -->
+    <div class="text-center p-3 footer">
+      © 2021 Copyright: Legumes Preciosos
+      <br>
+      Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
+    </div>
+    <!-- Copyright -->
+  </footer>
 
     
     <!-- Optional JavaScript -->
