@@ -20,34 +20,91 @@
   </head>
   
   <body>
-    <nav class="navbar navbar-expand-md navbar-static-top navbar-light bg-salmao">
-      <!-- Brand/logo -->
-      <a class="navbar-brand" href="index.html">
-          <img src="img/logo.png" alt="logo">
-      </a>
-      
-      <!-- search bar/buttom -->
-      <div class="container search-navbar">
-        <div class="input-group">
-          <div class="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Encontre aqui as melhores promoções"/>
-          </div>
-          <button type="button" class="btn btn-success">
-            <i class="fa fa-search fa-lg"></i>
-          </button>
-        </div>
-      </div>
+    <nav class="navbar bg-salmao">
+      <div class="container justify-content-around">
 
-      <!-- user and cart icons -->
-      <div class="container icons-user-cart">
-        <a class="icon-user" href="#">
-          <i class="fa fa-user fa-3x" style="color: whitesmoke;"></i>
-          <p>Entre ou Cadastre-se</p>
+        <a href="index.html">
+          <img src="img/_logo.png" alt="logo" width="210">
         </a>
-        <a class="icon-cart" href="#">
-          <i class="fa fa-shopping-cart fa-3x" style="color: whitesmoke;"></i>
-          <p>Meu Carrinho</p>
+
+        <form class="form-inline">
+          <input class="form-control mr-sm-1" type="text" placeholder="Buscar produtos..." aria-label="Search">
+          <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
+        </form>
+        
+        <a href="login_cadastro.html" class="text-white text-decoration-none">
+          <strong>Entre ou Cadastre-se</strong>
+          <i class="fa fa-user fa-lg ml-2 fa-2x"></i>
         </a>
+
+        <a href="carrinho.html">
+          <i class="fa fa-shopping-cart fa-2x cor-teal"></i>
+          <span class="badge badge-primary badge-pill adm-conf-emb-span ml-1">5</span>
+        </a>
+
+      </div>
+    </nav>
+    <nav class="navbar bg-salmao-dark">
+      <div class="container justify-content-start">
+        <div class="btn-group dropdown">
+          
+          <p class="dropdown-toggle dropdown-toggle-split text-whitesmoke" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+            Categorias
+          </p>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu" style="width: 300px;">
+          
+            <div class="row">
+              <div class="col-sm-12">
+                <!-- Category -->
+                <div class="single category">
+                  <h3 class="side-title">Categorias</h3>
+                  <ul class="list-group">
+                    <li><a href="" title="">Frutas <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Legumes <span class="pull-right">30</span></a></li>
+                    <li><a href="" title="">Folhas <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Folhas para Chás <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Sementes <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Android <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">IOS <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Windows <span class="pull-right">13</span></a></li>
+                  </ul>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+        
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Ofertas do dia</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Supermercado</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Mais vendidos</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Selecionados para você</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Lançamento</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Contato</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Sobre nós</p>
+        </a>
+
       </div>
     </nav>
 
@@ -62,7 +119,7 @@
         </div>
           <div class="col">
             <div class="row">
-            <h3>Soja em grãos Orgânico Importada 500g</h3><br>
+              <h3 class="mb-3 text-monospace">Soja em grãos Orgânico Importada 500g</h3>
             
           </div>
           <hr>
@@ -73,16 +130,16 @@
             <div class="row">
             <h4 class="card" style="border:solid 0.2px ; border-radius: 5px; margin-left: 200px; padding: 10px">R$: 8,90/UN</h4><br>
            </div><br>
-           <div class="row" style="margin-left: 150px;">
+           <div class="row d-flex justify-content-center" >
             <div class="btn-group" role="group" aria-label="Exemplo básico">
-              <button type="button" class="btn btn-salmao" onClick="btnCounter('input-count', 'sub');">-</button>
-              <input id="input-count" type="number" value="1" class="form-control text-center" style="width: 160px;">
-              <button type="button" class="btn btn-salmao" onClick="btnCounter('input-count', 'sum');">+</button>
+              <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white" onClick="btnCounter('input-count', 'sub');">-</button>
+              <input id="input-count" type="number" value="1" class="form-control text-center w-75">
+              <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white" onClick="btnCounter('input-count', 'sum');">+</button>
             </div>
-              </div><br>
-              <div class="row" style="margin-left: 150px; width: 220px;">
-              <input type="submit" class="btnSubmit offs-btn-submit" style="font-size: 20px; color: black; padding: 10px" value="Adicionar ao carrinho" onClick="location.href='carrinho.html'"/>
-            </div>
+            </div><br>
+              <div class="container d-flex justify-content-center">
+                <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-75 mb-2">Adicionar ao carrinho</button>
+              </div>
            </div>
         </div>
       </div>
@@ -92,7 +149,7 @@
      <div class="container-lg" style="margin-top: 50px; align-items: center; color:black">
      <div class="row">
        <div class="col">
-      <h2>Detalhes do produto:</h2><br>
+        <h3 class="mb-3 text-monospace">Detalhes do produto:</h3>
      <div class="row">
        <div class="col">       
       <table>
@@ -139,7 +196,7 @@
      <div class="container offs-container" style="margin-top: 200px;">
       <div class="row">
           <div class="col-8">
-              <h3 class="mb-3 text-right offs-label" style="color: black;">Aproveite e veja também:</h3>
+              <h3 class="mb-3 text-monospace">Aproveite e veja também:</h3>
           </div>
           <div class="col-4 text-right">
               <a class="btn btn-primary mb-3 mr-1 btn-success" href="#carouselExampleIndicators2" role="button"  data-slide="prev">
@@ -163,9 +220,9 @@
                               <img class="img-fluid offs-img-size" src="img/itens/castanha-do-brasil-media-organica.jpg">
                               <div class="card-body">
                                 <div class="form-group">
-                                  <h6 class="card-text item-titulo">Castanha do Brasil média 250g</h6>
-                                  <p class="card-text item">R$ 24,99/UN</p>
-                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                  <p class="card-text offs-text-name text-monospace">Castanha do Brasil média 250g</p>
+                                  <h5 class="text-success mb-2"><b>R$ 24,99</b> à vista</h5>
+                                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                 </div>
                               </div>
 
@@ -176,9 +233,9 @@
                               <img class="img-fluid offs-img-size" src="img/itens/cravo-da-india-organico.jpg">
                               <div class="card-body">
                                 <div class="form-group">
-                                  <h6 class="card-text item-titulo">Cravo da Índia 20g</h6>
-                                  <p class="card-text item">R$ 7,90/UN</p>
-                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                  <p class="card-text offs-text-name text-monospace">Cravo da Índia 20g</p>
+                                  <h5 class="text-success mb-2"><b>R$ 7,90</b> à vista</h5>
+                                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                 </div>
                               </div>
                           </div>
@@ -188,9 +245,9 @@
                               <img class="img-fluid offs-img-size" src="img/itens/farinha-de-trigo-especial-organico.jpg">
                               <div class="card-body">
                                 <div class="form-group">
-                                  <h6 class="card-text item-titulo">Farinha de trigo especial 500g</h6>
-                                  <p class="card-text item">R$ 6,90/UN</p>
-                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                  <p class="card-text offs-text-name text-monospace">Farinha de trigo especial 500g</p>
+                                  <h5 class="text-success mb-2"><b>R$ 6,90</b> à vista</h5>
+                                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                 </div>
                               </div>
                           </div>
@@ -206,9 +263,9 @@
                             <img class="img-fluid offs-img-size" src="img/itens/farinha-de-trigo-integral-organico.jpg">
                             <div class="card-body">
                               <div class="form-group">
-                                <h6 class="card-text item-titulo">Farinha de trigo integral 500g</h6>
-                                <p class="card-text item">R$ 6,90/UN</p>
-                                <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                <p class="card-text offs-text-name text-monospace">Farinha de trigo integral 500g</p>
+                                <h5 class="text-success mb-2"><b>R$ 6,90</b> à vista</h5>
+                                <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                               </div>
                             </div>
                         </div>
@@ -218,9 +275,9 @@
                           <img class="img-fluid offs-img-size" src="img/itens/farinha-flocada-de-mandioca-organica.jpg">
                           <div class="card-body">
                             <div class="form-group">
-                              <h6 class="card-text item-titulo">Farinha de mandioca flocada 500g</h6>
-                              <p class="card-text item">R$ 6,90/UN</p>
-                              <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                              <p class="card-text offs-text-name text-monospace">Farinha de mandioca flocada 500g</p>
+                              <h5 class="text-success mb-2"><b>R$ 6,90</b> à vista</h5>
+                              <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                             </div>
                           </div>
                       </div>
@@ -230,9 +287,9 @@
                         <img class="img-fluid offs-img-size" src="img/itens/fuba-de-milho.jpg">
                         <div class="card-body">
                           <div class="form-group">
-                            <h6 class="card-text item-titulo">Fubá de milho 500g</h6>
-                            <p class="card-text item">R$ 6,90/UN</p>
-                            <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                            <p class="card-text offs-text-name text-monospace">Fubá de milho 500g</p>
+                            <h5 class="text-success mb-2"><b>R$ 6,90</b> à vista</h5>
+                            <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                           </div>
                         </div>
                     </div>
@@ -248,9 +305,9 @@
                               <img class="img-fluid offs-img-size" src="img/itens/feijao-preto-organico.jpg">
                               <div class="card-body">
                                 <div class="form-group">
-                                  <h6 class="card-text item-titulo">Feijão Preto 500g</h6>
-                                  <p class="card-text item">R$ 14,90/UN</p>
-                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                  <p class="card-text offs-text-name text-monospace">Feijão Preto 500g</p>
+                                  <h5 class="text-success mb-2"><b>R$ 14,90</b> à vista</h5>
+                                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                 </div>
                               </div>
                           </div>
@@ -260,9 +317,9 @@
                             <img class="img-fluid offs-img-size" src="img/itens/tremoco-em-graos-organico.jpg">
                             <div class="card-body">
                               <div class="form-group">
-                                <h6 class="card-text item-titulo">Feijão Tremoço 500g</h6>
-                                <p class="card-text item">R$ 8,90/UN</p>
-                                <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                <p class="card-text offs-text-name text-monospace">Feijão Tremoço 500g</p>
+                                <h5 class="text-success mb-2"><b>R$ 8,90</b> à vista</h5>
+                                <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                               </div>
                             </div>
                           </div>
@@ -272,9 +329,9 @@
                               <img class="img-fluid offs-img-size" src="img/itens/acucar-mascavo-organico.jpg">
                               <div class="card-body">
                                 <div class="form-group">
-                                  <h6 class="card-text item-titulo">Açúcar Mascavo 1kg</h6>
-                                  <p class="card-text item"> R$ 17,90/UN</p>
-                                  <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                  <p class="card-text offs-text-name text-monospace">Açúcar Mascavo 1kg</p>
+                                  <h5 class="text-success mb-2"><b>R$ 17,90</b> à vista</h5>
+                                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                 </div>
                               </div>
                           </div>
@@ -289,9 +346,9 @@
 </div>
 
   <!-- FOOTER -->
-  <footer class="bg-dark text-center text-white">
+  <footer class="text-center text-white">
     <!-- Copyright -->
-    <div class="text-center p-3 footer">
+    <div class="text-center p-3 footer bg-salmao-dark">
       © 2021 Copyright: Legumes Preciosos
       <br>
       Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva

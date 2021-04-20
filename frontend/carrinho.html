@@ -18,34 +18,91 @@
   </head>
   
   <body>
-    <nav class="navbar navbar-expand-md navbar-static-top navbar-light bg-salmao">
-      <!-- Brand/logo -->
-      <a class="navbar-brand" href="index.html">
-          <img src="img/logo.png" alt="logo">
-      </a>
-      
-      <!-- search bar/buttom -->
-      <div class="container search-navbar">
-        <div class="input-group">
-          <div class="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Encontre aqui as melhores promoções"/>
-          </div>
-          <button type="button" class="btn btn-success">
-            <i class="fa fa-search fa-lg"></i>
-          </button>
-        </div>
-      </div>
+    <nav class="navbar bg-salmao">
+      <div class="container justify-content-around">
 
-      <!-- user and cart icons -->
-      <div class="container icons-user-cart">
-        <a class="icon-user" href="#">
-          <i class="fa fa-user fa-3x" style="color: whitesmoke;"></i>
-          <p>Entre ou Cadastre-se</p>
+        <a href="index.html">
+          <img src="img/_logo.png" alt="logo" width="210">
         </a>
-        <a class="icon-cart" href="#">
-          <i class="fa fa-shopping-cart fa-3x" style="color: whitesmoke;"></i>
-          <p>Meu Carrinho</p>
+
+        <form class="form-inline">
+          <input class="form-control mr-sm-1" type="text" placeholder="Buscar produtos..." aria-label="Search">
+          <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
+        </form>
+        
+        <a href="login_cadastro.html" class="text-white text-decoration-none">
+          <strong>Entre ou Cadastre-se</strong>
+          <i class="fa fa-user fa-lg ml-2 fa-2x"></i>
         </a>
+
+        <a href="carrinho.html">
+          <i class="fa fa-shopping-cart fa-2x cor-teal"></i>
+          <span class="badge badge-primary badge-pill adm-conf-emb-span ml-1">5</span>
+        </a>
+
+      </div>
+    </nav>
+    <nav class="navbar bg-salmao-dark">
+      <div class="container justify-content-start">
+        <div class="btn-group dropdown">
+          
+          <p class="dropdown-toggle dropdown-toggle-split text-whitesmoke" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+            Categorias
+          </p>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu" style="width: 300px;">
+          
+            <div class="row">
+              <div class="col-sm-12">
+                <!-- Category -->
+                <div class="single category">
+                  <h3 class="side-title">Categorias</h3>
+                  <ul class="list-group">
+                    <li><a href="" title="">Frutas <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Legumes <span class="pull-right">30</span></a></li>
+                    <li><a href="" title="">Folhas <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Folhas para Chás <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Sementes <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Android <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">IOS <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Windows <span class="pull-right">13</span></a></li>
+                  </ul>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+        
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Ofertas do dia</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Supermercado</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Mais vendidos</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Selecionados para você</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Lançamento</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Contato</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Sobre nós</p>
+        </a>
+
       </div>
     </nav>
 
@@ -61,13 +118,13 @@
         </div>
       </div><hr>
         <div class="row">
-            <div class="col-md-0.5">
+            <div class="col-md-1">
                 <div class="form-check aling_vert">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 </div>
             </div>
-            <div class="col-md-2.5">
-                <img class="card-img-top" src="../frontend/img/itens/soja.jpg" alt="Livros em promoção" style="width:200px">   
+            <div class="col-md-2">
+                <img class="img-fluid img-thumbnail" src="../frontend/img/itens/soja.jpg" alt="Livros em promoção" width="200">   
             </div>
             <div class="col-md-7">
             
@@ -81,8 +138,8 @@
                 </form>
                <small>Contagem de unidades: 1</small><br>
                
-              <form action="">
-                <select name="form-qntd" class="form-control carrinho-select-qntd" id="qntd">
+               <form action="">
+                <select class="form-select form-select-sm w-25" aria-label=".form-select-sm example">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -102,13 +159,13 @@
           <!--produto dois-->
           
           <div class="row">
-            <div class="col-md-0.5">
+            <div class="col-md-1">
                 <div class="form-check aling_vert">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 </div>
             </div>
-            <div class="col-md-2.5">
-                <img class="card-img-top" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            <div class="col-md-2">
+              <img class="img-fluid img-thumbnail" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" width="200">   
             </div>
             <div class="col-md-7">
             
@@ -121,13 +178,17 @@
                   </div>
                 </form>
                <small>Contagem de unidades: 1</small><br>
-               <select>
-                <option>Qtd: 1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+               
+              <form action="">
+                <select class="form-select form-select-sm w-25" aria-label=".form-select-sm example">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </form>
 
               <small><p>Excluir | Salvar para mais tarde</p></small></div>
               <div class="col-md-2" >
@@ -139,8 +200,8 @@
             <div class="col-md-5">
 
             </div>
-            <div class="col=md-2">
-              <button type="button" class="btn offs-btn-submit btn-lg" onClick="location.href='finalizarcompra.html'">Finalizar compra</button>
+            <div class="col-md-2">
+              <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100" onClick="location.href='finalizarcompra.html'">Finalizar compra</button>
             </div>
             <div class="col-md-2">
 
@@ -172,36 +233,25 @@
         <div class="tab-pane container active" id="home">
 
           <div class="row" style="margin-top: 20px;">
-            <div class="col-md-0.5">
+            <div class="col-md-1">
                 <div class="form-check aling_vert">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 </div>
             </div>
-            <div class="col-md-2.5">
-                <img class="card-img-top" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            <div class="col-md-2">
+                <img class="img-fluid img-thumbnail" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção">   
             </div>
             <div class="col-md-7">
             
-               <h5>Castanha do Brasil média 250g</h5>
-                <p>Em estoque</p>
-
-
-                
-               
+              <h5>Castanha do Brasil média 250g</h5>
+              <p>Em estoque</p>
               <small><p>Excluir | Adicionar a lista de desejos</p></small>
-              <div class="row">
-                <div class="col-md-5">
-
-                
-                  <button type="button" class="btn offs-btn-submit btn-sm">Mover para o carrinho </button></div>
-
-            </div>
-            
-            </div>
-
               
-              <div class="col-md-2" >
-                  <p style="margin-left: 55px;">R$ 24,90/UN</p>
+              <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white mb-2">Comprar novamente</button>
+            </div>
+
+            <div class="col-md-2">
+              <p style="margin-left: 55px;">R$ 24,90/UN</p>
             </div>
                 
           </div> <hr>
@@ -209,36 +259,25 @@
           <!--produto dois salvos-->
 
           <div class="row" style="margin-top: 20px;">
-            <div class="col-md-0.5">
+            <div class="col-md-1">
                 <div class="form-check aling_vert">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 </div>
             </div>
-            <div class="col-md-2.5">
-                <img class="card-img-top" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            <div class="col-md-2">
+                <img class="img-fluid img-thumbnail" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção">   
             </div>
             <div class="col-md-7">
             
-               <h5>Castanha do Brasil média 250g</h5>
-                <p>Em estoque</p>
-
-
-                
-               
+              <h5>Castanha do Brasil média 250g</h5>
+              <p>Em estoque</p>
               <small><p>Excluir | Adicionar a lista de desejos</p></small>
-              <div class="row">
-                <div class="col-md-5">
-
-                
-                  <button type="button" class="btn offs-btn-submit btn-sm">Mover para o carrinho </button></div>
-
-            </div>
-            
-            </div>
-
               
-              <div class="col-md-2" >
-                  <p style="margin-left: 55px;">R$ 24,90/UN</p>
+              <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white mb-2">Comprar novamente</button>
+            </div>
+
+            <div class="col-md-2">
+              <p style="margin-left: 55px;">R$ 24,90/UN</p>
             </div>
                 
           </div> <hr>
@@ -250,36 +289,25 @@
         <div class="tab-pane container fade" id="menu1">
 
           <div class="row" style="margin-top: 20px;">
-            <div class="col-md-0.5">
+            <div class="col-md-1">
                 <div class="form-check aling_vert">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 </div>
             </div>
-            <div class="col-md-2.5">
-                <img class="card-img-top" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            <div class="col-md-2">
+                <img class="img-fluid img-thumbnail" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção">   
             </div>
             <div class="col-md-7">
             
-               <h5>Castanha do Brasil média 250g</h5>
-                <p>Em estoque</p>
-
-
-                
-               
+              <h5>Castanha do Brasil média 250g</h5>
+              <p>Em estoque</p>
+              <small><p>Excluir | Adicionar a lista de desejos</p></small>
               
-              <div class="row">
-                <div class="col-md-5">
-
-                
-                  <button type="button" class="btn offs-btn-submit btn-sm">Adicionar ao carrinho </button></div>
-
-            </div>
-            
+              <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white mb-2">Comprar novamente</button>
             </div>
 
-              
-              <div class="col-md-2" >
-                  <p style="margin-left: 55px;">R$ 24,90/UN</p>
+            <div class="col-md-2">
+              <p style="margin-left: 55px;">R$ 24,90/UN</p>
             </div>
                 
           </div> <hr>
@@ -287,36 +315,25 @@
           <!--produto dois comprar novamente-->
 
           <div class="row" style="margin-top: 20px;">
-            <div class="col-md-0.5">
+            <div class="col-md-1">
                 <div class="form-check aling_vert">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 </div>
             </div>
-            <div class="col-md-2.5">
-                <img class="card-img-top" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção" style="width:200px">   
+            <div class="col-md-2">
+                <img class="img-fluid img-thumbnail" src="../frontend/img/itens/castanha-do-brasil-media-organica.jpg" alt="Livros em promoção">   
             </div>
             <div class="col-md-7">
             
-               <h5>Castanha do Brasil média 250g</h5>
-                <p>Em estoque</p>
-
-
-                
-               
+              <h5>Castanha do Brasil média 250g</h5>
+              <p>Em estoque</p>
+              <small><p>Excluir | Adicionar a lista de desejos</p></small>
               
-              <div class="row">
-                <div class="col-md-5">
-
-                
-                  <button type="button" class="btn offs-btn-submit btn-sm">Adicionar ao carrinho </button></div>
-
-            </div>
-            
+              <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white mb-2">Comprar novamente</button>
             </div>
 
-              
-              <div class="col-md-2" >
-                  <p style="margin-left: 55px;">R$ 24,90/UN</p>
+            <div class="col-md-2">
+              <p style="margin-left: 55px;">R$ 24,90/UN</p>
             </div>
                 
           </div> <hr>
@@ -327,16 +344,16 @@
 
     </div>
 
- <!-- FOOTER -->
- <footer class="bg-dark text-center text-white">
-  <!-- Copyright -->
-  <div class="text-center p-3 footer">
-    © 2021 Copyright: Legumes Preciosos
-    <br>
-    Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
-  </div>
-  <!-- Copyright -->
-</footer>
+  <!-- FOOTER -->
+  <footer class="text-center text-white">
+    <!-- Copyright -->
+    <div class="text-center p-3 footer bg-salmao-dark">
+      © 2021 Copyright: Legumes Preciosos
+      <br>
+      Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
+    </div>
+    <!-- Copyright -->
+  </footer>
 
  
 
