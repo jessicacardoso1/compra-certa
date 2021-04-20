@@ -153,6 +153,8 @@ margin-right: 50px;
     width: 50%;
 }
 
+.dropdown:hover .dropdown-menu{display: block;}
+
 .carousel-control-next, .carousel-control-prev{
     filter: invert(100%);
 }
@@ -617,7 +619,6 @@ li {
   text-decoration: none;
   color: darkgreen;
   font-size: 90%;
-
 }
 .menuLink:hover{
   text-decoration: none; 
