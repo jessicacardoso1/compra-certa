@@ -16,65 +16,102 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="js/index.js"></script>
+
+    <script src="jquerry.js"></script>
+
+    <style>
+      .dropdown:hover .dropdown-menu{display: block;}
+    </style>
+
+
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-static-top navbar-light bg-salmao">
-      <!-- Brand/logo -->
-      <a class="navbar-brand" href="index.html">
-          <img src="img/logo.png" alt="logo">
-      </a>
-      
-      <!-- search bar/buttom -->
-      <div class="container search-navbar">
-        <div class="input-group">
-          <div class="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Encontre aqui as melhores promoções"/>
-          </div>
-          <button type="button" class="btn btn-success">
-            <i class="fa fa-search fa-lg"></i>
-          </button>
-        </div>
-      </div>
-      <!-- user and cart icons -->
-      <div class="container icons-user-cart">
-        <a class="icon-user" href="login_cadastro.html">
-          <i class="fa fa-user fa-3x" style="color: whitesmoke;"></i>
-          <p>Entre ou Cadastre-se</p>
+    <nav class="navbar bg-salmao">
+      <div class="container justify-content-around">
+
+        <a href="index.html">
+          <img src="img/_logo.png" alt="logo" width="210">
         </a>
-        <a class="icon-cart" href="#">
-          <i class="fa fa-shopping-cart fa-3x" style="color: whitesmoke;"></i>
-          <p>Meu Carrinho</p>
+
+        <form class="form-inline">
+          <input class="form-control mr-sm-1" type="text" placeholder="Buscar produtos..." aria-label="Search">
+          <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
+        </form>
+        
+        <a href="login_cadastro.html" class="text-white text-decoration-none">
+          <strong>Entre ou Cadastre-se</strong>
+          <i class="fa fa-user fa-lg ml-2 fa-2x"></i>
         </a>
+
+        <a href="carrinho.html">
+          <i class="fa fa-shopping-cart fa-2x cor-teal"></i>
+          <span class="badge badge-primary badge-pill adm-conf-emb-span ml-1">5</span>
+        </a>
+
       </div>
     </nav>
-    <nav class="navbar navbar-expand-md navbar-static-top navbar-light bg-salmao-dark">
-      <div class="btn-group dropright" style="margin-left: 250px;">
-        <button type="button" class="btn btn-outline-whitesmoke">Categorias</button>
-        <button type="button" class="btn btn-whitesmoke dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu" style="width: 300px;">
+    <nav class="navbar bg-salmao-dark">
+      <div class="container justify-content-start">
+        <div class="btn-group dropdown">
+          
+          <p class="dropdown-toggle dropdown-toggle-split text-whitesmoke" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+            Categorias
+          </p>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu" style="width: 300px;">
           
             <div class="row">
-            <div class="col-sm-12">
-              <!-- Category -->
-              <div class="single category">
-                <h3 class="side-title">Categorias</h3>
-                <ul class="list-group">
-                  <li><a href="" title="">Frutas <span class="pull-right">13</span></a></li>
-                  <li><a href="" title="">Legumes <span class="pull-right">30</span></a></li>
-                  <li><a href="" title="">Folhas <span class="pull-right">13</span></a></li>
-                  <li><a href="" title="">Folhas para Chás <span class="pull-right">13</span></a></li>
-                  <li><a href="" title="">Sementes <span class="pull-right">13</span></a></li>
-                  <li><a href="" title="">Android <span class="pull-right">13</span></a></li>
-                  <li><a href="" title="">IOS <span class="pull-right">13</span></a></li>
-                  <li><a href="" title="">Windows <span class="pull-right">13</span></a></li>
-                </ul>
-               </div>
-            </div> 
+              <div class="col-sm-12">
+                <!-- Category -->
+                <div class="single category">
+                  <h3 class="side-title">Categorias</h3>
+                  <ul class="list-group">
+                    <li><a href="" title="">Frutas <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Legumes <span class="pull-right">30</span></a></li>
+                    <li><a href="" title="">Folhas <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Folhas para Chás <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Sementes <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Android <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">IOS <span class="pull-right">13</span></a></li>
+                    <li><a href="" title="">Windows <span class="pull-right">13</span></a></li>
+                  </ul>
+                </div>
+              </div> 
             </div>
-            </div>
+          </div>
         </div>
+        
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Ofertas do dia</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Supermercado</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Mais vendidos</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Selecionados para você</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Lançamento</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Contato</p>
+        </a>
+
+        <a href="#" class="text-whitesmoke text-decoration-none ml-4">
+          <p>Sobre nós</p>
+        </a>
+
+      </div>
     </nav>
 
     <!--Carousel-->
@@ -83,16 +120,20 @@
 			  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 			  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 			  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
 			</ol>
-			<div class="carousel-inner">
+			<div class="carousel-inner text-center">
 			  <div class="carousel-item active">
-				  <img class="d-block banner-img" src="img/banners/dino-kale-1920x420-darker.jpg" alt="First slide">
+				  <img class="img-fluid mt-0 w-75" src="img/banners/dino-kale-1920x420-darker.jpg" alt="First slide">
 			  </div>
 			  <div class="carousel-item">
-				  <img class="d-block banner-img" src="img/banners/vegano.jpg" alt="Second slide">
+				  <img class="img-fluid mt-0 w-75" src="img/banners/campo.png" alt="Second slide">
 			  </div>
         <div class="carousel-item">
-				  <img class="d-block banner-img" src="img/banners/header-pigs_cattle_1920x420_1_.jpg" alt="Second slide">
+				  <img class="img-fluid mt-0 w-75" src="img/banners/header-pigs_cattle_1920x420_1_.jpg" alt="Second slide">
+			  </div>
+        <div class="carousel-item">
+				  <img class="img-fluid mt-0 w-75" src="img/banners/vegano.jpg" alt="slide">
 			  </div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -108,7 +149,7 @@
       <div class="container offs-container">
         <div class="row">
             <div class="col-8">
-                <h3 class="mb-3 text-right offs-label">Confira as nossas promoções!</h3>
+                <h3 class="mb-3 offs-label text-monospace">Confira as nossas promoções!</h3>
             </div>
             <div class="col-4 text-right">
                 <a class="btn btn-primary mb-3 mr-1 btn-success" href="#carouselExampleIndicators2" role="button"  data-slide="prev">
@@ -118,6 +159,8 @@
                     <i class="carousel-control-next-icon"></i>
                 </a>
             </div>
+          </div>
+          <div class="row">
             <div class="col-12">
                 <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
     
@@ -130,12 +173,13 @@
                                         <img class="img-fluid offs-img-size" src="img/itens/caqui.jpeg">
                                         <div class="card-body">
                                           <div class="form-group">
-                                            <p class="card-text offs-text-name">Caqui Fuyu Orgânico</p>
-                                            <p class="card-text offs-text-name offs-text-value">Valor: R$ 16,99</p>
-                                            <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                            <p class="card-text offs-text-name text-monospace">Caqui Fuyu Orgânico</p>
+                                            <div class="card-text text-muted"><s>De: R$ 19,99</s> por:</div>
+                                            <h5 class="text-success mb-2"><b>R$ 16,99</b> à vista</h5>
+                                            <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                           </div>
                                         </div>
-    
+
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
@@ -143,9 +187,10 @@
                                         <img class="img-fluid offs-img-size" src="img/itens/cenoura.png">
                                         <div class="card-body">
                                           <div class="form-group">
-                                            <p class="card-text offs-text-name">Cenoura DeBruin Orgânico</p>
-                                            <p class="card-text offs-text-name offs-text-value">Valor: R$ 3,99</p>
-                                            <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                            <p class="card-text offs-text-name text-monospace">Cenoura DeBruin Orgânica</p>
+                                            <div class="card-text text-muted"><s>De: R$ 4,99</s> por:</div>
+                                            <h5 class="text-success mb-2"><b>R$ 3,99</b> à vista</h5>
+                                            <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                           </div>
                                         </div>
                                     </div>
@@ -155,9 +200,10 @@
                                         <img class="img-fluid offs-img-size" src="img/itens/cebola.jpg">
                                         <div class="card-body">
                                           <div class="form-group">
-                                            <p class="card-text offs-text-name">Cebola Chooury Orgânica</p>
-                                            <p class="card-text offs-text-name offs-text-value">Valor: R$ 5,99</p>
-                                            <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                            <p class="card-text offs-text-name text-monospace">Cebola Chooury Orgânica</p>
+                                            <div class="card-text text-muted"><s>De: R$ 6,29</s> por:</div>
+                                            <h5 class="text-success mb-2"><b>R$ 5,99</b> à vista</h5>
+                                            <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                           </div>
                                         </div>
                                     </div>
@@ -173,9 +219,10 @@
                                       <img class="img-fluid offs-img-size" src="img/itens/pimentao.webp">
                                       <div class="card-body">
                                         <div class="form-group">
-                                          <p class="card-text offs-text-name">Pimentão Restib Orgânico</p>
-                                          <p class="card-text offs-text-name offs-text-value">Valor: R$ 2,99</p>
-                                          <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                          <p class="card-text offs-text-name text-monospace">Pimentão Restib Orgânico</p>
+                                            <div class="card-text text-muted"><s>De: R$ 3,59</s> por:</div>
+                                            <h5 class="text-success mb-2"><b>R$ 2,99</b> à vista</h5>
+                                            <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                         </div>
                                       </div>
                                   </div>
@@ -185,9 +232,10 @@
                                     <img class="img-fluid offs-img-size" src="img/itens/laranja.jpg">
                                     <div class="card-body">
                                       <div class="form-group">
-                                        <p class="card-text offs-text-name">Laranja Umbigo Ogânica</p>
-                                        <p class="card-text offs-text-name offs-text-value">Valor: R$ 33,99</p>
-                                        <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                        <p class="card-text offs-text-name text-monospace">Laranja Umbigo Orgânica</p>
+                                            <div class="card-text text-muted"><s>De: R$ 35,99</s> por:</div>
+                                            <h5 class="text-success mb-2"><b>R$ 33,99</b> à vista</h5>
+                                            <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                       </div>
                                     </div>
                                 </div>
@@ -197,9 +245,10 @@
                                   <img class="img-fluid offs-img-size" src="img/itens/repolho.jpg">
                                   <div class="card-body">
                                     <div class="form-group">
-                                      <p class="card-text offs-text-name">Repolho Verde Orgânico</p>
-                                      <p class="card-text offs-text-name offs-text-value">Valor: R$ 7,35</p>
-                                      <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                      <p class="card-text offs-text-name text-monospace">Repolho Verde Orgânico</p>
+                                      <div class="card-text text-muted"><s>De: R$ 7,99</s> por:</div>
+                                      <h5 class="text-success mb-2"><b>R$ 7,35</b> à vista</h5>
+                                      <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                     </div>
                                   </div>
                               </div>
@@ -215,9 +264,10 @@
                                         <img class="img-fluid offs-img-size" src="img/itens/tomate.jpg">
                                         <div class="card-body">
                                           <div class="form-group">
-                                            <p class="card-text offs-text-name">Tomate Orgânico</p>
-                                            <p class="card-text offs-text-name offs-text-value">Valor: R$ 6,29</p>
-                                            <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                            <p class="card-text offs-text-name text-monospace">Tomate Orgânico</p>
+                                            <div class="card-text text-muted"><s>De: R$ 6,99</s> por:</div>
+                                            <h5 class="text-success mb-2"><b>R$ R$ 6,29</b> à vista</h5>
+                                            <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                           </div>
                                         </div>
                                     </div>
@@ -227,9 +277,10 @@
                                       <img class="img-fluid offs-img-size" src="img/itens/batata.jpg">
                                       <div class="card-body">
                                         <div class="form-group">
-                                          <p class="card-text offs-text-name">Batata Orgânica</p>
-                                          <p class="card-text offs-text-name offs-text-value">Valor: R$ 5,69</p>
-                                          <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                          <p class="card-text offs-text-name text-monospace">Batata Orgânica</p>
+                                          <div class="card-text text-muted"><s>De: R$ 6,99</s> por:</div>
+                                          <h5 class="text-success mb-2"><b>R$ R$ 5,69</b> à vista</h5>
+                                          <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                         </div>
                                       </div>
                                     </div>
@@ -239,9 +290,10 @@
                                         <img class="img-fluid offs-img-size" src="img/itens/banana-prata.png">
                                         <div class="card-body">
                                           <div class="form-group">
-                                            <p class="card-text offs-text-name">Banana da Prata</p>
-                                            <p class="card-text offs-text-name offs-text-value">Valor: R$ 8,99</p>
-                                            <input type="submit" class="btnSubmit offs-btn-submit" value="Comprar" />
+                                            <p class="card-text offs-text-name text-monospace">Banana da Prata</p>
+                                            <div class="card-text text-muted"><s>De: R$ 9,99</s> por:</div>
+                                            <h5 class="text-success mb-2"><b>R$ 8,99</b> à vista</h5>
+                                            <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2">Comprar</button>
                                           </div>
                                         </div>
                                     </div>
@@ -257,84 +309,103 @@
     
 
     <!--CARD-PRODUTOS-->
-    <div class="row justify-content-center" style=" margin-left: auto; margin-top: 180px; color: rgb(121, 121, 121);">
-      <h3>Produtos mais vendidos:</h3>
+    <div class="container offs-container">
+    <div class="row justify-content-center" style=" margin-top: 110px; color: rgb(121, 121, 121);">
+      <h3 class="mb-3 offs-label text-monospace">Produtos mais vendidos:</h3>
     </div>
     <div class="container-fluid">
       <div class="produtos d-flex flex-wrap">
         <div class="card mais-vendidos-card-size">
-            <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
+          <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
              <div class="card-body">
-                <h5 class="card-title fonte-card"> Batatas</h5>
+                <p class="card-text offs-text-name text-monospace">Batatas</p>
+                <h5 class="text-success mb-2"><b>R$ 8,99</b> à vista</h5>
                 <div class="btn-group" role="group" aria-label="Exemplo básico">
-                  <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos1', 'sub');">-</button>
-                  <input id="btnMaisVendidos1" type="number" class="form-control text-center">
-                  <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos1', 'sum');">+</button>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2 mr-2">Comprar</button>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos1', 'sub');">-</button>
+                  <input id="btnMaisVendidos1" type="number" class="form-control text-center w-25" value="1">
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos1', 'sum');">+</button>
                 </div>
-                <input type="submit" class="btnSubmit mais-vendidos-btn-submit" value="Comprar" />
               </div>
           </div>
 
           <div class="card mais-vendidos-card-size">
             <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
             <div class="card-body">
-                <h5 class="card-title fonte-card"> Batatas</h5>
+                <p class="card-text offs-text-name text-monospace">Batatas</p>
+                <h5 class="text-success mb-2"><b>R$ 8,99</b> à vista</h5>
                 <div class="btn-group" role="group" aria-label="Exemplo básico">
-                  <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos2', 'sub');">-</button>
-                  <input id="btnMaisVendidos2" type="number" class="form-control text-center">
-                  <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos2', 'sum');">+</button>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2 mr-2">Comprar</button>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos2', 'sub');">-</button>
+                  <input id="btnMaisVendidos2" type="number" class="form-control text-center w-25" value="1">
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos2', 'sum');">+</button>
                 </div>
-                <input type="submit" class="btnSubmit mais-vendidos-btn-submit" value="Comprar" />
             </div>
           </div>
 
           <div class="card mais-vendidos-card-size">
             <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
             <div class="card-body">
-                <h5 class="card-title fonte-card"> Batatas</h5>
-                <div class="btn-group" role="group" aria-label="Exemplo básico">
-                  <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos3', 'sub');">-</button>
-                  <input id="btnMaisVendidos3" type="number" class="form-control text-center">
-                  <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos3', 'sum');">+</button>
-                </div>
-                <input type="submit" class="btnSubmit mais-vendidos-btn-submit" value="Comprar" />
+              <p class="card-text offs-text-name text-monospace">Batatas</p>
+              <h5 class="text-success mb-2"><b>R$ 8,99</b> à vista</h5>
+              <div class="btn-group" role="group" aria-label="Exemplo básico">
+                <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2 mr-2">Comprar</button>
+                <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos3', 'sub');">-</button>
+                <input id="btnMaisVendidos3" type="number" class="form-control text-center w-25" value="1">
+                <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos3', 'sum');">+</button>
+              </div>
             </div>
           </div>
   
           <div class="card mais-vendidos-card-size">
               <img class="card-img-top mais-vendidos-img-size" src="img/itens/cebola.jpg" alt="Livros em promoção">
               <div class="card-body">
-                  <h5 class="card-title fonte-card" >Cebolas</h5>
-                  <div class="btn-group" role="group" aria-label="Exemplo básico">
-                    <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos4', 'sub');">-</button>
-                    <input id="btnMaisVendidos4" type="number" class="form-control text-center">
-                    <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos4', 'sum');">+</button>
-                  </div>
-                  <input type="submit" class="btnSubmit mais-vendidos-btn-submit" value="Comprar" />
+                <p class="card-text offs-text-name text-monospace">Cebolas</p>
+                <h5 class="text-success mb-2"><b>R$ 9,99</b> à vista</h5>
+                <div class="btn-group" role="group" aria-label="Exemplo básico">
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2 mr-2">Comprar</button>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos4', 'sub');">-</button>
+                  <input id="btnMaisVendidos4" type="number" class="form-control text-center w-25" value="1">
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos4', 'sum');">+</button>
+                </div>
               </div>
           </div>
   
           <div class="card mais-vendidos-card-size">
               <img class="card-img-top mais-vendidos-img-size" src="img/itens/caqui.jpeg" alt="Livros em promoção">
               <div class="card-body">
-                  <h5 class="card-title fonte-card" >Caqui</h5>
-                  <div class="btn-group" role="group" aria-label="Exemplo básico">
-                    <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos5', 'sub');">-</button>
-                    <input id="btnMaisVendidos5" type="number" class="form-control text-center">
-                    <button type="button" class="btn btn-salmao" onClick="btnMaisVendidos('btnMaisVendidos5', 'sum');">+</button>
+                <p class="card-text offs-text-name text-monospace">Caqui</p>
+                <h5 class="text-success mb-2"><b>R$ 18,99</b> à vista</h5>
+                <div class="btn-group" role="group" aria-label="Exemplo básico">
+                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2 mr-2">Comprar</button>
+                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos5', 'sub');">-</button>
+                    <input id="btnMaisVendidos5" type="number" class="form-control text-center w-25" value="1">
+                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos5', 'sum');">+</button>
                   </div>
-                  <input type="submit" class="btnSubmit mais-vendidos-btn-submit" value="Comprar" />
               </div>
           </div>
- 
-          
+
+          <div class="card mais-vendidos-card-size">
+            <img class="card-img-top mais-vendidos-img-size" src="img/itens/caqui.jpeg" alt="Livros em promoção">
+            <div class="card-body">
+              <p class="card-text offs-text-name text-monospace">Caqui</p>
+              <h5 class="text-success mb-2"><b>R$ 18,99</b> à vista</h5>
+              <div class="btn-group" role="group" aria-label="Exemplo básico">
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100 mb-2 mr-2">Comprar</button>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos6', 'sub');">-</button>
+                  <input id="btnMaisVendidos6" type="number" class="form-control text-center w-25" value="1">
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos6', 'sum');">+</button>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
       <!--CARD DE NOVIDADES-->
 
-      <div class="row justify-content-center" style=" margin-left: auto; margin-top: 180px; color: rgb(121, 121, 121);">
-        <h3>Novidades que chegaram para você:</h3>
+      <div class="row justify-content-around" style=" margin-left: auto; margin-top: 110px; color: rgb(121, 121, 121);">
+        <h3 class="mb-3 offs-label text-monospace">Novidades que chegaram para você:</h3>
       </div>
       <div class="container-fluid">
         <div class="produtos d-flex">
@@ -343,8 +414,9 @@
                 <img class="card-img-top news-img"src="img/itens/soja.jpg" alt="Livros em promoção">
               </a>
                <div class="card-body">
-                  <h5 class="card-title fonte-card"> Soja em grãos Orgânicos 500g </h5>
-                  <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />
+                  <p class="card-text offs-text-name text-monospace">Soja em grãos 500g</p>
+                  <h5 class="text-success mb-2"><b>R$ 18,99</b> à vista</h5>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
                 </div>
             </div>
   
@@ -352,42 +424,45 @@
               <img class="card-img-top news-img" src="img/itens/aveia.jpg" alt="Livros em promoção"
               >
               <div class="card-body">
-                  <h5 class="card-title fonte-card">Aveia em flocos Orgânico 500g</h5>
-                  <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />
+                  <p class="card-text offs-text-name text-monospace">Aveia em flocos 500g</p>
+                  <h5 class="text-success mb-2"><b>R$ 8,89</b> à vista</h5>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
               </div>
             </div>
   
             <div class="card" style="width: 18rem;">
               <img class="card-img-top news-img" src="img/itens/feijao.jpg" alt="Livros em promoção"/>
               <div class="card-body">
-                  <h5 class="card-title fonte-card">Feijão carioca Orgânico 500g</h5>
-                 <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />
+                <p class="card-text offs-text-name text-monospace">Feijão carioca 500g</p>
+                <h5 class="text-success mb-2"><b>R$ 6,39</b> à vista</h5>
+                <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
               </div>
             </div>
     
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top news-img" src="img/itens/quinoa.jpg" alt="Livros em promoção" />
                 <div class="card-body">
-                    <h5 class="card-title fonte-card">Quinoa Orgânico <br> 500g</h5>
-                    <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />                    
+                  <p class="card-text offs-text-name text-monospace">Quinoa 500g</p>
+                  <h5 class="text-success mb-2"><b>R$ 5,89</b> à vista</h5>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>                  
                 </div>
             </div>
     
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top news-img" src="img/itens/tapioca.jpg" alt="Livros em promoção"/>
                 <div class="card-body">
-                    <h5 class="card-title fonte-card">Tapioca Orgânica <br>500g</h5>
-                    <input type="submit" class="btnSubmit" style="background-color: #ffc0b6;" value="Comprar" />
+                  <p class="card-text offs-text-name text-monospace">Tapioca 500g</p>
+                  <h5 class="text-success mb-2"><b>R$ 3,59</b> à vista</h5>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
                 </div>
             </div>
            </div>
         </div>
-    
         
 		<!-- FOOTER -->
-    <footer class="bg-dark text-center text-white">
+    <footer class="text-center text-white">
       <!-- Copyright -->
-      <div class="text-center p-3 footer">
+      <div class="text-center p-3 footer bg-salmao-dark">
         © 2021 Copyright: Legumes Preciosos
         <br>
         Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva

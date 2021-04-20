@@ -126,7 +126,7 @@ margin-right: 50px;
 
 .navbar-brand img{
 	width: 300px;
-	margin: -40px auto -15px 200px;
+	margin: -40px 0 -15px 200px;
 	//margin-left: 20%;
 }
 
@@ -157,18 +157,6 @@ margin-right: 50px;
     filter: invert(100%);
 }
 // ####################### FIM BOOTSTRAP COMPONENTS #######################
-
-
-// ####################### BANNER #######################
-.banner-img{
-  margin-left: auto; 
-  margin-right: auto; 
-  margin-top: 0;
-
-  width: 100%;
-  height: 420px;
-}
-// ####################### FIM BANNER #######################
 
 
 // ####################### OFFS #######################
@@ -617,7 +605,7 @@ a.filtro:link, a.filtro:visited{
 }
 .menu {
   margin-top: 20px;
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 li {
@@ -806,6 +794,11 @@ input[type=number] {
   color: $salmao;
 }
 
+.cor-bg-salmao{
+  background-color: $salmao;
+}
+
+
 .cor-bg-salmao-dark{
   background-color: $salmao-dark;
 }
@@ -816,6 +809,10 @@ input[type=number] {
 
 .cor-bg-teal{
   background-color: $teal;
+}
+
+.cor-teal{
+  color: $teal;
 }
 // ####################### FIM CORES E BG-CORES #######################
 
