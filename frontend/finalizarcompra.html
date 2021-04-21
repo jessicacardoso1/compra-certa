@@ -239,102 +239,63 @@
    
    <!--forma de pagamento-->
  
-   <div class="container border" style="padding: 20px; margin-top: 40px;">
-    <ul class="nav nav-tabs" style="align-items: center;" id="myTab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Cartão de crédito</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#cadastro" role="tab" aria-controls="cadastro" aria-selected="false">Boleto</a>
-      </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-        <!-- LOGIN FORM -->
-        <div class="row">
-          
-          <div class="col-md-6 login-form-1">
-            <h3>Dados do cartão</h3>
-            <form>
-              <div class="form-group">
-                <div class="text-field">
-                  <input type="text" id="n_cartao" required>
-                  <label>Número do cartão</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="text-field">
-                  <input type="text" id="text_password" required>
-                  <label>Nome impresso no cartão</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="text-field">
-                  <input type="text" id="n_cartao" required>
-                  <label>Validade</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="text-field">
-                  <input type="text" id="n_cartao" style="display: inline;" required>
-                  <label>Validade</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="text-field">
-                  <input type="text" id="n_cartao" style="display: inline;" required>
-                  <label>CVV</label>
-                </div>
-              </div>
-              
-              <div class="row">
-                <div class="col-md-3">
-                  <h6 class="finalizar-compra-select-parcelas-label">Parcelas:</h6>
-                </div>
-                <div class="col-md-9">
-                  <form action="">
-                    <select name="form-parcelas" class="form-control finalizar-compra-select-parcelas" id="parcelas">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                    </select>
-                  </form>
-                </div>
-              </div>
+   <div class="container border" style="padding: 20px; margin-top: 40px; color: rgb(71, 73, 76);">
+    <h4>Dados do cartão de crédito</h4><hr>
+    <div class="row">
+      <div class="col-md-0.5">
 
-              <!-- total -->
-              <div class="row" style="margin-top: 20px;">
-                <div class="col-md-9">
-                  <h5>Total:</h5>
-                </div>
-                <div class="col-md-3">
-                  <h5>R$ XX,XX</h5>
-                </div>
-              </div>
+      </div>
+      <div class="col-md-10">
+      <form>
 
-              <div class="form-group">
-                  <input type="submit" class="btnSubmit" value="Fechar pedido" />
-              </div>
-             
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="cadastro" role="tabpanel" aria-labelledby="cadastro-tab">
-        <!-- REGISTER FORM -->
-        <div class="col-md-6 login-form-1">
-          <h4>Imprima o boleto e pague no banco</h4>
-          <h4>Ou pague pela internet utilizando o código de barras do boleto  </h4>
-         <h4>o prazo de validade do boleto é de 1 dia util</h4>
-      </div>
-      </div>
+
+      <h6>Número do cartão</h6>
+      <input class="fil"  type="text" name="firstname" >
+  
+      <h6>Nome impresso no cartão </h6>
+      <input class="fil" type="text" name="lastname">
+
+
+
+      <div class="row">
+        <div class="col-md-3">
+      <h6>Validade </h6>
+      <input class="fil" style="width: 100%;" type="text" name="lastname">
     </div>
+      <div class="col-md-3">
+      <h6>CVV </h6>
+      <input class="fil" style="width: 100%;" type="text" name="lastname">
+    </div>
+    <div class="col-md-6"></div>
+    </div>
+
+      <h6>Parcelas</h6>
+      <select class="fil" name="country">
+        <option value="australia">1</option>
+        <option value="canada">2</option>
+        <option value="usa">3</option>
+      </select>
+      <div class="row" style="padding: 30px; ">
+        <div class="col-md-3">
+       <h5>Total:</h5>
+       </div>
+       
+       <div class="col-md-3">
+         <h5 style="text-align: right;">R$ XX,XX</h5>
+       </div>
+       <div class="col-md-6">
+
+      </div>
+       </div>
+
+      
+      <input class="bott" type="submit" value="Fechar pedido">
+        
+    </form>
+  </div>
   </div>
 </div>
-    
+
     
     
     
