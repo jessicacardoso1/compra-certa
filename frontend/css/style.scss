@@ -311,6 +311,33 @@ textarea.form-control {
   width: 50%;
   
 }
+
+.avaliar-btn{
+ width: 20%;
+  margin-top: 20px;
+}
+.btn-outline-warning {
+  color: salmon;
+  border-color: salmon;
+}
+.btn-avaliar {
+  display: inline-block;
+  font-weight: 600;
+  color: #55595c;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 0 solid transparent;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  border-radius: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 // ####################### FIM AVALIAR #######################
 
 
