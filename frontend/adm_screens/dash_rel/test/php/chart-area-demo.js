@@ -3,7 +3,7 @@ Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,Bli
 Chart.defaults.global.defaultFontColor = '#858796';
 
 function dados_vendas_por_mes() {
-    var l = [];
+    var l = []
 
     $.ajax({
         url: 'connection.php',
@@ -22,7 +22,7 @@ function dados_vendas_por_mes() {
         },
     });
 
-    return l;
+    return l
 }
 
 function number_format(number, decimals, dec_point, thousands_sep) {

@@ -107,48 +107,47 @@
     </nav>
 
 
-    <!-- MY ADRESS -->
-    <div class="row my-adress-display">
-      <div class="col-sm-12">
-        <div class="card">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-text my-adress-txt">Adicionar novo endereço</h5>
-            <i class="fa fa-plus fa-3x" aria-hidden="true"></i>
+    <!-- USR FORM -->
+    <div class="row mt-5">
+      <div class="col-md-4"></div>
+      
+      <div class="col-md-4 _login-cadastro">
+        <h3 class="offs-label text-monospace text-dark text-center mt-5 mb-4">Altere seus dados cadastrais</h3>
+        <form class="mt-5 ml-4 mr-4">
+          <div class="form-group">
+            <div class="text-field">
+              <input type="text" id="text_cpf" required>
+              <label>CPF</label>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <i class="fa fa-home fa-3x" aria-hidden="true"></i>
-            <h5 class="card-title">Endereço 1</h5>
-            <p class="card-text txt-color-grey">Vila Rosa Margarida do Buque 55E</p>
-            <p class="card-text txt-color-grey">Apartamento 202, Pernambués</p>    
-            <p class="card-text txt-color-grey">Salvador, BA, 560430-999</p>       
-            <p class="card-text txt-color-grey">Brasil</p>          
-            <p class="card-text txt-color-grey">Telefone: (71) 99999-9999</p> 
-            <a href="editar_criar_endereco.html" class="btn btn-teal w-100 mb-2">Editar</a>
-            <a href="#" class="btn btn-red w-100">Remover</a>
+          <div class="form-group">
+            <div class="text-field">
+              <input type="email" id="text_email" required>
+              <label>E-mail</label>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <i class="fa fa-home fa-3x" aria-hidden="true"></i>
-            <h5 class="card-title">Endereço 2</h5>
-            <p class="card-text txt-color-grey">Avenida Linguagens Triangulares, 88A</p>
-            <p class="card-text txt-color-grey">Edifício Girassol, Cabula</p>    
-            <p class="card-text txt-color-grey">Salvador, BA, 827430-229</p>       
-            <p class="card-text txt-color-grey">Brasil</p>          
-            <p class="card-text txt-color-grey">Telefone: (71) 99999-9999</p> 
-            <a href="#" class="btn btn-teal w-100 mb-2">Editar</a>
-            <a href="#" class="btn btn-red w-100">Remover</a>
+          <div class="form-group">
+              <div class="text-field">
+                <input type="password" id="text_password" required>
+                <label>Senha</label>
+              </div>
           </div>
-        </div>
+          <div class="form-group">
+            <div class="text-field">
+              <input type="password" id="text_password" required>
+              <label>Confirme sua senha</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <a href="#" class="btn btn-success w-100 mb-3">Continuar</a>
+          </div>
+        </form>
       </div>
-    </div> 
-    
+
+      <div class="col-md-4"></div>
+
+    </div>
+  
     
     <!-- FOOTER -->
     <footer class="text-center text-white">
@@ -161,7 +160,7 @@
       <!-- Copyright -->
     </footer>
 
-
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
