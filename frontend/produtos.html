@@ -142,8 +142,8 @@
 
         <div class="col-md-10-mb-6 .col-prod filtro">
           <div class="container btn-group">
-            <a class="btnSubmit filtro" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Categoria</a>
-            <i class="fa fa-plus filtro cor-icone mt-2" aria-hidden="true" data-toggle="collapse" data-target="#multiCollapseExample2" style="cursor: pointer"></i>
+            <a class="btnSubmit filtro" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Categoria</a>
+            <i class="fa fa-plus filtro cor-icone mt-2" aria-hidden="true" data-toggle="collapse" data-target="#multiCollapseExample1" style="cursor: pointer"></i>
           </div>
         </div>
         <div class="collapse multi-collapse" id="multiCollapseExample1">
@@ -151,20 +151,26 @@
             <div class="form-inline">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input adjust adjust-checkbox-collapse"  name="customCheck" id="customControlInline1">
-                <label class="custom-control-label" for="customControlInline1">Vegetais</label>
+                <label class="custom-control-label" for="customControlInline1">Fruta Orgânica</label>
               </div>
             </div>
             <div class="form-inline">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input adjust-checkbox-collapse" name="customCheck" id="customControlInline2">
-                <label class="custom-control-label" for="defaultCheck">Aves</label>
+                <label class="custom-control-label" for="defaultCheck">Legume Orgânico</label>
+              </div>
+            </div>
+            <div class="form-inline">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input adjust-checkbox-collapse" name="customCheck" id="customControlInline2">
+                <label class="custom-control-label" for="defaultCheck">Ovos Orgânico</label>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-10-mb-6 col-prod filtro">
           <div class="container btn-group">
-            <a class="btnSubmit filtro" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Marca</a>
+            <a class="btnSubmit filtro" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Disponibilidade</a>
             <i class="fa fa-plus filtro cor-icone mt-2" aria-hidden="true" data-toggle="collapse" data-target="#multiCollapseExample2" style="cursor: pointer"></i>
           </div>
         </div>
@@ -173,13 +179,13 @@
             <div class="form-inline">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input adjust adjust-checkbox-collapse"  name="customCheck" id="customControlInline1">
-                <label class="custom-control-label" for="customControlInline1">Vegetais</label>
+                <label class="custom-control-label" for="customControlInline1">Disponível (30)</label>
               </div>
             </div>
             <div class="form-inline">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input adjust-checkbox-collapse" name="customCheck" id="customControlInline2">
-                <label class="custom-control-label" for="defaultCheck">Aves</label>
+                <label class="custom-control-label" for="defaultCheck">Indisponivel (5)</label>
               </div>
             </div>
           </div>
@@ -193,67 +199,89 @@
           <div class="container-fluid">
             <div class="produtos d-flex flex-wrap">
               <div class="card" style="width: 18rem;">
-                <img class="card-img-top news-img" src="img/itens/soja.jpg" alt="Livros em promoção">
+                <img class="card-img-top news-img" src="img/itens/laranja.jpg" alt="Livros em promoção"/>
+                <div class="card-body">
+                  <p class="card-text offs-text-name text-monospace">Tomate Cereja Orgânico 180g</p>
+                  <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <a class="text-decoration-none" href="/frontend/produtos_detalhes.html">
+                  <img class="card-img-top news-img" src="img/itens/soja.jpg" alt="Livros em promoção">
+                </a>
                   <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Soja em grãos Orgânicos 500g</p>
+                    <p class="card-text offs-text-name text-monospace">Soja em grãos 500g</p>
+                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
+                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
+                  </div>
+                  
+                
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top news-img" src="img/itens/banana-prata.png" alt="Livros em promoção"/>
+                <div class="card-body">
+                  <p class="card-text offs-text-name text-monospace">Banana da prata 500g</p>
+                  <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
+                  <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
+                </div>
+              </div> 
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top news-img" src="img/itens/fuba-de-milho.jpg" alt="Livros em promoção"/>
+                  <div class="card-body">
+                    <p class="card-text offs-text-name text-monospace">Fuba de milho Orgânico 500g</p>
                     <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
                     <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
                   </div>
                 </div>
       
                 <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/aveia.jpg" alt="Livros em promoção">
+                  <img class="card-img-top news-img" src="img/itens/pimentao.webp" alt="Livros em promoção"/>
                   <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Aveia em flocos Orgânico 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
-                  </div>
-                </div>
-      
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/feijao.jpg" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Feijão carioca Orgânico 500g</p>
+                    <p class="card-text offs-text-name text-monospace">Pimentão Orgânico 500g</p>
                     <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
                     <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
                   </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/soja.jpg" alt="Livros em promoção"/>
+                  <img class="card-img-top news-img" src="img/itens/tamarindo.jpg" alt="Livros em promoção"/>
                   <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Soja em grãos Orgânicos 500g</p>
+                    <p class="card-text offs-text-name text-monospace">Tamarindo Orgânico 500g</p>
+                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
+                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
+                  </div>
+                </div>
+                
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top news-img" src="img/itens/cenoura.png" alt="Livros em promoção"/>
+                  <div class="card-body">
+                    <p class="card-text offs-text-name text-monospace">Cenoura Orgânico 500g</p>
+                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
+                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
+                  </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top news-img" src="img/itens/cravo-da-india-organico.jpg" alt="Livros em promoção">
+                  <div class="card-body">
+                    <p class="card-text offs-text-name text-monospace">Cravo orgânico 500g</p>
+                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
+                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
+                  </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top news-img" src="img/itens/cebola.jpg" alt="Livros em promoção"/>
+                  <div class="card-body">
+                    <p class="card-text offs-text-name text-monospace">Cebola Orgânica 500g</p>
                     <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
                     <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
                   </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/feijao.jpg" alt="Livros em promoção"/>
+                  <img class="card-img-top news-img" src="img/itens/caqui.jpeg" alt="Livros em promoção"/>
                   <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Feijão carioca Orgânico 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
-                  </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/feijao.jpg" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Feijão carioca Orgânico 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
-                  </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/feijao.jpg" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Feijão carioca Orgânico 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
-                  </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/feijao.jpg" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Feijão carioca Orgânico 500g</p>
+                    <p class="card-text offs-text-name text-monospace">Caqui orgânico 500g</p>
                     <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
                     <button type="button" class="btn cor-bg-salmao-dark font-weight-bold text-white w-100">Comprar</button>
                   </div>
