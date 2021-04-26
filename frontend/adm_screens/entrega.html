@@ -40,7 +40,7 @@
     <div class="container adm-delivery-container">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active adm-delivery-icon-up-color" id="home-tab" data-toggle="tab" href="#enviado" role="tab" aria-controls="enviado" aria-selected="true">Enviado</a>
+          <a class="nav-link active adm-delivery-icon-up-color" id="home-tab" data-toggle="tab" href="#enviado" role="tab" aria-controls="enviado" aria-selected="true">Enviar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link adm-delivery-icon-down-color" id="profile-tab" data-toggle="tab" href="#em-andamento" role="tab" aria-controls="em-andamento" aria-selected="false">Em Andamento</a>
@@ -56,7 +56,7 @@
         <!-- ENVIADO -->
         <div class="tab-pane fade show active" id="enviado" role="tabpanel" aria-labelledby="enviado-tab">
           <div class="col-md-12 login-form-1">
-            <i class="fa fa-arrow-circle-up fa-3x adm-delivery-icon-up-color" style="font-size: 35px;"> Enviado</i>
+            <i class="fa fa-arrow-circle-up fa-3x adm-delivery-icon-up-color" style="font-size: 35px;"> Enviar</i>
             <div class="row adm-delivery-display">
               <div class="col-sm-4">
                 <div class="card">
@@ -71,7 +71,7 @@
                       </div>
                     </div>
                     <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                    <a href="#" class="btn btn-teal my-account-btn">Visualizar Informações</a>
+                    <a href="#" class="btn btn-teal my-account-btn">Enviar</a>
                   </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@
                       </div>
                     </div>
                     <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                    <a href="#" class="btn btn-teal my-account-btn">Visualizar Informações</a>
+                    <a href="#" class="btn btn-teal my-account-btn">Enviar</a>
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@
                       </div>
                     </div>
                     <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                    <a href="#" class="btn btn-teal my-account-btn">Visualizar Informações</a>
+                    <a href="#" class="btn btn-teal my-account-btn">Enviar</a>
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@
                       </div>
                     </div>
                     <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                    <a href="#" class="btn btn-teal my-account-btn">Visualizar Informações</a>
+                    <a href="#" class="btn btn-teal my-account-btn">Enviar</a>
                   </div>
                 </div>
               </div>
@@ -225,7 +225,7 @@
                       </div>
                     </div>
                     <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                    <a href="#" class="btn btn-teal my-account-btn">Visualizar Informações</a>
+                    <a href="#" class="btn btn-teal my-account-btn" data-toggle="modal" data-target="#modal_1">Visualizar Informações</a>
                   </div>
                 </div>
               </div>
@@ -280,6 +280,34 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL  -->
+        <div class="modal fade adm-rel-1" tabindex="-1" id="modal_1" role="dialog" aria-labelledby="modal_1" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <table class="table table-hover adm-modal-table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Data/Horário</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">#</th>
+                    <td>Ludmila Brito</td>
+                    <td>888.777.666-55</td>
+                    <td>(71) 98888-9999</td>
+                    <td>20/04/2020 - 16:38:25</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
