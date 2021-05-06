@@ -17,7 +17,4 @@
 
     }
 
-    $test = new LoginCliente();
-    $test->efetuarLogin();
-
 ?>

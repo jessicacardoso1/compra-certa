@@ -49,8 +49,8 @@ function validarSenha(){
     console.log("senha: " + senha)
     console.log("conf_senha: " + confirmar_senha)
 
-    if(senha != confirmar_senha){
-        alert("As senhas são diferentes!")
+    if(senha !== confirmar_senha){
+        alert("As senhas são diferentes! Por favor, tente novamente.")
         document.getElementById("confirmar_senha").value = "";
     }
 

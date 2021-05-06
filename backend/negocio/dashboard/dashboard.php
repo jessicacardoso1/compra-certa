@@ -5,7 +5,6 @@
     class Dashboard {
 
         public function get_receita_mes($mes_ref){
-            
             $dao = new DashboardDAO();
             return $dao->get_receita_mes(1);
 

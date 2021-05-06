@@ -7,7 +7,6 @@
     class DashboardDAO{
 
         public function get_receita_mes($mes_ref){
-
             $conn = new Conn();
             $pdo = $conn->connect();
 
