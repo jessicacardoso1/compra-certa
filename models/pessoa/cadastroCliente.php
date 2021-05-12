@@ -22,7 +22,7 @@ require("../../database/pessoa/cadastroClienteDAO.php");
             }
             
 
-            header("location:../../../frontend/index.html");
+            header("location:../../../frontend/index.php");
 
             return true;
 

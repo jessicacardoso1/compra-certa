@@ -21,7 +21,7 @@
             }
             
             // redirecionando para a tela inicial...
-            header("location:../../../frontend/index.html");
+            header("location:../../../frontend/index.php");
 
             return true;
 

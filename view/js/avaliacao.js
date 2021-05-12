@@ -1,7 +1,7 @@
 function Avaliar(estrela) {
     var url = window.location;
     url = url.toString()
-    url = url.split("avaliar_compras.html");
+    url = url.split("avaliar_compras.php");
     url = url[0];
    
    for(i=0; i<5; i++){
