@@ -2,15 +2,15 @@
 
 class Endereco{
 
-    protected $pais;
-    protected $nome;
-    protected $telefone;
-    protected $cep;
-    protected $bairro;
-    protected $endereco;
-    protected $complemento;
-    protected $cidade;
-    protected $numero;
+    private $pais;
+    private $nome;
+    private $telefone;
+    private $cep;
+    private $bairro;
+    private $endereco;
+    private $complemento;
+    private $cidade;
+    private $numero;
     
 
     

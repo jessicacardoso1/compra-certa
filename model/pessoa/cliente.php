@@ -3,10 +3,10 @@
 
     class Cliente extends Pessoa{
 
-        protected $email;
-        protected $ativo;
-        protected $compras;
-        protected $enderecos;
+        private $email;
+        private $ativo;
+        private $compras;
+        private $enderecos;
 
         // getters and setters
         public function getEmail(){

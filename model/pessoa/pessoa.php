@@ -1,8 +1,8 @@
 <?php
     class Pessoa{
 
-        protected $cpf;
-        protected $senha;
+        private $cpf;
+        private $senha;
 
         // getters and setters
         public function getCpf(){

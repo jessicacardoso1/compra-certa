@@ -2,10 +2,10 @@
 
 class Avaliacao{
 
-    protected $compra;
-    protected $estrelas;
-    protected $titulo;
-    protected $comentario;
+    private $compra;
+    private $estrelas;
+    private $titulo;
+    private $comentario;
 
     // getters and setters
    

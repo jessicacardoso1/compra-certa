@@ -1,6 +1,6 @@
 <?php
     class Rastrear{
-        protected $compra;
+        private $compra;
 
         public function rastrear(){
             
