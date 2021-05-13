@@ -2,8 +2,8 @@
 
 class Estado{
 
-    protected $nome;
-    protected $sigla;
+    private $nome;
+    private $sigla;
 
 //getters and setters
    

@@ -2,8 +2,8 @@
 
 class Cidade{
 
-    protected $nome;
-    protected $estado;
+    private $nome;
+    private $estado;
     
     //getters and setters
    

@@ -1,7 +1,7 @@
 <?php
     class Categoria{
 
-        protected $nome;
+        private $nome;
         
 
         /**

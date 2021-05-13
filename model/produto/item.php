@@ -1,8 +1,8 @@
 <?php
     class Item{
         
-        protected $produto;
-        protected $quantidade;
+        private $produto;
+        privates $quantidade;
         
 
         /**

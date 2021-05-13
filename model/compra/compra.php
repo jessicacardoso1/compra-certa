@@ -3,13 +3,13 @@
 
 class Compra{
 
-    protected $itens;
-    protected $cliente;
-    protected $numero;
-    protected $val_total;
-    protected $setor;
-    protected $data;
-    protected $endereco;
+    private $itens;
+    private $cliente;
+    private $numero;
+    private $val_total;
+    private $setor;
+    private $data;
+    private $endereco;
 
     public function Compra(){
         

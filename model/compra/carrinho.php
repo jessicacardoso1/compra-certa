@@ -1,7 +1,7 @@
 <?php
     class Carrinho{
-        protected $itens;
-        protected $valor_total;
+        private $itens;
+        private $valor_total;
 
         public function inserirProduto(){
 

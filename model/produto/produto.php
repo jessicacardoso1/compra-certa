@@ -106,5 +106,13 @@
 
                 return $this;
         }
+
+        public function OnSelectionChange($selectedVal){
+                echo '<script>';
+                echo 'alert("CPF ou senha incorreto!")';
+                echo '</script>';
+
+                return false;
+        }
     }
 ?>
