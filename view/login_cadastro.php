@@ -39,7 +39,7 @@
             <form method="POST" action="../backend/negocio/pessoa/loginCliente.php">
                 <div class="form-group">
                   <div class="text-field">
-                    <input type="text" name="cpfLogin" id="cpf_login">
+                    <input type="text" name="cpfLogin" id="cpf_login" onkeypress="cpf_mask(1)" maxlength="14">
                     <label>CPF</label>
                   </div>
                 </div>
@@ -65,7 +65,7 @@
             <form method="POST" action="../backend/negocio/pessoa/cadastroCliente.php">
                 <div class="form-group">
                   <div class="text-field">
-                    <input type="text" name="cpfCadastro" id="cpf_cadastro">
+                    <input type="text" name="cpfCadastro" id="cpf_cadastro" onkeypress="cpf_mask(0)" maxlength="14">
                     <label>CPF</label>
                   </div>
                 </div>

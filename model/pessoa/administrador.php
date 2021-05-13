@@ -3,7 +3,7 @@
 
     class Administrador extends Pessoa{
         
-        protected $tipo;
+        private $tipo;
 
         // getters and setters
         public function getTipo(){

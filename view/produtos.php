@@ -43,13 +43,12 @@
         </div>
         <div class="row">
           <div class="form-group">
-            <label for=""></label>
-            <select class="form-control-select select" aria-label="Default select example" name="" id="">
+            <select class="form-control-select select" aria-label="Default select example" name="relevancia" onchange="MostrarProdutosCategoria(this.value)">
               <option selected>Relevância</option>
-              <option value="">Nome [A-Z]</option>
-              <option value="">Nome [Z-A]</option>
-              <option value="">Preço [Maior]</option>
-              <option value="">Preço [Menor]</option>
+              <option value="nomeCrescente">Nome [A-Z]</option>
+              <option value="nomeDecrescente">Nome [Z-A]</option>
+              <option value="precoCrescente">Preço [Maior]</option>
+              <option value="precoDecrescente">Preço [Menor]</option>
             </select>
           </div>
         </div>

@@ -3,7 +3,7 @@
     //require("compras.php")
 
     class Entregador extends Administrador{
-        protected $compras;
+        private $compras;
 
         public function Entregador(){
             

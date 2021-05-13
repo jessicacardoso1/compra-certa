@@ -46,12 +46,23 @@ function validarSenha(){
     var senha = document.getElementById("senha_cadastro").value
     var confirmar_senha = document.getElementById("confirmar_senha").value
 
-    console.log("senha: " + senha)
-    console.log("conf_senha: " + confirmar_senha)
-
     if(senha !== confirmar_senha){
         alert("As senhas são diferentes! Por favor, tente novamente.")
-        document.getElementById("confirmar_senha").value = "";
+        document.getElementById("confirmar_senha").value = ""
     }
+
+}//FIM função
+
+function cpf_mask(type){
+    var campo = (type == 1) ? "cpf_login" : "cpf_cadastro"
+    var campo_senha = document.getElementById(campo).value
+
+    if(campo_senha.length == 3 || campo_senha.length == 7){
+        campo_senha += "."
+    }else if(campo_senha.length == 11){
+        campo_senha += "-"
+    }
+    
+    document.getElementById(campo).value = campo_senha
 
 }//FIM função
