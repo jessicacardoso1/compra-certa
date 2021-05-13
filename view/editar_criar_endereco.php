@@ -24,7 +24,7 @@
     <!-- CREATE/EDIT ADRESS -->
     <div class="col-md-6 create-edit-adress-display">
       <h3>Endereço</h3>
-      <form>
+      <form method="POST" action="">
         <div class="form-group">
           <select class="text-field my-adress-field">
             <option>Brasil</option>
@@ -43,7 +43,7 @@
               <label>CEP</label>
             </div>
             <div class="text-field my-adress-field-aling-two-elements">
-              <input type="text" id="text_cep" required>
+              <input type="text" id="text_bairro" required>
               <label>Bairro</label>
              </div>
           </div>
@@ -57,11 +57,11 @@
               <label>Cidade</label>
             </div>
             <div class="text-field my-adress-field-aling-three-elements">
-              <input type="text" id="text_email" required>
+              <input type="text" id="text_uf" required>
               <label>UF</label>
             </div>
             <div class="text-field my-adress-field-aling-three-elements">
-              <input type="text" id="text_email" required>
+              <input type="text" id="text_numero" required>
               <label>Número</label>
             </div>
           </div>
@@ -70,7 +70,7 @@
             <label>Complemento</label>
           </div>
           <div class="form-group">
-            <input type="submit" class="btnSubmit bg-success text-whitesmoke" value="Continuar" />
+            <input type="submit" class="btnSubmit bg-success text-whitesmoke" value="Continuar" onclick="return validarFormEndereco()"/>
         </div>
         </div>
       </form>
@@ -86,5 +86,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script src="js/enderecos/index.js"></script>
   </body>
 </html>

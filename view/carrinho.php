@@ -214,7 +214,7 @@
         <div class="col-sm-4"></div>
         
         <div class="col-sm-4">
-          <button type="button" class="btn cor-bg-teal text-white mt-2 w-100">Finalizar compra</button>
+          <button onclick=location.href="finalizar_compra.php" type="button" class="btn cor-bg-teal text-white mt-2 w-100">Finalizar compra</button>
         </div>
 
         <div class="col-sm-4"></div>
