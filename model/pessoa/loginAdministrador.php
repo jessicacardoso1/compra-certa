@@ -1,10 +1,18 @@
 <?php
-    class Pessoa{
+    
+    require("../../database/pessoa/loginAdministradorDAO.php");
+
+    class LoginAdministrador{
 
         private $cpf;
         private $senha;
 
-        // getters and setters
+        public function efetuarLogin(){
+            $dao = new LoginAdministradorDAO();
+            
+            return $dao->efetuarLogin($this->cpf, $this->senha);
+        }
+
         public function getCpf(){
             return $this->cpf;
         }
@@ -20,6 +28,7 @@
         public function setSenha($_senha){
             $this->senha = $_senha;
         }
+
     }
-    
+
 ?>

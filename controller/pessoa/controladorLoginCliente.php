@@ -13,8 +13,18 @@
             
         }
 
-        public function processaRequisicao():void{
-            $check_login = $this->login->efetuarLogin();
+        public function processaLogin():bool{
+            if(!$this->login->efetuarLogin()){
+                echo '<script>';
+                echo 'alert("CPF ou senha incorreto!")';
+                echo '</script>';
+
+                return false;
+            }
+
+            header("location:../../../view/adm_screens/dash_rel/home.php");
+
+            return true;
 
         }
 
