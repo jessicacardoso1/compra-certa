@@ -44,7 +44,9 @@
           <!-- LOGIN FORM -->
           <div class="col-md-6 login-form-1">
             <h3>Faça login na nossa loja</h3>
-            <form method="POST" action="../../../controller/pessoa/controladorAdministrador.php">
+            <form method="POST" action="../../../controller/pessoa/controladorLogin.php">
+              <input type=hidden name=usr_tp value="funcionario">
+
                 <div class="form-group">
                 <div class="form-group">
                   <div class="text-field">

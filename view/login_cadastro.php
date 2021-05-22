@@ -36,7 +36,8 @@
           <!-- LOGIN FORM -->
           <div class="col-md-6 login-form-1">
             <h3>Faça login na nossa loja</h3>
-            <form method="POST" action="../backend/negocio/pessoa/loginCliente.php">
+            <form method="POST" action="../controller/pessoa/controladorLogin.php">
+                <input type=hidden name=usr_tp value="cliente">
                 <div class="form-group">
                   <div class="text-field">
                     <input type="text" name="cpfLogin" id="cpf_login" onkeypress="cpf_mask(1)" maxlength="14">
@@ -45,7 +46,7 @@
                 </div>
                 <div class="form-group">
                   <div class="text-field">
-                    <input type="text" name="senhaLogin" id="senha_login">
+                    <input type="password" name="senhaLogin" id="senha_login">
                     <label>Senha</label>
                   </div>
                 </div>
@@ -62,7 +63,7 @@
           <!-- REGISTER FORM -->
           <div class="col-md-6 login-form-1">
             <h3>Cadastre-se na nossa loja</h3>
-            <form method="POST" action="../backend/negocio/pessoa/cadastroCliente.php">
+            <form method="POST" action="../controller/pessoa/controladorCliente.php">
                 <div class="form-group">
                   <div class="text-field">
                     <input type="text" name="cpfCadastro" id="cpf_cadastro" onkeypress="cpf_mask(0)" maxlength="14">

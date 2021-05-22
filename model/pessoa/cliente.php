@@ -1,5 +1,7 @@
 <?php
-    require("compra.php");
+
+    require "pessoa.php";
+    require "../../database/pessoa/clienteDAO.php";
 
     class Cliente extends Pessoa{
 
@@ -7,6 +9,13 @@
         private $ativo;
         private $compras;
         private $enderecos;
+
+        public function efetuarCadastro(){
+            $dao = new ClienteDAO();
+            
+            return $dao->efetuarCadastro($this);
+        }
+
 
         // getters and setters
         public function getEmail(){
@@ -18,7 +27,7 @@
         }
 
         public function getAtivo(){
-            return $this->email;
+            return $this->ativo;
         }
 
         public function setAtivo($_ativo){
