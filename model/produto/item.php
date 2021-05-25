@@ -2,7 +2,7 @@
     class Item{
         
         private $produto;
-        privates $quantidade;
+        private $quantidade;
         
 
         /**
