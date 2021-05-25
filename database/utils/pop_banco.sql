@@ -128,3 +128,12 @@ insert into compra_certa.categoria values (1, "Hortifruti Orgânico");
 insert into compra_certa.categoria values (2, "Mercearia Orgânica");
 insert into compra_certa.categoria values (3, "Bebidas Orgânicas");
 insert into compra_certa.categoria values (4, "Congelados Orgânicos");
+insert into compra_certa.categoria values (5, "Mercearia");
+
+-- ########################### produto
+insert into compra_certa.produto values (1, "Açúcar Mascavo 1kg", "Descrição...", 2, 7.99, 1, "acucar-mascavo-organico.jpg");
+insert into compra_certa.produto values (2, "Aveia", "Descrição...", 2, 6.99, 1, "aveia.jpg");
+insert into compra_certa.produto values (3, "Banana da Prata", "Descrição...", 1, 8.49, 1, "banana-prata.png");
+insert into compra_certa.produto values (4, "Batata", "Descrição...", 1, 2.38, 1, "batata.jpg");
+insert into compra_certa.produto values (5, "Café Mellita", "Descrição...", 2, 5.49, 1, "cafe-mellita.webp");
+
