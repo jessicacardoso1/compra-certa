@@ -1,10 +1,11 @@
 <?php
     class Produto{
-        protected $nome;
-        protected $descricao;
-        protected $categoria;
-        protected $preco;
-        protected $disponivel;
+        
+        private $nome;
+        private $descricao;
+        private $categoria;
+        private $preco;
+        private $disponivel;
 
 
         /**
@@ -23,8 +24,6 @@
         public function setNome($nome)
         {
                 $this->nome = $nome;
-
-                return $this;
         }
 
         /**
@@ -43,8 +42,6 @@
         public function setDescricao($descricao)
         {
                 $this->descricao = $descricao;
-
-                return $this;
         }
 
         /**
@@ -63,8 +60,6 @@
         public function setCategoria($categoria)
         {
                 $this->categoria = $categoria;
-
-                return $this;
         }
 
         /**
@@ -83,8 +78,6 @@
         public function setPreco($preco)
         {
                 $this->preco = $preco;
-
-                return $this;
         }
 
         /**
@@ -103,16 +96,7 @@
         public function setDisponivel($disponivel)
         {
                 $this->disponivel = $disponivel;
-
-                return $this;
         }
 
-        public function OnSelectionChange($selectedVal){
-                echo '<script>';
-                echo 'alert("CPF ou senha incorreto!")';
-                echo '</script>';
-
-                return false;
-        }
     }
 ?>

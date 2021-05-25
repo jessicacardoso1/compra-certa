@@ -15,21 +15,6 @@ class Endereco{
 
     
     //getters and setters
-
-    public function getTelefone()
-    {
-        return $this->telefone;
-    }
-
-
-    public function setTelefone($telefone)
-    {
-        $this->telefone = $telefone;
-
-        return $this;
-    }
-
-   
     public function getNome()
     {
         return $this->nome;
@@ -39,8 +24,6 @@ class Endereco{
     public function setNome($nome)
     {
         $this->nome = $nome;
-
-        return $this;
     }
 
    
@@ -53,8 +36,6 @@ class Endereco{
     public function setTelefone($telefone)
     {
         $this->telefone = $telefone;
-
-        return $this;
     }
 
     
@@ -67,8 +48,6 @@ class Endereco{
     public function setCep($cep)
     {
         $this->cep = $cep;
-
-        return $this;
     }
 
     
@@ -81,8 +60,6 @@ class Endereco{
     public function setBairro($bairro)
     {
         $this->bairro = $bairro;
-
-        return $this;
     }
 
     
@@ -95,8 +72,6 @@ class Endereco{
     public function setEndereco($endereco)
     {
         $this->endereco = $endereco;
-
-        return $this;
     }
 
    
@@ -109,8 +84,6 @@ class Endereco{
     public function setComplemento($complemento)
     {
         $this->complemento = $complemento;
-
-        return $this;
     }
 
     
@@ -123,8 +96,6 @@ class Endereco{
     public function setCidade($cidade)
     {
         $this->cidade = $cidade;
-
-        return $this;
     }
 
     
@@ -137,8 +108,6 @@ class Endereco{
     public function setNumero($numero)
     {
         $this->numero = $numero;
-
-        return $this;
     }
 }
 

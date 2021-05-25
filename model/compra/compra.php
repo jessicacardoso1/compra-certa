@@ -10,6 +10,7 @@ class Compra{
     private $setor;
     private $data;
     private $endereco;
+    private $data_setores;
 
     public function Compra(){
         
@@ -45,8 +46,6 @@ class Compra{
     public function setItens($itens)
     {
         $this->itens = $itens;
-
-        return $this;
     }
 
   
@@ -59,8 +58,6 @@ class Compra{
     public function setCliente($cliente)
     {
         $this->cliente = $cliente;
-
-        return $this;
     }
 
     
@@ -73,8 +70,6 @@ class Compra{
     public function setNumero($numero)
     {
         $this->numero = $numero;
-
-        return $this;
     }
 
     
@@ -87,8 +82,6 @@ class Compra{
     public function setVal_total($val_total)
     {
         $this->val_total = $val_total;
-
-        return $this;
     }
 
     
@@ -101,8 +94,6 @@ class Compra{
     public function setSetor($setor)
     {
         $this->setor = $setor;
-
-        return $this;
     }
 
      
@@ -115,8 +106,6 @@ class Compra{
     public function setData($data)
     {
         $this->data = $data;
-
-        return $this;
     }
 
    
@@ -129,8 +118,6 @@ class Compra{
     public function setEndereco($endereco)
     {
         $this->endereco = $endereco;
-
-        return $this;
     }
 }
 ?>

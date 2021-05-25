@@ -15,12 +15,10 @@
                 echo "Error: ".$e->getMessage();
 
             }
-            
         }
 
         public function close(){
             return null;
-
         }
         
     }

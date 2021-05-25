@@ -1,7 +1,7 @@
 <?php
     require("administrador.php");
 
-    class Empacotador extends Administrador{
+    class Empacotador extends Funcionario{
 
         public function Empacotador(){
 

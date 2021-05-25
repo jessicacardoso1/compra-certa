@@ -2,7 +2,7 @@
     require("administrador.php");
     //require("compras.php")
 
-    class Entregador extends Administrador{
+    class Entregador extends Funcionario{
         private $compras;
 
         public function Entregador(){

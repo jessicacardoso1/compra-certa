@@ -18,8 +18,6 @@ class Avaliacao{
     public function setCompra($compra)
     {
         $this->compra = $compra;
-
-        return $this;
     }
 
     
@@ -32,8 +30,6 @@ class Avaliacao{
     public function setEstrelas($estrelas)
     {
         $this->estrelas = $estrelas;
-
-        return $this;
     }
 
      
@@ -46,8 +42,6 @@ class Avaliacao{
     public function setTitulo($titulo)
     {
         $this->titulo = $titulo;
-
-        return $this;
     }
 
     
@@ -60,8 +54,6 @@ class Avaliacao{
     public function setComentario($comentario)
     {
         $this->comentario = $comentario;
-
-        return $this;
     }
 }
 

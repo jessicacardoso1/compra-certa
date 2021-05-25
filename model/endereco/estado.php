@@ -15,8 +15,6 @@ class Estado{
     public function setNome($nome)
     {
         $this->nome = $nome;
-
-        return $this;
     }
 
     public function getSigla()
@@ -27,8 +25,6 @@ class Estado{
     public function setSigla($sigla)
     {
         $this->sigla = $sigla;
-
-        return $this;
     }
 }
 

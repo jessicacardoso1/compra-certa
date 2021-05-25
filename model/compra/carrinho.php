@@ -1,5 +1,7 @@
 <?php
     class Carrinho{
+        
+        private $cliente;
         private $itens;
         private $valor_total;
 
@@ -39,8 +41,6 @@
         public function setItens($itens)
         {
                 $this->itens = $itens;
-
-                return $this;
         }
 
         /**
@@ -59,8 +59,6 @@
         public function setValor_total($valor_total)
         {
                 $this->valor_total = $valor_total;
-
-                return $this;
         }
     }
 ?>

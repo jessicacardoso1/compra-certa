@@ -1,27 +1,27 @@
 <?php
+
+    
+    require "../../database/produto/categoriaDAO.php";
+
     class Categoria{
 
         private $nome;
         
+        public function listarAll(){
+            $dao = new CategoriaDAO();
 
-        /**
-         * Get the value of nome
-         */ 
-        public function getNome()
-        {
-                return $this->nome;
+            return $dao->listarAll();
         }
 
-        /**
-         * Set the value of nome
-         *
-         * @return  self
-         */ 
-        public function setNome($nome)
-        {
-                $this->nome = $nome;
 
-                return $this;
+        public function getNome(){
+            return $this->nome;
         }
+
+        public function setNome($_nome){
+            $this->nome = $_nome;
+        }
+        
     }
+
 ?>

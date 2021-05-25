@@ -27,7 +27,6 @@
 
             // return database login data
             return $cred;
-
         }
 
         public function get_credentials(){
@@ -40,7 +39,6 @@
             $str_cred[2] = $cred["PASSWORD"];
 
             return $str_cred;
-
         }
 
     }
