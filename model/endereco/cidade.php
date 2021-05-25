@@ -15,8 +15,6 @@ class Cidade{
      public function setNome($nome)
     {
         $this->nome = $nome;
-
-        return $this;
     }
 
    public function getEstado()
@@ -27,8 +25,6 @@ class Cidade{
     public function setEstado($estado)
     {
         $this->estado = $estado;
-
-        return $this;
     }
 }
 

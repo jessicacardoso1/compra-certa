@@ -10,12 +10,12 @@
         <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
     </form>
     
-    <a href="login_cadastro.php" class="text-white text-decoration-none">
+    <a href="login_cadastro" class="text-white text-decoration-none">
         <strong>Entre ou Cadastre-se</strong>
         <i class="fa fa-user fa-lg ml-2 fa-2x"></i>
     </a>
 
-    <a href="carrinho.php">
+    <a href="carrinho">
         <i class="fa fa-shopping-cart fa-2x cor-teal"></i>
         <span class="badge badge-primary badge-pill adm-conf-emb-span ml-1">5</span>
     </a>

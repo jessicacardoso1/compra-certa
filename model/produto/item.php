@@ -21,8 +21,6 @@
         public function setProduto($produto)
         {
                 $this->produto = $produto;
-
-                return $this;
         }
 
         /**
@@ -41,8 +39,6 @@
         public function setQuantidade($quantidade)
         {
                 $this->quantidade = $quantidade;
-
-                return $this;
         }
     }
 ?>

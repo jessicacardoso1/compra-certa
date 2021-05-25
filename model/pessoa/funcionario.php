@@ -1,7 +1,7 @@
 <?php
     require("pessoa.php");
 
-    class Administrador extends Pessoa{
+    class Funcionario extends Pessoa{
         
         private $tipo;
 
