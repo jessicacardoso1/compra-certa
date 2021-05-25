@@ -1,34 +1,30 @@
 <?php
+
     class PromocaoProduto{
-        private produto;
-        private novoValor;
+        
+        private $produto;
+        private $novoValor;
 
          //getters and setters
+        public function getProduto()
+        {
+            return $this->produto;
+        }
 
-    
-    public function getProduto()
-    {
-        return $this->Produto;
-    }
+        public function setProduto($produto)
+        {
+            $this->produto = $produto;
+        }
 
-    public function setProduto($Produto)
-    {
-        $this->Produto = $Produto;
+        public function getNovoValor()
+        {
+            return $this->novoValor;
+        }
 
-        return $this;
-    }
+        public function setNovoValor($novoValor)
+        {
+            $this->novoValor = $novoValor;
+        }
 
-    public function getNovoValor()
-    {
-        return $this->novoValor;
-    }
-    public function setNovoValor($novoValor)
-    {
-        $this->novoValor = $novoValor;
-
-        return $this;
-    }
-
-        
     }
 ?>

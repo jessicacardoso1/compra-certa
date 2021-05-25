@@ -119,5 +119,16 @@ class Compra{
     {
         $this->endereco = $endereco;
     }
+
+    public function getDataSetores()
+    {
+        return $this->data_setores;
+    }
+
+   
+    public function setDataSetores($data_setores)
+    {
+        $this->data_setores = $data_setores;
+    }
 }
 ?>

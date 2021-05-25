@@ -1,4 +1,5 @@
 <?php
+
     class Carrinho{
         
         private $cliente;
@@ -23,6 +24,17 @@
 
         public function finalizarCompra(){
             
+        }
+
+        public function getCliente()
+        {
+                return $this->cliente;
+        }
+        
+        
+        public function setCliente($cliente)
+        {
+                $this->cliente = $cliente;
         }
 
         /**
@@ -61,4 +73,5 @@
                 $this->valor_total = $valor_total;
         }
     }
+
 ?>
