@@ -1,6 +1,7 @@
 <?php 
 
-    require '../../model/pessoa/cliente.php';
+    namespace compra_certa\controller\pessoa;
+    use compra_certa\model\pessoa\Cliente;
 
     class ControladorCliente
     {
@@ -19,7 +20,7 @@
             $this->cliente->setAtivo(1);
             
             #$view_success = "../../view/login_cadastro.php";
-            $view_failed  = "../../view/login_cadastro.php";
+            $view_failed = "login_cadastro.php";
             
             if(!$this->cliente->efetuarCadastro()){
                 echo '<script>';
@@ -31,13 +32,10 @@
             }
 
             // implementar o redirecionamento da tela?????????
-            header("location: ../../view/home.php");
+            header("location: home.php");
 
         }// FIM método
 
     }
-
-    $cn = new ControladorCliente();
-    $cn->processaCadastroCliente();
 
 ?>

@@ -1,5 +1,7 @@
 <?php
 
+    namespace compra_certa\controller;
+
     class Controlador{
 
         public function model($dir, $model){
@@ -18,8 +20,5 @@
         }
 
     }
-
-    $cn = new Controlador();
-    $cn->model("produto/", "categoria");
 
 ?>

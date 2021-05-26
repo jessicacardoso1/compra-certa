@@ -129,6 +129,9 @@ insert into compra_certa.categoria values (2, "Mercearia Orgânica");
 insert into compra_certa.categoria values (3, "Bebidas Orgânicas");
 insert into compra_certa.categoria values (4, "Congelados Orgânicos");
 insert into compra_certa.categoria values (5, "Mercearia");
+insert into compra_certa.categoria values (6, "Produtos de Limpeza");
+insert into compra_certa.categoria values (7, "Higiene Pessoal");
+
 
 -- ########################### produto
 insert into compra_certa.produto values (1, "Açúcar Mascavo 1kg", "Descrição...", 2, 7.99, 1, "acucar-mascavo-organico.jpg");
@@ -136,4 +139,30 @@ insert into compra_certa.produto values (2, "Aveia", "Descrição...", 2, 6.99, 
 insert into compra_certa.produto values (3, "Banana da Prata", "Descrição...", 1, 8.49, 1, "banana-prata.png");
 insert into compra_certa.produto values (4, "Batata", "Descrição...", 1, 2.38, 1, "batata.jpg");
 insert into compra_certa.produto values (5, "Café Mellita", "Descrição...", 2, 5.49, 1, "cafe-mellita.webp");
+insert into compra_certa.produto values (6, "Caqui", "Descrição...", 1, 15.49, 1, "caqui.jpeg");
+insert into compra_certa.produto values (7, "Castanha do Brasil", "Descrição...", 2, 8.49, 1, "castanha-do-brasil-media-organica.jpg");
+insert into compra_certa.produto values (8, "Cebola", "Descrição...", 1, 6.99, 1, "cebola.png");
+insert into compra_certa.produto values (9, "Cenoura", "Descrição...", 1, 5.49, 1, "cenoura.png");
+insert into compra_certa.produto values (10, "Colgate", "Descrição...", 7, 5.39, 1, "colgate.png");
+insert into compra_certa.produto values (11, "Cravo da Índia", "Descrição...", 2, 1.39, 1, "cravo-da-india-organico.jpg");
+insert into compra_certa.produto values (12, "Cream Cracker", "Descrição...", 2, 3.89, 1, "cream-cracker.jpeg");
+insert into compra_certa.produto values (13, "Farinha de Trigo", "Descrição...", 2, 5.49, 1, "farinha-de-trigo-especial-organico.jpg");
+insert into compra_certa.produto values (14, "Farinha de Trigo Integral", "Descrição...", 2, 6.49, 1, "farinha-de-trigo-integral-organico.jpg");
+insert into compra_certa.produto values (15, "Farinha Flocada", "Descrição...", 2, 7.49, 1, "farinha-flocada-de-mandioca-organica.jpg");
+insert into compra_certa.produto values (16, "Farinha", "Descrição...", 2, 3.49, 1, "farinha.jpg");
+insert into compra_certa.produto values (17, "Feijão Preto", "Descrição...", 2, 8.49, 1, "feijao-preto-organico.jpg");
+insert into compra_certa.produto values (18, "Feijão", "Descrição...", 2, 6.49, 1, "feijao.jpg");
+insert into compra_certa.produto values (19, "Fubá de Milho", "Descrição...", 2, 2.39, 1, "fuba-de-milho.jpg");
+insert into compra_certa.produto values (20, "Granola", "Descrição...", 2, 13.49, 1, "granola.jpg");
+insert into compra_certa.produto values (21, "Laranja", "Descrição...", 1, 5.48, 1, "laranja.jpg");
+insert into compra_certa.produto values (22, "Nescau", "Descrição...", 2, 3.49, 1, "nescau.jpg");
+insert into compra_certa.produto values (23, "Omo", "Descrição...", 6, 9.99, 1, "omo.jpg");
+insert into compra_certa.produto values (24, "Pimentão", "Descrição...", 1, 5.99, 1, "pimentao.webp");
+insert into compra_certa.produto values (25, "Quinoa", "Descrição...", 2, 7.89, 1, "quinoa.jpg");
+insert into compra_certa.produto values (26, "Repolho", "Descrição...", 1, 2.49, 1, "repolho.jpg");
+insert into compra_certa.produto values (27, "Soja", "Descrição...", 2, 3.29, 1, "soja.jpg");
+insert into compra_certa.produto values (28, "Tamarindo", "Descrição...", 1, 7.39, 1, "tamarindo.jpg");
+insert into compra_certa.produto values (29, "Tapioca", "Descrição...", 2, 2.49, 1, "tapioca.jpg");
+insert into compra_certa.produto values (30, "Tomate", "Descrição...", 1, 10.12, 1, "tomate.jpg");
+insert into compra_certa.produto values (31, "Feijão Tremoço", "Descrição...", 2, 5.49, 1, "tremoco-em-graos-organico.jpg");
 

@@ -23,11 +23,6 @@
         <a href="index.html">
           <img src="../../img/_logo.png" alt="logo" width="210">
         </a>
-        
-        <a href="login_cadastro.html" class="text-white text-decoration-none">
-          <strong>Sair</strong>
-          <i class="fa fa-sign-out fa-lg ml-2 fa-2x"></i>
-        </a>
       </div>
     </nav>
 
@@ -44,7 +39,7 @@
           <!-- LOGIN FORM -->
           <div class="col-md-6 login-form-1">
             <h3>Faça login na nossa loja</h3>
-            <form method="POST" action="../../../controller/pessoa/controladorLogin.php">
+            <form method="POST" action="index.php?ctrl=controlador_login&acao=login">
               <input type=hidden name=usr_tp value="funcionario">
 
                 <div class="form-group">
@@ -56,7 +51,7 @@
                 </div>
                 <div class="form-group">
                   <div class="text-field">
-                    <input type="text" name="senhaLogin" id="senha_login">
+                    <input type="password" name="senhaLogin" id="senha_login">
                     <label>Senha</label>
                   </div>
                 </div>

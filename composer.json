@@ -1,0 +1,15 @@
+{
+    "name": "fs/compra-certa",
+    "authors": [
+        {
+            "name": "Filipe Silva",
+            "email": "filipe25322@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "compra_certa\\": "."
+        }
+    },
+    "require": {}
+}

@@ -1,2 +1,4 @@
 
 backend/database/conn/.db_credentials
+
+/vendor/

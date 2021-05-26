@@ -1,7 +1,8 @@
 <?php
 
-    $DAO_dir = dirname(__DIR__);
-    require $DAO_dir."/conn/conn.php";
+    namespace compra_certa\database\pessoa;
+    use compra_certa\database\conn\Conn;
+    use PDOException;
 
     class ClienteDAO{
         

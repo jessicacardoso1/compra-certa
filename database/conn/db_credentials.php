@@ -1,5 +1,7 @@
 <?php
 
+    namespace compra_certa\database\conn;
+
     class Get_DB_Credentials{
 
         public function prs_credentials(){

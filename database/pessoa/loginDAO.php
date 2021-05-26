@@ -1,7 +1,10 @@
 <?php
 
-    $DAO_dir = dirname(__DIR__);
-    require $DAO_dir."/conn/conn.php";
+    namespace compra_certa\database\pessoa;
+    use compra_certa\database\conn\Conn;
+    use PDO;
+    #$DAO_dir = dirname(__DIR__);
+    #require $DAO_dir."/conn/conn.php";
 
     class LoginDAO{
 
@@ -16,8 +19,8 @@
 
             $sql = $pdo->prepare("select cpf, senha$column_tipo from compra_certa.$ust_tp where cpf = :cpf and senha = :senha");
             
-            $sql->bindParam("cpf", $_login_obj->getCpf());
-            $sql->bindParam("senha", $_login_obj->getSenha());
+            $sql->bindValue("cpf", $_login_obj->getCpf());
+            $sql->bindValue("senha", $_login_obj->getSenha());
             
             $sql->execute();
             

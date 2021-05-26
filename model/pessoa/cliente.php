@@ -1,7 +1,7 @@
 <?php
 
-    require "pessoa.php";
-    require "../../database/pessoa/clienteDAO.php";
+    namespace compra_certa\model\pessoa;
+    use compra_certa\database\pessoa\ClienteDAO;
 
     class Cliente extends Pessoa{
 

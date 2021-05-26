@@ -1,6 +1,7 @@
 <?php
     
-    require "../../database/pessoa/loginDAO.php";
+    namespace compra_certa\model\pessoa;
+    use compra_certa\database\pessoa\LoginDAO;
 
     class Login{
 

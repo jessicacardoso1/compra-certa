@@ -1,6 +1,7 @@
 <?php 
 
-    require '../../model/pessoa/login.php';
+    namespace compra_certa\controller\pessoa;
+    use compra_certa\model\pessoa\Login;
 
     class ControladorLogin
     {
@@ -19,18 +20,17 @@
 
             // variaveis de controle do fluxo de tela
             if($_POST["usr_tp"] == "funcionario"){
-                $view_success_gerente = "../../view/adm_screens/dash_rel/home.php";
-                $screen_dir = "../../view/adm_screens/";
-                $view_success_preparador = $screen_dir."preparacao.php";
-                $view_success_empacotador = $screen_dir."conf_embalagem.php";
-                $view_success_entregador = $screen_dir."entrega.php";
+                $view_success_gerente = "home.php";
+                $view_success_preparador = "../preparacao.php";
+                $view_success_empacotador = "../conf_embalagem.php";
+                $view_success_entregador = "../entrega.php";
 
-                $view_failed  = "../../view/adm_screens/dash_rel/login.php";
+                $view_failed  = "login.php";
             }
             else if ($_POST["usr_tp"] == "cliente"){
-                $view_success = "../../view/home.php";
+                $view_success = "home.php";
 
-                $view_failed  = "../../view/login_cadastro.php";
+                $view_failed  = "login_cadastro.php";
             }
 
             // check login
@@ -62,8 +62,5 @@
         } // FIM método
 
     }
-
-    $cn = new ControladorLogin();
-    $cn->processaLogin();
 
 ?>

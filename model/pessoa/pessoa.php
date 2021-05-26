@@ -1,4 +1,7 @@
 <?php
+
+    namespace compra_certa\model\pessoa;
+
     class Pessoa{
 
         private $cpf;

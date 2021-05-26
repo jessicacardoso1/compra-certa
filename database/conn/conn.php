@@ -1,6 +1,8 @@
 <?php
 
-    require("db_credentials.php");
+    namespace compra_certa\database\conn;
+    use compra_certa\database\conn\Get_DB_Credentials;
+    use PDO, PDOException;
 
     class Conn{
 

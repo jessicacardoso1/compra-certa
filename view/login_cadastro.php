@@ -36,7 +36,7 @@
           <!-- LOGIN FORM -->
           <div class="col-md-6 login-form-1">
             <h3>Faça login na nossa loja</h3>
-            <form method="POST" action="../controller/pessoa/controladorLogin.php">
+            <form method="POST" action="index.php?ctrl=controlador_login&acao=login">
                 <input type=hidden name=usr_tp value="cliente">
                 <div class="form-group">
                   <div class="text-field">
@@ -63,7 +63,7 @@
           <!-- REGISTER FORM -->
           <div class="col-md-6 login-form-1">
             <h3>Cadastre-se na nossa loja</h3>
-            <form method="POST" action="../controller/pessoa/controladorCliente.php">
+            <form method="POST" action="index.php?ctrl=controlador_cliente&acao=cadastro">
                 <div class="form-group">
                   <div class="text-field">
                     <input type="text" name="cpfCadastro" id="cpf_cadastro" onkeypress="cpf_mask(0)" maxlength="14">
