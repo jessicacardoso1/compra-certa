@@ -1,7 +1,7 @@
 <nav class="navbar bg-salmao">
     <div class="container justify-content-around">
 
-    <a href="home">
+    <a href="home.php">
         <img src="img/_logo.png" alt="logo" width="210">
     </a>
 
@@ -10,12 +10,12 @@
         <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
     </form>
     
-    <a href="login_cadastro" class="text-white text-decoration-none">
+    <a href="login_cadastro.php" class="text-white text-decoration-none">
         <strong>Entre ou Cadastre-se</strong>
         <i class="fa fa-user fa-lg ml-2 fa-2x"></i>
     </a>
 
-    <a href="carrinho">
+    <a href="carrinho.php">
         <i class="fa fa-shopping-cart fa-2x cor-teal"></i>
         <span class="badge badge-primary badge-pill adm-conf-emb-span ml-1">5</span>
     </a>
@@ -39,10 +39,13 @@
             <div class="single category">
                 <h3 class="side-title">Categorias</h3>
                 <ul class="list-group">
-                <li><a href="produtos.php" title="">Hortifruti Orgânico <span class="pull-right">30</span></a></li>
-                <li><a href="" title="">Mercearia Orgânica <span class="pull-right">13</span></a></li>
-                <li><a href="" title="">Bebidas Orgânicas <span class="pull-right">13</span></a></li>
-                <li><a href="" title="">Congelados Orgânicos <span class="pull-right">13</span></a></li>
+                    <?php
+                        #listagem de categorias....
+                        $lista_categorias = $dados;
+                        foreach($lista_categorias as &$c){
+                            echo '<li><a href="" title="">'.$c['NOME_CATEGORIA'].'<span class="pull-right">'.$c['QNT_PRODUTOS'].'</span></a></li>';
+                        }
+                    ?>
                 </ul>
             </div>
             </div> 

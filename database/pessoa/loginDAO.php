@@ -3,8 +3,6 @@
     namespace compra_certa\database\pessoa;
     use compra_certa\database\conn\Conn;
     use PDO;
-    #$DAO_dir = dirname(__DIR__);
-    #require $DAO_dir."/conn/conn.php";
 
     class LoginDAO{
 

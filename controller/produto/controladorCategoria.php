@@ -1,25 +1,29 @@
 <?php 
 
-    require "../controlador.php";
+    namespace compra_certa\controller\produto;
+    use compra_certa\controller\Controlador;
+    use compra_certa\model\produto\Categoria;
 
     class ControladorCategoria extends Controlador{
 
         protected $categoria;
 
         public function __construct(){
-            require $this->model("produto/", "categoria");
             $this->categoria = new Categoria();
         }
         
         public function processaListarAll(){
-            $lista_categorias = $this->categoria->listarAll();
+            $this->view("", "navbar", $this->categoria->listarTodas());
+        }
 
-            require $this->view("", "navbar", $lista_categorias);
-        }// FIM método
+        public function processaQntProdutosPorCategoria(){
+            #print_r($this->categoria->getQntProdutosPorCategoria());
+
+
+            #$this->paginaNaoEncontrada();
+            $this->view("", "navbar", $this->categoria->getQntProdutosPorCategoria());
+        }
 
     }
-
-    //$cn = new ControladorCategoria();
-    //$cn->processaListarAll();
 
 ?>

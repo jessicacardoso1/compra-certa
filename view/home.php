@@ -1,3 +1,7 @@
+<?php
+  $_GET['url'] = 'home.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,8 +22,6 @@
 
   </head>
   <body>
-    <?php require "navbar.php"; ?>
-
     <!--Carousel-->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">

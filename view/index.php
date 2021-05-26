@@ -4,6 +4,14 @@
 
     use compra_certa\controller\pessoa\ControladorLogin;
     use compra_certa\controller\pessoa\ControladorCliente;
+    use compra_certa\controller\produto\ControladorCategoria;
+
+    ## página principal
+    $cn = new ControladorCategoria(); # controlador de listagem das categorias
+    $cn->processaQntProdutosPorCategoria();
+    include "home.php";
+
+
 
     if(isset($_GET["ctrl"]) && isset($_GET["acao"])){
         $controller = $_GET["ctrl"];
