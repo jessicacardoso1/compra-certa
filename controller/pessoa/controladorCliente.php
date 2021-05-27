@@ -13,7 +13,7 @@
             
         }
         
-        public function processaCadastroCliente(){
+        public function processaCadastro(){
             $this->cliente->setCpf($_POST["cpfCadastro"]);
             $this->cliente->setEmail($_POST["emailCadastro"]);
             $this->cliente->setSenha($_POST["senhaCadastro"]);

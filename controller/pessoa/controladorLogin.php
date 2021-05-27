@@ -59,6 +59,7 @@
                     header("location: $view_success_entregador");
             }
 
+            return true;
         } // FIM método
 
     }

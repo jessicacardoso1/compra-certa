@@ -132,6 +132,7 @@ insert into compra_certa.categoria values (5, "Mercearia");
 insert into compra_certa.categoria values (6, "Produtos de Limpeza");
 insert into compra_certa.categoria values (7, "Higiene Pessoal");
 insert into compra_certa.categoria values (8, "Bebidas Alcóolicas");
+insert into compra_certa.categoria values (9, "Temperos e Especiarias");
 
 
 -- ########################### produto

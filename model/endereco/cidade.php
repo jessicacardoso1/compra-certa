@@ -1,31 +1,34 @@
 <?php 
 
-class Cidade{
+    namespace compra_certa\model\endereco;
 
-    private $nome;
-    private $estado;
+    class Cidade{
+
+        private $nome;
+        private $estado;
+        
+        //getters and setters
     
-    //getters and setters
-   
-    public function getNome()
-    {
-        return $this->nome;
-    }
+        public function getNome()
+        {
+            return $this->nome;
+        }
 
-     public function setNome($nome)
-    {
-        $this->nome = $nome;
-    }
+        public function setNome($nome)
+        {
+            $this->nome = $nome;
+        }
 
-   public function getEstado()
-    {
-        return $this->estado;
+        public function getEstado()
+        {
+            return $this->estado;
+        }
+    
+        public function setEstado($estado)
+        {
+            $this->estado = $estado;
+        }
+        
     }
- 
-    public function setEstado($estado)
-    {
-        $this->estado = $estado;
-    }
-}
 
 ?>

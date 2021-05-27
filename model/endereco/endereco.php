@@ -1,126 +1,132 @@
 <?php
 
-class Endereco{
+    namespace compra_certa\model\endereco;
+    use compra_certa\database\endereco\EnderecoDAO;
 
-    private $pais;
-    private $nome;
-    private $telefone;
-    private $cep;
-    private $bairro;
-    private $endereco;
-    private $complemento;
-    private $cidade;
-    private $numero;
-    
+    class Endereco{
 
-    
-    //getters and setters
-    public function getPais()
-    {
-        return $this->pais;
-    }
-     
+        private $pais;
+        private $nome;
+        private $telefone;
+        private $cep;
+        private $bairro;
+        private $endereco;
+        private $complemento;
+        private $cidade;
+        private $numero;
+        
+        public function efetuarCadastro(){
+            $dao = new EnderecoDAO();
 
-    public function setPais($pais)
-    {
-        $this->pais = $pais;
-    }
+            return $dao->efetuarCadastro($this);
+        }
+        
+        //getters and setters
+        public function getPais()
+        {
+            return $this->pais;
+        }
+        
+        public function setPais($pais)
+        {
+            $this->pais = $pais;
+        }
 
-    public function getNome()
-    {
-        return $this->nome;
-    }
-     
-      
-    public function setNome($nome)
-    {
-        $this->nome = $nome;
-    }
-
-   
-    public function getTelefone()
-    {
-        return $this->telefone;
-    }
-
- 
-    public function setTelefone($telefone)
-    {
-        $this->telefone = $telefone;
-    }
+        public function getNome()
+        {
+            return $this->nome;
+        }
+        
+        
+        public function setNome($nome)
+        {
+            $this->nome = $nome;
+        }
 
     
-    public function getCep()
-    {
-        return $this->cep;
-    }
+        public function getTelefone()
+        {
+            return $this->telefone;
+        }
 
     
-    public function setCep($cep)
-    {
-        $this->cep = $cep;
-    }
+        public function setTelefone($telefone)
+        {
+            $this->telefone = $telefone;
+        }
+
+        
+        public function getCep()
+        {
+            return $this->cep;
+        }
+
+        
+        public function setCep($cep)
+        {
+            $this->cep = $cep;
+        }
+
+        
+        public function getBairro()
+        {
+            return $this->bairro;
+        }
+
+        
+        public function setBairro($bairro)
+        {
+            $this->bairro = $bairro;
+        }
+
+        
+        public function getEndereco()
+        {
+            return $this->endereco;
+        }
+
+        
+        public function setEndereco($endereco)
+        {
+            $this->endereco = $endereco;
+        }
 
     
-    public function getBairro()
-    {
-        return $this->bairro;
-    }
+        public function getComplemento()
+        {
+            return $this->complemento;
+        }
 
-    
-    public function setBairro($bairro)
-    {
-        $this->bairro = $bairro;
-    }
+        
+        public function setComplemento($complemento)
+        {
+            $this->complemento = $complemento;
+        }
 
-    
-    public function getEndereco()
-    {
-        return $this->endereco;
-    }
+        
+        public function getCidade()
+        {
+            return $this->cidade;
+        }
 
-      
-    public function setEndereco($endereco)
-    {
-        $this->endereco = $endereco;
-    }
+        
+        public function setCidade($cidade)
+        {
+            $this->cidade = $cidade;
+        }
 
-   
-    public function getComplemento()
-    {
-        return $this->complemento;
-    }
+        
+        public function getNumero()
+        {
+            return $this->numero;
+        }
 
-     
-    public function setComplemento($complemento)
-    {
-        $this->complemento = $complemento;
+        
+        public function setNumero($numero)
+        {
+            $this->numero = $numero;
+        }
+        
     }
-
-    
-    public function getCidade()
-    {
-        return $this->cidade;
-    }
-
-    
-    public function setCidade($cidade)
-    {
-        $this->cidade = $cidade;
-    }
-
-    
-    public function getNumero()
-    {
-        return $this->numero;
-    }
-
-    
-    public function setNumero($numero)
-    {
-        $this->numero = $numero;
-    }
-}
-
 
 ?>

@@ -42,14 +42,20 @@
         </div>
         <div class="form-group">
             <div class="text-field">
+              <input type="password" id="text_old_password" required>
+              <label>Senha antiga</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="text-field">
               <input type="password" id="text_password" required>
-              <label>Senha</label>
+              <label>Nova senha</label>
             </div>
         </div>
         <div class="form-group">
           <div class="text-field">
             <input type="password" id="text_password2" onblur="validarSenha()" required>
-            <label>Confirme sua senha</label>
+            <label>Confirme sua nova senha</label>
           </div>
         </div>
         <div class="form-group">

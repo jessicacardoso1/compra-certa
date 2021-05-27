@@ -13,10 +13,10 @@
                 
                 $sql = $pdo->prepare("insert into compra_certa.cliente (cpf, senha, email, ativo) values (:cpf, :senha, :email, :ativo)");
                 
-                $sql->bindParam("cpf", $_cliente->getCpf());
-                $sql->bindParam("email", $_cliente->getEmail());
-                $sql->bindParam("senha", $_cliente->getSenha());
-                $sql->bindParam("ativo", $_cliente->getAtivo());
+                $sql->bindValue("cpf", $_cliente->getCpf());
+                $sql->bindValue("email", $_cliente->getEmail());
+                $sql->bindValue("senha", $_cliente->getSenha());
+                $sql->bindValue("ativo", $_cliente->getAtivo());
                 
                 $sql->execute();
 
