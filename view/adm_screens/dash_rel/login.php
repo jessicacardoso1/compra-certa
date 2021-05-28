@@ -20,7 +20,7 @@
   <body>
     <nav class="navbar bg-salmao">
       <div class="container justify-content-between">
-        <a href="index.html">
+        <a href="home.php">
           <img src="../../img/_logo.png" alt="logo" width="210">
         </a>
       </div>
@@ -39,7 +39,7 @@
           <!-- LOGIN FORM -->
           <div class="col-md-6 login-form-1">
             <h3>Faça login na nossa loja</h3>
-            <form method="POST" action="index.php?ctrl=controlador_login&acao=login">
+            <form method="POST" action="index.php?controlador=login&acao=login">
               <input type=hidden name=usr_tp value="funcionario">
 
                 <div class="form-group">

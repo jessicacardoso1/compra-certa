@@ -3,14 +3,23 @@
     require_once '../../../vendor/autoload.php';
 
     use compra_certa\controller\pessoa\ControladorLogin;
+    use compra_certa\controller\dashboard\ControladorDashboard;
 
-    if(isset($_GET["ctrl"]) && isset($_GET["acao"])){
-        $controller = $_GET["ctrl"];
+    $cn = new ControladorDashboard();
+
+    $cn->processaDadosHome();
+
+    if(isset($_GET["controlador"]) && isset($_GET["acao"])){
+        $controller = $_GET["controlador"];
         $acao = $_GET["acao"];
         
-        if($controller == 'controlador_login'){ # controller login
-            $cn = new ControladorLogin();
-            $cn->processaLogin();
+        if($controller == 'login'){
+
+            if($acao == 'login'){
+                $cn = new ControladorLogin();
+                $cn->processaLogin();
+            }
+
         }
 
     }

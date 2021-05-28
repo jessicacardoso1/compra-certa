@@ -20,7 +20,7 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-static-top navbar-light bg-salmao">
       <!-- Brand/logo -->
-      <a class="navbar-brand" href="../index.html">
+      <a class="navbar-brand" href="../index.php">
           <img src="../img/logo.png" alt="logo">
       </a>
     </nav>

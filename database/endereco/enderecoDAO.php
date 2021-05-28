@@ -39,6 +39,7 @@
 
             }
             catch(PDOException $e){
+                echo $e;
                 return false;
             }
         }// FIM método
@@ -71,6 +72,7 @@
                 return $last_id;
             }
             catch(PDOException $e){
+                echo $e;
                 return false;
             }
 

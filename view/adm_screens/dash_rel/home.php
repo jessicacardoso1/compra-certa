@@ -1,3 +1,9 @@
+<?php
+    # variáveis para popular a tela
+    $clientes_ativos = $dados['num_total_clientes_ativos'];
+    $total_clientes  = $dados['num_total_clientes'];
+?>
+
 <!DOCTYPE html> 
 <html lang="en">
 
@@ -35,7 +41,7 @@
         <ul class="navbar-nav cor-bg-salmao-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
                 <div class="sidebar-brand-text mx-3">Legumes Preciosos</div>
             </a>
 
@@ -44,7 +50,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Desempenho</span></a>
             </li>
@@ -59,23 +65,23 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="rel_tmp_medio_setor.html">
+                <a class="nav-link" href="rel_tmp_medio_setor.php">
                     <i class="fa fa-clock-o"></i>
                     <span>Tempo médio por setor</span></a>
 
-                <a class="nav-link" href="rel_bairros_mais_atendidos.html">
+                <a class="nav-link" href="rel_bairros_mais_atendidos.php">
                     <i class="fa fa-location-arrow"></i>
                     <span>Bairros mais atendidos</span></a>
                 
-                <a class="nav-link" href="rel_clientes_mais_compram.html">
+                <a class="nav-link" href="rel_clientes_mais_compram.php">
                     <i class="fa fa-users"></i>
                     <span>Clientes que mais compram</span></a>
                         
-                <a class="nav-link" href="rel_produtos_mais_vendidos.html">
+                <a class="nav-link" href="rel_produtos_mais_vendidos.php">
                     <i class="fa fa-product-hunt"></i>
                     <span>Produtos mais vendidos</span></a>
 
-                <a class="nav-link" href="404.html">
+                <a class="nav-link" href="404.php">
                     <i class="fa fa-th"></i>
                     <span>Outros</span></a>
 
@@ -233,12 +239,18 @@
                                                     </div>
                                                     <div class="row no-gutters align-items-center">
                                                         <div class="col-auto">
-                                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">77.3%</div>
+                                                            <?php
+                                                                $porcentagem = ($clientes_ativos / $total_clientes) * 100;
+                                                                $porcentagem = round($porcentagem, 2);
+                                                                echo '<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">'.$porcentagem.'%</div>';
+                                                            ?>
                                                         </div>
                                                         <div class="col">
                                                             <div class="progress progress-sm mr-2">
                                                                 <div class="progress-bar bg-success" role="progressbar"
-                                                                    style="width: 77.3%" aria-valuenow="77.3" aria-valuemin="0"
+                                                                    <?php
+                                                                        echo 'style="width: '.$porcentagem.'%" aria-valuenow="'.$porcentagem.'" aria-valuemin="0"';
+                                                                    ?>
                                                                     aria-valuemax="100"></div>
                                                             </div>
                                                         </div>
@@ -260,7 +272,9 @@
                                                 <div class="col mr-2">
                                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                         Clientes</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">325</div>
+                                                    <?php
+                                                        echo '<div class="h5 mb-0 font-weight-bold text-gray-800">'.$total_clientes.'</div>'; 
+                                                    ?>
                                                 </div>
                                                 <div class="col-auto">
                                                     <i class="fa fa-users fa-2x"></i>
@@ -471,7 +485,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-success" href="login.html">Sair</a>
+                    <a class="btn btn-success" href="login.php">Sair</a>
                 </div>
             </div>
         </div>

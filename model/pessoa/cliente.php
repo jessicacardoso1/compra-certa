@@ -16,6 +16,18 @@
             return $dao->efetuarCadastro($this);
         }
 
+        public function getNumTotalClientes(){
+            $dao = new ClienteDAO();
+            
+            return $dao->getNumTotalClientes();
+        }
+
+        public function getNumTotalClientesAtivos(){
+            $dao = new ClienteDAO();
+            
+            return $dao->getNumTotalClientesAtivos();
+        }
+
 
         // getters and setters
         public function getEmail(){

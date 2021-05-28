@@ -36,7 +36,7 @@
         <ul class="navbar-nav cor-bg-salmao-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
                 <div class="sidebar-brand-text mx-3">Legumes Preciosos</div>
             </a>
 
@@ -45,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Desempenho</span></a>
             </li>
@@ -60,23 +60,23 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="rel_tmp_medio_setor.html">
+                <a class="nav-link" href="rel_tmp_medio_setor.php">
                     <i class="fa fa-clock-o"></i>
                     <span>Tempo médio por setor</span></a>
 
-                <a class="nav-link" href="rel_bairros_mais_atendidos.html">
+                <a class="nav-link" href="rel_bairros_mais_atendidos.php">
                     <i class="fa fa-location-arrow"></i>
                     <span>Bairros mais atendidos</span></a>
                 
-                <a class="nav-link" href="rel_clientes_mais_compram.html">
+                <a class="nav-link" href="rel_clientes_mais_compram.php">
                     <i class="fa fa-users"></i>
                     <span>Clientes que mais compram</span></a>
                         
-                <a class="nav-link" href="rel_produtos_mais_vendidos.html">
+                <a class="nav-link" href="rel_produtos_mais_vendidos.php">
                     <i class="fa fa-product-hunt"></i>
                     <span>Produtos mais vendidos</span></a>
 
-                <a class="nav-link" href="404.html">
+                <a class="nav-link" href="404.php">
                     <i class="fa fa-th"></i>
                     <span>Outros</span></a>
 
@@ -711,7 +711,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-success" href="login.html">Sair</a>
+                    <a class="btn btn-success" href="login.php">Sair</a>
                 </div>
             </div>
         </div>

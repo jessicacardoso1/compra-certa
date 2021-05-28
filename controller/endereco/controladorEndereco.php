@@ -1,12 +1,12 @@
 <?php 
 
     namespace compra_certa\controller\endereco;
+    use compra_certa\controller\Controlador;
     use compra_certa\model\endereco\Cidade;
     use compra_certa\model\endereco\Endereco;
     use compra_certa\model\endereco\Estado;
 
-    class ControladorEndereco
-    {
+    class ControladorEndereco extends Controlador{
 
         private $cidade;
         private $endereco;

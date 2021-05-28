@@ -20,11 +20,11 @@
   <body>
     <nav class="navbar bg-salmao">
       <div class="container justify-content-between">
-        <a href="index.html">
+        <a href="index.php">
           <img src="../img/_logo.png" alt="logo" width="210">
         </a>
         
-        <a href="login_cadastro.html" class="text-white text-decoration-none">
+        <a href="login_cadastro.php" class="text-white text-decoration-none">
           <strong>Sair</strong>
           <i class="fa fa-sign-out fa-lg ml-2 fa-2x"></i>
         </a>

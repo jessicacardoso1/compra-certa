@@ -2,7 +2,7 @@
 
     namespace compra_certa\database\pessoa;
     use compra_certa\database\conn\Conn;
-    use PDOException;
+    use PDO, PDOException;
 
     class ClienteDAO{
         
@@ -26,9 +26,63 @@
 
             }
             catch(PDOException $e){
+                echo $e;
                 return false;
             }
             
+        }// FIM método
+
+
+        /** Métodos úteis **/
+        public function getNumTotalClientes(){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+
+                $sql = $pdo->prepare("
+                    select COUNT(cpf) 
+                    from compra_certa.cliente;
+                ");
+
+                $sql->execute();
+                
+                $pdo = $conn->close();
+
+                $linha = $sql->fetch(PDO::FETCH_ASSOC);
+
+                return $linha['COUNT(cpf)'];
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }// FIM método
+
+        public function getNumTotalClientesAtivos(){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select COUNT(cpf) 
+                    from compra_certa.cliente
+                    where ativo = 1;
+                ");
+
+                $sql->execute();
+                
+                $pdo = $conn->close();
+
+                $linha = $sql->fetch(PDO::FETCH_ASSOC);
+
+                return $linha['COUNT(cpf)'];
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
         }// FIM método
 
     }
