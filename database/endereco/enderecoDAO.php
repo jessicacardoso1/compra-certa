@@ -48,6 +48,11 @@
                 $conn = new Conn();
                 $pdo = $conn->connect();
                 
+                # verifica se já existe cidade, se sim, retorna o id dela.. se não, deixa inserir.
+                $check_cidade = $this->getIdCidadeViaNome($_cidade->getNome());
+                if($check_cidade)
+                    return $check_cidade;
+
                 $id_estado = $this->getIdEstadoViaNome($_cidade->getEstado()->getNome());
                 $sql = $pdo->prepare("
                     insert into compra_certa.cidade 
@@ -70,6 +75,34 @@
             }
 
         }// FIM método
+
+        public function getIdCidadeViaNome($_nome_cidade){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select id_cidade
+                    from compra_certa.cidade
+                    where nome = :nome;
+                ");
+                
+                $sql->bindParam("nome", $_nome_cidade);
+
+                $sql->execute();
+                
+                $pdo = $conn->close();
+
+                $linha = $sql->fetch(PDO::FETCH_ASSOC);
+
+                return $linha['id_cidade'];
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
 
         public function getIdEstadoViaNome($_nome_estado){
             try{
@@ -97,7 +130,7 @@
                 echo $e;
                 return false;
             }
-        }
+        }// FIM método
 
     }    
 
