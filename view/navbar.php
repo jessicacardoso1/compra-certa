@@ -5,8 +5,8 @@
         <img src="img/_logo.png" alt="logo" width="210">
     </a>
 
-    <form class="form-inline">
-        <input class="form-control mr-sm-1" type="text" placeholder="Buscar produtos..." aria-label="Search">
+    <form class="form-inline" method="POST" action="index.php?controlador=produtos&acao=consulta">
+        <input class="form-control mr-sm-1" name="nome_produto" type="text" placeholder="Buscar produtos..." aria-label="Search">
         <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
     </form>
     

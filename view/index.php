@@ -6,14 +6,14 @@
     use compra_certa\controller\pessoa\ControladorCliente;
     use compra_certa\controller\produto\ControladorCategoria;
     use compra_certa\controller\endereco\ControladorEndereco;
-
+    use compra_certa\controller\produto\ControladorPoduto;
 
     ## página principal
     $cn = new ControladorCategoria(); # controlador de listagem das categorias
     $cn->processaQntProdutosPorCategoria();
     include "home.php";
     
-
+    
     if(isset($_GET["controlador"]) && isset($_GET["acao"])){
         $controller = $_GET["controlador"];
         $acao = $_GET["acao"];
@@ -37,6 +37,13 @@
             if($acao == 'cadastro'){
                 $cn = new ControladorEndereco();
                 $cn->processaCadastro();
+            }
+
+        } else if($controller == 'produtos'){
+
+            if($acao == 'consulta'){
+                $cn = new ControladorPoduto();
+                $cn->processaConsultarProdutos();
             }
 
         }

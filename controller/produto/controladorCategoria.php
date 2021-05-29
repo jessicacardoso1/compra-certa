@@ -17,9 +17,6 @@
         }
 
         public function processaQntProdutosPorCategoria(){
-            #print_r($this->categoria->getQntProdutosPorCategoria());
-
-
             #$this->paginaNaoEncontrada();
             $this->view("", "navbar", $this->categoria->getQntProdutosPorCategoria());
         }

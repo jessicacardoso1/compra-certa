@@ -1,3 +1,13 @@
+<?php
+
+  $categorias = array();
+  foreach($dados as &$c){
+    if(!in_array($c['NOME_CATEGORIA'], $categorias))
+      array_push($categorias, $c['NOME_CATEGORIA']);
+  }
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -43,8 +53,8 @@
         </div>
         <div class="row">
           <div class="form-group">
-            <select class="form-control-select select" aria-label="Default select example" name="relevancia" onchange="MostrarProdutosCategoria(this.value)">
-              <option selected>Relevância</option>
+            <select class="form-control-select select" aria-label="Default select example" name="relevancia" onchange="MostrarProdutosCategoria('ordenacao', this.value)">
+              <option value="relevancia" selected>Relevância</option>
               <option value="nomeCrescente">Nome [A-Z]</option>
               <option value="nomeDecrescente">Nome [Z-A]</option>
               <option value="precoCrescente">Preço [Maior]</option>
@@ -65,24 +75,16 @@
         </div>
         <div class="collapse multi-collapse" id="multiCollapseExample1">
           <div class="card card-body">
-            <div class="form-inline">
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input adjust adjust-checkbox-collapse"  name="customCheck" id="customControlInline1">
-                <label class="custom-control-label" for="customControlInline1">Fruta Orgânica</label>
-              </div>
-            </div>
-            <div class="form-inline">
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input adjust-checkbox-collapse" name="customCheck" id="customControlInline2">
-                <label class="custom-control-label" for="defaultCheck">Legume Orgânico</label>
-              </div>
-            </div>
-            <div class="form-inline">
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input adjust-checkbox-collapse" name="customCheck" id="customControlInline2">
-                <label class="custom-control-label" for="defaultCheck">Ovos Orgânico</label>
-              </div>
-            </div>
+            <?php
+              for($i = 0; $i < count($categorias); $i++){
+                echo '<div class="form-inline">';
+                echo '<div class="custom-control custom-checkbox">';
+                echo '<input type="checkbox" class="custom-control-input adjust adjust-checkbox-collapse" name="customCheck" id="customControlInline'.$i.'" value="'.$categorias[$i].'" onchange="MostrarProdutosCategoria("categoria", this.value)">';
+                echo '<label class="custom-control-label" for="customControlInline1">'.$categorias[$i].'</label>';
+                echo '</div>';
+                echo '</div>';
+              }
+            ?>
           </div>
         </div>
         <div class="col-md-10-mb-6 col-prod filtro">
@@ -115,98 +117,22 @@
         <div class="row">
           <div class="container-fluid">
             <div class="produtos d-flex flex-wrap">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top news-img" src="img/itens/laranja.jpg" alt="Livros em promoção"/>
-                <div class="card-body">
-                  <p class="card-text offs-text-name text-monospace">Laranja Orgânica</p>
-                  <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                  <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <a class="text-decoration-none" href="/frontend/produtos_detalhes.php">
-                  <img class="card-img-top news-img" src="img/itens/soja.jpg" alt="Livros em promoção">
-                </a>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Soja em grãos 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                  </div>
-                  
-                
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top news-img" src="img/itens/banana-prata.png" alt="Livros em promoção"/>
-                <div class="card-body">
-                  <p class="card-text offs-text-name text-monospace">Banana da prata 500g</p>
-                  <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                  <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                </div>
-              </div> 
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/fuba-de-milho.jpg" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Fuba de milho 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                  </div>
-                </div>
-      
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/pimentao.webp" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Pimentão Orgânico 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                  </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/tamarindo.jpg" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Tamarindo Orgânico 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                  </div>
-                </div>
-                
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/cenoura.png" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Cenoura Orgânico 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                  </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/cravo-da-india-organico.jpg" alt="Livros em promoção">
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Cravo orgânico 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                  </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/cebola.jpg" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Cebola Orgânica 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                  </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top news-img" src="img/itens/caqui.jpeg" alt="Livros em promoção"/>
-                  <div class="card-body">
-                    <p class="card-text offs-text-name text-monospace">Caqui orgânico 500g</p>
-                    <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                    <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                  </div>
-                </div>
-              </div>
+              <?php
+                foreach($dados as &$c){
+                  echo '<div class="card" style="width: 18rem;">';
+                  echo '<img class="card-img-top news-img" src="img/itens/'.$c['IMG'].'" alt="'.$c['IMG'].'"/>';
+                  echo '<div class="card-body">';
+                  echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
+                  echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO'].'</b> <small> à vista</small></h5>';
+                  echo '<button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>';
+                  echo '</div>';
+                  echo '</div>';
+                }
+              ?>
             </div>
           </div>
         </div>
+      </div>
 
       <div class="col-sm-1"></div>
 

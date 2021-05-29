@@ -1,4 +1,8 @@
 <?php
+
+	namespace compra_certa\model\produto;
+	use compra_certa\database\produto\ProdutoDAO;
+
     class Produto{
         
         private $nome;
@@ -6,6 +10,12 @@
         private $categoria;
         private $preco;
         private $disponivel;
+
+		public function consultarProdutos(){
+			$dao = new ProdutoDAO();
+
+			return $dao->consultarProdutos($this);
+		}
 
 
         /**

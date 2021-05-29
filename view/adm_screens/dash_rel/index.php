@@ -6,7 +6,6 @@
     use compra_certa\controller\dashboard\ControladorDashboard;
 
     $cn = new ControladorDashboard();
-
     $cn->processaDadosHome();
 
     if(isset($_GET["controlador"]) && isset($_GET["acao"])){
