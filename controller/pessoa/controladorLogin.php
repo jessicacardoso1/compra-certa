@@ -2,6 +2,7 @@
 
     namespace compra_certa\controller\pessoa;
     use compra_certa\model\pessoa\Login;
+    use compra_certa\controller\dashboard\ControladorDashboard;
 
     class ControladorLogin
     {
@@ -49,8 +50,10 @@
                 header("location: $view_success");
             }
             else if($_POST["usr_tp"] == "funcionario"){
-                if($check_login == 1)
-                    header("location: $view_success_gerente");
+                if($check_login == 1){
+                    #header("location: $view_success_gerente");
+                    return $check_login;
+                }
                 else if($check_login == 2)
                     header("location: $view_success_preparador");
                 else if($check_login == 3)
@@ -59,7 +62,7 @@
                     header("location: $view_success_entregador");
             }
 
-            return true;
+            return $check_login;
         } // FIM método
 
     }
