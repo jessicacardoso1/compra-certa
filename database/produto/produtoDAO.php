@@ -3,7 +3,7 @@
     namespace compra_certa\database\produto;
     use compra_certa\database\conn\Conn;
     use PDO, PDOException;
-
+    
     class ProdutoDAO{
 
         public function consultarProdutos($_produto){
@@ -35,6 +35,46 @@
                 $pdo = $conn->close();
 
                 return $produtos;
+            }
+            catch(PDOException $e){
+                return array();
+            }
+        }
+
+        public function getPromocao($_id_promocao){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+
+                $sql = $pdo->prepare("
+                    select pr.nome as n, pp.novo_valor as nv, p.nome as pn, p.preco as p, p.nome_imagem as ni
+                    from
+                    compra_certa.promocao as pr join compra_certa.promocao_produto as pp on pr.id_promocao = pp.id_promocao
+                    join
+                    compra_certa.produto as p on p.id_produto = pp.id_produto
+                    where pr.id_promocao = :id_promocao;
+                ");
+
+                $sql->bindParam("id_promocao", $_id_promocao);
+            
+                $sql->execute();
+
+                $promocao = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                        "NOME_PROMOCAO"      => $linha['n'],
+                        "PRECO_NOVO_PRODUTO" => $linha['nv'],
+                        "NOME_PRODUTO"       => $linha['pn'],
+                        "PRECO"              => $linha['p'],
+                        "IMG"                => $linha['ni']
+                    );
+
+                    array_push($promocao, $arr);
+                }
+                
+                $pdo = $conn->close();
+
+                return $promocao;
             }
             catch(PDOException $e){
                 return array();

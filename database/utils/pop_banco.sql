@@ -168,3 +168,15 @@ insert into compra_certa.produto values (29, "Tapioca", "Descrição...", 2, 2.4
 insert into compra_certa.produto values (30, "Tomate", "Descrição...", 1, 10.12, 1, "tomate.jpg");
 insert into compra_certa.produto values (31, "Feijão Tremoço", "Descrição...", 2, 5.49, 1, "tremoco-em-graos-organico.jpg");
 
+
+-- ########################### promocao
+insert into compra_certa.promocao (nome) values ("São João");
+insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 6, 12.39);
+insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 9, 4.99);
+insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 8, 6.59);
+insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 24, 3.99);
+insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 21, 5.29);
+insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 26, 2.39);
+insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 30, 8.99);
+insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 4, 1.99);
+insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 3, 7.99);

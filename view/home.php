@@ -1,3 +1,8 @@
+<?php
+
+  $nome_promocao = $dados[0]['NOME_PROMOCAO'];
+
+?>
 <main>
   <!--Carousel-->
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -34,7 +39,9 @@
     <div class="container offs-container">
       <div class="row">
           <div class="col-8">
-              <h3 class="mb-3 offs-label text-monospace">Confira as nossas promoções!</h3>
+              <?php
+                echo '<h3 class="mb-3 offs-label text-monospace">'.$nome_promocao.': Confira a nossa promoção!</h3>';
+              ?>
           </div>
           <div class="col-4 text-right">
               <a class="btn btn-primary mb-3 mr-1 btn-success" href="#carouselExampleIndicators2" role="button"  data-slide="prev">
@@ -48,145 +55,51 @@
         <div class="row">
           <div class="col-12">
               <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
                   <div class="carousel-inner">
-                      <div class="carousel-item active">
-                          <div class="row">
+                    <?php
+                      $carousel_others = '<div class="carousel-item">';
+                      $row = '<div class="row">';
+                      
+                      echo '<div class="carousel-item active">';
+                      echo $row;
+                      exibirItens($dados[0]);
+                      exibirItens($dados[1]);
+                      exibirItens($dados[2]);
+                      echo '</div>';
+                      echo '</div>';
 
-                              <div class="col-md-4 mb-3">
-                                  <div class="card offs-card-size">
-                                      <img class="img-fluid offs-img-size" src="img/itens/caqui.jpeg">
-                                      <div class="card-body">
-                                        <div class="form-group">
-                                          <p class="card-text offs-text-name text-monospace">Caqui Fuyu Orgânico</p>
-                                          <div class="card-text text-muted"><s>De: R$ 19,99</s> por:</div>
-                                          <h5 class="text-success mb-2"><b>R$ 16,99</b><small> à vista</small></h5>
-                                          <button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>
-                                        </div>
-                                      </div>
+                      echo $carousel_others;
+                      echo $row;
+                      exibirItens($dados[3]);
+                      exibirItens($dados[4]);
+                      exibirItens($dados[5]);
+                      echo '</div>';
+                      echo '</div>';
 
-                                  </div>
-                              </div>
-                              <div class="col-md-4 mb-3">
-                                  <div class="card offs-card-size">
-                                      <img class="img-fluid offs-img-size" src="img/itens/cenoura.png">
-                                      <div class="card-body">
-                                        <div class="form-group">
-                                          <p class="card-text offs-text-name text-monospace">Cenoura DeBruin Orgânica</p>
-                                          <div class="card-text text-muted"><s>De: R$ 4,99</s> por:</div>
-                                          <h5 class="text-success mb-2"><b>R$ 3,99</b> <small> à vista</small></h5>
-                                          <button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-4 mb-3">
-                                  <div class="card offs-card-size">
-                                      <img class="img-fluid offs-img-size" src="img/itens/cebola.jpg">
-                                      <div class="card-body">
-                                        <div class="form-group">
-                                          <p class="card-text offs-text-name text-monospace">Cebola Chooury Orgânica</p>
-                                          <div class="card-text text-muted"><s>De: R$ 6,29</s> por:</div>
-                                          <h5 class="text-success mb-2"><b>R$ 5,99</b> <small> à vista</small></h5>
-                                          <button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                              </div>
+                      echo $carousel_others;
+                      echo $row;
+                      exibirItens($dados[6]);
+                      exibirItens($dados[7]);
+                      exibirItens($dados[8]);
+                      echo '</div>';
+                      echo '</div>';
 
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <div class="row">
-
-                              <div class="col-md-4 mb-3">
-                                <div class="card offs-card-size">
-                                    <img class="img-fluid offs-img-size" src="img/itens/pimentao.webp">
-                                    <div class="card-body">
-                                      <div class="form-group">
-                                        <p class="card-text offs-text-name text-monospace">Pimentão Restib Orgânico</p>
-                                          <div class="card-text text-muted"><s>De: R$ 3,59</s> por:</div>
-                                          <h5 class="text-success mb-2"><b>R$ 2,99</b> <small> à vista</small></h5>
-                                          <button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                              <div class="card offs-card-size">
-                                  <img class="img-fluid offs-img-size" src="img/itens/laranja.jpg">
-                                  <div class="card-body">
-                                    <div class="form-group">
-                                      <p class="card-text offs-text-name text-monospace">Laranja Umbigo Orgânica</p>
-                                          <div class="card-text text-muted"><s>De: R$ 35,99</s> por:</div>
-                                          <h5 class="text-success mb-2"><b>R$ 33,99</b> <small> à vista</small></h5>
-                                          <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
-                                    </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <div class="card offs-card-size">
-                                <img class="img-fluid offs-img-size" src="img/itens/repolho.jpg">
-                                <div class="card-body">
-                                  <div class="form-group">
-                                    <p class="card-text offs-text-name text-monospace">Repolho Verde Orgânico</p>
-                                    <div class="card-text text-muted"><s>De: R$ 7,99</s> por:</div>
-                                    <h5 class="text-success mb-2"><b>R$ 7,35</b> <small> à vista</small></h5>
-                                    <button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-
-                          </div>
-                      </div>
-                          <div class="carousel-item">
-                              <div class="row">
-      
-                                <div class="col-md-4 mb-3">
-                                  <div class="card offs-card-size">
-                                      <img class="img-fluid offs-img-size" src="img/itens/tomate.jpg">
-                                      <div class="card-body">
-                                        <div class="form-group">
-                                          <p class="card-text offs-text-name text-monospace">Tomate Orgânico</p>
-                                          <div class="card-text text-muted"><s>De: R$ 6,99</s> por:</div>
-                                          <h5 class="text-success mb-2"><b>R$ R$ 6,29</b> <small> à vista</small></h5>
-                                          <button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                  <div class="card offs-card-size">
-                                    <img class="img-fluid offs-img-size" src="img/itens/batata.jpg">
-                                    <div class="card-body">
-                                      <div class="form-group">
-                                        <p class="card-text offs-text-name text-monospace">Batata Orgânica</p>
-                                        <div class="card-text text-muted"><s>De: R$ 6,99</s> por:</div>
-                                        <h5 class="text-success mb-2"><b>R$ R$ 5,69</b> <small> à vista</small></h5>
-                                        <button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                  <div class="card offs-card-size">
-                                      <img class="img-fluid offs-img-size" src="img/itens/banana-prata.png">
-                                      <div class="card-body">
-                                        <div class="form-group">
-                                          <p class="card-text offs-text-name text-monospace">Banana da Prata</p>
-                                          <div class="card-text text-muted"><s>De: R$ 9,99</s> por:</div>
-                                          <h5 class="text-success mb-2"><b>R$ 8,99</b> <small> à vista</small></h5>
-                                          <button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                              </div>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
+                      function exibirItens($c){
+                        echo '<div class="col-md-4 mb-3">';
+                        echo '<div class="card offs-card-size">';
+                        echo '<img class="img-fluid offs-img-size" src="'.DIRIMG.'itens/'.$c['IMG'].'">';
+                        echo '<div class="card-body">';
+                        echo '<div class="form-group">';
+                        echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
+                        echo '<div class="card-text text-muted"><s>De: R$ '.$c['PRECO'].'</s> por:</div>';
+                        echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO_NOVO_PRODUTO'].'</b><small> à vista</small></h5>';
+                        echo '<button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                      }
+                    ?>
               </div>
           </div>
       </div>
