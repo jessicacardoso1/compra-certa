@@ -11,20 +11,21 @@
             $index = $url[0];
 
             $this->rota=array(
-                "" => "controladorHome",
-                "home" => "controladorHome",
-                "404" => "controlador404",
-                "login" => "pessoa/controladorLogin"
+                ""        => "controladorHome",
+                "home"    => "controladorHome",
+                "404"     => "controlador404",
+                "login"   => "pessoa/controladorLogin",
+                "produto" => "produto/controladorProduto"
             );
 
-            if(array_key_exists($index, $this->rota))
+            if(array_key_exists($index, $this->rota)){
                 if(file_exists(dirname(__DIR__)."/controller/{$this->rota[$index]}.php"))
                     return $this->rota[$index];
                 else
-                    return "controllerHome";
+                    return "controlador404";
+            }
             else
-                return "controlador404";
-            
+                return "controlador404";            
         }
 
         public function parseUrl(){
