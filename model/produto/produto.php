@@ -11,11 +11,11 @@
         private $preco;
         private $disponivel;
 
-		public function consultarProdutos(){
-			$dao = new ProdutoDAO();
+        public function consultarProdutos(){
+                $dao = new ProdutoDAO();
 
-			return $dao->consultarProdutos($this);
-		}
+                return $dao->consultarProdutos($this);
+        }
 
 
         /**

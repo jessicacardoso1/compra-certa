@@ -9,17 +9,18 @@
         protected $produto;
 
         public function __construct(){
-            $this->produto = new Produto();
             $this->carregarNavbar();
+            $this->produto = new Produto();
             
             if(count($this->parseUrl()) == 1){
                 $this->view("", "produtos");
             }
-        }
+        } 
         
-        public function processaConsultarProdutos(){    
+        public function consultar(){
             $this->produto->setNome($_GET['produto']);
             $listaProdutos = $this->produto->consultarProdutos();
+            
             $this->view("", "produtos", $listaProdutos);
         }
 

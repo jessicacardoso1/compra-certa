@@ -7,8 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/style.min.css">
-        <link rel="icon" type="image/png" href="img/ref_icon.png" />
+        <?php
+            require_once '../configs/config.php';
+            echo '<link rel="stylesheet" href="'.DIRCSS.'style.min.css">';
+            echo '<link rel="icon" type="image/png" href="'.DIRIMG.'ref_icon.png" />';
+        ?>
+        
+        <?php
+            /*
+            echo '<link rel="stylesheet" href="'.DIRCSS.'style.min.css">';
+            echo '<link rel="icon" type="image/png" href="'.DIRIMG.'img/ref_icon.png" />';
+            */
+        ?>
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 

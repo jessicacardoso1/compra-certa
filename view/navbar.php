@@ -2,11 +2,13 @@
     <nav class="navbar bg-salmao">
         <div class="container justify-content-around">
 
-        <a href="home">
-            <img src="img/_logo.png" alt="logo" width="210">
+        <a href="<?php echo DIRPAGE.'view'; ?>">
+            <?php 
+                echo '<img src="'.DIRIMG.'_logo.png" alt="logo" width="210">';
+            ?>
         </a>
 
-        <form class="form-inline" method="GET" action="produto/processaConsultarProdutos">
+        <form class="form-inline" method="GET" action="produto/consultar">
             <input class="form-control mr-sm-1" name="produto" type="text" placeholder="Buscar produtos..." aria-label="Search">
             <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
         </form>
