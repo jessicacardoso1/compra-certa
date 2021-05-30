@@ -16,7 +16,6 @@
             $this->produto->setNome($_POST['nome_produto']);
 
             $listaProdutos = $this->produto->consultarProdutos();
-
             $this->view("", "produtos", $listaProdutos);
         }
 

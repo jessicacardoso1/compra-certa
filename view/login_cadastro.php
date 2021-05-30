@@ -18,8 +18,6 @@
   </head>
   
   <body>
-    <?php require "navbar.php"; ?>
-
 
     <!-- form -->
     <div class="container login-register">
@@ -36,7 +34,7 @@
           <!-- LOGIN FORM -->
           <div class="col-md-6 login-form-1">
             <h3>Faça login na nossa loja</h3>
-            <form method="POST" action="index.php?controlador=login&acao=login">
+            <form method="POST" action="login/processaLogin">
                 <input type=hidden name=usr_tp value="cliente">
                 <div class="form-group">
                   <div class="text-field">

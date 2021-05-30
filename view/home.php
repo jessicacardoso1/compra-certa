@@ -1,7 +1,3 @@
-<?php
-  $_GET['url'] = 'home.php';
-?>
-
 <!doctype html>
 <html lang="en">
   <head>

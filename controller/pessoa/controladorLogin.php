@@ -1,17 +1,22 @@
 <?php 
 
     namespace compra_certa\controller\pessoa;
-    use compra_certa\model\pessoa\Login;
+
+use compra_certa\controller\Controlador;
+use compra_certa\model\pessoa\Login;
     use compra_certa\controller\dashboard\ControladorDashboard;
 
-    class ControladorLogin
-    {
+    class ControladorLogin extends Controlador{
 
         private $login;
 
         public function __construct(){
             $this->login = new Login();
             
+            if(count($this->parseUrl()) == 1){
+                $this->carregarNavbar();
+                $this->view("", "login_cadastro");
+            }
         }
 
         public function processaLogin(){
@@ -29,9 +34,9 @@
                 $view_failed  = "login.php";
             }
             else if ($_POST["usr_tp"] == "cliente"){
-                $view_success = "home.php";
+                $view_success = "../home";
 
-                $view_failed  = "login_cadastro.php";
+                $view_failed  = "../login";
             }
 
             // check login

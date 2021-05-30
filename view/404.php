@@ -21,8 +21,6 @@
 
   </head>
   <body>
-    <?php require "navbar.php"; ?>
-
     <!-- 404 Error Text -->
     <div class="text-center">
         <div class="error mx-auto mt-5" data-text="404">404</div>

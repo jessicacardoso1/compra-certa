@@ -1,16 +1,21 @@
+<head>
+    <title>Legumes Preciosos</title>
+    <link rel="icon" type="image/png" href="img/ref_icon.png" />
+</head>
+
 <nav class="navbar bg-salmao">
     <div class="container justify-content-around">
 
-    <a href="home.php">
+    <a href="home">
         <img src="img/_logo.png" alt="logo" width="210">
     </a>
 
-    <form class="form-inline" method="POST" action="index.php?controlador=produtos&acao=consulta">
+    <form class="form-inline" method="POST" action="index.php?controlador=produto&acao=consulta">
         <input class="form-control mr-sm-1" name="nome_produto" type="text" placeholder="Buscar produtos..." aria-label="Search">
         <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
     </form>
     
-    <a href="login_cadastro.php" class="text-white text-decoration-none">
+    <a href="login" class="text-white text-decoration-none">
         <strong>Entre ou Cadastre-se</strong>
         <i class="fa fa-user fa-lg ml-2 fa-2x"></i>
     </a>
