@@ -15,7 +15,9 @@
                 "home"    => "controladorHome",
                 "404"     => "controlador404",
                 "login"   => "pessoa/controladorLogin",
-                "produto" => "produto/controladorProduto"
+                "logout"  => "pessoa/controladorLogin",
+                "produto" => "produto/controladorProduto",
+                "cliente" => "pessoa/controladorCliente"
             );
 
             if(array_key_exists($index, $this->rota)){

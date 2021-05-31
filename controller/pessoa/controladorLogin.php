@@ -2,9 +2,8 @@
 
     namespace compra_certa\controller\pessoa;
 
-use compra_certa\controller\Controlador;
-use compra_certa\model\pessoa\Login;
-    use compra_certa\controller\dashboard\ControladorDashboard;
+    use compra_certa\controller\Controlador;
+    use compra_certa\model\pessoa\Login;
 
     class ControladorLogin extends Controlador{
 
@@ -48,8 +47,13 @@ use compra_certa\model\pessoa\Login;
                 echo '</script>';
             
                 header("location: $view_failed");
+
+                $_SESSION['usuario_logado'] = false;
                 return false;
             }
+            
+            $_SESSION['usuario_logado'] = true;
+
             // redirecionamento das telas
             if($_POST["usr_tp"] == "cliente"){
                 header("location: $view_success");
@@ -66,9 +70,16 @@ use compra_certa\model\pessoa\Login;
                 else if($check_login == 4)
                     header("location: $view_success_entregador");
             }
-
+            
             return $check_login;
         } // FIM método
+
+        public function logout(){
+            if($_SESSION['usuario_logado'])
+                session_destroy();
+
+            header("location: ../home");
+        }
 
     }
 

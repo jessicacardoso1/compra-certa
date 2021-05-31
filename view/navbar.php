@@ -13,10 +13,25 @@
             <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
         </form>
         
-        <a href="login" class="text-white text-decoration-none">
-            <strong>Entre ou Cadastre-se</strong>
-            <i class="fa fa-user fa-lg ml-2 fa-2x"></i>
-        </a>
+        <?php
+            if(!$_SESSION['usuario_logado']){
+                echo '<a href="login" class="text-white text-decoration-none">';
+                echo '<strong>Entre ou Cadastre-se</strong>';
+                echo '<i class="fa fa-user fa-lg ml-2 fa-2x"></i>';
+                echo '</a>';
+            }
+            else{
+                echo '<a href="'.DIRPAGE.'view/cliente/minhaConta" class="text-white text-decoration-none">';
+                echo '<strong>Minha conta</strong>';
+                echo '<i class="fa fa-user fa-lg ml-2 fa-2x"></i>';
+                echo '</a>';
+                
+                echo '<a href="'.DIRPAGE.'view/logout/logout" class="text-white text-decoration-none">';
+                echo '<strong>Sair</strong>';
+                echo '<i class="fa fa-sign-out fa-lg ml-2 fa-2x"></i>';
+                echo '</a>';
+            }
+        ?>
 
         <a href="carrinho.php">
             <i class="fa fa-shopping-cart fa-2x cor-teal"></i>

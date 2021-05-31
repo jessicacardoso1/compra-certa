@@ -1,10 +1,10 @@
 <?php 
 
     namespace compra_certa\controller\pessoa;
+    use compra_certa\controller\Controlador;
     use compra_certa\model\pessoa\Cliente;
 
-    class ControladorCliente
-    {
+    class ControladorCliente extends Controlador{
 
         private $cliente;
 
@@ -35,6 +35,11 @@
             header("location: home.php");
 
         }// FIM método
+
+        public function minhaConta(){
+            $this->carregarNavbar();
+            $this->view("", "minha_conta");
+        }
 
     }
 
