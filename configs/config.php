@@ -8,5 +8,6 @@ if(substr($_SERVER['DOCUMENT_ROOT'],-1)=='/'){ define('DIRREQ',"{$_SERVER['DOCUM
 define('DIRIMG', DIRPAGE."view/img/");
 define('DIRCSS', DIRPAGE."view/css/");
 define('DIRJS', DIRPAGE."view/js/");
+define('DIRACTION', DIRPAGE."view/");
 
 ?>

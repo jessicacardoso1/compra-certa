@@ -8,7 +8,7 @@
             ?>
         </a>
 
-        <form class="form-inline" method="GET" action="produto/consultar">
+        <form class="form-inline" method="GET" action="<?php echo DIRACTION.'produto/consultar'; ?>">
             <input class="form-control mr-sm-1" name="produto" type="text" placeholder="Buscar produtos..." aria-label="Search">
             <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-lg"></i></button>
         </form>
