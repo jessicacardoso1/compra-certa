@@ -1,13 +1,18 @@
 <?php
     require("pessoa.php");
 
-    class Funcionario extends Pessoa{
+    class Preparador extends Pessoa{
         
-        private $tipo;
+        private $compras;
 
-        // getters and setters
-        public function getTipo(){
-            return $this->tipo;
+        public function getCompras()
+        {
+            return $this->compras;
+        }
+
+        public function setCompras($compras)
+        {
+            $this->compras = $compras;
         }
     }
     

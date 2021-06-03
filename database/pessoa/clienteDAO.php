@@ -85,6 +85,56 @@
             }
         }// FIM método
 
+        public function editarDados($cliente){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare(
+                "UPDATE compra_certa.cliente 
+                SET email = :email, senha = :senha 
+                WHERE cpf = :cpf;"
+                );
+                $sql->bindValue(':email',$cliente->getEmail());
+                $sql->bindValue(':cpf',$cliente->getCpf());
+                $sql->bindValue(':senha',$cliente->getSenha());
+
+                $sql->execute();
+                
+                $pdo = $conn->close();
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+        public function getDadosUser($cliente){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select email, senha 
+                    from compra_certa.cliente
+                    where cpf = :cpf;
+                ");
+                $sql->bindValue(":cpf",$cliente->getCpf());
+                $sql->execute();
+                
+                $pdo = $conn->close();
+
+                $linha = $sql->fetch(PDO::FETCH_ASSOC);
+
+                return $linha;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
     }
 
 ?>

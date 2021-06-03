@@ -28,6 +28,17 @@
             return $dao->getNumTotalClientesAtivos();
         }
 
+        public function editarDados(){
+            $dao = new ClienteDAO();
+
+            $dao->editarDados($this);
+        }
+
+        public function getDadosUser(){
+            $dao = new ClienteDAO();
+
+            return $dao->getDadosUser($this);
+        }
 
         // getters and setters
         public function getEmail(){
