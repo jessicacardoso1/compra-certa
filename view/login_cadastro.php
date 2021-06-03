@@ -73,4 +73,7 @@
       </div>
     </div>
   </div>
+
+  <script src="js/login_cadastro/index.js"></script>
+  
 </main>

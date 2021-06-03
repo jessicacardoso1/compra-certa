@@ -15,18 +15,18 @@
         
         <?php
             if(!$_SESSION['usuario_logado']){
-                echo '<a href="login" class="text-white text-decoration-none">';
+                echo '<a href="'.DIRACTION.'login" class="text-white text-decoration-none">';
                 echo '<strong>Entre ou Cadastre-se</strong>';
                 echo '<i class="fa fa-user fa-lg ml-2 fa-2x"></i>';
                 echo '</a>';
             }
             else{
-                echo '<a href="'.DIRPAGE.'view/cliente/minhaConta" class="text-white text-decoration-none">';
+                echo '<a href="'.DIRACTION.'cliente/minhaConta" class="text-white text-decoration-none">';
                 echo '<strong>Minha conta</strong>';
                 echo '<i class="fa fa-user fa-lg ml-2 fa-2x"></i>';
                 echo '</a>';
                 
-                echo '<a href="'.DIRPAGE.'view/logout/logout" class="text-white text-decoration-none">';
+                echo '<a href="'.DIRACTION.'logout/logout" class="text-white text-decoration-none">';
                 echo '<strong>Sair</strong>';
                 echo '<i class="fa fa-sign-out fa-lg ml-2 fa-2x"></i>';
                 echo '</a>';

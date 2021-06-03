@@ -11,13 +11,14 @@
             $index = $url[0];
 
             $this->rota=array(
-                ""        => "controladorHome",
-                "home"    => "controladorHome",
-                "404"     => "controlador404",
-                "login"   => "pessoa/controladorLogin",
-                "logout"  => "pessoa/controladorLogin",
-                "produto" => "produto/controladorProduto",
-                "cliente" => "pessoa/controladorCliente"
+                ""         => "controladorHome",
+                "home"     => "controladorHome",
+                "404"      => "controlador404",
+                "login"    => "pessoa/controladorLogin",
+                "logout"   => "pessoa/controladorLogin",
+                "produto"  => "produto/controladorProduto",
+                "cliente"  => "pessoa/controladorCliente",
+                "carrinho" => "produto/controladorCarrinho"
             );
 
             if(array_key_exists($index, $this->rota)){
@@ -27,7 +28,7 @@
                     return "controlador404";
             }
             else
-                return "controlador404";            
+                return "controlador404";
         }
 
         public function parseUrl(){

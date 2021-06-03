@@ -36,9 +36,14 @@
 
         }// FIM método
 
-        public function minhaConta(){
+        public function minhaconta(){
             $this->carregarNavbar();
             $this->view("", "minha_conta");
+        }
+
+        public function meusEnderecos(){
+            $this->carregarNavbar();
+            $this->view("", "meus_enderecos");
         }
 
     }
