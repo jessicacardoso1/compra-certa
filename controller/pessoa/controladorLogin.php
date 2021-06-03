@@ -52,7 +52,7 @@
                 return false;
             }
             
-            $_SESSION['usuario_logado'] = true;
+            $_SESSION['usuario_logado'] = $this->login->getCpf();
 
             // redirecionamento das telas
             if($_POST["usr_tp"] == "cliente"){

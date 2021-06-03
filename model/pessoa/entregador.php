@@ -5,8 +5,14 @@
     class Entregador extends Funcionario{
         private $compras;
 
-        public function Entregador(){
-            
+        public function getCompras()
+        {
+            return $this->compras;
+        }
+
+        public function setCompras($compras)
+        {
+            $this->compras = $compras;
         }
     }
     

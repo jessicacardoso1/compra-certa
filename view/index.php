@@ -23,6 +23,9 @@
             require_once '../vendor/autoload.php';
             
             session_start();
+            if(!isset($_SESSION['usuario_logado'])){
+                $_SESSION['usuario_logado'] = '';
+            }
             $despachante = new \compra_certa\routes\Despachante;
 
             require "footer.php" 

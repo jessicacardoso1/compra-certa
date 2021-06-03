@@ -40,6 +40,25 @@
             $this->carregarNavbar();
             $this->view("", "minha_conta");
         }
+        public function minhasCompras(){
+            $this->carregarNavbar();
+            $this->view("","minhas_compras");
+        }
+
+        public function dados(){
+            $this->cliente->setCpf($_SESSION['usuario_logado']);
+            $dadosUser = $this->cliente->getDadosUser();
+            $this->view("","editar_dados_usr",$dadosUser);
+        }
+
+        public function editarDados(){
+            $this->cliente->setCpf($_SESSION['usuario_logado']);
+            $this->cliente->setEmail($_POST['email']);
+            $this->cliente->setSenha($_POST['novasenha']);
+            $this->cliente->editarDados();
+            header('location: '.DIRACTION.'/cliente/minhaConta');
+
+        }
 
     }
 
