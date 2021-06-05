@@ -34,6 +34,8 @@
                 $last_id = $pdo->lastInsertID();
 
                 $pdo = $conn->close();
+
+                $this->vincularClienteEndereco($last_id);
                 
                 return $last_id;
 
@@ -43,6 +45,39 @@
                 return false;
             }
         }// FIM método
+
+        public function vincularClienteEndereco($id_endereco){
+
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+
+               
+
+                $sql = $pdo->prepare("
+                    INSERT INTO compra_certa.cliente_has_endereco
+                    (cpf, id_endereco)
+                    VALUES
+                    (:cpf, :id_endereco);
+                ");
+                
+                $sql->bindValue("cpf", $_SESSION['usuario_logado']);
+                $sql->bindParam("id_endereco", $id_endereco);
+               
+                $sql->execute();
+                
+                $last_id = $pdo->lastInsertID();
+
+                $pdo = $conn->close();
+                
+                return $last_id;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+     } // 
 
         public function inserirCidade($_cidade){
             try{

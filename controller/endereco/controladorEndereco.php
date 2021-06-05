@@ -16,6 +16,7 @@
             $this->estado   = new Estado();
             $this->cidade   = new Cidade();
             $this->endereco = new Endereco();
+           
             
         }
         
@@ -26,7 +27,7 @@
             $this->cidade->setEstado($this->estado);
 
             $this->endereco->setCidade($this->cidade);
-            echo "nome cidade: ";
+           
             echo $this->endereco->getCidade()->getNome();
             $this->endereco->setPais($_POST['pais']);
             $this->endereco->setNome($_POST['nome']);
@@ -48,11 +49,21 @@
                 echo '<script>';
                 echo 'alert("Operação realizada com sucesso!")';
                 echo '</script>';
+                header('location:'.DIRACTION.'cliente/meusEnderecos');
 
                 return true;
             }
         }// FIM método
 
-    }
+
+        public function adicionarEndereco(){
+            $this->carregarNavbar();
+
+            $this->view("", "editar_criar_endereco");
+        }
+
+    }   
+
+        
 
 ?>
