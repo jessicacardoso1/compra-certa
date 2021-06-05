@@ -98,7 +98,7 @@
             <?php
               foreach($dados as &$c){
                 echo '<div class="card" style="width: 18rem;">';
-                echo '<img class="card-img-top news-img" src="'.DIRIMG.'itens/'.$c['IMG'].'" alt="'.$c['IMG'].'"/>';
+                echo '<img href="/cliente/dado"class="card-img-top news-img" src="'.DIRIMG.'itens/'.$c['IMG'].'" alt="'.$c['IMG'].'"/>';
                 echo '<div class="card-body">';
                 echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
                 echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO'].'</b> <small> à vista</small></h5>';

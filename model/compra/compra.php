@@ -1,134 +1,130 @@
 <?php 
+     namespace compra_certa\model\compra;
+
+    class Compra{
+
+        private $itens;
+        private $cliente;
+        private $numero;
+        private $val_total;
+        private $setor;
+        private $data;
+        private $endereco;
+        private $data_setores;
+
+        public function gerar_num_compra(){
+            
+        }
+
+        public function listarCompra(){
+            
+        }
+
+        public function editarEndereco(){
+            
+        }
+
+        public function concluirCompra(){
+            
+        }
 
 
-class Compra{
 
-    private $itens;
-    private $cliente;
-    private $numero;
-    private $val_total;
-    private $setor;
-    private $data;
-    private $endereco;
-    private $data_setores;
+        //getters and setters
 
-    public function Compra(){
         
-    }
+        public function getItens()
+        {
+            return $this->itens;
+        }
 
-    public function gerar_num_compra(){
+    
+        public function setItens($itens)
+        {
+            $this->itens = $itens;
+        }
+
+    
+        public function getCliente()
+        {
+            return $this->cliente;
+        }
+
+
+        public function setCliente($cliente)
+        {
+            $this->cliente = $cliente;
+        }
+
         
-    }
+        public function getNumero()
+        {
+            return $this->numero;
+        }
 
-    public function listarCompra(){
+    
+        public function setNumero($numero)
+        {
+            $this->numero = $numero;
+        }
+
         
-    }
+        public function getVal_total()
+        {
+            return $this->val_total;
+        }
 
-    public function editarEndereco(){
         
-    }
+        public function setVal_total($val_total)
+        {
+            $this->val_total = $val_total;
+        }
 
-    public function concluirCompra(){
         
-    }
+        public function getSetor()
+        {
+            return $this->setor;
+        }
 
+        
+        public function setSetor($setor)
+        {
+            $this->setor = $setor;
+        }
 
+        
+        public function getData()
+        {
+            return $this->data;
+        }
 
-    //getters and setters
-
-    
-    public function getItens()
-    {
-        return $this->itens;
-    }
-
-   
-    public function setItens($itens)
-    {
-        $this->itens = $itens;
-    }
-
-  
-    public function getCliente()
-    {
-        return $this->cliente;
-    }
-
-
-    public function setCliente($cliente)
-    {
-        $this->cliente = $cliente;
-    }
+        
+        public function setData($data)
+        {
+            $this->data = $data;
+        }
 
     
-    public function getNumero()
-    {
-        return $this->numero;
-    }
+        public function getEndereco()
+        {
+            return $this->endereco;
+        }
 
-   
-    public function setNumero($numero)
-    {
-        $this->numero = $numero;
-    }
+        
+        public function setEndereco($endereco)
+        {
+            $this->endereco = $endereco;
+        }
 
-    
-    public function getVal_total()
-    {
-        return $this->val_total;
-    }
-
-     
-    public function setVal_total($val_total)
-    {
-        $this->val_total = $val_total;
-    }
+        public function getDataSetores()
+        {
+            return $this->data_setores;
+        }
 
     
-    public function getSetor()
-    {
-        return $this->setor;
+        public function setDataSetores($data_setores)
+        {
+            $this->data_setores = $data_setores;
+        }
     }
-
-    
-    public function setSetor($setor)
-    {
-        $this->setor = $setor;
-    }
-
-     
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    
-    public function setData($data)
-    {
-        $this->data = $data;
-    }
-
-   
-    public function getEndereco()
-    {
-        return $this->endereco;
-    }
-
-    
-    public function setEndereco($endereco)
-    {
-        $this->endereco = $endereco;
-    }
-
-    public function getDataSetores()
-    {
-        return $this->data_setores;
-    }
-
-   
-    public function setDataSetores($data_setores)
-    {
-        $this->data_setores = $data_setores;
-    }
-}
 ?>

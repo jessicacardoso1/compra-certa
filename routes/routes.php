@@ -18,7 +18,8 @@
                 "logout"   => "pessoa/controladorLogin",
                 "produto"  => "produto/controladorProduto",
                 "cliente"  => "pessoa/controladorCliente",
-                "carrinho" => "produto/controladorCarrinho"
+                "carrinho" => "produto/controladorCarrinho",
+                "compra"   => "compra/controladorCompra"
             );
 
             if(array_key_exists($index, $this->rota)){

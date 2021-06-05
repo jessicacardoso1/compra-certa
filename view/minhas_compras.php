@@ -11,65 +11,7 @@
         </li>    
       </ul>
     </div>
-
-      
     <!--compra -->
-    <div class="container">
-        <div class="card" style="margin-top: 50px">
-            <div class="row">
-                <p class="text-compras text-color text-monospace">Compra Nº 0051</p>
-            </div>
-            <div class="card-body">
-                <div class="row align-compras">
-                    <div class="col-md-2">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                          <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                          </ol>
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img src="img/itens/pimentao.webp" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="img/itens/caqui.jpeg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="img/itens/laranja.jpg" class="d-block w-100" alt="...">
-                            </div>
-                          </div>
-                          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                          </a>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                      <small class="text-compras"><p>Resumo da compra:</p></small>
-                      <small><p>Compra: 0051</p></small>
-                      <small><p>Data do compra: 16/04/2021</p></small>
-                      <small><p>Valor total: R$ 36,88</p></small>                     
-                      <button type="button" class="btn " style="display: inline; text-decoration: underline" data-toggle="modal" data-target="#myModal">
-                        Ver detalhes
-                        </button>
-
-                    </div>
-                    <div class="col-md-5">
-                      <a href="avaliar_compras.php" class="btn btn-teal my-account-btn w-75">Avaliar compra</a>
-                      <a href="rastrear_compras.php" class="btn btn-teal my-account-btn w-75">Rastrear compra</a>
-                      <a href="#" class="btn btn-teal my-account-btn w-75">Comprar novamente</a>
-                    </div>
-                </div>
-            </div>
-          </div>
-        
-    </div>
-    
     <div class="container">
       <div class="card" style="margin-top: 50px">
           <div class="row">
@@ -116,8 +58,8 @@
 
                   </div>
                   <div class="col-md-5">
-                    <a href="avaliar_compras.php" class="btn btn-teal my-account-btn w-75">Avaliar compra</a>
-                    <a href="rastrear_compras.php" class="btn btn-teal my-account-btn w-75">Rastrear compra</a>
+                    <a href=<?php echo DIRACTION.'compra/avaliar'?> class="btn btn-teal my-account-btn w-75">Avaliar compra</a>
+                    <a href=<?php echo DIRACTION.'compra/rastrear'?> class="btn btn-teal my-account-btn w-75">Rastrear compra</a>
                     <a href="#" class="btn btn-teal my-account-btn w-75">Comprar novamente</a>
                   </div>
               </div>
