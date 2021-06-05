@@ -18,12 +18,12 @@
             $rota_controller = $this->getRota();
             #tratamento na rota
             $rota_controller = str_replace("/controlador", "\\controlador", $rota_controller);
-            $name_space ="compra_certa\\controller\\{$rota_controller}";
+            $name_space = "compra_certa\\controller\\{$rota_controller}";
             #echo 'namespace: '.$name_space.'<br>';
 
             $this->objeto_controller = new $name_space;
 
-            if(isset($this->parseUrl()[1])){
+            if(isset($this->parseUrl()[1]) && $this->parseUrl()[1] != '/'){
                 $this->addMetodo();
             }
         }
@@ -34,6 +34,9 @@
                 $this->metodo = "{$this->parseUrl()[1]}";
                 $this->addParametro();
                 call_user_func_array([$this->objeto_controller, $this->metodo], $this->parametro);
+            }
+            else{
+                $this->objeto_controller = new \compra_certa\controller\Controlador404;
             }
         }
 
