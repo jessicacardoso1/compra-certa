@@ -19,7 +19,8 @@
                 "produto"  => "produto/controladorProduto",
                 "cliente"  => "pessoa/controladorCliente",
                 "carrinho" => "produto/controladorCarrinho",
-                "compra"   => "compra/controladorCompra"
+                "compra"   => "compra/controladorCompra",
+                "endereco" => "endereco/controladorEndereco"
             );
 
             if(array_key_exists($index, $this->rota)){

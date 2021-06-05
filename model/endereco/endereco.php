@@ -32,27 +32,31 @@
             $this->pais = $pais;
         }
 
+         
         public function getNome()
         {
-            return $this->nome;
+                return $this->nome;
         }
-        
+
         
         public function setNome($nome)
         {
-            $this->nome = $nome;
+                $this->nome = $nome;
+
+            
         }
 
-    
+       
         public function getTelefone()
         {
-            return $this->telefone;
+                return $this->telefone;
         }
 
-    
+        
         public function setTelefone($telefone)
         {
-            $this->telefone = $telefone;
+                $this->telefone = $telefone;
+   
         }
 
         
@@ -127,6 +131,8 @@
             $this->numero = $numero;
         }
         
+
+       
     }
 
 ?>

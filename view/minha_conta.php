@@ -20,7 +20,7 @@
           <i class="fa fa-home fa-3x" aria-hidden="true"></i>
           <h5 class="card-title">Endereços</h5>
           <p class="card-text txt-color-grey">Gerencie seus endereços</p> <br>
-          <a href="meus_enderecos.php" class="btn btn-teal my-account-btn">Continuar</a>
+          <a href="<?php echo DIRACTION.'cliente/meusEnderecos';?>" class="btn btn-teal my-account-btn">Continuar</a>
         </div>
       </div>
     </div>
