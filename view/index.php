@@ -28,7 +28,7 @@
             }
             $despachante = new \compra_certa\routes\Despachante;
 
-            require "footer.php" 
+            require "footer.php"
         ?>
 
         <script src="js/index.js"></script>
