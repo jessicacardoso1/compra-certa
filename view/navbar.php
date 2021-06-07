@@ -26,7 +26,7 @@
                 echo '<i class="fa fa-user fa-lg ml-2 fa-2x"></i>';
                 echo '</a>';
                 
-                echo '<a href="'.DIRACTION.'logout/logout" class="text-white text-decoration-none">';
+                echo '<a href="'.DIRACTION.'login/logout" class="text-white text-decoration-none">';
                 echo '<strong>Sair</strong>';
                 echo '<i class="fa fa-sign-out fa-lg ml-2 fa-2x"></i>';
                 echo '</a>';

@@ -15,7 +15,6 @@
                 "home"     => "controladorHome",
                 "404"      => "controlador404",
                 "login"    => "pessoa/controladorLogin",
-                "logout"   => "pessoa/controladorLogin",
                 "produto"  => "produto/controladorProduto",
                 "cliente"  => "pessoa/controladorCliente",
                 "carrinho" => "produto/controladorCarrinho",

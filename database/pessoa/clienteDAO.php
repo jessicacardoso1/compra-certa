@@ -109,6 +109,7 @@
                 return false;
             }
         }
+        
         public function getDadosUser($cliente){
             try{
                 $conn = new Conn();
@@ -119,7 +120,8 @@
                     from compra_certa.cliente
                     where cpf = :cpf;
                 ");
-                $sql->bindValue(":cpf",$cliente->getCpf());
+                $sql->bindValue(":cpf", $cliente->getCpf());
+
                 $sql->execute();
                 
                 $pdo = $conn->close();
@@ -133,53 +135,8 @@
                 echo $e;
                 return false;
             }
-
-            
         }
 
-    } 
-        public function  inserirEndereco($cliente){
-            try{
-                $conn = new Conn();
-                $pdo = $conn->connect();
-                
-                $sql = $pdo->prepare("
-                INSERT INTO compra_certa.endereco
-                (pais,
-                nome,
-                cep,
-                bairro,
-                endereco,
-                complemento,
-                id_cidade,
-                numero)
-                VALUES
-                (<{pais: Brasil}>,
-                <{nome: }>,
-                <{cep: }>,
-                <{bairro: }>,
-                <{endereco: }>,
-                <{complemento: N/A}>,
-                <{id_cidade: }>,
-                <{numero: S/N}>);
-                ");
-                $sql->bindValue(":cpf",$cliente->getCpf());
-                $sql->execute();
-                
-                $pdo = $conn->close();
+    }
 
-                $linha = $sql->fetch(PDO::FETCH_ASSOC);
-
-                return $linha;
-
-            }
-            catch(PDOException $e){
-                echo $e;
-                return false;
-            }
-
-            
-        }
-
-    } 
 ?>

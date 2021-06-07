@@ -42,13 +42,15 @@
         }
         public function minhasCompras(){
             $this->carregarNavbar();
-            $this->view("","minhas_compras");
+            $this->view("", "minhas_compras");
         }
 
         public function dados(){
+            $this->carregarNavbar();
             $this->cliente->setCpf($_SESSION['usuario_logado']);
             $dadosUser = $this->cliente->getDadosUser();
-            $this->view("","editar_dados_usr",$dadosUser);
+            // var_dump($dadosUser);
+            $this->view("", "editar_dados_usr", $dadosUser);
         }
 
         public function editarDados(){

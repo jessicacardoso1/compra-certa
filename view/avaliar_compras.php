@@ -25,11 +25,10 @@
           <img src="<?php echo DIRIMG.'star0.png';?>" onclick="Avaliar(3)" id="s3" class="rating-img-star">
           <img src="<?php echo DIRIMG.'star0.png';?>" onclick="Avaliar(4)" id="s4" class="rating-img-star">
           <img src="<?php echo DIRIMG.'star0.png';?>" onclick="Avaliar(5)" id="s5" class="rating-img-star">
-          <!--
-            <p id="rating">0</p>
-          -->
-          
       </div>
+
+      <input type=hidden name=rating id=rating value="">
+
       <h3 class="text-color aling-left text-monospace">Adicione um título:</h3>
       <input type="text" class="form-control aling-left" placeholder="Título do seu comentário" id="titulo" name="titulo">
       <h3 class="text-color aling-left text-monospace" >Adicione um comentário:</h3>
@@ -37,11 +36,6 @@
       <button type="button" class="btn cor-bg-teal font-weight-bold text-white aling-left w-50 mb-2 mt-4">Enviar</button>
     </form>
     
-    <!-- form -->
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/index.js"></script>
-    <script src="jquerry.js"></script>
-    <script src="js/avaliacao.js"></script>
+    <!-- js -->
+    <script src="<?php echo DIRJS.'avaliacao.js'; ?>"></script>
 </main>
