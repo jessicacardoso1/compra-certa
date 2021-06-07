@@ -10,6 +10,7 @@
         private $setor;
         private $data;
         private $endereco;
+        private $avaliacao;
         private $data_setores;
 
         public function gerar_num_compra(){
@@ -125,6 +126,16 @@
         public function setDataSetores($data_setores)
         {
             $this->data_setores = $data_setores;
+        }
+
+        public function getAvaliacao()
+        {
+                return $this->avaliacao;
+        }
+
+        public function setAvaliacao($avaliacao)
+        {
+                $this->avaliacao = $avaliacao;
         }
     }
 ?>
