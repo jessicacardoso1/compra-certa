@@ -52,8 +52,6 @@
                 $conn = new Conn();
                 $pdo = $conn->connect();
 
-               
-
                 $sql = $pdo->prepare("
                     INSERT INTO compra_certa.cliente_has_endereco
                     (cpf, id_endereco)
