@@ -60,7 +60,10 @@
 
         public function meusEnderecos(){
             $this->carregarNavbar();
-            $this->view("", "meus_enderecos");
+            
+            $endereco = new \compra_certa\model\endereco\Endereco;
+            $lista_enderecos = $endereco->getEnderecosViaCpf($_SESSION['usuario_logado']);
+            $this->view("", "meus_enderecos", $lista_enderecos);
         }
 
     }

@@ -167,6 +167,82 @@
             }
         }// FIM método
 
+        public function getEnderecosViaCpf($_cpf){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select endereco.id_endereco as id, endereco.pais as pais, endereco.nome as nome, endereco.cep as cep, endereco.bairro as bairro, endereco.endereco as endereco, endereco.complemento as complemento, endereco.numero as numero, endereco.telefone as telefone, cidade.nome as cidade_nome, estado.nome as estado_nome, estado.sigla as estado_sigla
+                    from compra_certa.endereco join compra_certa.cliente_has_endereco on cliente_has_endereco.id_endereco = endereco.id_endereco
+                    join compra_certa.cidade on endereco.id_cidade = cidade.id_cidade
+                    join compra_certa.estado on cidade.id_estado = estado.id_estado
+                    where cliente_has_endereco.cpf = :cpf;
+                ");
+                
+                $sql->bindParam("cpf", $_cpf);
+
+                $sql->execute();
+
+                $enderecos = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                        "ID_ENDERECO"  => $linha['id'],
+                        "PAIS"         => $linha['pais'],
+                        "NOME"         => $linha['nome'],
+                        "CEP"          => $linha['cep'],
+                        "BAIRRO"       => $linha['bairro'],
+                        "ENDERECO"     => $linha['endereco'],
+                        "COMPLEMENTO"  => $linha['complemento'],
+                        "NUMERO"       => $linha['numero'],
+                        "TELEFONE"     => $linha['telefone'],
+                        "CIDADE_NOME"  => $linha['cidade_nome'],
+                        "ESTADO_NOME"  => $linha['estado_nome'],
+                        "ESTADO_SIGLA" => $linha['estado_sigla']
+                    );
+
+                    array_push($enderecos, $arr);
+                }
+                
+                $pdo = $conn->close();
+
+                return $enderecos;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
+        public function removerEndereco($_id_endereco){
+            try{
+                $conn = new Conn();
+                #$pdo = $conn->connect();
+                
+                /* 
+                    método um tanto complicado de desenvolve por envolver 
+                    uma cascata de chaves. endereco está em várias tabelas...
+                    vale a pena remover o endereco?
+                */
+
+                #$sql = $pdo->prepare("
+                #    delete from endereco;
+                #");
+                
+                #$sql->bindParam("cpf", $_cpf);
+
+                #$sql->execute();
+
+                #$pdo = $conn->close();
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
     }    
 
 ?>

@@ -20,6 +20,18 @@
 
             return $dao->efetuarCadastro($this);
         }
+
+        public function getEnderecosViaCpf($_cpf){
+            $dao = new EnderecoDAO();
+
+            return $dao->getEnderecosViaCpf($_cpf);
+        }
+
+        public function removerEndereco($_id_endereco){
+            $dao = new EnderecoDAO();
+
+            return $dao->removerEndereco($_id_endereco);
+        }
         
         //getters and setters
         public function getPais()
