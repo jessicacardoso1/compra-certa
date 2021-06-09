@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-body d-flex justify-content-center">
             <h5 class="card-text my-adress-txt">Adicionar novo endereço</h5>
-            <a href="<?php echo DIRACTION.'endereco/adicionarEndereco'; ?>" style="color:black;"> <i class="fa fa-plus fa-3x" aria-hidden="true"></i></a>
+            <a href="<?php echo DIRACTION.'endereco/adicionarEndereco';?>" style="color:black;"> <i class="fa fa-plus fa-3x" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
