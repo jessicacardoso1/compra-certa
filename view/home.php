@@ -95,7 +95,9 @@
                         echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
                         echo '<div class="card-text text-muted"><s>De: R$ '.$c['PRECO'].'</s> por:</div>';
                         echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO_NOVO_PRODUTO'].'</b><small> à vista</small></h5>';
-                        echo '<button class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>';
+                        echo '<form action="'.DIRACTION.'carrinho/inserirItem/'.$c['ID_PRODUTO'].'">';
+                        echo '<button type="submit" class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>';
+                        echo '</form>';
                         echo '</div>';
                         echo '</div>';
                         echo '</div>';
