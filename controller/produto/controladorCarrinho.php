@@ -45,8 +45,19 @@
             header('location: '.DIRACTION.'home');
         }
 
+        public function excluirItem($_item){
+            $p = new \compra_certa\model\produto\Produto;
+            $p->setCodigo($_item);
+
+            $i = new \compra_certa\model\produto\Item;
+            $i->setProduto($p);
+
+
+            $this->carrinho->excluirItem($i);
+
+            header('location: '.DIRACTION.'carrinho/meuCarrinho');
+        }
+
     }
-
-
 
 ?>

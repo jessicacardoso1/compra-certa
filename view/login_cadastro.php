@@ -1,5 +1,5 @@
 <main>
-  <div class="container login-register">
+  <div class="container mt-5 w-50" style="margin-right: 260px;">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>

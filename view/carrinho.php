@@ -32,7 +32,7 @@
             
             echo '<div class="row">';
             echo '<div class="col-sm-7">';
-            echo '<a href="" class="text-dark"><small>Excluir</small></a>';
+            echo '<a href="'.DIRACTION.'carrinho/excluirItem/'.$i->getProduto()->getCodigo().'" class="text-dark"><small>Excluir</small></a>';
             echo '<a class="text-decoration-none text-dark ml-1 mr-1"><small>|</small></a>';
             echo '<a href="" class="text-dark"><small>Salvar para mais tarde</small></a>';
             echo '</div>';
