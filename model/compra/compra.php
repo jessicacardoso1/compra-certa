@@ -1,5 +1,6 @@
 <?php 
      namespace compra_certa\model\compra;
+     use compra_certa\database\compra\CompraDAO;
 
     class Compra{
 
@@ -17,7 +18,10 @@
             
         }
 
-        public function listarCompra(){
+        public function listarCompras($cliente){
+            $dao = new CompraDAO();
+            
+            return $dao->listarCompras($cliente);
             
         }
 

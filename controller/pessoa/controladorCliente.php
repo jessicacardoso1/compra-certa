@@ -40,10 +40,6 @@
             $this->carregarNavbar();
             $this->view("", "minha_conta");
         }
-        public function minhasCompras(){
-            $this->carregarNavbar();
-            $this->view("", "minhas_compras");
-        }
 
         public function dados(){
             $this->carregarNavbar();

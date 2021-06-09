@@ -10,7 +10,7 @@
           <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
           <h5 class="card-title">Minhas Compras</h5>
           <p class="card-text txt-color-grey">Veja o status da sua compra, devolva ou compre os produtos novamente</p>
-          <a href="<?php echo DIRACTION.'cliente/minhascompras';?>" class="btn btn-teal my-account-btn">Continuar</a>
+          <a href="<?php echo DIRACTION.'compra/listarCompras';?>" class="btn btn-teal my-account-btn">Continuar</a>
         </div>
       </div>
     </div>

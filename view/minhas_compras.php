@@ -1,3 +1,6 @@
+<?php
+var_dump($dados);
+?>
 <main>
     <!--MENU FIXO-->
     <div class="container" style="margin-left: 15%;">
