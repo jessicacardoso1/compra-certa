@@ -61,7 +61,7 @@
                             #listagem de categorias....
                             $lista_categorias = $dados;
                             foreach($lista_categorias as &$c){
-                                echo '<li><a href="" title="">'.$c['NOME_CATEGORIA'].'<span class="pull-right">'.$c['QNT_PRODUTOS'].'</span></a></li>';
+                                echo '<li><a href="'.DIRACTION.'produto/consultar?produto='.$c['NOME_CATEGORIA'].'" title="">'.$c['NOME_CATEGORIA'].'<span class="pull-right">'.$c['QNT_PRODUTOS'].'</span></a></li>';
                             }
                         ?>
                     </ul>
