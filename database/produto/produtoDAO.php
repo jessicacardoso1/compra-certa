@@ -48,7 +48,7 @@
                 $pdo = $conn->connect();
 
                 $sql = $pdo->prepare("
-                    select pr.nome as n, pp.novo_valor as nv, p.nome as pn, p.preco as p, p.nome_imagem as ni
+                    select p.id_produto as id, pr.nome as n, pp.novo_valor as nv, p.nome as pn, p.preco as p, p.nome_imagem as ni
                     from
                     compra_certa.promocao as pr join compra_certa.promocao_produto as pp on pr.id_promocao = pp.id_promocao
                     join
@@ -63,6 +63,7 @@
                 $promocao = array();
                 while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
                     $arr = array(
+                        "ID_PRODUTO"         => $linha['id'],
                         "NOME_PROMOCAO"      => $linha['n'],
                         "PRECO_NOVO_PRODUTO" => $linha['nv'],
                         "NOME_PRODUTO"       => $linha['pn'],

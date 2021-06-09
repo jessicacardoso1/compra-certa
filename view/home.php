@@ -87,7 +87,9 @@
                       function exibirItens($c){
                         echo '<div class="col-md-4 mb-3">';
                         echo '<div class="card offs-card-size">';
+                        #echo '<a href="'.DIRACTION.'produto/detalhes/'.$c['ID_PRODUTO'].'">';
                         echo '<img class="img-fluid offs-img-size" src="'.DIRIMG.'itens/'.$c['IMG'].'">';
+                        #echo '</a>';
                         echo '<div class="card-body">';
                         echo '<div class="form-group">';
                         echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
@@ -114,7 +116,7 @@
   <div class="container-fluid">
     <div class="produtos d-flex flex-wrap">
       <div class="card mais-vendidos-card-size">
-        <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
+            <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
             <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Batatas</p>
               <h5 class="text-success mb-2"><b>R$ 8,99</b> <small> à vista</small></h5>

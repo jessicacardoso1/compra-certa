@@ -6,10 +6,6 @@
         private $itens = array();
         private $valor_total;
 
-        public function __construct(){
-            $this->cliente = $_SESSION['usuario_logado'];
-        }
-
         public function inserirProduto(){
 
         }

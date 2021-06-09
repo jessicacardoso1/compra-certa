@@ -242,5 +242,6 @@ $dados = $dados[0];
           </div>
       </div>
 
-
+    <script src="<?php echo DIRJS.'produtos/produtos-detalhes.js'; ?>"></script>
+  
 </main>
