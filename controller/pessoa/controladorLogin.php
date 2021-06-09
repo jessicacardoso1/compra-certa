@@ -76,7 +76,8 @@
 
         public function logout(){
             if($_SESSION['usuario_logado'])
-                session_destroy();
+                $_SESSION['usuario_logado'] = '';
+                #session_destroy();
 
             header("location: ../home");
         }

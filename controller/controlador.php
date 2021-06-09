@@ -1,7 +1,7 @@
 <?php
 
     namespace compra_certa\controller;
-    use  compra_certa\controller\produto\ControladorCategoria;
+    use compra_certa\controller\produto\ControladorCategoria;
 
     class Controlador{
 
@@ -17,7 +17,15 @@
 
         public function carregarNavbar(){
             $cn = new ControladorCategoria();
-            $cn->processaQntProdutosPorCategoria();
+            $carrinho = new \compra_certa\model\produto\Carrinho;
+
+            $qnt_produtos = $carrinho->getQntProdutos();
+            $categorias = $cn->processaQntProdutosPorCategoria();
+
+            $dados_navbar[] = $categorias;
+            $dados_navbar[] = $qnt_produtos;
+
+            $this->view("", "navbar", $dados_navbar);
         }
 
         public function parseUrl(){

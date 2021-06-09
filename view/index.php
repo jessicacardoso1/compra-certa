@@ -28,7 +28,15 @@
                 $_SESSION['usuario_logado'] = '';
             }
 
+            #if(!isset($_SESSION['carrinho'])){
+            #    $_SESSION['carrinho'] = array();
+            #}
+
             $despachante = new \compra_certa\routes\Despachante;
+
+            #$carrinho = new \compra_certa\model\produto\Carrinho;
+            #echo $carrinho->getTotal();
+            #$carrinho->__destruct();
 
             require "footer.php";
         ?>

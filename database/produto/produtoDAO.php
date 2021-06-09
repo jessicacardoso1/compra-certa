@@ -89,7 +89,7 @@
                 $pdo = $conn->connect();
                 
                 $sql = $pdo->prepare( 
-                    "select p.nome as pn, p.preco as pp, p.nome_imagem as pni, c.nome as cn, p.descricao as d
+                    "select p.id_produto as id, p.nome as pn, p.preco as pp, p.nome_imagem as pni, c.nome as cn, p.descricao as d
                 from (compra_certa.categoria as c join compra_certa.produto as p on c.id_categoria = p.id_categoria)
                 where p.id_produto=:id_produto"
                 );
@@ -101,7 +101,7 @@
                 $produtos = array();
                 while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
                     $arr = array(
-                       
+                        "ID"              => $linha['id'],
                         "NOME_PRODUTO"    => $linha['pn'],
                         "PRECO"           => $linha['pp'],
                         "IMG"             => $linha['pni'],

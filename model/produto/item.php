@@ -1,9 +1,15 @@
 <?php
+
+    namespace compra_certa\model\produto;
+
     class Item{
         
         private $produto;
         private $quantidade;
         
+        public function subTotal(){
+            return $this->produto->getPreco() * $this->quantidade;
+        }
 
         public function getProduto()
         {
@@ -24,5 +30,6 @@
         {
             $this->quantidade = $quantidade;
         }
+
     }
 ?>

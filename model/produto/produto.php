@@ -5,11 +5,13 @@
 
     class Produto{
         
+        private $codigo;
         private $nome;
         private $descricao;
-        private $categoria;
+        private $categoria;  
         private $preco;
         private $disponivel;
+        private $img;
 
         public function consultarProdutos(){
 			$dao = new ProdutoDAO();
@@ -29,6 +31,15 @@
 			return $dao->consultarProdutoViaID($id_produto);
         }
 
+        public function getCodigo()
+        {
+            return $this->codigo;
+        }
+
+        public function setCodigo($codigo)
+        {
+            $this->codigo = $codigo;
+        }
 
         public function getNome()
         {
@@ -80,6 +91,15 @@
             $this->disponivel = $disponivel;
         }
 
+        public function getImg()
+        {
+            return $this->img;
+        }
+
+        public function setImg($img)
+        {
+            $this->img = $img;
+        }
 
     }
 ?>

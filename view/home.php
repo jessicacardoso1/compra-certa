@@ -119,10 +119,12 @@
             <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
             <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Batatas</p>
-              <h5 class="text-success mb-2"><b>R$ 8,99</b> <small> à vista</small></h5>
+              <h5 class="text-success mb-2"><b>R$ 2,38</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <button type="button" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos1', 'sub');">-</button>
+                <form action="carrinho/inserirItem/4">
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
+                </form>
+                <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos1', 'sub');">-</button>
                 <input id="btnMaisVendidos1" type="number" class="form-control text-center w-25" value="1">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos1', 'sum');">+</button>
               </div>
@@ -133,10 +135,12 @@
           <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
           <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Batatas</p>
-              <h5 class="text-success mb-2"><b>R$ 8,99</b> <small> à vista</small></h5>
+              <h5 class="text-success mb-2"><b>R$ 2,38</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <button type="button" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos2', 'sub');">-</button>
+                <form action="carrinho/inserirItem/4">  
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
+                </form>
+                <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos2', 'sub');">-</button>
                 <input id="btnMaisVendidos2" type="number" class="form-control text-center w-25" value="1">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos2', 'sum');">+</button>
               </div>
@@ -147,10 +151,12 @@
           <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
           <div class="card-body">
             <p class="card-text offs-text-name text-monospace">Batatas</p>
-            <h5 class="text-success mb-2"><b>R$ 8,99</b> <small> à vista</small></h5>
+            <h5 class="text-success mb-2"><b>R$ 2,38</b> <small> à vista</small></h5>
             <div class="btn-group" role="group" aria-label="Exemplo básico">
-              <button type="button" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-              <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos3', 'sub');">-</button>
+              <form action="carrinho/inserirItem/4">
+                <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
+              </form>
+              <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos3', 'sub');">-</button>
               <input id="btnMaisVendidos3" type="number" class="form-control text-center w-25" value="1">
               <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos3', 'sum');">+</button>
             </div>
@@ -160,11 +166,13 @@
         <div class="card mais-vendidos-card-size">
             <img class="card-img-top mais-vendidos-img-size" src="img/itens/cebola.jpg" alt="Livros em promoção">
             <div class="card-body">
-              <p class="card-text offs-text-name text-monospace">Cebolas</p>
-              <h5 class="text-success mb-2"><b>R$ 9,99</b> <small> à vista</small></h5>
+              <p class="card-text offs-text-name text-monospace">Cebola</p>
+              <h5 class="text-success mb-2"><b>R$ 6,99</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <button type="button" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos4', 'sub');">-</button>
+                <form action="carrinho/inserirItem/8">
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
+                </form>
+                <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos4', 'sub');">-</button>
                 <input id="btnMaisVendidos4" type="number" class="form-control text-center w-25" value="1">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos4', 'sum');">+</button>
               </div>
@@ -175,10 +183,12 @@
             <img class="card-img-top mais-vendidos-img-size" src="img/itens/caqui.jpeg" alt="Livros em promoção">
             <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Caqui</p>
-              <h5 class="text-success mb-2"><b>R$ 18,99</b> <small> à vista</small></h5>
+              <h5 class="text-success mb-2"><b>R$ 15,49</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                  <button type="button" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                  <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos5', 'sub');">-</button>
+                <form action="carrinho/inserirItem/6">
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
+                </form>
+                  <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos5', 'sub');">-</button>
                   <input id="btnMaisVendidos5" type="number" class="form-control text-center w-25" value="1">
                   <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos5', 'sum');">+</button>
                 </div>
@@ -189,10 +199,12 @@
           <img class="card-img-top mais-vendidos-img-size" src="img/itens/caqui.jpeg" alt="Livros em promoção">
           <div class="card-body">
             <p class="card-text offs-text-name text-monospace">Caqui</p>
-            <h5 class="text-success mb-2"><b>R$ 18,99</b> <small> à vista</small></h5>
+            <h5 class="text-success mb-2"><b>R$ 15,49</b> <small> à vista</small></h5>
             <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <button type="button" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos6', 'sub');">-</button>
+                <form action="carrinho/inserirItem/6">
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
+                </form>
+                <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos6', 'sub');">-</button>
                 <input id="btnMaisVendidos6" type="number" class="form-control text-center w-25" value="1">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos6', 'sum');">+</button>
               </div>
@@ -214,9 +226,11 @@
               <img class="card-img-top news-img"src="img/itens/soja.jpg" alt="Livros em promoção">
             </a>
               <div class="card-body">
-                <p class="card-text offs-text-name text-monospace">Soja em grãos 500g</p>
-                <h5 class="text-success mb-2"><b>R$ 18,99</b> <small> à vista</small></h5>
-                <button type="button" class="btn cor-bg-teal text-white w-100">Comprar</button>             
+                <p class="card-text offs-text-name text-monospace">Soja em grãos</p>
+                <h5 class="text-success mb-2"><b>R$ 3,29</b> <small> à vista</small></h5>
+                <form action="carrinho/inserirItem/27">
+                  <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
+                </form>
               </div>
           </div>
 
@@ -224,36 +238,44 @@
             <img class="card-img-top news-img" src="img/itens/aveia.jpg" alt="Livros em promoção"
             >
             <div class="card-body">
-                <p class="card-text offs-text-name text-monospace">Aveia em flocos 500g</p>
-                <h5 class="text-success mb-2"><b>R$ 8,89</b> <small> à vista</small></h5>
-                <button type="button" class="btn cor-bg-teal text-white w-100">Comprar</button>             
+                <p class="card-text offs-text-name text-monospace">Aveia em flocos</p>
+                <h5 class="text-success mb-2"><b>R$ 6,99</b> <small> à vista</small></h5>
+                <form action="carrinho/inserirItem/2">
+                  <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
+                </form>
             </div>
           </div>
 
           <div class="card" style="width: 18rem;">
             <img class="card-img-top news-img" src="img/itens/feijao.jpg" alt="Livros em promoção"/>
             <div class="card-body">
-              <p class="card-text offs-text-name text-monospace">Feijão carioca 500g</p>
-              <h5 class="text-success mb-2"><b>R$ 6,39</b> <small> à vista</small></h5>
-              <button type="button" class="btn cor-bg-teal text-white w-100">Comprar</button>             
+              <p class="card-text offs-text-name text-monospace">Feijão carioca</p>
+              <h5 class="text-success mb-2"><b>R$ 6,49</b> <small> à vista</small></h5>
+              <form action="carrinho/inserirItem/18">
+                <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
+              </form>
             </div>
           </div>
 
           <div class="card" style="width: 18rem;">
               <img class="card-img-top news-img" src="img/itens/quinoa.jpg" alt="Livros em promoção" />
               <div class="card-body">
-                <p class="card-text offs-text-name text-monospace">Quinoa 500g</p>
-                <h5 class="text-success mb-2"><b>R$ 5,89</b> <small> à vista</small></h5>
-                <button type="button" class="btn cor-bg-teal text-white w-100">Comprar</button>                               
+                <p class="card-text offs-text-name text-monospace">Quinoa</p>
+                <h5 class="text-success mb-2"><b>R$ 7,89</b> <small> à vista</small></h5>
+                <form action="carrinho/inserirItem/25">
+                  <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>                               
+                </form>
               </div>
           </div>
 
           <div class="card" style="width: 18rem;">
               <img class="card-img-top news-img" src="img/itens/tapioca.jpg" alt="Livros em promoção"/>
               <div class="card-body">
-                <p class="card-text offs-text-name text-monospace">Tapioca 500g</p>
-                <h5 class="text-success mb-2"><b>R$ 3,59</b> <small> à vista</small></h5>
-                <button type="button" class="btn cor-bg-teal text-white w-100">Comprar</button>             
+                <p class="card-text offs-text-name text-monospace">Tapioca</p>
+                <h5 class="text-success mb-2"><b>R$ 2,49</b> <small> à vista</small></h5>
+                <form action="carrinho/inserirItem/29">
+                  <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
+                </form>
               </div>
           </div>
           </div>

@@ -31,7 +31,6 @@
         public function detalhes($id_produto){
             $detalheproduto = $this->produto->consultarProdutoViaID($id_produto);          
             $this->view("", "produtos_detalhes", $detalheproduto);
-        
         }
 
 

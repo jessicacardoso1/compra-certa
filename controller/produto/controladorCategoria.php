@@ -17,8 +17,10 @@
         }
 
         public function processaQntProdutosPorCategoria(){
+            return $this->categoria->getQntProdutosPorCategoria();
+
             #$this->paginaNaoEncontrada();
-            $this->view("", "navbar", $this->categoria->getQntProdutosPorCategoria());
+            #$this->view("", "navbar", $this->categoria->getQntProdutosPorCategoria());
         }
 
     }

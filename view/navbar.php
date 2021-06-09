@@ -33,9 +33,12 @@
             }
         ?>
 
-        <a href="<?php echo DIRACTION.'carrinho';?>">
+        <a href="<?php echo DIRACTION.'carrinho/meuCarrinho';?>">
             <i class="fa fa-shopping-cart fa-2x cor-teal"></i>
-            <span class="badge badge-primary badge-pill adm-conf-emb-span ml-1">5</span>
+            <?php 
+                $qnt_produtos = $dados[1];
+                echo '<span class="badge badge-primary badge-pill adm-conf-emb-span ml-1">'.$qnt_produtos.'</span>';
+            ?>
         </a>
 
         </div>
@@ -59,7 +62,7 @@
                     <ul class="list-group">
                         <?php
                             #listagem de categorias....
-                            $lista_categorias = $dados;
+                            $lista_categorias = $dados[0];
                             foreach($lista_categorias as &$c){
                                 echo '<li><a href="'.DIRACTION.'produto/consultar?produto='.$c['NOME_CATEGORIA'].'" title="">'.$c['NOME_CATEGORIA'].'<span class="pull-right">'.$c['QNT_PRODUTOS'].'</span></a></li>';
                             }
