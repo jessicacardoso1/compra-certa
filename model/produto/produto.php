@@ -23,6 +23,12 @@
 			return $dao->getPromocao($_id_promocao);
         }
 
+        public function consultarProdutoViaID($id_produto){
+            $dao = new ProdutoDAO();
+			
+			return $dao->consultarProdutoViaID($id_produto);
+        }
+
 
         public function getNome()
         {
@@ -73,6 +79,7 @@
         {
             $this->disponivel = $disponivel;
         }
+
 
     }
 ?>

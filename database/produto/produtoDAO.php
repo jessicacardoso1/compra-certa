@@ -11,7 +11,7 @@
                 $conn = new Conn();
                 $pdo = $conn->connect();
 
-                $str_sql = "select p.nome as pn, p.preco as pp, p.nome_imagem as pni, c.nome as cn, p.disponivel as pd
+                $str_sql = "select p.id_produto as id, p.nome as pn, p.preco as pp, p.nome_imagem as pni, c.nome as cn, p.disponivel as pd
                 from (compra_certa.categoria as c join compra_certa.produto as p on c.id_categoria = p.id_categoria)
                 where p.nome like '%:nome_produto%' or c.nome like '%:nome_produto%'";
                 $str_sql = str_replace(":nome_produto", $_produto->getNome(), $str_sql);
@@ -23,6 +23,7 @@
                 $produtos = array();
                 while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
                     $arr = array(
+                        "ID"              => $linha['id'],
                         "NOME_PRODUTO"    => $linha['pn'],
                         "PRECO"           => $linha['pp'],
                         "IMG"             => $linha['pni'],
@@ -80,6 +81,46 @@
                 return array();
             }
         }
+
+        public function consultarProdutoViaID($id_produto){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare( 
+                    "select p.nome as pn, p.preco as pp, p.nome_imagem as pni, c.nome as cn, p.descricao as d
+                from (compra_certa.categoria as c join compra_certa.produto as p on c.id_categoria = p.id_categoria)
+                where p.id_produto=:id_produto"
+                );
+
+                $sql->bindParam("id_produto", $id_produto);
+                
+                $sql->execute();
+
+                $produtos = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                       
+                        "NOME_PRODUTO"    => $linha['pn'],
+                        "PRECO"           => $linha['pp'],
+                        "IMG"             => $linha['pni'],
+                        "NOME_CATEGORIA"  => $linha['cn'],
+                        "DESCRICAO"       => $linha['d']
+                    );
+
+                    array_push($produtos, $arr);
+                }
+                
+                $pdo = $conn->close();
+
+                return $produtos;
+            }
+            catch(PDOException $e){
+                return array();
+            }
+        }
+
+        
 
     }
 

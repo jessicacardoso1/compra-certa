@@ -33,7 +33,7 @@
             }
         ?>
 
-        <a href="carrinho">
+        <a href="<?php echo DIRACTION.'carrinho';?>">
             <i class="fa fa-shopping-cart fa-2x cor-teal"></i>
             <span class="badge badge-primary badge-pill adm-conf-emb-span ml-1">5</span>
         </a>
