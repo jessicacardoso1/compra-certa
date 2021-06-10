@@ -22,7 +22,7 @@
                     INNER JOIN compra_certa.item
                     ON item.id_item = compra_has_item.id_item
                     INNER JOIN compra_certa.produto
-                    ON produto_id_produto = item.produto_id_produto
+                    ON produto.id_produto = item.produto_id_produto
                     WHERE cliente_has_compra.cpf = :cpf
                 ");
 
