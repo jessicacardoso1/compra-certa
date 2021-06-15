@@ -3,8 +3,6 @@
     namespace compra_certa\controller;
     use compra_certa\model\produto\Produto;
 
-
-
     class ControladorHome extends Controlador{
 
         public function __construct(){

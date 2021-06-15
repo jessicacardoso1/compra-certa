@@ -28,20 +28,18 @@
             $dados_produto = $this->produto->consultarProdutoViaID($_item);
             $dados_produto = $dados_produto[0];
 
-            $this->produto->setCodigo($_item);
-            $this->produto->setNome($dados_produto['NOME_PRODUTO']);
-            $this->produto->setPreco($dados_produto['PRECO']);
-            $this->produto->setImg($dados_produto['IMG']);
+            $p = new \compra_certa\model\produto\Produto;
+            $p->setCodigo($_item);
+            $p->setNome($dados_produto['NOME_PRODUTO']);
+            $p->setPreco($dados_produto['PRECO']);
+            $p->setImg($dados_produto['IMG']);
 
-            $this->item->setProduto($this->produto);
-            $this->item->setQuantidade(1); # quantidade temporária... pegar da tela esse valor...
+            $i = new \compra_certa\model\produto\Item;
+            $i->setProduto($p);
+            $i->setQuantidade(1); # quantidade temporária... pegar da tela esse valor...
 
-            $this->carrinho->inserirItem($this->item);
+            $this->carrinho->inserirItem($i);
 
-            #$this->carrinho->__destruct();
-            #$this->carregarNavbar();
-            #echo $this->carrinho->getTotal();
-            #header("refresh: 1");
             header('location: '.DIRACTION.'home');
         }
 
@@ -52,10 +50,9 @@
             $i = new \compra_certa\model\produto\Item;
             $i->setProduto($p);
 
-
             $this->carrinho->excluirItem($i);
 
-            header('location: '.DIRACTION.'carrinho/meuCarrinho');
+            #header('location: '.DIRACTION.'carrinho/meuCarrinho');
         }
 
     }

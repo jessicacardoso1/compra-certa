@@ -19,7 +19,13 @@
                 "cliente"  => "pessoa/controladorCliente",
                 "carrinho" => "produto/controladorCarrinho",
                 "compra"   => "compra/controladorCompra",
-                "endereco" => "endereco/controladorEndereco"
+                "endereco" => "endereco/controladorEndereco",
+
+                // rotas funcionário
+                "funcionario-preparacao" => "adm/controladorPreparacao",
+                "funcionario-conferencia-embalagem" => "adm/controladorConfEmbalagem",
+                "funcionario-entrega" => "adm/controladorEntrega",
+                "funcionario-rastrear" => "adm/controladorRastrear"
             );
 
             if(array_key_exists($index, $this->rota)){

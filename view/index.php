@@ -9,6 +9,7 @@
         <!-- Bootstrap CSS -->
         <?php
             require_once '../configs/config.php';
+            require_once '../utils/utils.php';
 
             echo '<link rel="stylesheet" href="'.DIRCSS.'style.min.css">';
             echo '<link rel="icon" type="image/png" href="'.DIRIMG.'ref_icon.png" />';

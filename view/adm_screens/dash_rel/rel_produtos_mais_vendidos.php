@@ -47,7 +47,8 @@
             <li class="nav-item active">
                 <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Desempenho</span></a>
+                    <span>Desempenho</span>
+                </a>
             </li>
 
             <!-- Divider -->

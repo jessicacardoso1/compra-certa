@@ -180,3 +180,56 @@ insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) v
 insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 30, 8.99);
 insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 4, 1.99);
 insert into compra_certa.promocao_produto(id_promocao, id_produto, novo_valor) values (1, 3, 7.99);
+
+
+-- ########################### item
+insert into compra_certa.item (produto_id_produto, quantidade) values (1, 2);
+insert into compra_certa.item (produto_id_produto, quantidade) values (1, 1);
+insert into compra_certa.item (produto_id_produto, quantidade) values (2, 2);
+insert into compra_certa.item (produto_id_produto, quantidade) values (3, 3);
+insert into compra_certa.item (produto_id_produto, quantidade) values (5, 4);
+insert into compra_certa.item (produto_id_produto, quantidade) values (4, 4);
+insert into compra_certa.item (produto_id_produto, quantidade) values (6, 2);
+insert into compra_certa.item (produto_id_produto, quantidade) values (1, 1);
+insert into compra_certa.item (produto_id_produto, quantidade) values (4, 5);
+insert into compra_certa.item (produto_id_produto, quantidade) values (6, 2);
+insert into compra_certa.item (produto_id_produto, quantidade) values (6, 2);
+
+-- ########################### compra
+INSERT INTO compra_certa.compra (id_compra, valor_total, data, id_endereco, id_avaliacao) VALUES ('1', '39.89', '2021-06-14 09:59:59', '45', null);
+INSERT INTO compra_certa.compra (id_compra, valor_total, data, id_endereco, id_avaliacao) VALUES ('2', '29.89', '2021-06-14 09:59:59', '45', null);
+INSERT INTO compra_certa.compra (id_compra, valor_total, data, id_endereco, id_avaliacao) VALUES ('3', '139.89', '2021-06-14 09:57:59', '45', null);
+INSERT INTO compra_certa.compra (id_compra, valor_total, data, id_endereco, id_avaliacao) VALUES ('4', '349.89', '2021-06-14 10:59:59', '45', null);
+
+-- ########################### compra_has_item
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (1, 1);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (1, 2);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (1, 3);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (1, 5);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (1, 6);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (2, 6);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (2, 8);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (3, 6);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (3, 2);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (4, 8);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (4, 6);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (4, 5);
+INSERT INTO compra_certa.compra_has_item(id_compra, id_item) VALUES (4, 1);
+
+-- ########################### cliente_has_compra
+insert into compra_certa.cliente_has_compra (cpf, id_compra) values ('111.111.111-11', 1);
+insert into compra_certa.cliente_has_compra (cpf, id_compra) values ('111.111.111-11', 2);
+insert into compra_certa.cliente_has_compra (cpf, id_compra) values ('111.111.111-11', 3);
+insert into compra_certa.cliente_has_compra (cpf, id_compra) values ('111.111.111-11', 4);
+
+-- ########################### data_setores
+INSERT INTO compra_certa.data_setores (data, setor) VALUES ('2021-06-14 09:59:59', 1);
+INSERT INTO compra_certa.data_setores (data, setor) VALUES ('2021-06-14 09:59:59', 1);
+INSERT INTO compra_certa.data_setores (data, setor) VALUES ('2021-06-14 09:57:59', 1);
+INSERT INTO compra_certa.data_setores (data, setor) VALUES ('2021-06-14 10:59:59', 1);
+
+-- ########################### compra_has_data_setores
+INSERT INTO compra_certa.compra_has_data_setores (id_compra, id_data_setores) VALUES (1, 1);
+INSERT INTO compra_certa.compra_has_data_setores (id_compra, id_data_setores) VALUES (2, 2);
+INSERT INTO compra_certa.compra_has_data_setores (id_compra, id_data_setores) VALUES (3, 3);
+INSERT INTO compra_certa.compra_has_data_setores (id_compra, id_data_setores) VALUES (4, 4);

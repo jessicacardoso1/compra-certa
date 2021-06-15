@@ -1,6 +1,6 @@
 <?php 
 
-    namespace compra_certa\controller\dashboard;
+    namespace compra_certa\controller\adm\dashboard;
     use compra_certa\controller\Controlador;
     use compra_certa\model\pessoa\Cliente;
 

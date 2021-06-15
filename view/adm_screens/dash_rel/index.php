@@ -3,7 +3,7 @@
     require_once '../../../vendor/autoload.php';
 
     use compra_certa\controller\pessoa\ControladorLogin;
-    use compra_certa\controller\dashboard\ControladorDashboard;
+    use compra_certa\controller\adm\dashboard\ControladorDashboard;
 
     if(isset($_GET["controlador"]) && isset($_GET["acao"])){
         $controller = $_GET["controlador"];

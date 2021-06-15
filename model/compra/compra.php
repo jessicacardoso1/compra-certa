@@ -25,6 +25,27 @@
             
         }
 
+        public function listarComprasParaSetorPreparacao(){
+            $dao = new CompraDAO();
+
+            $lista_compras = $dao->listarComprasParaSetorPreparacao();
+
+            $lista_compras_por_id = array();
+            for($i = 0; $i < count($lista_compras); $i++){
+                if(!array_key_exists($lista_compras[$i]['ID_COMPRA'], $lista_compras_por_id)){
+                    $arr = array(
+                        $lista_compras[$i]['ID_COMPRA'] => array($lista_compras[$i]['NOME_PRODUTO'], $lista_compras[$i]['QUANTIDADE'])
+                    );
+
+                    $lista_compras_por_id[$lista_compras[$i]['ID_COMPRA']] = $arr;
+                }
+                else
+                    array_push($lista_compras_por_id[$lista_compras[$i]['ID_COMPRA']], array($lista_compras[$i]['NOME_PRODUTO'], $lista_compras[$i]['QUANTIDADE']));
+            }
+            
+            return $lista_compras_por_id;
+        }
+
         public function editarEndereco(){
             
         }

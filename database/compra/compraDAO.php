@@ -53,6 +53,43 @@
             }
         }
 
+        public function listarComprasParaSetorPreparacao(){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+
+                $sql = $pdo->prepare("
+                    select produto.nome as nome, item.quantidade as quantidade, compra_has_item.id_compra as id_compra
+                    from compra_certa.produto
+                    join compra_certa.item on produto.id_produto = item.produto_id_produto
+                    join compra_certa.compra_has_item on compra_has_item.id_item = item.id_item
+                    join compra_certa.compra_has_data_setores on compra_has_data_setores.id_compra = compra_has_item.id_compra
+                    join compra_certa.data_setores on data_setores.id_data_setores = compra_has_data_setores.id_data_setores
+                    where data_setores.setor = 1
+                    order by data_setores.data;
+                ");
+            
+                $sql->execute();
+
+                $compras = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                        "ID_COMPRA"    => $linha['id_compra'],
+                        "QUANTIDADE"   => $linha['quantidade'],
+                        "NOME_PRODUTO" => $linha['nome']                 
+                    );
+
+                    array_push($compras, $arr);
+                }
+                
+                $pdo = $conn->close();
+
+                return $compras;
+            }
+            catch(PDOException $e){
+                return array();
+            }
+        }
 
     }
 
