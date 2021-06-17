@@ -1,3 +1,8 @@
+<?php 
+$dados = $dados[0];
+var_dump($dados);
+?>
+
 <main>
     <!--MENU FIXO-->
     <div class="container" style="margin-left: 15%;">
@@ -49,8 +54,8 @@
                   </div>
                   <div class="col-md-5">
                     <small class="text-compras"><p>Resumo da compra:</p></small>
-                    <small><p>Compra: 0052</p></small>
-                    <small><p>Data do compra: 16/04/2021</p></small>
+                    <small><p>Compra: <?php echo $dados["ID_COMPRA"]?></p></small>
+                    <small><p>Data do compra: <?php echo $dados["DATA"]?></p></small>
                     <small><p>Valor total: R$ 40,88</p></small>                     
                     <button type="button" class="btn " style="display: inline; text-decoration: underline" data-toggle="modal" data-target="#myModal">
                       Ver detalhes
@@ -72,51 +77,28 @@
       <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
-        <!-- Modal Header -->
+              <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="offs-label text-monospace text-center">Resumo da compra</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-          
-          <!-- Modal body -->
-            <div class="modal-body">
+              <!-- Modal body -->
               <div class="row" style="margin-top: 20px;">
-                  <div class="col-md-5">
-                    <img class="card-img-top" src="img/itens/pimentao.webp" alt="" style="width:130px"> 
-                  </div>
-                  <div class="col-md-7">
-                      <h6 class="offs-label">Pimentão verde</h6>
-                      <small style="line-height: 10px;">
-                          Receba até 20 de maio<br>
-                          Qtd:1<br>
-                          R$ 8,90
-                      </small>
-                  </div>
-              </div> <hr>
-              <div class="row" style="margin-top: 20px;">
-                  <div class="col-md-5">
-                <img class="card-img-top" src="img/itens/caqui.jpeg" style="width:130px"> </div>
-                <div class="col-md-7">
-                    <h6 class="offs-label">Caqui</h6>
-                    <small style="line-height: 10px;">
-                        Receba até 20 de maio<br>
-                        Qtd:1<br>
-                        R$ 8,90  
-                    </small>
-                </div>
-              </div>
-              <div class="row" style="margin-top: 20px;">
-                <div class="col-md-5">
-                  <img class="card-img-top" src="img/itens/laranja.jpg" alt="Laranja" style="width:130px"> 
-                </div>
-                <div class="col-md-7">
-                    <h6 class="offs-label">Laranja</h6>
-                    <small style="line-height: 10px;">
-                        Receba até 20 de maio<br>
-                        Qtd:1<br>
-                        R$ 8,90
-                    </small>
-                </div>
+                <?php 
+                  foreach($dados as &$item){
+                    echo '<div class="col-md-5">';
+                    echo '<img class="card-img-top" src="'.DIRIMG.'/itens'.$item["IMAGEM_PRODUTO"].'" alt="'.$item["IMAGEM_PRODUTO"].'" style="width:130px">';
+                    echo '</div>';
+                    echo '<div class="col-md-7">';
+                    echo '<h6 class="offs-label">'.$item["NOME_PRODUTO"].'</h6>';
+                    echo '<small style="line-height: 10px;">';
+                    echo     'Receba até 20 de maio<br>';
+                    echo     'Qtd:'.$item["QUANTIDADE"].'<br>';
+                    echo     '.$item["PRECO_PRODUTO"]';
+                    echo '</small>';
+                    echo '</div>';
+                  } 
+                ?>
             </div> <hr>
             </div>
           </div>
