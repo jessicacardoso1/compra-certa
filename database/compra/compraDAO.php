@@ -91,6 +91,66 @@
             }
         }
 
+        public function inserirDataSetores($_setor){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    insert into compra_certa.data_setores
+                    (data, setor) values
+                    (:hora_atual, :setor)
+                ");
+                
+                $sql->bindValue("hora_atual", getDatetimeNow());
+                $sql->bindParam(":setor", $_setor);
+                
+                $sql->execute();
+
+                $last_id = $pdo->lastInsertID();
+
+                $pdo = $conn->close();
+                
+                return $last_id;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+            
+        }// FIM método
+
+        public function inserirCompraHasDataSetores($_compra, $_id_data_setores){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    insert into compra_certa.data_setores
+                    (id_compra, id_data_setores) values
+                    (:compra, :id_data_setores)
+                ");
+                
+                $sql->bindValue("compra", $_compra->getCodigo());
+                $sql->bindParam(":id_data_setores", $_id_data_setores);
+                
+                $sql->execute();
+
+                $last_id = $pdo->lastInsertID();
+
+                $pdo = $conn->close();
+                
+                return $last_id;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+            
+        }// FIM método
+
     }
 
 ?>

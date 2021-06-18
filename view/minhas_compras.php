@@ -1,6 +1,13 @@
 <?php 
-$dados = $dados[0];
-var_dump($dados);
+  $compras = mergeListaPorID($dados, 'ID_COMPRA');
+
+  // foreach($compras as $i){
+  //   foreach($i as $j){
+  //     echo $j['NOME_PRODUTO'];
+  //     echo '<br>';
+  //   }
+  // }
+
 ?>
 
 <main>
@@ -57,7 +64,7 @@ var_dump($dados);
                     <small><p>Compra: <?php echo $dados["ID_COMPRA"]?></p></small>
                     <small><p>Data do compra: <?php echo $dados["DATA"]?></p></small>
                     <small><p>Valor total: R$ 40,88</p></small>                     
-                    <button type="button" class="btn " style="display: inline; text-decoration: underline" data-toggle="modal" data-target="#myModal">
+                    <button type="submit" class="btn " style="display: inline; text-decoration: underline" data-toggle="modal" data-target="#myModal">
                       Ver detalhes
                       </button>
 
@@ -83,19 +90,21 @@ var_dump($dados);
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
               <!-- Modal body -->
-              <div class="row" style="margin-top: 20px;">
+              <div class="modal-body">
                 <?php 
                   foreach($dados as &$item){
+                    echo '<div class="row" style="margin-top: 20px;">';
                     echo '<div class="col-md-5">';
-                    echo '<img class="card-img-top" src="'.DIRIMG.'/itens'.$item["IMAGEM_PRODUTO"].'" alt="'.$item["IMAGEM_PRODUTO"].'" style="width:130px">';
+                    echo '<img class="card-img-top" src="'.DIRIMG.'itens/acucar-mascavo-organico.jpg" alt="" style="width:130px">';
                     echo '</div>';
                     echo '<div class="col-md-7">';
-                    echo '<h6 class="offs-label">'.$item["NOME_PRODUTO"].'</h6>';
+                    echo '<h6 class="offs-label">'.'nome_produto'.'</h6>';
                     echo '<small style="line-height: 10px;">';
-                    echo     'Receba até 20 de maio<br>';
-                    echo     'Qtd:'.$item["QUANTIDADE"].'<br>';
-                    echo     '.$item["PRECO_PRODUTO"]';
+                    echo 'Receba até 20 de maio<br>';
+                    echo 'Qtd:'.'quantidade_produto'.'<br>';
+                    echo 'preco_produto'; #$item["PRECO_PRODUTO"];
                     echo '</small>';
+                    echo '</div>';
                     echo '</div>';
                   } 
                 ?>

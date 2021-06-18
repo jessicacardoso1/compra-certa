@@ -52,7 +52,7 @@
 
             $this->carrinho->excluirItem($i);
 
-            #header('location: '.DIRACTION.'carrinho/meuCarrinho');
+            header('location: '.DIRACTION.'carrinho/meuCarrinho');
         }
 
     }

@@ -5,7 +5,7 @@
     use compra_certa\model\compra\compra;
     use compra_certa\model\pessoa\Cliente;
 
-class ControladorCompra extends Controlador{
+    class ControladorCompra extends Controlador{
 
         private $compra;
         private $cliente;
@@ -14,8 +14,8 @@ class ControladorCompra extends Controlador{
             $this->compra= new Compra();
             $this->cliente = new Cliente();
             $this->cliente->setCpf($_SESSION['usuario_logado']);
-            
         }
+
         public function listarCompras(){
             $listaCompras = $this->compra->listarCompras($this->cliente);
             $this->carregarNavbar();

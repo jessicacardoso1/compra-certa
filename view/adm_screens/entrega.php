@@ -25,10 +25,10 @@
         <a class="nav-link active adm-delivery-icon-up-color" id="home-tab" data-toggle="tab" href="#enviado" role="tab" aria-controls="enviado" aria-selected="true">Enviar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link adm-delivery-icon-down-color" id="profile-tab" data-toggle="tab" href="#em-andamento" role="tab" aria-controls="em-andamento" aria-selected="false">Em Andamento</a>
+        <a class="nav-link adm-delivery-icon-right-color" id="profile-tab" data-toggle="tab" href="#em-andamento" role="tab" aria-controls="em-andamento" aria-selected="false">Em Andamento</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link adm-delivery-icon-right-color" id="profile-tab" data-toggle="tab" href="#entregue" role="tab" aria-controls="entregue" aria-selected="false">Entregue</a>
+        <a class="nav-link adm-delivery-icon-down-color" id="profile-tab" data-toggle="tab" href="#entregue" role="tab" aria-controls="entregue" aria-selected="false">Entregue</a>
       </li>
       <li class="nav-item">
         <a class="nav-link adm-delivery-icon-x-color" id="profile-tab" href="<?php echo DIRACTION.'funcionario-rastrear"' ?>" aria-controls="cadastro" aria-selected="false">Rastreamento Detalhado</a>

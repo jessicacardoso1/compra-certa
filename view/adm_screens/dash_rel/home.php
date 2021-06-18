@@ -19,16 +19,16 @@
     <link rel="icon" type="image/png" href="../../img/ref_icon.png" />
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo DIR_DASHBOARD_CSS.'fontawesome-free/css/all.min.css'; ?>" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?php echo DIR_DASHBOARD_CSS.'sb-admin-2.min.css'; ?>" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../css/style.min.css">
+    <link href="<?php echo DIR_DASHBOARD_CSS.'style.min.css'; ?>" rel="stylesheet">
 
 </head>
 
@@ -492,21 +492,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo DIR_DASHBOARD_VENDOR.'jquery/jquery.min.js'; ?>"></script>
+    <script src="<?php echo DIR_DASHBOARD_VENDOR.'bootstrap/js/bootstrap.bundle.min.js'; ?>"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?php echo DIR_DASHBOARD_VENDOR.'jquery-easing/jquery.easing.min.js'; ?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="<?php echo DIR_DASHBOARD_JS.'sb-admin-2.min.js'; ?>"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="<?php echo DIR_DASHBOARD_VENDOR.'chart.js/Chart.min.js'; ?>"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="<?php echo DIR_DASHBOARD_JS.'demo/chart-area-demo.js'; ?>"></script>
+    <script src="<?php echo DIR_DASHBOARD_JS.'demo/chart-pie-demo.js'; ?>"></script>
 
 </body>
 

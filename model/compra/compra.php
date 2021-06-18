@@ -22,7 +22,6 @@
             $dao = new CompraDAO();
             
             return $dao->listarCompras($cliente);
-            
         }
 
         public function listarComprasParaSetorPreparacao(){
@@ -46,6 +45,18 @@
             return $lista_compras_por_id;
         }
 
+        public function inserirDataSetores($_setor){
+            $dao = new CompraDAO();
+            
+            return $dao->inserirDataSetores($_setor);
+        }
+
+        public function inserirCompraHasDataSetores($_compra, $_id_data_setores){
+            $dao = new CompraDAO();
+            
+            return $dao->inserirCompraHasDataSetores($_compra, $_id_data_setores);
+        }
+
         public function editarEndereco(){
             
         }
@@ -57,8 +68,6 @@
 
 
         //getters and setters
-
-        
         public function getItens()
         {
             return $this->itens;

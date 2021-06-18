@@ -1,6 +1,6 @@
 <?php 
 
-    namespace compra_certa\controller\adm\dashboard;
+    namespace compra_certa\controller\adm;
     use compra_certa\controller\Controlador;
     use compra_certa\model\pessoa\Cliente;
 
@@ -10,6 +10,8 @@
 
         public function __construct(){
             $this->cliente = new Cliente();
+
+            $this->view("adm_screens/dash_rel/", "home");
         }
 
         public function processaDadosHome(){
