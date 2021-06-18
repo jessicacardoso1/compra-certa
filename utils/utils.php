@@ -11,7 +11,6 @@
     function mergeListaPorID($_lista, $_id_base){
         $lista_por_id = array();
 
-        #var_dump($_lista);
         for($i = 0; $i < count($_lista); $i++){
             if(!array_key_exists($_lista[$i][$_id_base], $lista_por_id)){
                 $arr = array(

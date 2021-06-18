@@ -1,4 +1,4 @@
-<?php 
+<?php
   $compras = mergeListaPorID($dados, 'ID_COMPRA');
 
   // foreach($compras as $i){
@@ -66,7 +66,7 @@
                     <small><p>Valor total: R$ 40,88</p></small>                     
                     <button type="submit" class="btn " style="display: inline; text-decoration: underline" data-toggle="modal" data-target="#myModal">
                       Ver detalhes
-                      </button>
+                    </button>
 
                   </div>
                   <div class="col-md-5">
