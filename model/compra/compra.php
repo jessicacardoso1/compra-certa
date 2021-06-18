@@ -4,6 +4,7 @@
 
     class Compra{
 
+        private $codigo;
         private $itens;
         private $cliente;
         private $numero;
@@ -68,6 +69,17 @@
 
 
         //getters and setters
+        public function getCodigo()
+        {
+            return $this->codigo;
+        }
+
+    
+        public function setCodigo($codigo)
+        {
+            $this->codigo = $codigo;
+        }
+
         public function getItens()
         {
             return $this->itens;

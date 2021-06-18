@@ -1,7 +1,4 @@
-
 <main>
-
-
     <!-- CREATE/EDIT ADRESS -->
     <div class="col-md-6 create-edit-adress-display">
       <h3>Endereço</h3>
@@ -15,7 +12,7 @@
             <label>Nome</label>
           </div>
           <div class="text-field">
-            <input type="text" id="text_phone" name="telefone">
+            <input type="text" id="text_phone" name="telefone" value="">
             <label>Telefone</label>
           </div>
           <div class="form-inline">
@@ -94,6 +91,6 @@
     </div>
   
  
- <script src="js/enderecos/index.js"></script>
+  <script src="js/enderecos/index.js"></script>
  </main>
   

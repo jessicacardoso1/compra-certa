@@ -2,7 +2,6 @@
 
 class Avaliacao{
 
-    private $compra;
     private $estrelas;
     private $titulo;
     private $comentario;

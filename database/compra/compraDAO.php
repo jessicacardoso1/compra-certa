@@ -151,6 +151,64 @@
             
         }// FIM método
 
+
+
+        public function avaliarCompra($_compra, $_avaliacao){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    insert into compra_certa.avaliacao
+                    (estrelas, titulo, cometario) values
+                    (:estrelas, :titulo, :cometario)
+                ");
+                
+                $sql->bindValue("estrelas", $_avaliacao->getEstrelas());
+                $sql->bindValue("titulo", $_avaliacao->getTitulo());
+                $sql->bindValue("cometario", $_avaliacao->getComentario());
+                
+                $sql->execute();
+
+                $last_id = $pdo->lastInsertID();
+
+                $pdo = $conn->close();
+                
+                $this->vincularAvaliacaoCompra($_compra, $last_id);
+                
+                return $last_id;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+            
+        }// FIM método
+
+        public function vincularAvaliacaoCompra($_compra, $_id_avaliacao){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    UPDATE compra_certa.compra
+                    SET id_avaliacao = :_id_avaliacao 
+                    WHERE (id_compra = :_id_compra)
+                ");
+
+                $sql->bindParam(":_id_avaliacao", $_id_avaliacao);
+                $sql->bindParam(":_id_compra", $_compra->getCodigo());
+
+                $sql->execute();
+
+                return True;
+                
+            }catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
     }
 
 ?>
