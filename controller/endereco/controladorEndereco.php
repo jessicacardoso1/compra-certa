@@ -53,11 +53,39 @@
             }
         }// FIM método
 
+
         public function adicionarEndereco(){
             $this->carregarNavbar();
 
-            $this->view("", "editar_criar_endereco");
+            $this->view("", "criar_endereco");
         }
+
+        public function editarEndereco($id_endereco){
+            $this->carregarNavbar();
+            $this->endereco->setCodigo($id_endereco);
+
+            $dadosEndereco = $this->endereco->getDadosEndereco();
+
+            $this->view("", "editar_endereco", $dadosEndereco);
+
+        }
+
+        public function processaUpdate(){
+           
+            $this->endereco->setCodigo($_POST['id']);
+            $this->endereco->setNome($_POST['nome']);
+            $this->endereco->setCep($_POST['cep']);
+            $this->endereco->setBairro($_POST['bairro']);
+            $this->endereco->setEndereco($_POST['endereco']);
+            $this->endereco->setComplemento($_POST['complemento']);
+            $this->endereco->setNumero($_POST['numero']);
+            $this->endereco->setTelefone($_POST['telefone']);
+
+            $this->endereco->editarEndereco();
+            header('location:'.DIRACTION.'cliente/meusEnderecos');
+
+        }
+        
 
         public function removerEndereco($_id_endereco){
             $this->endereco->removerEndereco($_id_endereco);
