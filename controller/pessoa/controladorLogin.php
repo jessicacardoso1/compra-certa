@@ -42,9 +42,7 @@
             $check_login = $this->login->efetuarLogin();
 
             if(!$check_login){
-                echo '<script>';
-                echo 'alert("CPF ou senha incorreto!")';
-                echo '</script>';
+                alert('CPF ou senha incorreto!');
             
                 header("location: $view_failed");
 

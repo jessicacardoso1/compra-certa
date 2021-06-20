@@ -2,9 +2,9 @@
     <nav class="navbar bg-salmao">
         <div class="container justify-content-around">
 
-        <a href="<?php echo DIRPAGE.'view'; ?>">
+        <a href="<?php echo DIRPAGE; ?>">
             <?php 
-                echo '<img src="'.DIRIMG.'_logo.png" alt="logo" width="210">';
+                echo '<img src="'.DIRIMG.'logo.png" alt="logo" width="210">';
             ?>
         </a>
 

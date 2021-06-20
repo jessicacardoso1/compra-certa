@@ -5,6 +5,7 @@
 
         $datetime = new DateTime();
         $datetime->setTimezone($tz_object);
+
         return $datetime->format('Y\-m\-d\ h:i:s');
     }
 
@@ -24,6 +25,10 @@
         }
         
         return $lista_por_id;
+    }
+
+    function alert($_mensagem){
+        echo "<script type='text/javascript'>alert('$_mensagem');</script>";
     }
 
 ?>

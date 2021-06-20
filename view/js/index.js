@@ -21,6 +21,8 @@ function btnCounter(id, tipoOperacao){
 function setBtnMaisVendidos(id, valor){
     document.getElementById(id).value = valor;
 
+    // setando o campo hidden do form da quantidade pro carrinho
+    document.getElementById('qnt').value = valor
 }//FIM função
 
 $(document).ready(function(){

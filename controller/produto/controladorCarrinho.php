@@ -24,7 +24,7 @@
             $this->view("", "carrinho", $dados_tela);
         }
 
-        public function inserirItem($_item){
+        public function inserirItem($_item, $_tela){
             $dados_produto = $this->produto->consultarProdutoViaID($_item);
             $dados_produto = $dados_produto[0];
 
@@ -36,11 +36,19 @@
 
             $i = new \compra_certa\model\produto\Item;
             $i->setProduto($p);
-            $i->setQuantidade(1); # quantidade temporária... pegar da tela esse valor...
+
+            $quantidade = $_POST['quantidade'];
+            if(!isset($quantidade))
+                $quantidade = 1;
+            $i->setQuantidade($quantidade);
 
             $this->carrinho->inserirItem($i);
 
-            header('location: '.DIRACTION.'home');
+            /* redirecionamento para a tela correta */
+            if($_tela == 'home' || $_tela == 1)
+                header('location: '.DIRACTION);  
+            else if($_tela == 'detalhes_produto' || $_tela == 2)
+                header('location: '.DIRACTION.'produto/detalhes/'.$_item);
         }
 
         public function excluirItem($_item){

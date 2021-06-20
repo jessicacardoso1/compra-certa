@@ -13,7 +13,7 @@
         <!-- LOGIN FORM -->
         <div class="col-md-6 login-form-1">
           <h3>Faça login na nossa loja</h3>
-          <form method="POST" action="login/processaLogin">
+          <form method="POST" action="<?php echo DIRACTION.'login/processaLogin'; ?>">
               <input type=hidden name=usr_tp value="cliente">
               <div class="form-group">
                 <div class="text-field">
@@ -40,7 +40,7 @@
         <!-- REGISTER FORM -->
         <div class="col-md-6 login-form-1">
           <h3>Cadastre-se na nossa loja</h3>
-          <form method="POST" action="index.php?controlador=cliente&acao=cadastro">
+          <form form method="POST" action="<?php echo DIRACTION.'cliente/processaCadastro'; ?>">
               <div class="form-group">
                 <div class="text-field">
                   <input type="text" name="cpfCadastro" id="cpf_cadastro" onkeypress="cpf_mask(0)" maxlength="14">
@@ -74,6 +74,6 @@
     </div>
   </div>
 
-  <script src="js/login_cadastro/index.js"></script>
+  <script src="<?php echo DIRJS.'login_cadastro/index.js'; ?>"></script>
   
 </main>

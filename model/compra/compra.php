@@ -29,7 +29,7 @@
             $dao = new CompraDAO();
 
             $lista_compras = $dao->listarComprasParaSetorPreparacao();
-
+            
             $lista_compras_por_id = array();
             for($i = 0; $i < count($lista_compras); $i++){
                 if(!array_key_exists($lista_compras[$i]['ID_COMPRA'], $lista_compras_por_id)){

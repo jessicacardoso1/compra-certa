@@ -19,20 +19,17 @@
             $this->cliente->setSenha($_POST["senhaCadastro"]);
             $this->cliente->setAtivo(1);
             
-            #$view_success = "../../view/login_cadastro.php";
-            $view_failed = "login_cadastro.php";
-            
             if(!$this->cliente->efetuarCadastro()){
-                echo '<script>';
-                echo 'alert("Houve uma falha no cadastro! Contate o suporte para maiores informações.")';
-                echo '</script>';
+                alert('Houve uma falha no cadastro! Contate o suporte para maiores informações.');
                 
-                header("location: $view_failed");
+                $_SESSION['usuario_logado'] = false;
+                header('location: '.DIRACTION.'login');
+                
                 return false;
             }
 
-            // implementar o redirecionamento da tela?????????
-            header("location: home.php");
+            $_SESSION['usuario_logado'] = $_POST["cpfCadastro"];
+            header('location: '.DIRACTION);
 
         }// FIM método
 

@@ -40,7 +40,8 @@ $dados = $dados[0];
 
           </div>
           <div class="container d-flex justify-content-center mt-4">
-          <form action="<?php echo DIRACTION.'carrinho/inserirItem/'.$dados['ID']?>">
+          <form method="POST" action="<?php echo DIRACTION.'carrinho/inserirItem/'.$dados['ID'].'/2'?>">
+            <input id="qnt" type="hidden" name="quantidade" value="1">
             <button type="submit" class="btn cor-bg-teal font-weight-bold text-white mb-2" style="width: 120%;">Adicionar ao carrinho</button>
           </form>
           </div>

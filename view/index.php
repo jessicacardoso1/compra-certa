@@ -12,12 +12,11 @@
             require_once '../utils/utils.php';
 
             echo '<link rel="stylesheet" href="'.DIRCSS.'style.min.css">';
-            echo '<link rel="icon" type="image/png" href="'.DIRIMG.'ref_icon.png" />';
+            echo '<link rel="icon" type="image/png" href="'.DIRIMG.'icon.png" />';
         ?>
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
@@ -25,13 +24,12 @@
             require_once '../vendor/autoload.php';
             
             session_start();
-            if(!isset($_SESSION['usuario_logado'])){
+            if(!isset($_SESSION['usuario_logado']))
                 $_SESSION['usuario_logado'] = '';
-            }
 
             $despachante = new \compra_certa\routes\Despachante;
             
-            require "footer.php";
+            require_once "footer.php";
         ?>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

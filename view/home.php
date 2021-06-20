@@ -14,16 +14,16 @@
     </ol>
     <div class="carousel-inner text-center">
       <div class="carousel-item active">
-        <img class="img-fluid mt-0 w-75" src="img/banners/dino-kale-1920x420-darker.jpg" alt="First slide">
+        <img class="img-fluid mt-0 w-75" src="<?php echo DIRIMG.'banners/dino-kale-1920x420-darker.jpg'; ?>" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="img-fluid mt-0 w-75" src="img/banners/campo.png" alt="Second slide">
+        <img class="img-fluid mt-0 w-75" src="<?php echo DIRIMG.'banners/campo.png'; ?>" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="img-fluid mt-0 w-75" src="img/banners/header-pigs_cattle_1920x420_1_.jpg" alt="Second slide">
+        <img class="img-fluid mt-0 w-75" src="<?php echo DIRIMG.'banners/header-pigs_cattle_1920x420_1_.jpg'; ?>" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="img-fluid mt-0 w-75" src="img/banners/vegano.jpg" alt="slide">
+        <img class="img-fluid mt-0 w-75" src="<?php echo DIRIMG.'banners/vegano.jpg' ?>" alt="slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -95,7 +95,7 @@
                         echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
                         echo '<div class="card-text text-muted"><s>De: R$ '.$c['PRECO'].'</s> por:</div>';
                         echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO_NOVO_PRODUTO'].'</b><small> à vista</small></h5>';
-                        echo '<form action="'.DIRACTION.'carrinho/inserirItem/'.$c['ID_PRODUTO'].'">';
+                        echo '<form action="'.DIRACTION.'carrinho/inserirItem/'.$c['ID_PRODUTO'].'/1">';
                         echo '<button type="submit" class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>';
                         echo '</form>';
                         echo '</div>';
@@ -118,12 +118,12 @@
   <div class="container-fluid">
     <div class="produtos d-flex flex-wrap">
       <div class="card mais-vendidos-card-size">
-            <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
+            <img class="card-img-top mais-vendidos-img-size" src="<?php echo DIRIMG.'itens/batata.jpg'; ?>" alt="Livros em promoção">
             <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Batatas</p>
               <h5 class="text-success mb-2"><b>R$ 2,38</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form action="carrinho/inserirItem/4">
+                <form method="POST" action="carrinho/inserirItem/4/1">
                   <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
                 </form>
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos1', 'sub');">-</button>
@@ -134,12 +134,12 @@
         </div>
 
         <div class="card mais-vendidos-card-size">
-          <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
+          <img class="card-img-top mais-vendidos-img-size" src="<?php echo DIRIMG.'itens/batata.jpg'; ?>" alt="Livros em promoção">
           <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Batatas</p>
               <h5 class="text-success mb-2"><b>R$ 2,38</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form action="carrinho/inserirItem/4">  
+                <form method="POST" action="carrinho/inserirItem/4/1">  
                   <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
                 </form>
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos2', 'sub');">-</button>
@@ -150,12 +150,12 @@
         </div>
 
         <div class="card mais-vendidos-card-size">
-          <img class="card-img-top mais-vendidos-img-size" src="img/itens/batata.jpg" alt="Livros em promoção">
+          <img class="card-img-top mais-vendidos-img-size" src="<?php echo DIRIMG.'itens/batata.jpg'; ?>" alt="Livros em promoção">
           <div class="card-body">
             <p class="card-text offs-text-name text-monospace">Batatas</p>
             <h5 class="text-success mb-2"><b>R$ 2,38</b> <small> à vista</small></h5>
             <div class="btn-group" role="group" aria-label="Exemplo básico">
-              <form action="carrinho/inserirItem/4">
+              <form method="POST" action="carrinho/inserirItem/4/1">
                 <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
               </form>
               <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos3', 'sub');">-</button>
@@ -166,12 +166,12 @@
         </div>
 
         <div class="card mais-vendidos-card-size">
-            <img class="card-img-top mais-vendidos-img-size" src="img/itens/cebola.jpg" alt="Livros em promoção">
+            <img class="card-img-top mais-vendidos-img-size" src="<?php echo DIRIMG.'itens/cebola.jpg'; ?>" alt="Livros em promoção">
             <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Cebola</p>
               <h5 class="text-success mb-2"><b>R$ 6,99</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form action="carrinho/inserirItem/8">
+                <form method="POST" action="carrinho/inserirItem/8/1">
                   <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
                 </form>
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos4', 'sub');">-</button>
@@ -182,12 +182,12 @@
         </div>
 
         <div class="card mais-vendidos-card-size">
-            <img class="card-img-top mais-vendidos-img-size" src="img/itens/caqui.jpeg" alt="Livros em promoção">
+            <img class="card-img-top mais-vendidos-img-size" src="<?php echo DIRIMG.'itens/caqui.jpeg'; ?>" alt="Livros em promoção">
             <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Caqui</p>
               <h5 class="text-success mb-2"><b>R$ 15,49</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form action="carrinho/inserirItem/6">
+                <form method="POST" action="carrinho/inserirItem/6/1">
                   <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
                 </form>
                   <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos5', 'sub');">-</button>
@@ -198,12 +198,12 @@
         </div>
 
         <div class="card mais-vendidos-card-size">
-          <img class="card-img-top mais-vendidos-img-size" src="img/itens/caqui.jpeg" alt="Livros em promoção">
+          <img class="card-img-top mais-vendidos-img-size" src="<?php echo DIRIMG.'itens/caqui.jpeg'; ?>" alt="Livros em promoção">
           <div class="card-body">
             <p class="card-text offs-text-name text-monospace">Caqui</p>
             <h5 class="text-success mb-2"><b>R$ 15,49</b> <small> à vista</small></h5>
             <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form action="carrinho/inserirItem/6">
+                <form method="POST" action="carrinho/inserirItem/6/1">
                   <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
                 </form>
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos6', 'sub');">-</button>
@@ -225,57 +225,57 @@
       <div class="produtos d-flex">
         <div class="card" style="width: 18rem;">
             <a href="produtos_detalhes.php">
-              <img class="card-img-top news-img"src="img/itens/soja.jpg" alt="Livros em promoção">
+              <img class="card-img-top news-img"src="<?php echo DIRIMG.'itens/soja.jpg'; ?>" alt="Livros em promoção">
             </a>
               <div class="card-body">
                 <p class="card-text offs-text-name text-monospace">Soja em grãos</p>
                 <h5 class="text-success mb-2"><b>R$ 3,29</b> <small> à vista</small></h5>
-                <form action="carrinho/inserirItem/27">
+                <form method="POST" action="carrinho/inserirItem/27/1">
                   <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
                 </form>
               </div>
           </div>
 
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top news-img" src="img/itens/aveia.jpg" alt="Livros em promoção"
+            <img class="card-img-top news-img" src="<?php echo DIRIMG.'itens/aveia.jpg'; ?>" alt="Livros em promoção"
             >
             <div class="card-body">
                 <p class="card-text offs-text-name text-monospace">Aveia em flocos</p>
                 <h5 class="text-success mb-2"><b>R$ 6,99</b> <small> à vista</small></h5>
-                <form action="carrinho/inserirItem/2">
+                <form method="POST" action="carrinho/inserirItem/2/1">
                   <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
                 </form>
             </div>
           </div>
 
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top news-img" src="img/itens/feijao.jpg" alt="Livros em promoção"/>
+            <img class="card-img-top news-img" src="<?php echo DIRIMG.'itens/feijao.jpg'; ?>" alt="Livros em promoção"/>
             <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Feijão carioca</p>
               <h5 class="text-success mb-2"><b>R$ 6,49</b> <small> à vista</small></h5>
-              <form action="carrinho/inserirItem/18">
+              <form method="POST" action="carrinho/inserirItem/18/1">
                 <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
               </form>
             </div>
           </div>
 
           <div class="card" style="width: 18rem;">
-              <img class="card-img-top news-img" src="img/itens/quinoa.jpg" alt="Livros em promoção" />
+              <img class="card-img-top news-img" src="<?php echo DIRIMG.'itens/quinoa.jpg'; ?>" alt="Livros em promoção" />
               <div class="card-body">
                 <p class="card-text offs-text-name text-monospace">Quinoa</p>
                 <h5 class="text-success mb-2"><b>R$ 7,89</b> <small> à vista</small></h5>
-                <form action="carrinho/inserirItem/25">
+                <form method="POST" action="carrinho/inserirItem/25/1">
                   <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>                               
                 </form>
               </div>
           </div>
 
           <div class="card" style="width: 18rem;">
-              <img class="card-img-top news-img" src="img/itens/tapioca.jpg" alt="Livros em promoção"/>
+              <img class="card-img-top news-img" src="<?php echo DIRIMG.'itens/tapioca.jpg'; ?>" alt="Livros em promoção"/>
               <div class="card-body">
                 <p class="card-text offs-text-name text-monospace">Tapioca</p>
                 <h5 class="text-success mb-2"><b>R$ 2,49</b> <small> à vista</small></h5>
-                <form action="carrinho/inserirItem/29">
+                <form method="POST" action="carrinho/inserirItem/29/1">
                   <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
                 </form>
               </div>

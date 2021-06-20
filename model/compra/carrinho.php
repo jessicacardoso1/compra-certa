@@ -16,21 +16,15 @@
         }
 
         public function inserirItem($_item){
-            if(!$this->itemEstaNoCarrinho($_item))
-                $this->itens[] = $_item;
-                #array_push($this->itens, $_item);
-            else{
-                $indice_item = $this->getIndiceItem($_item);
-
-                $this->alterarQuantidade($this->itens[$indice_item], $this->itens[$indice_item]->getQuantidade() + 1);
-            }
-        }
-
-        public function alterarQuantidade($_item, $_quantidade){
             if($this->itemEstaNoCarrinho($_item)){
                 $indice_item = $this->getIndiceItem($_item);
 
-                $this->itens[$indice_item]->setQuantidade($_quantidade);
+                $qnt_cliente = $_item->getQuantidade();
+                $qnt_atual = $this->itens[$indice_item]->getQuantidade();
+                $this->itens[$indice_item]->setQuantidade($qnt_cliente + $qnt_atual);
+            }
+            else{
+                $this->itens[] = $_item;
             }
         }
 
@@ -38,7 +32,22 @@
             if($this->itemEstaNoCarrinho($_item)){
                 $indice_item = $this->getIndiceItem($_item);
 
-                unset($this->itens[$indice_item]);
+                /* 
+                    solução antiga: unset() 
+                    - funcionava entretando apenas via testes por linha de comando...
+                    por algum motivo ao excluir o item na tela de carrinho que não
+                    fosse de baixo pra cima (último indice do array para o primeiro),
+                    o site crashava...
+                    foi implementado a construção de um novo array sem o índice do item 
+                    a ser excluido para evitar este bug utilizando o unset() para remover 
+                    o indice do array $this->itens.
+                */
+                $new_array = array();
+                for($i = 0; $i < count($this->itens); $i++)
+                    if($i != $indice_item)
+                        $new_array[] = $this->itens[$i];
+
+                $this->itens = $new_array;
             }
         }
 
