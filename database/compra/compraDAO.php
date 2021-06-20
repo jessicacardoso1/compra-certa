@@ -65,7 +65,12 @@
                     join compra_certa.compra_has_item on compra_has_item.id_item = item.id_item
                     join compra_certa.compra_has_data_setores on compra_has_data_setores.id_compra = compra_has_item.id_compra
                     join compra_certa.data_setores on data_setores.id_data_setores = compra_has_data_setores.id_data_setores
-                    where data_setores.setor = 1
+                    where compra_has_data_setores.id_compra in 
+                        (
+                            select id_compra from compra_has_data_setores
+                            group by id_compra
+                            having COUNT(id_compra) = 1
+                        )
                     order by data_setores.data;
                 ");
             
@@ -118,7 +123,6 @@
                 echo $e;
                 return false;
             }
-            
         }// FIM método
 
         public function inserirCompraHasDataSetores($_compra, $_id_data_setores){
@@ -127,7 +131,7 @@
                 $pdo = $conn->connect();
                 
                 $sql = $pdo->prepare("
-                    insert into compra_certa.data_setores
+                    insert into compra_certa.compra_has_data_setores
                     (id_compra, id_data_setores) values
                     (:compra, :id_data_setores)
                 ");
@@ -148,7 +152,6 @@
                 echo $e;
                 return false;
             }
-            
         }// FIM método
 
 
@@ -183,7 +186,6 @@
                 echo $e;
                 return false;
             }
-            
         }// FIM método
 
         public function vincularAvaliacaoCompra($_compra, $_id_avaliacao){
@@ -209,6 +211,43 @@
                 return false;
             }
         }
+
+        public function rastrearCompra($compra){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select data_setores.data as data, data_setores.setor as setor
+                    from compra_certa.data_setores
+                    join compra_certa.compra_has_data_setores on compra_has_data_setores.id_data_setores = data_setores.id_data_setores
+                    where compra_has_data_setores.id_compra = :id;
+                ");
+                
+                $sql->bindValue("id", $compra->getCodigo());
+                
+                $sql->execute();
+
+                $rastreio = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                        "DATA"    => $linha['data'],
+                        "SETOR"   => $linha['setor'],              
+                    );
+
+                    array_push($rastreio, $arr);
+                }
+                
+                $pdo = $conn->close();
+
+                return $rastreio;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }//FIM função
     }
 
 ?>

@@ -95,9 +95,9 @@
                         echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
                         echo '<div class="card-text text-muted"><s>De: R$ '.$c['PRECO'].'</s> por:</div>';
                         echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO_NOVO_PRODUTO'].'</b><small> à vista</small></h5>';
-                        echo '<form action="'.DIRACTION.'carrinho/inserirItem/'.$c['ID_PRODUTO'].'/1">';
-                        echo '<button type="submit" class="btn cor-bg-teal  text-white w-100 mb-2">Comprar</button>';
-                        echo '</form>';
+                        #echo '<form action="'.DIRACTION.'carrinho/inserirItem/'.$c['ID_PRODUTO'].'/1">';
+                        echo '<button type="submit" class="btn cor-bg-teal text-white w-100 mb-2" onclick="add_carrinho('.$c['ID_PRODUTO'].', 1)">Comprar</button>';
+                        #echo '</form>';
                         echo '</div>';
                         echo '</div>';
                         echo '</div>';
@@ -123,9 +123,9 @@
               <p class="card-text offs-text-name text-monospace">Batatas</p>
               <h5 class="text-success mb-2"><b>R$ 2,38</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form method="POST" action="carrinho/inserirItem/4/1">
-                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                </form>
+                <!-- <form method="POST" action="carrinho/inserirItem/4/1"> -->
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2" onclick="add_carrinho(4, 1)">Comprar</button>
+                <!-- </form> -->
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos1', 'sub');">-</button>
                 <input id="btnMaisVendidos1" type="number" class="form-control text-center w-25" value="1">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos1', 'sum');">+</button>
@@ -139,9 +139,9 @@
               <p class="card-text offs-text-name text-monospace">Batatas</p>
               <h5 class="text-success mb-2"><b>R$ 2,38</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form method="POST" action="carrinho/inserirItem/4/1">  
-                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                </form>
+                <!-- <form method="POST" action="carrinho/inserirItem/4/1">   -->
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2" onclick="add_carrinho(4, 1)">Comprar</button>
+                <!-- </form> -->
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos2', 'sub');">-</button>
                 <input id="btnMaisVendidos2" type="number" class="form-control text-center w-25" value="1">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos2', 'sum');">+</button>
@@ -155,9 +155,9 @@
             <p class="card-text offs-text-name text-monospace">Batatas</p>
             <h5 class="text-success mb-2"><b>R$ 2,38</b> <small> à vista</small></h5>
             <div class="btn-group" role="group" aria-label="Exemplo básico">
-              <form method="POST" action="carrinho/inserirItem/4/1">
-                <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-              </form>
+              <!-- <form method="POST" action="carrinho/inserirItem/4/1"> -->
+                <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2" onclick="add_carrinho(4, 1)">Comprar</button>
+              <!-- </form> -->
               <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos3', 'sub');">-</button>
               <input id="btnMaisVendidos3" type="number" class="form-control text-center w-25" value="1">
               <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos3', 'sum');">+</button>
@@ -171,9 +171,9 @@
               <p class="card-text offs-text-name text-monospace">Cebola</p>
               <h5 class="text-success mb-2"><b>R$ 6,99</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form method="POST" action="carrinho/inserirItem/8/1">
-                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                </form>
+                <!-- <form method="POST" action="carrinho/inserirItem/8/1"> -->
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2" onclick="add_carrinho(8, 1)">Comprar</button>
+                <!-- </form> -->
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos4', 'sub');">-</button>
                 <input id="btnMaisVendidos4" type="number" class="form-control text-center w-25" value="1">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos4', 'sum');">+</button>
@@ -187,9 +187,9 @@
               <p class="card-text offs-text-name text-monospace">Caqui</p>
               <h5 class="text-success mb-2"><b>R$ 15,49</b> <small> à vista</small></h5>
               <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form method="POST" action="carrinho/inserirItem/6/1">
-                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                </form>
+                <!-- <form method="POST" action="carrinho/inserirItem/6/1"> -->
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2" onclick="add_carrinho(6, 1)">Comprar</button>
+                <!-- </form> -->
                   <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos5', 'sub');">-</button>
                   <input id="btnMaisVendidos5" type="number" class="form-control text-center w-25" value="1">
                   <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos5', 'sum');">+</button>
@@ -203,9 +203,9 @@
             <p class="card-text offs-text-name text-monospace">Caqui</p>
             <h5 class="text-success mb-2"><b>R$ 15,49</b> <small> à vista</small></h5>
             <div class="btn-group" role="group" aria-label="Exemplo básico">
-                <form method="POST" action="carrinho/inserirItem/6/1">
-                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2">Comprar</button>
-                </form>
+                <!-- <form method="POST" action="carrinho/inserirItem/6/1"> -->
+                  <button type="submit" class="btn cor-bg-teal text-white w-100 mb-2 mr-2" onclick="add_carrinho(6, 1)">Comprar</button>
+                <!-- </form> -->
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25 ml-1" onClick="btnCounter('btnMaisVendidos6', 'sub');">-</button>
                 <input id="btnMaisVendidos6" type="number" class="form-control text-center w-25" value="1">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white h-25" onClick="btnCounter('btnMaisVendidos6', 'sum');">+</button>
@@ -230,9 +230,9 @@
               <div class="card-body">
                 <p class="card-text offs-text-name text-monospace">Soja em grãos</p>
                 <h5 class="text-success mb-2"><b>R$ 3,29</b> <small> à vista</small></h5>
-                <form method="POST" action="carrinho/inserirItem/27/1">
-                  <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
-                </form>
+                <!-- <form method="POST" action="carrinho/inserirItem/27/1"> -->
+                  <button type="submit" class="btn cor-bg-teal text-white w-100" onclick="add_carrinho(27, 1)">Comprar</button>             
+                <!-- </form> -->
               </div>
           </div>
 
@@ -242,9 +242,9 @@
             <div class="card-body">
                 <p class="card-text offs-text-name text-monospace">Aveia em flocos</p>
                 <h5 class="text-success mb-2"><b>R$ 6,99</b> <small> à vista</small></h5>
-                <form method="POST" action="carrinho/inserirItem/2/1">
-                  <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
-                </form>
+                <!-- <form method="POST" action="carrinho/inserirItem/2/1"> -->
+                  <button type="submit" class="btn cor-bg-teal text-white w-100" onclick="add_carrinho(2, 1)">Comprar</button>             
+                <!-- </form> -->
             </div>
           </div>
 
@@ -253,9 +253,9 @@
             <div class="card-body">
               <p class="card-text offs-text-name text-monospace">Feijão carioca</p>
               <h5 class="text-success mb-2"><b>R$ 6,49</b> <small> à vista</small></h5>
-              <form method="POST" action="carrinho/inserirItem/18/1">
-                <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
-              </form>
+              <!-- <form method="POST" action="carrinho/inserirItem/18/1"> -->
+                <button type="submit" class="btn cor-bg-teal text-white w-100" onclick="add_carrinho(18, 1)">Comprar</button>             
+              <!-- </form> -->
             </div>
           </div>
 
@@ -264,9 +264,9 @@
               <div class="card-body">
                 <p class="card-text offs-text-name text-monospace">Quinoa</p>
                 <h5 class="text-success mb-2"><b>R$ 7,89</b> <small> à vista</small></h5>
-                <form method="POST" action="carrinho/inserirItem/25/1">
-                  <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>                               
-                </form>
+                <!-- <form method="POST" action="carrinho/inserirItem/25/1"> -->
+                  <button type="submit" class="btn cor-bg-teal text-white w-100" onclick="add_carrinho(25, 1)">Comprar</button>                               
+                <!-- </form> -->
               </div>
           </div>
 
@@ -275,14 +275,15 @@
               <div class="card-body">
                 <p class="card-text offs-text-name text-monospace">Tapioca</p>
                 <h5 class="text-success mb-2"><b>R$ 2,49</b> <small> à vista</small></h5>
-                <form method="POST" action="carrinho/inserirItem/29/1">
-                  <button type="submit" class="btn cor-bg-teal text-white w-100">Comprar</button>             
-                </form>
+                <!-- <form method="POST" action="carrinho/inserirItem/29/1"> -->
+                <button type="submit" class="btn cor-bg-teal text-white w-100" onclick="add_carrinho(29, 1)">Comprar</button>             
+                <!-- </form> -->
               </div>
           </div>
           </div>
       </div>
     
-    <script src="js/index.js"></script>
+    <script src="<?php echo DIRJS.'index.js'; ?>"></script>
+    <script src="<?php echo DIRJS.'ajax.js'; ?>"></script>
     
 </main>

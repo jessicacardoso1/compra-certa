@@ -6,23 +6,25 @@
 
     class ControladorPreparacao extends Controlador{
 
+        protected $_compra;
+
         public function __construct(){
             
-            $compra = new Compra;
-            $list = $compra->listarComprasParaSetorPreparacao();
+            $this->compra = new Compra;
+            $list = $this->compra->listarComprasParaSetorPreparacao();
             
             $this->view("adm_screens/", "preparacao", $list);
 
         }
 
         public function enviarParaEmbalagem(){
-            /* implementar a baixa da compra no setor de preparacao... */
-            # inserir novo registro em data_setores
-            # inserir novo registro em compra_has_data_setores
+            $this->compra->setCodigo($_POST['num_compra']);
 
-            echo getDatetimeNow();
-            echo '<br>';
-            echo $_POST['num_compra'];
+            $setor = 2; # setor de embalagem
+            $id_data_setores = $this->compra->inserirDataSetores($setor);
+            $this->compra->inserirCompraHasDataSetores($this->compra, $id_data_setores);
+
+            header('location: '.DIRACTION.'funcionario-preparacao');
         }
 
     }

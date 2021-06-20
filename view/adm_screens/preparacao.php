@@ -104,7 +104,7 @@
 
               ?>
             </ul>
-            <form action="<?php echo DIRACTION.'funcionario-preparacao/enviarParaEmbalagem'; ?>" method="POST">
+            <form method="POST" action="<?php echo DIRACTION.'funcionario-preparacao/enviarParaEmbalagem'; ?>">
               <input type="hidden" name="num_compra" value="<?php echo $numero_primeira_compra_realizada ?>"/>
               <input type="submit" class="btn btn-success adm-preparation-btn" value="Conf. e Embalagem" />
             </form>
