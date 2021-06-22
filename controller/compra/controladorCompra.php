@@ -4,11 +4,13 @@
     use compra_certa\controller\Controlador;
     use compra_certa\model\compra\compra;
     use compra_certa\model\pessoa\Cliente;
+    use compra_certa\model\compra\avaliacao;
 
     class ControladorCompra extends Controlador{
 
         private $compra;
         private $cliente;
+        private $avaliacao;
 
         public function __construct(){
             $this->compra= new Compra();
@@ -26,7 +28,12 @@
             $this->carregarNavbar();
             $this->view("", "avaliar_compras");
         }
-        public function rastrear(){
+
+        public function avaliacao($id_compra){
+            $this->carregarNavbar();
+        }
+
+        public function rastrear($id_compra){
             $this->carregarNavbar();
             $this->view("", "rastrear_compras");
         }
