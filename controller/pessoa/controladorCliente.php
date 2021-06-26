@@ -20,7 +20,7 @@
             $this->cliente->setAtivo(1);
             
             if(!$this->cliente->efetuarCadastro()){
-                alert('Houve uma falha no cadastro! Contate o suporte para maiores informações.');
+                alert('Erro!', 'Houve uma falha no cadastro! Contate o suporte para maiores informações.');
                 
                 $_SESSION['usuario_logado'] = false;
                 header('location: '.DIRACTION.'login');
@@ -34,11 +34,23 @@
         }// FIM método
 
         public function minhaconta(){
-            $this->carregarNavbar();
-            $this->view("", "minha_conta");
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+
+                $this->carregarNavbar();
+                $this->view("", "minha_conta");
         }
 
         public function dados(){
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+            
             $this->carregarNavbar();
             $this->cliente->setCpf($_SESSION['usuario_logado']);
             $dadosUser = $this->cliente->getDadosUser();
@@ -47,6 +59,12 @@
         }
 
         public function editarDados(){
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+
             $this->cliente->setCpf($_SESSION['usuario_logado']);
             $this->cliente->setEmail($_POST['email']);
             $this->cliente->setSenha($_POST['novasenha']);
@@ -56,6 +74,12 @@
         }
 
         public function meusEnderecos(){
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+
             $this->carregarNavbar();
             
             $endereco = new \compra_certa\model\endereco\Endereco;

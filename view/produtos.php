@@ -103,7 +103,13 @@
                 echo '</a>';
                 echo '<div class="card-body">';
                 echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
-                echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO'].'</b> <small> à vista</small></h5>';
+                if(isset($c['PRECO_NOVO_PRODUTO'])){
+                  echo '<div class="card-text text-muted"><s>De: R$ '.$c['PRECO'].'</s> por:</div>';
+                  echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO_NOVO_PRODUTO'].'</b> <small> à vista</small></h5>';
+                }
+                else{
+                  echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO'].'</b> <small> à vista</small></h5>';
+                }
                 echo '<button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>';
                 echo '</div>';
                 echo '</div>';

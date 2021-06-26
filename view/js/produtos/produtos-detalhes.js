@@ -24,3 +24,13 @@ function setBtnMaisVendidos(id, valor){
     // setando o campo hidden do form da quantidade pro carrinho
     document.getElementById('qnt').value = valor
 }//FIM função
+
+function update_value(){
+    var valor = document.getElementById('input-count').value
+
+    if(valor < 1){
+        document.getElementById('qnt').value = 1
+        document.getElementById('input-count').value = 1
+    }else
+        document.getElementById('qnt').value = valor
+}

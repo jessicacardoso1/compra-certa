@@ -13,6 +13,12 @@
         private $estado;
 
         public function __construct(){
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+
             $this->estado   = new Estado();
             $this->cidade   = new Cidade();
             $this->endereco = new Endereco();

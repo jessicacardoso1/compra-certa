@@ -14,21 +14,37 @@
         private $img;
 
         public function consultarProdutos(){
-			$dao = new ProdutoDAO();
-
-			return $dao->consultarProdutos($this);
-        }
-
-        public function getPromocao($_id_promocao){
+			$promocao = new \compra_certa\model\produto\Promocao(1);
             $dao = new ProdutoDAO();
-			
-			return $dao->getPromocao($_id_promocao);
+            
+            // ajuste no valor dos produtos que estão em promoção...
+			$produtos = $dao->consultarProdutos($this);
+            for($i = 0; $i < count($produtos); $i++){
+                $produto = new Produto();
+                $produto->setCodigo($produtos[$i]['ID']);
+
+                if($promocao->produtoEmPromocao($produto))
+                    $produtos[$i]['PRECO_NOVO_PRODUTO'] = $promocao->getProdutoPromocao($produto)['PRECO_NOVO_PRODUTO'];
+                
+            }
+
+            return $produtos;
         }
 
         public function consultarProdutoViaID($id_produto){
+            $promocao = new \compra_certa\model\produto\Promocao(1);
             $dao = new ProdutoDAO();
-			
-			return $dao->consultarProdutoViaID($id_produto);
+
+            $produto = new Produto;
+            $produto->setCodigo($id_produto);
+
+            $dados_produto = $dao->consultarProdutoViaID($produto->getCodigo());
+            
+            if($promocao->produtoEmPromocao($produto)){
+                $dados_produto[0]['PRECO'] = $promocao->getProdutoPromocao($produto)['PRECO_NOVO_PRODUTO'];
+            }
+
+			return $dados_produto;
         }
 
         public function getCodigo()

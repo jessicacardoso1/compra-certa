@@ -46,7 +46,7 @@
 
             /* redirecionamento para a tela correta */
             if($_tela == 'home' || $_tela == 1)
-                header('location: '.DIRACTION);  
+                header('location: '.DIRACTION);
             else if($_tela == 'detalhes_produto' || $_tela == 2)
                 header('location: '.DIRACTION.'produto/detalhes/'.$_item);
         }
@@ -59,6 +59,12 @@
             $i->setProduto($p);
 
             $this->carrinho->excluirItem($i);
+
+            header('location: '.DIRACTION.'carrinho/meuCarrinho');
+        }
+
+        public function limparCarrinho(){
+            $this->carrinho->limparCarrinho();
 
             header('location: '.DIRACTION.'carrinho/meuCarrinho');
         }

@@ -31,7 +31,7 @@ $dados = $dados[0];
             <div class="col-sm-5">
               <div class="btn-group" role="group" aria-label="Exemplo básico">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white" onClick="btnCounter('input-count', 'sub');">-</button>
-                <input id="input-count" type="number" value="1" class="form-control text-center w-75">
+                <input id="input-count" type="number" value="1" class="form-control text-center w-75" onChange="update_value()">
                 <button type="button" class="btn cor-bg-teal font-weight-bold text-white" onClick="btnCounter('input-count', 'sum');">+</button>
               </div>
             </div>

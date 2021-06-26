@@ -40,6 +40,7 @@ return array(
     'compra_certa\\model\\produto\\Categoria' => $baseDir . '/model/produto/categoria.php',
     'compra_certa\\model\\produto\\Item' => $baseDir . '/model/produto/item.php',
     'compra_certa\\model\\produto\\Produto' => $baseDir . '/model/produto/produto.php',
+    'compra_certa\\model\\produto\\Promocao' => $baseDir . '/model/produto/promocao.php',
     'compra_certa\\routes\\Despachante' => $baseDir . '/routes/dispatch.php',
     'compra_certa\\routes\\Rota' => $baseDir . '/routes/routes.php',
 );

@@ -19,12 +19,12 @@ $dados = $dados[0];
             <label>Nome</label>
           </div>
           <div class="text-field">
-            <input type="text" id="text_phone" name="telefone" value="<?php echo $dados['TELEFONE'] ?>">
+            <input type="text" id="text_phone" name="telefone" value="<?php echo $dados['TELEFONE'] ?>" onkeypress="telefone_mask('text_phone')" maxlength="15">
             <label>Telefone</label>
           </div>
           <div class="form-inline">
             <div class="text-field my-adress-field-aling-two-elements">
-              <input type="text" id="text_cep" name="cep"  value="<?php echo $dados['CEP'] ?>">
+              <input type="text" id="text_cep" name="cep"  value="<?php echo $dados['CEP'] ?>" onkeypress="cep_mask('text_cep')" maxlength="9">
               <label>CEP</label>
             </div>
             <div class="text-field my-adress-field-aling-two-elements">
@@ -98,6 +98,7 @@ $dados = $dados[0];
     </div>
   
  
- <script src="js/enderecos/index.js"></script>
+    <script src="<?php echo DIRJS.'enderecos/index.js'; ?>"></script>
+    <script src="<?php echo DIRJS.'mask.js'; ?>"></script>
  </main>
   

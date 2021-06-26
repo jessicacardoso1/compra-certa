@@ -55,6 +55,7 @@ class ComposerStaticInite77d6a6dd6ff40d05d575f567497fe7b
         'compra_certa\\model\\produto\\Categoria' => __DIR__ . '/../..' . '/model/produto/categoria.php',
         'compra_certa\\model\\produto\\Item' => __DIR__ . '/../..' . '/model/produto/item.php',
         'compra_certa\\model\\produto\\Produto' => __DIR__ . '/../..' . '/model/produto/produto.php',
+        'compra_certa\\model\\produto\\Promocao' => __DIR__ . '/../..' . '/model/produto/promocao.php',
         'compra_certa\\routes\\Despachante' => __DIR__ . '/../..' . '/routes/dispatch.php',
         'compra_certa\\routes\\Rota' => __DIR__ . '/../..' . '/routes/routes.php',
     );

@@ -16,6 +16,12 @@
         }
 
         public function inserirItem($_item){
+            // check se o produto esta em promocao...
+            $promocao = new \compra_certa\model\produto\Promocao(1);
+            if($promocao->produtoEmPromocao($_item->getProduto())){
+                $_item->getProduto()->setPreco($promocao->getProdutoPromocao($_item->getProduto())['PRECO_NOVO_PRODUTO']);
+            }
+
             if($this->itemEstaNoCarrinho($_item)){
                 $indice_item = $this->getIndiceItem($_item);
 
@@ -49,6 +55,14 @@
 
                 $this->itens = $new_array;
             }
+        }
+
+        public function limparCarrinho(){
+            $this->itens = [];
+        }
+
+        public function produtoEmPromocao($produto){
+            return 1;
         }
 
         public function getQntProdutos(){

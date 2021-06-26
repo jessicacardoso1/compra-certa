@@ -33,17 +33,17 @@
                 $view_failed  = "login.php";
             }
             else if ($_POST["usr_tp"] == "cliente"){
-                $view_success = "../home";
+                $view_success = DIRACTION;
 
-                $view_failed  = "../login";
+                $view_failed  = DIRACTION.'login';
             }
 
             // check login
             $check_login = $this->login->efetuarLogin();
 
             if(!$check_login){
-                alert('CPF ou senha incorreto!');
-            
+                alert('Atenção!', 'CPF ou senha inválidos!');
+                
                 header("location: $view_failed");
 
                 $_SESSION['usuario_logado'] = false;
@@ -77,7 +77,7 @@
                 $_SESSION['usuario_logado'] = '';
                 #session_destroy();
 
-            header("location: ../home");
+            header('location: '.DIRACTION);
         }
 
     }
