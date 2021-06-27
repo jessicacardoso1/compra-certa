@@ -61,10 +61,6 @@
             $this->itens = [];
         }
 
-        public function produtoEmPromocao($produto){
-            return 1;
-        }
-
         public function getQntProdutos(){
             $qnt = 0;
             for($i = 0; $i < count($this->itens); $i++)

@@ -31,13 +31,15 @@
       </div>
       <div class="row">
         <div class="form-group">
-          <select class="form-control-select select" aria-label="Default select example" name="relevancia" onchange="MostrarProdutosCategoria('ordenacao', this.value)">
-            <option value="relevancia" selected>Relevância</option>
-            <option value="nomeCrescente">Nome [A-Z]</option>
-            <option value="nomeDecrescente">Nome [Z-A]</option>
-            <option value="precoCrescente">Preço [Maior]</option>
-            <option value="precoDecrescente">Preço [Menor]</option>
-          </select>
+          <form method="GET" action="<?php echo DIRACTION.'produto/consultar'; ?>">
+            <select name="filtro_ordem" class="form-control-select select" aria-label="Default select example" name="relevancia" onchange="this.form.submit();">
+              <option value="relevancia">Relevância</option>
+              <option value="nomeCrescente">Nome [A-Z]</option>
+              <option value="nomeDecrescente">Nome [Z-A]</option>
+              <option value="precoCrescente">Preço [Menor]</option>
+              <option value="precoDecrescente">Preço [Maior]</option>
+            </select>
+          </form>
         </div>
       </div>
 

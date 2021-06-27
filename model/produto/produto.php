@@ -19,6 +19,10 @@
             
             // ajuste no valor dos produtos que estão em promoção...
 			$produtos = $dao->consultarProdutos($this);
+            
+            // sessão com os produtos para realizar o filtro da consulta...
+            $_SESSION['consulta_produtos'] = $produtos;
+
             for($i = 0; $i < count($produtos); $i++){
                 $produto = new Produto();
                 $produto->setCodigo($produtos[$i]['ID']);

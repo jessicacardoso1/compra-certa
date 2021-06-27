@@ -18,9 +18,33 @@
         } 
         
         public function consultar(){
-            $this->produto->setNome($_GET['produto']);
-            $listaProdutos = $this->produto->consultarProdutos();
-            
+            $listaProdutos = array();
+
+            if(isset($_SESSION['consulta_produtos']) && isset($_GET['filtro_ordem'])){
+                $consulta = $_SESSION['consulta_produtos'];
+
+                switch($_GET['filtro_ordem']){
+                    case 'nomeCrescente':
+                        $consulta = array_sort($consulta, 'NOME_PRODUTO', SORT_ASC);
+                        break;
+                    case 'nomeDecrescente':
+                        $consulta = array_sort($consulta, 'NOME_PRODUTO', SORT_DESC);
+                        break;
+                    case 'precoCrescente':
+                        $consulta = array_sort($consulta, 'PRECO', SORT_ASC);
+                        break;
+                    case 'precoDecrescente':
+                        $consulta = array_sort($consulta, 'PRECO', SORT_DESC);
+                        break;
+                }
+
+                $listaProdutos = $consulta;
+            }
+            else{
+                $this->produto->setNome($_GET['produto']);
+                $listaProdutos = $this->produto->consultarProdutos();
+            }
+
             $this->view("", "produtos", $listaProdutos);
         }
 
