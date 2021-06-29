@@ -25,10 +25,10 @@
             return $dao->listarCompras($cliente);
         }
 
-        public function listarComprasParaSetorPreparacao(){
+        public function listarComprasParaFuncionarios($setor){
             $dao = new CompraDAO();
 
-            $lista_compras = $dao->listarComprasParaSetorPreparacao();
+            $lista_compras = $dao->listarComprasParaFuncionarios($setor);
             
             $lista_compras_por_id = array();
             for($i = 0; $i < count($lista_compras); $i++){

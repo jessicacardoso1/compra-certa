@@ -11,10 +11,9 @@
         public function __construct(){
             
             $this->compra = new Compra;
-            $list = $this->compra->listarComprasParaSetorPreparacao();
+            $list = $this->compra->listarComprasParaFuncionarios(1); # 1- setor preparação
             
             $this->view("adm_screens/", "preparacao", $list);
-
         }
 
         public function enviarParaEmbalagem(){
@@ -23,8 +22,8 @@
             $setor = 2; # setor de embalagem
             $id_data_setores = $this->compra->inserirDataSetores($setor);
             $this->compra->inserirCompraHasDataSetores($this->compra, $id_data_setores);
-
-            header('location: '.DIRACTION.'funcionario-preparacao');
+            #header("location: ".DIRACTION."funcionario-preparacao",  true,  30 );
+            echo "<script type='text/javascript'>window.top.location='".DIRACTION."funcionario-preparacao';</script>"; exit;
         }
 
     }

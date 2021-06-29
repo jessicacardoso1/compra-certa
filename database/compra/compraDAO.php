@@ -53,7 +53,7 @@
             }
         }
 
-        public function listarComprasParaSetorPreparacao(){
+        public function listarComprasParaFuncionarios($setor){
             try{
                 $conn = new Conn();
                 $pdo = $conn->connect();
@@ -65,14 +65,15 @@
                     join compra_certa.compra_has_item on compra_has_item.id_item = item.id_item
                     join compra_certa.compra_has_data_setores on compra_has_data_setores.id_compra = compra_has_item.id_compra
                     join compra_certa.data_setores on data_setores.id_data_setores = compra_has_data_setores.id_data_setores
-                    where compra_has_data_setores.id_compra in 
-                        (
-                            select id_compra from compra_has_data_setores
-                            group by id_compra
-                            having COUNT(id_compra) = 1
-                        )
-                    order by data_setores.data;
+                    where data_setores.data in (
+                        select MAX(data_setores.data) from compra_certa.data_setores
+                        join compra_certa.compra_has_data_setores on compra_has_data_setores.id_data_setores = data_setores.id_data_setores
+                        group by compra_has_data_setores.id_compra
+                    ) and data_setores.setor = :setor
+                    order by data_setores.data, produto.nome;
                 ");
+
+                $sql->bindParam(':setor', $setor);
             
                 $sql->execute();
 
@@ -153,8 +154,6 @@
                 return false;
             }
         }// FIM método
-
-
 
         public function avaliarCompra($_compra, $_avaliacao){
             try{
@@ -248,6 +247,7 @@
                 return false;
             }
         }//FIM função
+
     }
 
 ?>

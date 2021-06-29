@@ -1,8 +1,8 @@
 <?php 
-$dados = $dados[0];
+
+  $dados = $dados[0];
 
 ?>
-
 
 <main>
       <!--PRODUTO DETALHADO-->

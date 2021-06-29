@@ -6,7 +6,7 @@
         $datetime = new DateTime();
         $datetime->setTimezone($tz_object);
 
-        return $datetime->format('Y\-m\-d\ h:i:s');
+        return $datetime->format('Y\-m\-d\ H:i:s');
     }
 
     function array_sort($array, $on, $order=SORT_ASC){

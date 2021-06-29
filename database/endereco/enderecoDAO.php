@@ -177,7 +177,7 @@
                     from compra_certa.endereco join compra_certa.cliente_has_endereco on cliente_has_endereco.id_endereco = endereco.id_endereco
                     join compra_certa.cidade on endereco.id_cidade = cidade.id_cidade
                     join compra_certa.estado on cidade.id_estado = estado.id_estado
-                    where cliente_has_endereco.cpf = :cpf;
+                    where cliente_has_endereco.cpf = :cpf and endereco.status = 1;
                 ");
                 
                 $sql->bindParam("cpf", $_cpf);
@@ -218,24 +218,17 @@
         public function removerEndereco($_id_endereco){
             try{
                 $conn = new Conn();
-                #$pdo = $conn->connect();
+                $pdo = $conn->connect();
+
+                $sql = $pdo->prepare("
+                    update compra_certa.endereco set status = 0 where (id_endereco = :_id_endereco);
+                ");
                 
-                /* 
-                    método um tanto complicado de desenvolve por envolver 
-                    uma cascata de chaves. endereco está em várias tabelas...
-                    vale a pena remover o endereco?
-                */
+                $sql->bindParam(":_id_endereco", $_id_endereco);
 
-                #$sql = $pdo->prepare("
-                #    delete from endereco;
-                #");
-                
-                #$sql->bindParam("cpf", $_cpf);
+                $sql->execute();
 
-                #$sql->execute();
-
-                #$pdo = $conn->close();
-
+                $pdo = $conn->close();
             }
             catch(PDOException $e){
                 echo $e;

@@ -13,6 +13,7 @@
       <?php
           $itens = $dados[0];
           
+          $j = 1;
           foreach($itens as $i){
             echo '<div class="row">';
 
@@ -25,12 +26,21 @@
             echo '<p>Em estoque</p>';
             echo '<small>Contagem de unidades: '.$i->getQuantidade().'</small><br>';
             
+            echo '<div class="col-sm-4" style="margin-left: -15px;">';
+            echo '<div class="btn-group" role="group" aria-label="Exemplo básico">';
+            echo '<button type="button" class="btn cor-bg-teal font-weight-bold text-white" onClick="btnCounter(\'input-count-'.$j.'\', \'sub\');">-</button>';
+            echo '<input id="input-count-'.$j.'" type="number" value="'.$i->getQuantidade().'" class="form-control text-center w-100" onChange="update_value()">';
+            echo '<button type="button" class="btn cor-bg-teal font-weight-bold text-white" onClick="btnCounter(\'input-count-'.$j.'\', \'sum\');">+</button>';
+            echo '</div>';
+            echo '</div>';
+            
             echo '<div class="row">';
             echo '<div class="col-sm-4">';
             echo '<a href="'.DIRACTION.'carrinho/excluirItem/'.$i->getProduto()->getCodigo().'" class="text-dark"><small>Excluir</small></a>';
             echo '<a class="text-decoration-none text-dark ml-1 mr-1"><small>|</small></a>';
-            echo '<a href="" class="text-dark"><small>Salvar para mais tarde</small></a>';
+            echo '<a href="" onclick="atualiza_carrinho('.$i->getProduto()->getCodigo().', '.$i->getQuantidade().', '.$j.')" class="text-dark"><small>Atualizar carrinho</small></a>';
             echo '</div>';
+            
             echo '<div class="col-sm-5"></div>';
             echo '</div>';
             echo '</div>';
@@ -38,6 +48,8 @@
             echo '<p class="text-center">R$ '.number_format($i->subTotal(),2,',','.').'</p>';
             echo '</div>';
             echo '</div> <hr>';
+            
+            $j++;
           }
       ?>
 
@@ -178,4 +190,8 @@
       </div>
 
     </div>
+
+    <script src="<?php echo DIRJS.'index.js'; ?>"></script>
+    <script src="<?php echo DIRJS.'ajax.js'; ?>"></script>
+    
 </main>

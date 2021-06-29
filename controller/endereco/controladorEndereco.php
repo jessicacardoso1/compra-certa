@@ -95,6 +95,8 @@
 
         public function removerEndereco($_id_endereco){
             $this->endereco->removerEndereco($_id_endereco);
+
+            header('location:'.DIRACTION.'cliente/meusEnderecos');
         }
 
     }
