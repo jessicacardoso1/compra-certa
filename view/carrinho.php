@@ -1,12 +1,13 @@
 <main>
   <div class="container border pt-3 my-3" style="margin-top: 70px; color:rgb(71, 70, 70); padding: 30px;">
       <div class="row">
-        <div class="col-10">
+        <div class="col-9">
           <h3 class="mb-3 offs-label text-monospace">Carrinho de compras</h3>
         </div>
         <div class="col-md-2 text-center">
-          <small>Preço</small>
+          <small>Subtotal</small>
         </div>
+        <div class="col-md-1"></div>
       </div>
 
       <!-- PRODUTOS CARRINHO -->
@@ -19,9 +20,11 @@
 
             echo '<div class="col-md-2">';
             echo '<img class="img-fluid img-thumbnail" src="'.DIRIMG.'itens/'.$i->getProduto()->getImg().'" alt="Produtos" width="200">';
+            #echo '<p class="text-center">Valor Unt.: R$ '.number_format($i->getProduto()->getPreco(),2,',','.').'</p>';
+            echo '<h5 class="text-success mb-2 text-center"><b>R$ '.number_format($i->getProduto()->getPreco(),2,',','.').'</b><small> und.</small></h5>';
             echo '</div>';
 
-            echo '<div class="col-md-7">';
+            echo '<div class="col-md-6">';
             echo '<h5>'.$i->getProduto()->getNome().'</h5>';
             echo '<p>Em estoque</p>';
             echo '<small>Contagem de unidades: '.$i->getQuantidade().'</small><br>';
@@ -40,12 +43,12 @@
             echo '<a class="text-decoration-none text-dark ml-1 mr-1"><small>|</small></a>';
             echo '<a href="" onclick="atualiza_carrinho('.$i->getProduto()->getCodigo().', '.$i->getQuantidade().', '.$j.')" class="text-dark"><small>Atualizar carrinho</small></a>';
             echo '</div>';
-            
+
             echo '<div class="col-sm-5"></div>';
             echo '</div>';
             echo '</div>';
-            echo '<div class="col-md-3" >';
-            echo '<p class="text-center">R$ '.number_format($i->subTotal(),2,',','.').'</p>';
+            echo '<div class="col-md-4" >';
+            echo '<p class="text-center"><b>R$ '.number_format($i->subTotal(),2,',','.').'</b></p>';
             echo '</div>';
             echo '</div> <hr>';
             
@@ -72,7 +75,7 @@
             <div class="col-sm-1"></div>
     
             <div class="col-sm-4">
-              <h5 class=" ml-5 mt-2">Valor Total: R$ '.number_format($dados[1],2,',','.').'</h3>
+              <h5 class=" ml-5 mt-2"><b>Valor Total: R$ '.number_format($dados[1],2,',','.').'</b></h3>
             </div>
           </div>
           ';

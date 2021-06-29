@@ -6,7 +6,6 @@
     
     class CompraDAO{
 
-
         public function listarCompras($_cliente){
             try{
                 $conn = new Conn();
