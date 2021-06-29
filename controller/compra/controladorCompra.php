@@ -13,6 +13,12 @@
         private $avaliacao;
 
         public function __construct(){
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+
             $this->compra= new Compra();
             $this->cliente = new Cliente();
             $this->cliente->setCpf($_SESSION['usuario_logado']);

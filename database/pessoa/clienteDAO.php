@@ -15,8 +15,8 @@
                 
                 $sql->bindValue("cpf", $_cliente->getCpf());
                 $sql->bindValue("email", $_cliente->getEmail());
-                $sql->bindValue("senha", $_cliente->getSenha());
                 $sql->bindValue("ativo", $_cliente->getAtivo());
+                $sql->bindValue("senha", $_cliente->getSenha());
                 
                 $sql->execute();
 

@@ -4,7 +4,6 @@ use compra_certa\database\compra\CompraDAO;
 
 class Avaliacao{
 
-    private $compra;
     private $estrelas;
     private $titulo;
     private $comentario;

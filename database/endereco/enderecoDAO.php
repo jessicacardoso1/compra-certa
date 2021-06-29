@@ -177,7 +177,7 @@
                     from compra_certa.endereco join compra_certa.cliente_has_endereco on cliente_has_endereco.id_endereco = endereco.id_endereco
                     join compra_certa.cidade on endereco.id_cidade = cidade.id_cidade
                     join compra_certa.estado on cidade.id_estado = estado.id_estado
-                    where cliente_has_endereco.cpf = :cpf;
+                    where cliente_has_endereco.cpf = :cpf and endereco.status = 1;
                 ");
                 
                 $sql->bindParam("cpf", $_cpf);
@@ -218,26 +218,100 @@
         public function removerEndereco($_id_endereco){
             try{
                 $conn = new Conn();
-                #$pdo = $conn->connect();
+                $pdo = $conn->connect();
+
+                $sql = $pdo->prepare("
+                    update compra_certa.endereco set status = 0 where (id_endereco = :_id_endereco);
+                ");
                 
-                /* 
-                    método um tanto complicado de desenvolve por envolver 
-                    uma cascata de chaves. endereco está em várias tabelas...
-                    vale a pena remover o endereco?
-                */
+                $sql->bindParam(":_id_endereco", $_id_endereco);
 
-                #$sql = $pdo->prepare("
-                #    delete from endereco;
-                #");
-                
-                #$sql->bindParam("cpf", $_cpf);
+                $sql->execute();
 
-                #$sql->execute();
-
-                #$pdo = $conn->close();
-
+                $pdo = $conn->close();
             }
             catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
+        public function getDadosEndereco($endereco){
+
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+              
+                $sql = $pdo->prepare("
+                    select endereco.id_endereco as id, endereco.pais as pais, endereco.nome as nome, endereco.cep as cep, endereco.bairro as bairro, endereco.endereco as endereco, endereco.complemento as complemento, endereco.numero as numero, endereco.telefone as telefone, cidade.nome as cidade_nome, estado.nome as estado_nome, estado.sigla as estado_sigla
+                    from compra_certa.endereco 
+                    join compra_certa.cidade on endereco.id_cidade = cidade.id_cidade
+                    join compra_certa.estado on cidade.id_estado = estado.id_estado
+                    where endereco.id_endereco = :id;
+                ");
+                
+                $sql->bindValue("id", $endereco->getCodigo());
+
+                $sql->execute();
+
+                $enderecov = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                        "ID_ENDERECO"  => $linha['id'],
+                        "PAIS"         => $linha['pais'],
+                        "NOME"         => $linha['nome'],
+                        "CEP"          => $linha['cep'],
+                        "BAIRRO"       => $linha['bairro'],
+                        "ENDERECO"     => $linha['endereco'],
+                        "COMPLEMENTO"  => $linha['complemento'],
+                        "NUMERO"       => $linha['numero'],
+                        "TELEFONE"     => $linha['telefone'],
+                        "CIDADE_NOME"  => $linha['cidade_nome'],
+                        "ESTADO_NOME"  => $linha['estado_nome'],
+                        "ESTADO_SIGLA" => $linha['estado_sigla']
+                    );
+
+                    array_push($enderecov, $arr);
+
+                }
+
+                $pdo = $conn->close();
+                return $enderecov; 
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+            
+        }
+
+        public function editarEndereco($endereco){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+
+                $sql = $pdo->prepare("
+                    UPDATE compra_certa.endereco
+                    SET nome = :nome, cep = :cep, bairro = :bairro, endereco = :endereco, complemento = :complemento, numero = :numero, telefone = :telefone 
+                    WHERE (id_endereco = :id_endereco)
+                ");
+
+                $sql->bindValue(":id_endereco", $endereco->getCodigo());
+                $sql->bindValue(":nome", $endereco->getNome());
+                $sql->bindValue(":cep", $endereco->getCep());
+                $sql->bindValue(":bairro", $endereco->getBairro());
+                $sql->bindValue(":endereco", $endereco->getEndereco());
+                $sql->bindValue(":complemento", $endereco->getComplemento());
+                #$sql->bindValue(":_id_cidade", $endereco->getCidade()->getCodigo());
+                $sql->bindValue(":numero", $endereco->getNumero());
+                $sql->bindValue(":telefone", $endereco->getTelefone());
+
+                $sql->execute();
+
+                return True;
+
+            }catch(PDOException $e){
                 echo $e;
                 return false;
             }

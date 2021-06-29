@@ -4,6 +4,7 @@
 
     class Compra{
 
+        private $codigo;
         private $itens;
         private $cliente;
         private $numero;
@@ -24,11 +25,11 @@
             return $dao->listarCompras($cliente);
         }
 
-        public function listarComprasParaSetorPreparacao(){
+        public function listarComprasParaFuncionarios($setor){
             $dao = new CompraDAO();
 
-            $lista_compras = $dao->listarComprasParaSetorPreparacao();
-
+            $lista_compras = $dao->listarComprasParaFuncionarios($setor);
+            
             $lista_compras_por_id = array();
             for($i = 0; $i < count($lista_compras); $i++){
                 if(!array_key_exists($lista_compras[$i]['ID_COMPRA'], $lista_compras_por_id)){
@@ -68,6 +69,17 @@
 
 
         //getters and setters
+        public function getCodigo()
+        {
+            return $this->codigo;
+        }
+
+    
+        public function setCodigo($codigo)
+        {
+            $this->codigo = $codigo;
+        }
+
         public function getItens()
         {
             return $this->itens;

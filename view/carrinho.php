@@ -13,14 +13,10 @@
       <?php
           $itens = $dados[0];
           
+          $j = 1;
           foreach($itens as $i){
             echo '<div class="row">';
-            echo '<div class="col-md-1">';
-            echo '<div class="form-check aling_vert">';
-            echo '<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">';
-            echo '</div>';
-            echo '</div>';
-            
+
             echo '<div class="col-md-2">';
             echo '<img class="img-fluid img-thumbnail" src="'.DIRIMG.'itens/'.$i->getProduto()->getImg().'" alt="Produtos" width="200">';
             echo '</div>';
@@ -30,34 +26,60 @@
             echo '<p>Em estoque</p>';
             echo '<small>Contagem de unidades: '.$i->getQuantidade().'</small><br>';
             
+            echo '<div class="col-sm-4" style="margin-left: -15px;">';
+            echo '<div class="btn-group" role="group" aria-label="Exemplo básico">';
+            echo '<button type="button" class="btn cor-bg-teal font-weight-bold text-white" onClick="btnCounter(\'input-count-'.$j.'\', \'sub\');">-</button>';
+            echo '<input id="input-count-'.$j.'" type="number" value="'.$i->getQuantidade().'" class="form-control text-center w-100" onChange="update_value()">';
+            echo '<button type="button" class="btn cor-bg-teal font-weight-bold text-white" onClick="btnCounter(\'input-count-'.$j.'\', \'sum\');">+</button>';
+            echo '</div>';
+            echo '</div>';
+            
             echo '<div class="row">';
-            echo '<div class="col-sm-7">';
+            echo '<div class="col-sm-4">';
             echo '<a href="'.DIRACTION.'carrinho/excluirItem/'.$i->getProduto()->getCodigo().'" class="text-dark"><small>Excluir</small></a>';
             echo '<a class="text-decoration-none text-dark ml-1 mr-1"><small>|</small></a>';
-            echo '<a href="" class="text-dark"><small>Salvar para mais tarde</small></a>';
+            echo '<a href="" onclick="atualiza_carrinho('.$i->getProduto()->getCodigo().', '.$i->getQuantidade().', '.$j.')" class="text-dark"><small>Atualizar carrinho</small></a>';
             echo '</div>';
+            
             echo '<div class="col-sm-5"></div>';
             echo '</div>';
             echo '</div>';
-            echo '<div class="col-md-2" >';
+            echo '<div class="col-md-3" >';
             echo '<p class="text-center">R$ '.number_format($i->subTotal(),2,',','.').'</p>';
             echo '</div>';
             echo '</div> <hr>';
+            
+            $j++;
           }
       ?>
 
-      <div class="row mt-3">
-        <div class="col-sm-4"></div>
-        
-        <div class="col-sm-4">
-          <button onclick=location.href="finalizar_compra.php" type="button" class="btn cor-bg-teal text-white mt-2 w-100">Finalizar compra</button>
-        </div>
+      <?php
+        $carrinho = new \compra_certa\model\produto\Carrinho;
 
-        <div class="col-sm-4">
-          <h5 class=" ml-5 mt-2">Valor Total: R$ <?php echo number_format($dados[1],2,',','.'); ?></h3>
-        </div>
-      </div>
-
+        if($carrinho->getTotal() > 0.0)
+          echo '
+            <div class="row">
+          
+            <div class="col-sm-7">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button type="button" onclick=location.href="'.DIRACTION.'carrinho/limparCarrinho'.'" class="btn cor-bg-teal text-white btn-md mr-2">Limpar o carrinho</button>
+                  <button type="button" class="btn cor-bg-teal text-white btn-md w-50">Finalizar compra</button>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col-sm-1"></div>
+    
+            <div class="col-sm-4">
+              <h5 class=" ml-5 mt-2">Valor Total: R$ '.number_format($dados[1],2,',','.').'</h3>
+            </div>
+          </div>
+          ';
+        else 
+          echo '<h4 class="mb-3 offs-label text-monospace text-center">Seu carrinho está vazio</h4>';
+      ?>
+      
     </div>
     <!--salvos/comprar novamente-->
 
@@ -168,4 +190,8 @@
       </div>
 
     </div>
+
+    <script src="<?php echo DIRJS.'index.js'; ?>"></script>
+    <script src="<?php echo DIRJS.'ajax.js'; ?>"></script>
+    
 </main>

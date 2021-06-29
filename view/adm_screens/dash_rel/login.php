@@ -21,7 +21,7 @@
     <nav class="navbar bg-salmao">
       <div class="container justify-content-between">
         <a href="home.php">
-          <img src="../../img/_logo.png" alt="logo" width="210">
+          <img src="../../img/logo.png" alt="logo" width="210">
         </a>
       </div>
     </nav>

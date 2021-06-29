@@ -1,16 +1,15 @@
 <?php
 
     namespace compra_certa\controller;
-    use compra_certa\model\produto\Produto;
+    use compra_certa\model\produto\Promocao;
 
     class ControladorHome extends Controlador{
 
         public function __construct(){
             $this->carregarNavbar();
 
-            $produto = new Produto();
-            $promocao = $produto->getPromocao(1);
-            $this->view("", "home", $promocao);
+            $p = new Promocao(1);
+            $this->view("", "home", $p->getPromocao($p));
         }
 
     }

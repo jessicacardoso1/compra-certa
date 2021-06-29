@@ -19,29 +19,38 @@
             $this->cliente->setSenha($_POST["senhaCadastro"]);
             $this->cliente->setAtivo(1);
             
-            #$view_success = "../../view/login_cadastro.php";
-            $view_failed = "login_cadastro.php";
-            
             if(!$this->cliente->efetuarCadastro()){
-                echo '<script>';
-                echo 'alert("Houve uma falha no cadastro! Contate o suporte para maiores informações.")';
-                echo '</script>';
+                alert('Erro!', 'Houve uma falha no cadastro! Contate o suporte para maiores informações.');
                 
-                header("location: $view_failed");
+                $_SESSION['usuario_logado'] = false;
+                header('location: '.DIRACTION.'login');
+                
                 return false;
             }
 
-            // implementar o redirecionamento da tela?????????
-            header("location: home.php");
+            $_SESSION['usuario_logado'] = $_POST["cpfCadastro"];
+            header('location: '.DIRACTION);
 
         }// FIM método
 
         public function minhaconta(){
-            $this->carregarNavbar();
-            $this->view("", "minha_conta");
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+
+                $this->carregarNavbar();
+                $this->view("", "minha_conta");
         }
 
         public function dados(){
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+            
             $this->carregarNavbar();
             $this->cliente->setCpf($_SESSION['usuario_logado']);
             $dadosUser = $this->cliente->getDadosUser();
@@ -50,6 +59,12 @@
         }
 
         public function editarDados(){
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+
             $this->cliente->setCpf($_SESSION['usuario_logado']);
             $this->cliente->setEmail($_POST['email']);
             $this->cliente->setSenha($_POST['novasenha']);
@@ -59,6 +74,12 @@
         }
 
         public function meusEnderecos(){
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION);
+
+                return;
+            }
+
             $this->carregarNavbar();
             
             $endereco = new \compra_certa\model\endereco\Endereco;

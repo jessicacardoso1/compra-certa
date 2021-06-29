@@ -10,8 +10,8 @@
 <main>
   <nav class="navbar bg-salmao">
     <div class="container justify-content-between">
-      <a href="<?php echo DIRPAGE.'view'; ?>">
-        <img src="<?php echo DIRIMG.'_logo.png'; ?>" alt="logo" width="210">
+      <a href="<?php echo DIRPAGE; ?>">
+        <img src="<?php echo DIRIMG.'logo.png'; ?>" alt="logo" width="210">
       </a>
       
       <a href="<?php echo DIRACTION.'login/logout'; ?>" class="text-white text-decoration-none">
@@ -104,7 +104,7 @@
 
               ?>
             </ul>
-            <form action="<?php echo DIRACTION.'funcionario-preparacao/enviarParaEmbalagem'; ?>" method="POST">
+            <form method="POST" action="<?php echo DIRACTION.'funcionario-preparacao/enviarParaEmbalagem'; ?>">
               <input type="hidden" name="num_compra" value="<?php echo $numero_primeira_compra_realizada ?>"/>
               <input type="submit" class="btn btn-success adm-preparation-btn" value="Conf. e Embalagem" />
             </form>

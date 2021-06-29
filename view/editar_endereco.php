@@ -1,40 +1,44 @@
+<?php
 
+$dados = $dados[0];
+?>
 <main>
 
 
     <!-- CREATE/EDIT ADRESS -->
     <div class="col-md-6 create-edit-adress-display">
       <h3>Endereço</h3>
-      <form method="POST" action="<?php echo DIRACTION.'endereco/processaCadastro'; ?>">
+      <form method="POST" action="<?php echo DIRACTION.'endereco/processaUpdate'; ?>">
         <div class="form-group">
+        <input type="hidden" name="id" value="<?php echo $dados['ID_ENDERECO'] ?>">
           <select class="text-field my-adress-field" name="pais">
             <option>Brasil</option>
           </select>
           <div class="text-field">
-            <input type="text" id="text_name" name="nome">
+            <input type="text" id="text_name" name="nome"  value="<?php echo $dados['NOME'] ?>">
             <label>Nome</label>
           </div>
           <div class="text-field">
-            <input type="text" id="text_phone" name="telefone">
+            <input type="text" id="text_phone" name="telefone" value="<?php echo $dados['TELEFONE'] ?>" onkeypress="telefone_mask('text_phone')" maxlength="15">
             <label>Telefone</label>
           </div>
           <div class="form-inline">
             <div class="text-field my-adress-field-aling-two-elements">
-              <input type="text" id="text_cep" name="cep">
+              <input type="text" id="text_cep" name="cep"  value="<?php echo $dados['CEP'] ?>" onkeypress="cep_mask('text_cep')" maxlength="9">
               <label>CEP</label>
             </div>
             <div class="text-field my-adress-field-aling-two-elements">
-              <input type="text" id="text_bairro" name="bairro">
+              <input type="text" id="text_bairro" name="bairro"  value="<?php echo $dados['BAIRRO'] ?>">
               <label>Bairro</label>
              </div>
           </div>
           <div class="text-field">
-            <input type="text" id="text_adress" name="endereco">
+            <input type="text" id="text_adress" name="endereco"  value="<?php echo $dados['ENDERECO'] ?>">
             <label>Endereço</label>
           </div>
           <div class="form-inline">
             <div class="text-field my-adress-field-aling-three-elements">
-              <input type="text" id="text_city" name="cidade">
+              <input type="text" id="text_city" name="cidade"  value="<?php echo $dados['CIDADE_NOME'] ?>">
               <label>Cidade</label>
             </div>
             <div class="text-field my-adress-field-aling-three-elements">
@@ -78,12 +82,12 @@
               </select>
             </div>
             <div class="text-field my-adress-field-aling-three-elements">
-              <input type="text" id="text_numero" name="numero">
+              <input type="text" id="text_numero" name="numero"  value="<?php echo $dados['NUMERO'] ?>">
               <label>Número</label>
             </div>
           </div>
           <div class="text-field">
-            <input type="text" id="text_cmp" name="complemento">
+            <input type="text" id="text_cmp" name="complemento"  value="<?php echo $dados['COMPLEMENTO'] ?>">
             <label>Complemento</label>
           </div>
           <div class="form-group">
@@ -94,6 +98,7 @@
     </div>
   
  
- <script src="js/enderecos/index.js"></script>
+    <script src="<?php echo DIRJS.'enderecos/index.js'; ?>"></script>
+    <script src="<?php echo DIRJS.'mask.js'; ?>"></script>
  </main>
   

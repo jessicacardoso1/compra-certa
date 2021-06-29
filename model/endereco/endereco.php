@@ -14,6 +14,7 @@
         private $complemento;
         private $cidade;
         private $numero;
+        private $codigo;
         
         public function efetuarCadastro(){
             $dao = new EnderecoDAO();
@@ -31,6 +32,19 @@
             $dao = new EnderecoDAO();
 
             return $dao->removerEndereco($_id_endereco);
+        }
+         
+        public function getDadosEndereco(){
+
+            $dao = new EnderecoDAO();
+
+            return $dao->getDadosEndereco($this);
+        }
+
+        public function editarEndereco(){
+            $dao = new EnderecoDAO();
+            
+            $dao->editarEndereco($this);
         }
         
         //getters and setters
@@ -131,20 +145,26 @@
             $this->cidade = $cidade;
         }
 
-        
         public function getNumero()
         {
             return $this->numero;
         }
 
-        
         public function setNumero($numero)
         {
             $this->numero = $numero;
         }
         
+        public function getCodigo()
+        {
+                return $this->codigo;
+        }
 
-       
+        public function setCodigo($codigo)
+        {
+                $this->codigo = $codigo;
+
+        }
     }
 
 ?>

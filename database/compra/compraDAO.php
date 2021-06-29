@@ -53,7 +53,7 @@
             }
         }
 
-        public function listarComprasParaSetorPreparacao(){
+        public function listarComprasParaFuncionarios($setor){
             try{
                 $conn = new Conn();
                 $pdo = $conn->connect();
@@ -65,9 +65,15 @@
                     join compra_certa.compra_has_item on compra_has_item.id_item = item.id_item
                     join compra_certa.compra_has_data_setores on compra_has_data_setores.id_compra = compra_has_item.id_compra
                     join compra_certa.data_setores on data_setores.id_data_setores = compra_has_data_setores.id_data_setores
-                    where data_setores.setor = 1
-                    order by data_setores.data;
+                    where data_setores.data in (
+                        select MAX(data_setores.data) from compra_certa.data_setores
+                        join compra_certa.compra_has_data_setores on compra_has_data_setores.id_data_setores = data_setores.id_data_setores
+                        group by compra_has_data_setores.id_compra
+                    ) and data_setores.setor = :setor
+                    order by data_setores.data, produto.nome;
                 ");
+
+                $sql->bindParam(':setor', $setor);
             
                 $sql->execute();
 
@@ -118,7 +124,6 @@
                 echo $e;
                 return false;
             }
-            
         }// FIM método
 
         public function inserirCompraHasDataSetores($_compra, $_id_data_setores){
@@ -127,7 +132,7 @@
                 $pdo = $conn->connect();
                 
                 $sql = $pdo->prepare("
-                    insert into compra_certa.data_setores
+                    insert into compra_certa.compra_has_data_setores
                     (id_compra, id_data_setores) values
                     (:compra, :id_data_setores)
                 ");
@@ -148,8 +153,100 @@
                 echo $e;
                 return false;
             }
-            
         }// FIM método
+
+        public function avaliarCompra($_compra, $_avaliacao){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    insert into compra_certa.avaliacao
+                    (estrelas, titulo, cometario) values
+                    (:estrelas, :titulo, :cometario)
+                ");
+                
+                $sql->bindValue("estrelas", $_avaliacao->getEstrelas());
+                $sql->bindValue("titulo", $_avaliacao->getTitulo());
+                $sql->bindValue("cometario", $_avaliacao->getComentario());
+                
+                $sql->execute();
+
+                $last_id = $pdo->lastInsertID();
+
+                $pdo = $conn->close();
+                
+                $this->vincularAvaliacaoCompra($_compra, $last_id);
+                
+                return $last_id;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }// FIM método
+
+        public function vincularAvaliacaoCompra($_compra, $_id_avaliacao){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    UPDATE compra_certa.compra
+                    SET id_avaliacao = :_id_avaliacao 
+                    WHERE (id_compra = :_id_compra)
+                ");
+
+                $sql->bindParam(":_id_avaliacao", $_id_avaliacao);
+                $sql->bindParam(":_id_compra", $_compra->getCodigo());
+
+                $sql->execute();
+
+                return True;
+                
+            }catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
+        public function rastrearCompra($compra){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select data_setores.data as data, data_setores.setor as setor
+                    from compra_certa.data_setores
+                    join compra_certa.compra_has_data_setores on compra_has_data_setores.id_data_setores = data_setores.id_data_setores
+                    where compra_has_data_setores.id_compra = :id;
+                ");
+                
+                $sql->bindValue("id", $compra->getCodigo());
+                
+                $sql->execute();
+
+                $rastreio = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                        "DATA"    => $linha['data'],
+                        "SETOR"   => $linha['setor'],              
+                    );
+
+                    array_push($rastreio, $arr);
+                }
+                
+                $pdo = $conn->close();
+
+                return $rastreio;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }//FIM função
 
     }
 

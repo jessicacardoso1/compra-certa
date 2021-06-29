@@ -31,13 +31,15 @@
       </div>
       <div class="row">
         <div class="form-group">
-          <select class="form-control-select select" aria-label="Default select example" name="relevancia" onchange="MostrarProdutosCategoria('ordenacao', this.value)">
-            <option value="relevancia" selected>Relevância</option>
-            <option value="nomeCrescente">Nome [A-Z]</option>
-            <option value="nomeDecrescente">Nome [Z-A]</option>
-            <option value="precoCrescente">Preço [Maior]</option>
-            <option value="precoDecrescente">Preço [Menor]</option>
-          </select>
+          <form method="GET" action="<?php echo DIRACTION.'produto/consultar'; ?>">
+            <select name="filtro_ordem" class="form-control-select select" aria-label="Default select example" name="relevancia" onchange="this.form.submit();">
+              <option value="relevancia">Relevância</option>
+              <option value="nomeCrescente">Nome [A-Z]</option>
+              <option value="nomeDecrescente">Nome [Z-A]</option>
+              <option value="precoCrescente">Preço [Menor]</option>
+              <option value="precoDecrescente">Preço [Maior]</option>
+            </select>
+          </form>
         </div>
       </div>
 
@@ -103,7 +105,13 @@
                 echo '</a>';
                 echo '<div class="card-body">';
                 echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
-                echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO'].'</b> <small> à vista</small></h5>';
+                if(isset($c['PRECO_NOVO_PRODUTO'])){
+                  echo '<div class="card-text text-muted"><s>De: R$ '.$c['PRECO'].'</s> por:</div>';
+                  echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO_NOVO_PRODUTO'].'</b> <small> à vista</small></h5>';
+                }
+                else{
+                  echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO'].'</b> <small> à vista</small></h5>';
+                }
                 echo '<button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>';
                 echo '</div>';
                 echo '</div>';
