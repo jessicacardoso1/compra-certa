@@ -84,8 +84,8 @@
             echo   '</button>';
             echo   '</div>';
             echo   '<div class="col-md-5">';
-            echo   '<a href='.DIRACTION.'compra/avaliar class="btn btn-teal my-account-btn w-75">Avaliar compra</a>';
-            echo   '<a href='.DIRACTION.'compra/rastrear class="btn btn-teal my-account-btn w-75">Rastrear compra</a>';
+            echo   '<a href="'.DIRACTION.'compra/avaliar" class="btn btn-teal my-account-btn w-75">Avaliar compra</a>';
+            echo   '<a href="'.DIRACTION.'compra/rastrearCompra/'.$key.'" class="btn btn-teal my-account-btn w-75">Rastrear compra</a>';
             echo   '<a href="#" class="btn btn-teal my-account-btn w-75">Comprar novamente</a>';
             echo   '</div>';
             echo   '</div>';

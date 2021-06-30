@@ -3,6 +3,7 @@
     namespace compra_certa\database\compra;
     use compra_certa\database\conn\Conn;
     use PDO, PDOException;
+    use compra_certa\model\compra\Compra;
     
     class CompraDAO{
 
@@ -228,16 +229,15 @@
 
                 $rastreio = array();
                 while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
-                    $arr = array(
-                        "DATA"    => $linha['data'],
-                        "SETOR"   => $linha['setor'],              
-                    );
-
-                    array_push($rastreio, $arr);
+                    $c = new Compra();
+                    $c->setCodigo($compra->getCodigo());
+                    $c->setData($linha['data']);
+                    $c->setSetor($linha['setor']);
+                    array_push($rastreio, $c);
                 }
                 
                 $pdo = $conn->close();
-
+                    
                 return $rastreio;
 
             }

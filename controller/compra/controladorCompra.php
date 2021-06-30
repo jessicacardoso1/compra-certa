@@ -39,9 +39,11 @@
             $this->carregarNavbar();
         }
 
-        public function rastrear($id_compra){
+        public function rastrearCompra($id_compra){
+            $this->compra->setCodigo($id_compra);
+            $rastrearCompra = $this->compra->rastrearCompra($this->compra);
             $this->carregarNavbar();
-            $this->view("", "rastrear_compras");
+            $this->view("", "rastrear_compras", $rastrearCompra);
         }
 
     }

@@ -65,8 +65,12 @@
         public function concluirCompra(){
             
         }
+        public function rastrearCompra($compra){
+            $dao = new CompraDAO;
 
-
+            return $dao->rastrearCompra($compra);
+            
+        }
 
         //getters and setters
         public function getCodigo()
@@ -183,5 +187,6 @@
         {
                 $this->avaliacao = $avaliacao;
         }
+        
     }
 ?>
