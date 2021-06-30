@@ -21,6 +21,7 @@
 
             $this->compra= new Compra();
             $this->cliente = new Cliente();
+            $this->avaliacao = new Avaliacao();
             $this->cliente->setCpf($_SESSION['usuario_logado']);
         }
 
@@ -29,14 +30,20 @@
             $this->carregarNavbar();
             $this->view("","minhas_compras", $listaCompras);
         }
-
-        public function avaliar(){
+        //Exibir a tela de avaliar
+        public function avaliar($id_compra){
             $this->carregarNavbar();
-            $this->view("", "avaliar_compras");
+            $this->view("", "avaliar_compras",$id_compra);
         }
-
-        public function avaliacao($id_compra){
-            $this->carregarNavbar();
+        //Enviar a avaliação
+        public function avaliarCompra(){
+            $this->compra->setCodigo($_POST["idCompra"]);
+            $this->avaliacao->setEstrelas($_POST["rating"]);
+            $this->avaliacao->setTitulo($_POST["titulo"]);
+            $this->avaliacao->setComentario($_POST["comentario"]);
+            $this->compra->setAvaliacao($this->avaliacao);
+            $this->compra->avaliarCompra($this->compra);
+            header('location: '.DIRACTION.'compra/listarCompras');
         }
 
         public function rastrearCompra($id_compra){

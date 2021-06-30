@@ -1,6 +1,6 @@
 <?php
-namespace compra_certa\model\avaliacao;
-use compra_certa\database\compra\CompraDAO;
+namespace compra_certa\model\compra;
+
 
 class Avaliacao{
 
