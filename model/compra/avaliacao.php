@@ -1,61 +1,56 @@
 <?php
-namespace compra_certa\model\avaliacao;
-use compra_certa\database\compra\CompraDAO;
 
-class Avaliacao{
+    namespace compra_certa\model\avaliacao;
+    use compra_certa\database\compra\CompraDAO;
 
-    private $estrelas;
-    private $titulo;
-    private $comentario;
+    class Avaliacao{
 
-    // getters and setters
-   
-    public function getCompra()
-    {
-        return $this->compra;
-    }
+        private $estrelas;
+        private $titulo;
+        private $comentario;
 
+        // getters and setters
     
-    public function setCompra($compra)
-    {
-        $this->compra = $compra;
-    }
+        public function getCompra()
+        {
+            return $this->compra;
+        }
 
-    
-    public function getEstrelas()
-    {
-        return $this->estrelas;
-    }
+        public function setCompra($compra)
+        {
+            $this->compra = $compra;
+        }
 
-     
-    public function setEstrelas($estrelas)
-    {
-        $this->estrelas = $estrelas;
-    }
+        public function getEstrelas()
+        {
+            return $this->estrelas;
+        }
 
-     
-    public function getTitulo()
-    {
-        return $this->titulo;
-    }
+        public function setEstrelas($estrelas)
+        {
+            $this->estrelas = $estrelas;
+        }
 
-    
-    public function setTitulo($titulo)
-    {
-        $this->titulo = $titulo;
-    }
+        public function getTitulo()
+        {
+            return $this->titulo;
+        }
 
-    
-    public function getComentario()
-    {
-        return $this->comentario;
-    }
+        public function setTitulo($titulo)
+        {
+            $this->titulo = $titulo;
+        }
+        
+        public function getComentario()
+        {
+            return $this->comentario;
+        }
 
-     
-    public function setComentario($comentario)
-    {
-        $this->comentario = $comentario;
+        public function setComentario($comentario)
+        {
+            $this->comentario = $comentario;
+        }
+        
     }
-}
 
 ?>

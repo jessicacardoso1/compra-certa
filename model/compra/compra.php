@@ -15,10 +15,6 @@
         private $avaliacao;
         private $data_setores;
 
-        public function gerar_num_compra(){
-            
-        }
-
         public function listarCompras($cliente){
             $dao = new CompraDAO();
             

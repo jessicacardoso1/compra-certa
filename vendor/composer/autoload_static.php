@@ -44,6 +44,7 @@ class ComposerStaticInite77d6a6dd6ff40d05d575f567497fe7b
         'compra_certa\\database\\pessoa\\LoginDAO' => __DIR__ . '/../..' . '/database/pessoa/loginDAO.php',
         'compra_certa\\database\\produto\\CategoriaDAO' => __DIR__ . '/../..' . '/database/produto/categoriaDAO.php',
         'compra_certa\\database\\produto\\ProdutoDAO' => __DIR__ . '/../..' . '/database/produto/produtoDAO.php',
+        'compra_certa\\model\\avaliacao\\Avaliacao' => __DIR__ . '/../..' . '/model/compra/avaliacao.php',
         'compra_certa\\model\\compra\\Compra' => __DIR__ . '/../..' . '/model/compra/compra.php',
         'compra_certa\\model\\endereco\\Cidade' => __DIR__ . '/../..' . '/model/endereco/cidade.php',
         'compra_certa\\model\\endereco\\Endereco' => __DIR__ . '/../..' . '/model/endereco/endereco.php',

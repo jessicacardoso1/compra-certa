@@ -20,7 +20,7 @@
                 
                 $sql->bindValue(":_valor_total", $compra->getVal_total());
                 $sql->bindValue(":_data", getDatetimeNow());
-                $sql->bindValue(":_id_endereco", '57');
+                $sql->bindValue(":_id_endereco", '1');
             
                 
                 $sql->execute();
@@ -76,7 +76,7 @@
                 $pdo = $conn->connect();
                 
                 $sql = $pdo->prepare("
-                    insert into compra_certa.item
+                    insert into compra_certa.compra_has_item
                     (id_compra, id_item) values
                     (:_id_compra, :_id_item)
                 ");
@@ -142,7 +142,7 @@
                 $pdo = $conn->connect();
 
                 $sql = $pdo->prepare("
-                    SELECT compra.id_compra as id, compra.data as data, produto.nome as nome_p, produto.preco as preco_p, produto.nome_imagem as img, item.quantidade as qtd
+                    SELECT compra.id_compra as id, compra.valor_total as val_total, compra.data as data, produto.nome as nome_p, produto.preco as preco_p, produto.nome_imagem as img, item.quantidade as qtd
                     FROM compra_certa.compra 
                     INNER JOIN compra_certa.cliente_has_compra
                     ON cliente_has_compra.id_compra = compra.id_compra
@@ -163,6 +163,7 @@
                 while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
                     $arr = array(
                         "ID_COMPRA"      => $linha['id'],
+                        "VAL_TOTAL"      => $linha['val_total'],
                         "DATA"           => $linha['data'],
                         "NOME_PRODUTO"   => $linha['nome_p'],
                         "PRECO_PRODUTO"  => $linha['preco_p'],

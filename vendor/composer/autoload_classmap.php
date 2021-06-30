@@ -29,6 +29,7 @@ return array(
     'compra_certa\\database\\pessoa\\LoginDAO' => $baseDir . '/database/pessoa/loginDAO.php',
     'compra_certa\\database\\produto\\CategoriaDAO' => $baseDir . '/database/produto/categoriaDAO.php',
     'compra_certa\\database\\produto\\ProdutoDAO' => $baseDir . '/database/produto/produtoDAO.php',
+    'compra_certa\\model\\avaliacao\\Avaliacao' => $baseDir . '/model/compra/avaliacao.php',
     'compra_certa\\model\\compra\\Compra' => $baseDir . '/model/compra/compra.php',
     'compra_certa\\model\\endereco\\Cidade' => $baseDir . '/model/endereco/cidade.php',
     'compra_certa\\model\\endereco\\Endereco' => $baseDir . '/model/endereco/endereco.php',

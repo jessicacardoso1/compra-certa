@@ -5,7 +5,7 @@
     use compra_certa\model\compra\compra;
     use compra_certa\model\pessoa\Cliente;
     use compra_certa\model\compra\avaliacao;
-    use compra_certa\model\compra\carrinho;
+    #use compra_certa\model\produto\carrinho;
     use compra_certa\model\produto\item;
     class ControladorCompra extends Controlador{
 
@@ -54,11 +54,11 @@
         }
 
         public function finalizar(){
-            $carrinho = new Carrinho();
+            $carrinho = new \compra_certa\model\produto\Carrinho;
             $this->compra->setVal_total($carrinho->getTotal());
             $id_compra = $this->compra->inserirCompra($this->compra); 
             $this->compra->setCodigo($id_compra);
-           
+            
             $itenscarrinho = $carrinho->getItens();
             for($i=0; $i<count($itenscarrinho);$i++){
                 $item = new Item();
@@ -69,7 +69,9 @@
             
             $this->cliente->setCpf($_SESSION['usuario_logado']);
             $this->compra->vincularClienteHasCompra($this->cliente, $this->compra);
-
+            
+            $carrinho->limparCarrinho();
+            header('location: '.DIRACTION);
         }
 
     }
