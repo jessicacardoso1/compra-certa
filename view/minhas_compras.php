@@ -1,4 +1,5 @@
-<?php
+<?php 
+error_reporting(E_ERROR | E_PARSE);
   $compras = mergeListaPorID($dados, 'ID_COMPRA');
 
    foreach($compras as $i){
