@@ -71,6 +71,12 @@
             
             return $dao->vincularClienteHasCompra($cliente, $compra);
         }
+        public function avaliarCompra($compra){
+            $dao = new CompraDAO;
+
+            return $dao->avaliarCompra($compra);
+            
+        }
         public function rastrearCompra($compra){
             $dao = new CompraDAO;
 

@@ -285,20 +285,20 @@
             }
         }// FIM método
 
-        public function avaliarCompra($_compra, $_avaliacao){
+        public function avaliarCompra($_compra){
             try{
                 $conn = new Conn();
                 $pdo = $conn->connect();
                 
                 $sql = $pdo->prepare("
                     insert into compra_certa.avaliacao
-                    (estrelas, titulo, cometario) values
-                    (:estrelas, :titulo, :cometario)
+                    (estrelas, titulo, comentario) values
+                    (:_estrelas, :_titulo, :_comentario)
                 ");
-                
-                $sql->bindValue("estrelas", $_avaliacao->getEstrelas());
-                $sql->bindValue("titulo", $_avaliacao->getTitulo());
-                $sql->bindValue("cometario", $_avaliacao->getComentario());
+
+                $sql->bindValue(":_estrelas", $_compra->getAvaliacao()->getEstrelas());
+                $sql->bindValue(":_titulo", $_compra->getAvaliacao()->getTitulo());
+                $sql->bindValue(":_comentario", $_compra->getAvaliacao()->getComentario());
                 
                 $sql->execute();
 
@@ -329,7 +329,7 @@
                 ");
 
                 $sql->bindParam(":_id_avaliacao", $_id_avaliacao);
-                $sql->bindParam(":_id_compra", $_compra->getCodigo());
+                $sql->bindValue(":_id_compra", $_compra->getCodigo());
 
                 $sql->execute();
 
@@ -351,6 +351,7 @@
                     from compra_certa.data_setores
                     join compra_certa.compra_has_data_setores on compra_has_data_setores.id_data_setores = data_setores.id_data_setores
                     where compra_has_data_setores.id_compra = :id;
+                    
                 ");
                 
                 $sql->bindValue("id", $compra->getCodigo());

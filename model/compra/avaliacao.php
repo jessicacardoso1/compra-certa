@@ -1,7 +1,6 @@
 <?php
-
+    namespace compra_certa\model\compra;
     namespace compra_certa\model\avaliacao;
-    use compra_certa\database\compra\CompraDAO;
 
     class Avaliacao{
 
@@ -50,7 +49,7 @@
         {
             $this->comentario = $comentario;
         }
-        
+
     }
 
 ?>
