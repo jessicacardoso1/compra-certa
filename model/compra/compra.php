@@ -58,12 +58,22 @@
             return $dao->inserirCompraHasDataSetores($_compra, $_id_data_setores);
         }
 
-        public function editarEndereco(){
+        public function inserirCompra($compra){
+            $dao = new CompraDAO();
             
+            return $dao->inserirCompra($compra);
         }
 
-        public function concluirCompra(){
+        public function vincularCompraHasItem($compra, $item){
+            $dao = new CompraDAO();
             
+            return $dao->vincularCompraHasItem($compra, $item);
+        }
+
+        public function vincularClienteHasCompra($cliente, $compra){
+            $dao = new CompraDAO();
+            
+            return $dao->vincularClienteHasCompra($cliente, $compra);
         }
         public function avaliarCompra($compra){
             $dao = new CompraDAO;

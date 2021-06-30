@@ -67,7 +67,7 @@
               <div class="row">
                 <div class="col-sm-12">
                   <button type="button" onclick=location.href="'.DIRACTION.'carrinho/limparCarrinho'.'" class="btn cor-bg-teal text-white btn-md mr-2">Limpar o carrinho</button>
-                  <button type="button" class="btn cor-bg-teal text-white btn-md w-50">Finalizar compra</button>
+                  <button type="button" onclick=location.href="'.DIRACTION.'compra/pagamento'.'" class="btn cor-bg-teal text-white btn-md w-50">Finalizar compra</button>
                 </div>
               </div>
             </div>

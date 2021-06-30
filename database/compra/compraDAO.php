@@ -7,6 +7,135 @@
     
     class CompraDAO{
 
+        public function inserirCompra($compra){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    insert into compra_certa.compra
+                    (valor_total, data, id_endereco) values
+                    (:_valor_total, :_data, :_id_endereco)
+                ");
+                
+                $sql->bindValue(":_valor_total", $compra->getVal_total());
+                $sql->bindValue(":_data", getDatetimeNow());
+                $sql->bindValue(":_id_endereco", '57');
+            
+                
+                $sql->execute();
+
+                $last_id = $pdo->lastInsertID();
+
+                $pdo = $conn->close();
+                
+                return $last_id;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
+        public function inserirItem($item){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    insert into compra_certa.item
+                    (produto_id_produto, quantidade) values
+                    (:_produto_id_produto, :_quantidade)
+                ");
+                
+                $sql->bindValue(":_produto_id_produto", $item->getProduto()->getCodigo());
+                $sql->bindValue(":_quantidade", $item->getQuantidade());
+               
+            
+                
+                $sql->execute();
+
+                $last_id = $pdo->lastInsertID();
+
+                $pdo = $conn->close();
+                
+                return $last_id;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+
+        }
+
+        public function vincularCompraHasItem($compra, $item){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    insert into compra_certa.item
+                    (id_compra, id_item) values
+                    (:_id_compra, :_id_item)
+                ");
+                
+                $sql->bindValue(":_id_compra", $compra->getCodigo());
+                $sql->bindValue(":_id_item", $item->getCodigo());
+               
+            
+                
+                $sql->execute();
+
+                $last_id = $pdo->lastInsertID();
+
+                $pdo = $conn->close();
+                
+                return $last_id;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+
+        }
+
+        public function vincularClienteHasCompra($cliente, $compra){
+
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    insert into compra_certa.cliente_has_compra
+                    (cpf, id_compra) values
+                    (:_cpf, :_id_compra)
+                ");
+                
+                $sql->bindValue(":_cpf", $cliente->getCpf());
+                $sql->bindValue(":_id_compra", $compra->getCodigo());
+               
+               
+            
+                
+                $sql->execute();
+
+                $last_id = $pdo->lastInsertID();
+
+                $pdo = $conn->close();
+                
+                return $last_id;
+
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+
+        }
+
         public function listarCompras($_cliente){
             try{
                 $conn = new Conn();
