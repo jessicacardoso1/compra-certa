@@ -7,7 +7,7 @@
         </li>
         <li> > </li>
         <li>
-          <a class="menuLink" href="<?php echo DIRACTION.'cliente/minhascompras';?>">Minha compras</a>
+          <a class="menuLink" href="<?php echo DIRACTION.'compra/listarCompras';?>">Minha compras</a>
         </li>  
         <li> > </li>
         <li>

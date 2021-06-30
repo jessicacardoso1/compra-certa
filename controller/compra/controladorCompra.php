@@ -89,6 +89,19 @@
             header('location: '.DIRACTION);
         }
 
+        public function comprarNovamente(){
+            $this->compra->setCodigo($_POST['id_compra']);
+
+            $lista_itens = $this->compra->comprarNovamente();
+
+            $carrinho = new \compra_certa\model\produto\Carrinho;
+            foreach($lista_itens as $l){
+                $carrinho->inserirItem($l);
+            }
+
+            echo "<script type='text/javascript'>window.top.location='".DIRACTION."carrinho/meuCarrinho';</script>"; exit;
+        }
+
     }
 
 ?>

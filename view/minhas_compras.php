@@ -18,6 +18,8 @@
         </li>    
       </ul>
     </div>
+
+    <a href="" onclick="alerta()">chevrolet</a>
     <!--compra -->
     <?php
       $indicador = 1;
@@ -74,7 +76,7 @@
             echo   '<div class="col-md-5">';
             echo   '<a href="'.DIRACTION.'compra/avaliar/'.$key.'" class="btn btn-teal my-account-btn w-75">Avaliar compra</a>';
             echo   '<a href="'.DIRACTION.'compra/rastrearCompra/'.$key.'" class="btn btn-teal my-account-btn w-75">Rastrear compra</a>';
-            echo   '<a href="#" class="btn btn-teal my-account-btn w-75">Comprar novamente</a>';
+            echo   '<a href="#" onclick="comprar_novamente('.$key.')" class="btn btn-teal my-account-btn w-75">Comprar novamente</a>';
             echo   '</div>';
             echo   '</div>';
             echo   '</div>';
@@ -122,4 +124,7 @@
         $idModal++; 
       }      
     ?>
+
+  <script src="<?php echo DIRJS.'ajax.js'; ?>"></script>  
+
 </main>

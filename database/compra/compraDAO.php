@@ -4,8 +4,10 @@
     use compra_certa\database\conn\Conn;
     use PDO, PDOException;
     use compra_certa\model\compra\Compra;
-    
-    class CompraDAO{
+    use compra_certa\model\produto\Item;
+use compra_certa\model\produto\Produto;
+
+class CompraDAO{
 
         public function inserirCompra($compra){
             try{
@@ -51,8 +53,6 @@
                 
                 $sql->bindValue(":_produto_id_produto", $item->getProduto()->getCodigo());
                 $sql->bindValue(":_quantidade", $item->getQuantidade());
-               
-            
                 
                 $sql->execute();
 
@@ -83,8 +83,6 @@
                 
                 $sql->bindValue(":_id_compra", $compra->getCodigo());
                 $sql->bindValue(":_id_item", $item->getCodigo());
-               
-            
                 
                 $sql->execute();
 
@@ -116,9 +114,6 @@
                 
                 $sql->bindValue(":_cpf", $cliente->getCpf());
                 $sql->bindValue(":_id_compra", $compra->getCodigo());
-               
-               
-            
                 
                 $sql->execute();
 
@@ -380,6 +375,48 @@
                 return false;
             }
         }//FIM função
+
+        public function comprarNovamente($compra){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select item.id_item as id_item, item.produto_id_produto as id_produto, item.quantidade as quantidade, produto.preco as preco, produto.nome_imagem as img from compra_certa.compra_has_item
+                    join compra_certa.item on item.id_item = compra_has_item.id_item
+                    join compra_certa.produto on produto.id_produto = item.produto_id_produto
+                    where id_compra = :_id_compra;
+                    
+                ");
+                
+                $sql->bindValue(":_id_compra", $compra->getCodigo());
+                
+                $sql->execute();
+
+                $itens = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $i = new Item();
+                    $p = new Produto();
+                    $p->setCodigo($linha['id_produto']);
+                    $p->setPreco($linha['preco']);
+                    $p->setImg($linha['img']);
+
+                    $i->setCodigo($linha['id_item']);
+                    $i->setProduto($p);
+                    $i->setQuantidade($linha['quantidade']);
+
+                    array_push($itens, $i);
+                }
+                
+                $pdo = $conn->close();
+                    
+                return $itens;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
 
     }
 
