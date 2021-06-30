@@ -180,8 +180,8 @@
        
        
        <form method="POST" action="<?php echo DIRACTION.'compra/finalizar'?>">
-            <input name="endereco" type="hidden" value="1">
-            <button type="submit" class=" w-50 btn cor-bg-teal font-weight-bold text-white mb-2" style="width: 120%;">Fechar pedido</button>
+          <input name="endereco" type="hidden" value="1">
+          <button type="submit" class=" w-50 btn cor-bg-teal font-weight-bold text-white mb-2" style="width: 120%;">Fechar pedido</button>
       </form>
      
     </div>

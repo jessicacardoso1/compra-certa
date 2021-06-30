@@ -1,6 +1,6 @@
 <?php
+
     namespace compra_certa\model\compra;
-    namespace compra_certa\model\avaliacao;
 
     class Avaliacao{
 

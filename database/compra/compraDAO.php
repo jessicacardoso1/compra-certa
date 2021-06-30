@@ -153,6 +153,7 @@
                     INNER JOIN compra_certa.produto
                     ON produto.id_produto = item.produto_id_produto
                     WHERE cliente_has_compra.cpf = :cpf
+                    ORDER BY compra.data DESC;
                 ");
 
                 $sql->bindValue("cpf", $_cliente->getCPF());
@@ -350,7 +351,9 @@
                     select data_setores.data as data, data_setores.setor as setor
                     from compra_certa.data_setores
                     join compra_certa.compra_has_data_setores on compra_has_data_setores.id_data_setores = data_setores.id_data_setores
-                    where compra_has_data_setores.id_compra = :id;
+                    where compra_has_data_setores.id_compra = :id
+                    order by data_setores.data desc
+                    limit 1;
                     
                 ");
                 

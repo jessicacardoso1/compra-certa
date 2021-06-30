@@ -1,20 +1,7 @@
 <?php 
-error_reporting(E_ERROR | E_PARSE);
+
+  error_reporting(E_ERROR | E_PARSE);
   $compras = mergeListaPorID($dados, 'ID_COMPRA');
-
-   foreach($compras as $i){
-      key($i);
-      echo '<br>';
-    }
-
-
-  /*
-   foreach($compras as $i){
-    foreach($i as $j){
-      echo $j['NOME_PRODUTO'];
-      echo '<br>';
-    }
-  }*/
 
 ?>
 

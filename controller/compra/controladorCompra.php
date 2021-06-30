@@ -5,8 +5,8 @@
     use compra_certa\model\compra\compra;
     use compra_certa\model\pessoa\Cliente;
     use compra_certa\model\compra\avaliacao;
-    #use compra_certa\model\produto\carrinho;
     use compra_certa\model\produto\item;
+
     class ControladorCompra extends Controlador{
 
         private $compra;
@@ -55,7 +55,11 @@
         }
 
         public function pagamento(){
-            
+            if(!$_SESSION['usuario_logado']){
+                header('location: '.DIRACTION.'login');
+
+                return;
+            }
             $this->carregarNavbar();
             $this->view("", "finalizar_compra");
         }
@@ -78,6 +82,10 @@
             $this->compra->vincularClienteHasCompra($this->cliente, $this->compra);
             
             $carrinho->limparCarrinho();
+
+            // cria datasetores e vincula compra recém realizada ao setor de preparação
+            $id_datasetores = $this->compra->inserirDataSetores(1);
+            $this->compra->inserirCompraHasDataSetores($this->compra, $id_datasetores);
             header('location: '.DIRACTION);
         }
 

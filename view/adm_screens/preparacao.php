@@ -1,9 +1,14 @@
 <?php
 
-  $primeira_compra_realizada = current($dados);
-  $numero_primeira_compra_realizada = array_keys($primeira_compra_realizada)[0];
-  
-  $outras_compras = array_slice($dados, 1);
+  $check = false;
+  if(count($dados) >= 1){
+    $primeira_compra_realizada = current($dados);
+    $numero_primeira_compra_realizada = array_keys($primeira_compra_realizada)[0];
+    
+    $outras_compras = array_slice($dados, 1);
+
+    $check = true;
+  }
 
 ?>
 
@@ -92,7 +97,11 @@
         <div class="card">
           <h5 class="card-header adm-preparation-card adm-preparation-font">Pedido #<?php echo $numero_primeira_compra_realizada; ?></h5>
           <div class="card-body">
-            <h5 class="card-title">Itens:</h5>
+            <?php if($check){ ?>
+              <h5 class="card-title">Itens:</h5>
+            <?php } else { ?>
+              <h5 class="card-title text-center">Não há compras a serem processadas...</h5>
+            <?php } ?>
             <ul class="list-group">
               <?php
 
@@ -104,10 +113,12 @@
 
               ?>
             </ul>
-            <form method="POST" action="<?php echo DIRACTION.'funcionario-preparacao/enviarParaEmbalagem'; ?>">
-              <input type="hidden" name="num_compra" value="<?php echo $numero_primeira_compra_realizada ?>"/>
-              <input type="submit" class="btn btn-success adm-preparation-btn" value="Conf. e Embalagem" />
-            </form>
+            <?php if($check){ ?>
+              <form method="POST" action="<?php echo DIRACTION.'funcionario-preparacao/enviarParaEmbalagem'; ?>">
+                <input type="hidden" name="num_compra" value="<?php echo $numero_primeira_compra_realizada ?>"/>
+                <input type="submit" class="btn btn-success adm-preparation-btn" value="Conf. e Embalagem" />
+              </form>
+            <?php } ?>
           </div>
         </div>
       </div>
