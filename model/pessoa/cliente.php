@@ -40,6 +40,12 @@
             return $dao->getDadosUser($this);
         }
 
+        public function clientesMaisCompram(){
+            $dao = new ClienteDAO();
+
+            return $dao->clientesMaisCompram();
+        }
+
         // getters and setters
         public function getEmail(){
             return $this->email;

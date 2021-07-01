@@ -73,11 +73,11 @@
                     <i class="fa fa-location-arrow"></i>
                     <span>Bairros mais atendidos</span></a>
                 
-                <a class="nav-link" href="rel_clientes_mais_compram.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/produtosMaisVendidos'?>">
                     <i class="fa fa-users"></i>
                     <span>Clientes que mais compram</span></a>
                         
-                <a class="nav-link" href="rel_produtos_mais_vendidos.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/produtosMaisVendidos'?>">
                     <i class="fa fa-product-hunt"></i>
                     <span>Produtos mais vendidos</span></a>
 
