@@ -1,3 +1,32 @@
+<?php
+
+  # 3 -> setor entrega - envio
+  # 4 -> setor entrega - em andamento
+  # 5 -> setor entrega - entregue
+
+  $check = false;
+  if($dados != []){
+    $dados_compras = $dados;
+    
+    foreach($dados_compras as $i){
+      $i = $i[0];
+
+      if($i->getSetor() == 3){
+        $compras_envio[] = $i;
+      }
+      elseif($i->getSetor() == 4){
+        $compras_em_andamento[] = $i;
+      }
+      elseif($i->getSetor() == 5){
+        $compras_entregues[] = $i;
+      }
+    }
+
+    $check = true;
+  }
+
+?>
+
 <main>
   <nav class="navbar bg-salmao">
     <div class="container justify-content-between">
@@ -40,74 +69,30 @@
         <div class="col-md-12 login-form-1">
           <i class="fa fa-arrow-circle-up fa-3x adm-delivery-icon-up-color" style="font-size: 35px;"> Enviar</i>
           <div class="row adm-delivery-display">
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-up-color">#31992 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
+            
+            <?php foreach($compras_envio as $i): ?>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title text-center adm-delivery-icon-up-color"><?= '#'.$i->getCodigo().' '.'<br>'.$i->getData() ?></h5>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> <?= $i->getEndereco()->getNome() ?></p>
+                      </div> 
+                      <div class="col-sm-6">
+                        <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> <?= $i->getEndereco()->getTelefone() ?></p>
+                      </div>
                     </div>
+                    <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> <?= $i->getEndereco()->getCidade()->getNome() ?></p>
+                    <form method="POST" action="<?php echo DIRACTION.'funcionario-entrega/emAndamento'; ?>">
+                      <input type="hidden" name="num_compra" value="<?= $i->getCodigo() ?>"/>
+                      <input type="submit" class="btn btn-success adm-preparation-btn" value="Enviar" />
+                    </form>
                   </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Enviar</a>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-up-color">#32001 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
-                    </div>
-                  </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Enviar</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-up-color">#31992 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
-                    </div>
-                  </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Enviar</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-up-color">#31992 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
-                    </div>
-                  </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Enviar</a>
-                </div>
-              </div>
-            </div>
+            <?php endforeach ?>
+
           </div>
         </div>
       </div>
@@ -117,74 +102,30 @@
         <div class="col-md-12 login-form-1">
           <i class="fa fa-arrow-circle-right fa-3x adm-delivery-icon-right-color" style="font-size: 35px;"> Em Andamento</i>
           <div class="row adm-delivery-display">
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-right-color">#31992 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
+            
+            <?php foreach($compras_em_andamento as $i): ?>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title text-center adm-delivery-icon-right-color"><?= '#'.$i->getCodigo().' '.'<br>'.$i->getData() ?></h5>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> <?= $i->getEndereco()->getNome() ?></p>
+                      </div> 
+                      <div class="col-sm-6">
+                        <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> <?= $i->getEndereco()->getTelefone() ?></p>
+                      </div>
                     </div>
+                    <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> <?= $i->getEndereco()->getCidade()->getNome() ?></p>
+                    <form method="POST" action="<?php echo DIRACTION.'funcionario-entrega/entregar'; ?>">
+                      <input type="hidden" name="num_compra" value="<?= $i->getCodigo() ?>"/>
+                      <input type="submit" class="btn btn-success adm-preparation-btn" value="Enviar" />
+                    </form>
                   </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Concluir Entrega</a>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-right-color">#32001 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
-                    </div>
-                  </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Concluir Entrega</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-right-color">#31992 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
-                    </div>
-                  </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Concluir Entrega</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-right-color">#31992 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
-                    </div>
-                  </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Concluir Entrega</a>
-                </div>
-              </div>
-            </div>
+            <?php endforeach ?>
+            
           </div>
         </div>
       </div>
@@ -194,74 +135,27 @@
         <div class="col-md-12 login-form-1">
           <i class="fa fa-arrow-circle-down fa-3x adm-delivery-icon-down-color" style="font-size: 35px;"> Entregue</i>
           <div class="row adm-delivery-display">
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-down-color">#31992 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
+            
+            <?php foreach($compras_entregues as $i): ?>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title text-center adm-delivery-icon-down-color"><?= '#'.$i->getCodigo().' '.'<br>'.$i->getData() ?></h5>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> <?= $i->getEndereco()->getNome() ?></p>
+                      </div> 
+                      <div class="col-sm-6">
+                        <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> <?= $i->getEndereco()->getTelefone() ?></p>
+                      </div>
                     </div>
+                    <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> <?= $i->getEndereco()->getCidade()->getNome() ?></p>
+                    <a href="#" class="btn btn-teal my-account-btn" data-toggle="modal" data-target="#modal_1">Visualizar Informações</a>
                   </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn" data-toggle="modal" data-target="#modal_1">Visualizar Informações</a>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-down-color">#32001 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
-                    </div>
-                  </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Visualizar Informações</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-down-color">#31992 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
-                    </div>
-                  </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Visualizar Informações</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title text-center adm-delivery-icon-down-color">#31992 - 10/04/2021</h5>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-user" aria-hidden="true"></i> Filipe Silva</p>
-                    </div> 
-                    <div class="col-sm-6">
-                      <p class="card-text txt-color-grey"><i class="fa fa-phone" aria-hidden="true"></i> (71) 98222-2222</p>
-                    </div>
-                  </div>
-                  <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> Salvador-BA</p>
-                  <a href="#" class="btn btn-teal my-account-btn">Visualizar Informações</a>
-                </div>
-              </div>
-            </div>
+            <?php endforeach ?>
+
           </div>
         </div>
       </div>

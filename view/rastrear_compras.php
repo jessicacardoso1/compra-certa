@@ -28,7 +28,7 @@
       <div class="col-sm-3 mt-5">
         <p class="card-text offs-text-name text-monospace">Legumes Preciosos - TRACKING</p>
         <p class="text-center"><b>Pedido:</b> <?=$dados[0]->getCodigo();?></p>
-        <p class="text-center"><b>Nota Fiscal:</b> 5667</p>
+        <p class="text-center"><b>Nota Fiscal:</b> <?= '#'.rand(1000000, 10000000) ?></p>
       </div>
       <?php
       $statusPedido = ['disabled','disabled','disabled','disabled'];

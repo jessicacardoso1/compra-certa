@@ -1,6 +1,6 @@
 <?php 
-     namespace compra_certa\model\compra;
-     use compra_certa\database\compra\CompraDAO;
+    namespace compra_certa\model\compra;
+    use compra_certa\database\compra\CompraDAO;
 
     class Compra{
 
@@ -40,6 +40,39 @@
             }
             
             return $lista_compras_por_id;
+        }
+
+        public function getComprasSetorEntrega(){
+            # 3 -> setor entrega - envio
+            # 4 -> setor entrega - em andamento
+            # 5 -> setor entrega - entregue
+            $fases_setores = [3, 4, 5];
+
+            $lista_compras = array();
+            for($i = 0; $i < count($fases_setores); $i++){
+                $this->setor = $fases_setores[$i];
+
+                $lista_compras = array_merge($lista_compras, $this->getComprasPorSetor());
+            }
+            
+            $dados_compras = [];
+            foreach($lista_compras as $l){
+                $dados_compras[] = $l->dadosCompraSetorEntrega();
+            }
+
+            return $dados_compras;
+        }
+
+        public function getComprasPorSetor(){
+            $dao = new CompraDAO();
+
+            return $dao->getComprasPorSetor($this->setor);
+        }
+
+        public function dadosCompraSetorEntrega(){
+            $dao = new CompraDAO();
+
+            return $dao->dadosCompraSetorEntrega($this);
         }
 
         public function inserirDataSetores($_setor){

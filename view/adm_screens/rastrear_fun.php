@@ -1,3 +1,34 @@
+<?php
+
+  # 3 -> setor entrega - envio
+  # 4 -> setor entrega - em andamento
+  # 5 -> setor entrega - entregue
+
+  $check = false;
+  if($dados != []){
+    $dados_compras = $dados;
+    
+    foreach($dados_compras as $i){
+      $i = $i[0];
+
+      if($i->getSetor() == 3){
+        $compras_envio[] = $i;
+      }
+      elseif($i->getSetor() == 4){
+        $compras_em_andamento[] = $i;
+      }
+      elseif($i->getSetor() == 5){
+        $compras_entregues[] = $i;
+      }
+    }
+
+    $dados_compras = array_merge($compras_envio, $compras_em_andamento, $compras_entregues);
+
+    $check = true;
+  }
+
+?>
+
 <main>
   <nav class="navbar bg-salmao">
     <div class="container justify-content-between">
@@ -16,146 +47,65 @@
     <h3 class="mb-3 offs-label text-monospace text-center">Acompanhe o andamento das compras:</h3>
   </div>
 
-  <!-- Rastrear 1 -->
-  <div class="row cor-bg-teal-light mt-5">
+  <!-- Rastrear -->
+  <?php $background = 0 ?>
+  <?php foreach($dados_compras as $i): ?>
+    <?php if($background % 2 == 0): ?>
+      <div class="row cor-bg-teal-light">
+    <?php else: ?>
+      <div class="row">
+    <?php endif ?>
 
-    <div class="col-sm-1"></div>
+      <?php
+        if($i->getSetor() == 3){
+          $status = ['active', 'disabled', 'disabled'];
+        }
+        elseif($i->getSetor() == 4){
+          $status = ['complete', 'active', 'disabled'];
+        }
+        elseif($i->getSetor() == 5){
+          $status = ['complete', 'complete', 'active'];
+        }
+      ?>
 
-    <div class="col-sm-3 mt-5">
-      <p class="card-text offs-text-name text-monospace">Legumes Preciosos - TRACKING</p>
-      <p class="text-center"><b>Pedido:</b> #15877</p>
-      <p class="text-center"><b>Nota Fiscal:</b> 5667</p>
-    </div>
+      <div class="col-sm-2"></div>
 
-    <div class="col-sm-6 mt-2">
-      <div class="row bs-wizard">
-        <div class="col-xs-3 bs-wizard-step complete">
-          <div class="text-center bs-wizard-stepnum">Pedido realizado</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center mr-5">O pedido foi realizado.</div>
-        </div>
+      <div class="col-sm-4 mt-5">
+        <p class="card-text offs-text-name text-monospace">Legumes Preciosos - TRACKING</p>
+        <p class="text-center"><b>Pedido:</b> <?= $i->getCodigo() ?></p>
+        <p class="text-center"><b>Nota Fiscal:</b> <?= '#'.rand(1000000, 10000000) ?></p>
+      </div>
 
-        <div class="col-xs-3 bs-wizard-step complete">
-          <div class="text-center bs-wizard-stepnum">Preparação</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center mr-5">O pedido está sendo preparado.</div>
-        </div>
-          
-        <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
-          <div class="text-center bs-wizard-stepnum">Conferência e Embalagem</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center mr-5">O pedido está sendo conferido e embalado.</div>
-        </div>
-          
-        <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
-          <div class="text-center bs-wizard-stepnum">Entrega</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center">O pedido saiu para a entrega.</div>
+      <div class="col-sm-6 mt-2">
+        <div class="row bs-wizard">
+          <div class="col-xs-3 bs-wizard-step <?= $status[0] ?>">
+            <div class="text-center bs-wizard-stepnum">Pedido conferido</div>
+            <div class="progress"><div class="progress-bar"></div></div>
+            <a href="#" class="bs-wizard-dot"></a>
+            <div class="bs-wizard-info text-center mr-5">O pedido irá ser enviado.</div>
+          </div>
+
+          <div class="col-xs-3 bs-wizard-step <?= $status[1] ?>">
+            <div class="text-center bs-wizard-stepnum">Em andamento</div>
+            <div class="progress"><div class="progress-bar"></div></div>
+            <a href="#" class="bs-wizard-dot"></a>
+            <div class="bs-wizard-info text-center mr-5">O pedido está em andamento.</div>
+          </div>
+            
+          <div class="col-xs-3 bs-wizard-step <?= $status[2] ?>"><!-- complete -->
+            <div class="text-center bs-wizard-stepnum">Entregue</div>
+            <div class="progress"><div class="progress-bar"></div></div>
+            <a href="#" class="bs-wizard-dot"></a>
+            <div class="bs-wizard-info text-center mr-5">O pedido foi entregue.</div>
+          </div>
+            
         </div>
       </div>
+
+      <div class="col-sm-2"></div>
+
     </div>
+  <?php $background++ ?>
+  <?php endforeach ?>
 
-    <div class="col-sm-2"></div>
-
-  </div>
-
-
-  <!-- Rastrear 2 -->
-  <div class="row">
-
-    <div class="col-sm-1"></div>
-
-    <div class="col-sm-3 mt-5">
-      <p class="card-text offs-text-name text-monospace">Legumes Preciosos - TRACKING</p>
-      <p class="text-center"><b>Pedido:</b> #19233</p>
-      <p class="text-center"><b>Nota Fiscal:</b> 3467</p>
-    </div>
-
-    <div class="col-sm-6 mt-2">
-      <div class="row bs-wizard">
-        <div class="col-xs-3 bs-wizard-step complete">
-          <div class="text-center bs-wizard-stepnum">Pedido realizado</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center mr-5">O pedido foi realizado.</div>
-        </div>
-
-        <div class="col-xs-3 bs-wizard-step complete">
-          <div class="text-center bs-wizard-stepnum">Preparação</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center mr-5">O pedido está sendo preparado.</div>
-        </div>
-          
-        <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
-          <div class="text-center bs-wizard-stepnum">Conferência e Embalagem</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center mr-5">O pedido está sendo conferido e embalado.</div>
-        </div>
-          
-        <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
-          <div class="text-center bs-wizard-stepnum">Entrega</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center">O pedido saiu para a entrega.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-2"></div>
-
-  </div>
-
-
-  <!-- Rastrear 3 -->
-  <div class="row cor-bg-teal-light">
-
-    <div class="col-sm-1"></div>
-
-    <div class="col-sm-3 mt-5">
-      <p class="card-text offs-text-name text-monospace">Legumes Preciosos - TRACKING</p>
-      <p class="text-center"><b>Pedido:</b> #12889</p>
-      <p class="text-center"><b>Nota Fiscal:</b> 5467</p>
-    </div>
-
-    <div class="col-sm-6 mt-2">
-      <div class="row bs-wizard">
-        <div class="col-xs-3 bs-wizard-step complete">
-          <div class="text-center bs-wizard-stepnum">Pedido realizado</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center mr-5">O pedido foi realizado.</div>
-        </div>
-
-        <div class="col-xs-3 bs-wizard-step complete">
-          <div class="text-center bs-wizard-stepnum">Preparação</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center mr-5">O pedido está sendo preparado.</div>
-        </div>
-          
-        <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
-          <div class="text-center bs-wizard-stepnum">Conferência e Embalagem</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center mr-5">O pedido está sendo conferido e embalado.</div>
-        </div>
-          
-        <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
-          <div class="text-center bs-wizard-stepnum">Entrega</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center">O pedido saiu para a entrega.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-2"></div>
-
-  </div>
 </main>

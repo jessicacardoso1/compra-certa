@@ -21,9 +21,7 @@
 
   <div class="row" style="margin-top: 50px;">
 
-
     <div class="col-sm-1"></div>
-
 
     <div class="col-sm-2">
       <div class="row">
@@ -55,16 +53,14 @@
       </div>
       <div class="collapse multi-collapse" id="multiCollapseExample1">
         <div class="card card-body">
-          <?php
-            for($i = 0; $i < count($categorias); $i++){
-              echo '<div class="form-inline">';
-              echo '<div class="custom-control custom-checkbox">';
-              echo '<input type="checkbox" class="custom-control-input adjust adjust-checkbox-collapse" name="customCheck" id="customControlInline'.$i.'" value="'.$categorias[$i].'" onchange="MostrarProdutosCategoria("categoria", this.value)">';
-              echo '<label class="custom-control-label" for="customControlInline1">'.$categorias[$i].'</label>';
-              echo '</div>';
-              echo '</div>';
-            }
-          ?>
+          <?php for($i = 0; $i < count($categorias); $i++){ ?>
+            <div class="form-inline">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input adjust adjust-checkbox-collapse" name="customCheck" id="customControlInline'.$i.'" value="<?= $categorias[$i] ?>" onchange="MostrarProdutosCategoria('categoria', this.value)">
+                <label class="custom-control-label" for="customControlInline1"><?= $categorias[$i] ?></label>
+              </div>
+            </div>
+          <?php } ?>
         </div>
       </div>
       <div class="col-md-10-mb-6 col-prod filtro">
@@ -90,33 +86,29 @@
         </div>
       </div>
     </div>
-            
       
     <div class="col-sm-8 card">
       <h3 class="mb-3 offs-label text-monospace mt-2">Todos os produtos</h3>
       <div class="row">
         <div class="container-fluid">
           <div class="produtos d-flex flex-wrap">
-            <?php
-              foreach($dados as &$c){
-                echo '<div class="card" style="width: 18rem;">';
-                echo '<a href="'.DIRACTION.'produto/detalhes/'.$c['ID'].'">';
-                echo '<img href="/cliente/dado"class="card-img-top news-img" src="'.DIRIMG.'itens/'.$c['IMG'].'" alt="'.$c['IMG'].'"/>';
-                echo '</a>';
-                echo '<div class="card-body">';
-                echo '<p class="card-text offs-text-name text-monospace">'.$c['NOME_PRODUTO'].'</p>';
-                if(isset($c['PRECO_NOVO_PRODUTO'])){
-                  echo '<div class="card-text text-muted"><s>De: R$ '.$c['PRECO'].'</s> por:</div>';
-                  echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO_NOVO_PRODUTO'].'</b> <small> à vista</small></h5>';
-                }
-                else{
-                  echo '<h5 class="text-success mb-2"><b>R$ '.$c['PRECO'].'</b> <small> à vista</small></h5>';
-                }
-                echo '<button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>';
-                echo '</div>';
-                echo '</div>';
-              }
-            ?>
+            <?php foreach($dados as &$c): ?>
+              <div class="card" style="width: 18rem;">
+                <a href="<?= DIRACTION.'produto/detalhes/'.$c['ID'] ?>">
+                  <img href="/cliente/dado" class="card-img-top news-img" src="<?= DIRIMG.'itens/'.$c['IMG'] ?>" alt="<?= $c['IMG'] ?>"/>';
+                </a>
+                <div class="card-body">
+                  <p class="card-text offs-text-name text-monospace"><?= $c['NOME_PRODUTO'] ?></p>
+                  <?php if(isset($c['PRECO_NOVO_PRODUTO'])): ?>
+                    <div class="card-text text-muted"><s>De: R$ <?= $c['PRECO'] ?></s> por:</div>
+                    <h5 class="text-success mb-2"><b>R$ <?= $c['PRECO_NOVO_PRODUTO'] ?></b> <small> à vista</small></h5>
+                  <?php else: ?>
+                    <h5 class="text-success mb-2"><b>R$ <?= $c['PRECO'] ?></b> <small> à vista</small></h5>
+                  <?php endif ?>
+                  <button class="btn cor-bg-teal text-white w-100 mb-2">Comprar</button>
+                </div>
+              </div>
+            <?php endforeach ?>
           </div>
         </div>
       </div>

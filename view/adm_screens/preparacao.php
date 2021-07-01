@@ -1,7 +1,7 @@
 <?php
 
   $check = false;
-  if(count($dados) >= 1){
+  if($dados != []){
     $primeira_compra_realizada = current($dados);
     $numero_primeira_compra_realizada = array_keys($primeira_compra_realizada)[0];
     

@@ -19,7 +19,6 @@
       </ul>
     </div>
 
-    <a href="" onclick="alerta()">chevrolet</a>
     <!--compra -->
     <?php
       $indicador = 1;
@@ -113,6 +112,7 @@
           echo '</small>';
           echo '</div>';
           echo '</div>';
+          echo '<hr/>';
         }
         echo '</div>';
         echo '</div>';

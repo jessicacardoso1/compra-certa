@@ -9,7 +9,6 @@
         protected $_compra;
 
         public function __construct(){
-            
             $this->compra = new Compra;
             $list = $this->compra->listarComprasParaFuncionarios(1); # 1- setor preparação
             

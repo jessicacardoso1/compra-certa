@@ -74,7 +74,6 @@
             </div>
         </div>
         
-
         <a href="#" class="text-whitesmoke text-decoration-none ml-4">
             <p>Ofertas do dia</p>
         </a>

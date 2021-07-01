@@ -4,10 +4,12 @@
     use compra_certa\database\conn\Conn;
     use PDO, PDOException;
     use compra_certa\model\compra\Compra;
+use compra_certa\model\endereco\Cidade;
+use compra_certa\model\endereco\Endereco;
     use compra_certa\model\produto\Item;
-use compra_certa\model\produto\Produto;
+    use compra_certa\model\produto\Produto;
 
-class CompraDAO{
+    class CompraDAO{
 
         public function inserirCompra($compra){
             try{
@@ -411,6 +413,94 @@ class CompraDAO{
                 $pdo = $conn->close();
                     
                 return $itens;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
+        public function getComprasPorSetor($setor){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select compra_has_data_setores.id_compra as id_compra from compra_certa.compra_has_data_setores
+                    join compra_certa.data_setores on data_setores.id_data_setores = compra_has_data_setores.id_data_setores
+                    where data_setores.data in (
+                        select MAX(data_setores.data) from compra_certa.data_setores
+                        join compra_certa.compra_has_data_setores on compra_has_data_setores.id_data_setores = data_setores.id_data_setores
+                        group by compra_has_data_setores.id_compra
+                    ) and data_setores.setor = :_setor
+                    order by data_setores.data;
+                    
+                ");
+                
+                $sql->bindParam(":_setor", $setor);
+                
+                $sql->execute();
+
+                $compras = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $compra = new Compra();
+                    $compra->setCodigo($linha['id_compra']);
+                    $compra->setSetor($setor);
+                    
+                    array_push($compras, $compra);
+                }
+                
+                $pdo = $conn->close();
+                    
+                return $compras;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
+        public function dadosCompraSetorEntrega($compra){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select compra.id_compra as id_compra, compra.data as data, endereco.nome as nome_endereco, endereco.telefone as telefone, cidade.nome as nome_cidade from compra_certa.compra
+                    join compra_certa.endereco on endereco.id_endereco = compra.id_endereco
+                    join compra_certa.cidade on cidade.id_cidade = endereco.id_cidade
+                    where id_compra = :_id_compra;
+                ");
+                
+                $sql->bindValue(":_id_compra", $compra->getCodigo());
+                
+                $sql->execute();
+
+                $compras = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $c = new Compra();
+                    $c->setCodigo($linha['id_compra']);
+                    $c->setData($linha['data']);
+
+                    $endereco = new Endereco();
+                    $endereco-> setNome($linha['nome_endereco']);
+                    $endereco->setTelefone($linha['telefone']);
+
+                    $cidade = new Cidade();
+                    $cidade->setNome($linha['nome_cidade']);
+
+                    $endereco->setCidade($cidade);
+
+                    $c->setEndereco($endereco);
+
+                    $c->setSetor($compra->getSetor());
+                    
+                    array_push($compras, $c);
+                }
+                
+                $pdo = $conn->close();
+                    
+                return $compras;
             }
             catch(PDOException $e){
                 echo $e;
