@@ -2,6 +2,9 @@
 
     namespace compra_certa\database\endereco;
     use compra_certa\database\conn\Conn;
+    use compra_certa\model\endereco\Cidade;
+    use compra_certa\model\endereco\Estado;
+    use compra_certa\model\endereco\Endereco;
     use PDO, PDOException;
 
     class EnderecoDAO{
@@ -184,24 +187,31 @@
 
                 $sql->execute();
 
-                $enderecos = array();
+                $enderecos = array();        
                 while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
-                    $arr = array(
-                        "ID_ENDERECO"  => $linha['id'],
-                        "PAIS"         => $linha['pais'],
-                        "NOME"         => $linha['nome'],
-                        "CEP"          => $linha['cep'],
-                        "BAIRRO"       => $linha['bairro'],
-                        "ENDERECO"     => $linha['endereco'],
-                        "COMPLEMENTO"  => $linha['complemento'],
-                        "NUMERO"       => $linha['numero'],
-                        "TELEFONE"     => $linha['telefone'],
-                        "CIDADE_NOME"  => $linha['cidade_nome'],
-                        "ESTADO_NOME"  => $linha['estado_nome'],
-                        "ESTADO_SIGLA" => $linha['estado_sigla']
-                    );
+                    $estado = new Estado();
+                    $estado->setNome($linha['estado_nome']);
+                    $estado->setSigla($linha['estado_sigla']);
 
-                    array_push($enderecos, $arr);
+                    $cidade = new Cidade();
+                    $cidade->setNome($linha['cidade_nome']);
+                    $cidade->setEstado($estado);
+                   
+
+                    $endereco = new Endereco();
+                    $endereco->setCodigo($linha['id']);
+                    $endereco->setPais($linha['pais']);
+                    $endereco->setNome($linha['nome']);
+                    $endereco->setCep($linha['cep']);
+                    $endereco->setBairro($linha['bairro']);
+                    $endereco->setComplemento($linha['complemento']);
+                    $endereco->setNumero($linha['numero']);
+                    $endereco->setTelefone($linha['telefone']);
+                    $endereco->setCidade($cidade);
+                
+                  
+
+                    array_push($enderecos, $endereco);
                 }
                 
                 $pdo = $conn->close();

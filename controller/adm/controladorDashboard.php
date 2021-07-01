@@ -30,6 +30,17 @@
         public function processaQntTotalClientesAtivos(){
             return $this->cliente->getNumTotalClientesAtivos();
         }
+        
+        public function produtosMaisVendidos(){
+            $this->carregarNavbar();
+            $this->view("adm_screens/dash_rel/", "rel_produtos_mais_vendidos");
+        }
+
+        public function clientesMaisCompram(){
+            $clientesMaiscompram = $this->cliente->clientesMaisCompram();
+            $this->carregarNavbar();
+            $this->view("adm_screens/dash_rel/", "rel_clientes_mais_compra", $clientesMaiscompram);
+        }
 
     }
 

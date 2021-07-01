@@ -4,7 +4,7 @@
     use compra_certa\database\endereco\EnderecoDAO;
 
     class Endereco{
-
+        
         private $pais;
         private $nome;
         private $telefone;
@@ -28,10 +28,10 @@
             return $dao->getEnderecosViaCpf($_cpf);
         }
 
-        public function removerEndereco($_id_endereco){
+        public function removerEndereco($id_endereco){
             $dao = new EnderecoDAO();
 
-            return $dao->removerEndereco($_id_endereco);
+            return $dao->removerEndereco($id_endereco);
         }
          
         public function getDadosEndereco(){
@@ -165,6 +165,7 @@
                 $this->codigo = $codigo;
 
         }
+
     }
 
 ?>
