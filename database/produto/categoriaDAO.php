@@ -61,6 +61,40 @@
             }
         }
 
+        // métodos para o dashboard...
+        public function getCategoriasMaisVendidas(){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    SELECT categoria.nome as nome, sum(quantidade) as qtd FROM compra_certa.item
+                    LEFT JOIN compra_certa.produto on produto.id_produto = item.produto_id_produto
+                    LEFT JOIN compra_certa.categoria on categoria.id_categoria = produto.id_categoria
+                    GROUP BY categoria.nome
+                    ORDER BY SUM(quantidade) DESC;
+                ");
+                
+                $sql->execute();
+                
+                $categorias = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                        "NOME" => $linha['nome'],
+                        "QUANTIDADE"   => $linha['qtd']
+                    );
+
+                    $categorias[] = $arr;
+                }
+                
+                return $categorias;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return array();
+            }
+        }
+
     }
 
 ?>

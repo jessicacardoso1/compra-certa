@@ -26,7 +26,8 @@
                 "funcionario-conferencia-embalagem" => "adm/controladorConfEmbalagem",
                 "funcionario-entrega"               => "adm/controladorEntrega",
                 "funcionario-rastrear"              => "adm/controladorRastrear",
-                "funcionario-dashboard"             => "adm/controladorDashboard"
+                "funcionario-dashboard"             => "adm/controladorDashboard",
+                "ajax-dashboard"                    => "adm/controladorAjaxDashboard"
             );
 
             if(array_key_exists($index, $this->rota)){

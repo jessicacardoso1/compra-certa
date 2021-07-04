@@ -95,7 +95,7 @@
             <?php foreach($dados as &$c): ?>
               <div class="card" style="width: 18rem;">
                 <a href="<?= DIRACTION.'produto/detalhes/'.$c['ID'] ?>">
-                  <img href="/cliente/dado" class="card-img-top news-img" src="<?= DIRIMG.'itens/'.$c['IMG'] ?>" alt="<?= $c['IMG'] ?>"/>';
+                  <img href="/cliente/dado" class="card-img-top news-img" src="<?= DIRIMG.'itens/'.$c['IMG'] ?>" alt="<?= $c['IMG'] ?>"/>
                 </a>
                 <div class="card-body">
                   <p class="card-text offs-text-name text-monospace"><?= $c['NOME_PRODUTO'] ?></p>

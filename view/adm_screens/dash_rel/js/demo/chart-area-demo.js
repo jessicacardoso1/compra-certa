@@ -2,6 +2,32 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
+var request = 'http://localhost/compracerta/ajax-dashboard/'
+
+function dados_vendas_por_mes() {
+  var l = []
+
+  $.ajax({
+      url: request + 'overview_receita',
+      type:'POST',
+      async: false,
+      success: function(data){
+        data = JSON.parse(data)
+
+        for(let i = 0; i < Object.keys(data).length; i++){
+          j = i + 1
+          if(j < 10)
+            j = "0" + j
+
+          l[i] = data[j]
+          
+        }
+      },
+  });
+
+  return l
+}
+
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');
   // *     return: '1 234,56'
@@ -28,7 +54,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // Area Chart Example
-var ctx = document.getElementById("myAreaChart");
+var ctx = document.getElementById("receita_overview");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
@@ -46,7 +72,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "#058d49",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [0, 600, 5000, 4050, 10000, 60000, 15000, 25000, 20000, 30000, 25000, 4000],
+      data: dados_vendas_por_mes(),
     }],
   },
   options: {
@@ -110,7 +136,7 @@ var myLineChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ': R$' + number_format(tooltipItem.yLabel);
         }
       }
     }

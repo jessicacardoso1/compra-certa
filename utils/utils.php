@@ -6,7 +6,7 @@
         $datetime = new DateTime();
         $datetime->setTimezone($tz_object);
 
-        return $datetime->format('Y\-m\-d\ H:i:s');
+        return $datetime;
     }
 
     function array_sort($array, $on, $order=SORT_ASC){
@@ -59,45 +59,6 @@
         }
         
         return $lista_por_id;
-    }
-
-    function inserir_multiplas_linhas_sql($tabela, $campos, $linhas){
-        /*  
-            Exemplo de uso:
-
-            -> $linhas = array(
-                0 => [22, 90],
-                1 => [22, 16],
-                2 => [22, 2]
-            );
-            -> inserir_multiplas_linhas_sql("item", ["produto_id_produto", "quantidade"], $linhas);
-
-            @retorno: insert into compra_certa.item (produto_id_produto, quantidade) values (22, 90), (22, 16), (22, 2)
-        */
-
-        $sql = "insert into compra_certa.$tabela ";
-        
-        $sql .= "(";
-        for($i = 0; $i < count($campos) - 1; $i++){
-            $sql .= "$campos[$i], ";
-        }
-        $sql .= $campos[count($campos) - 1].") values (";
-        
-        foreach($linhas as $l){
-            $i = 0;
-            for(; $i < count($linhas[0]); $i++){
-                $sql .= "$l[$i]";
-                if($i < count($linhas[0]) - 1)
-                    $sql .= ", ";
-            }
-
-            $sql .= "), (";
-        }
-        
-        for($i = strlen($sql) - 1; $i > strlen($sql) - 4; $i--)
-            $sql[$i] = ' ';
- 
-        return $sql;
     }
 
     function alerta($titulo, $mensagem){

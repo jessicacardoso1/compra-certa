@@ -119,7 +119,7 @@
                     <p class="card-text txt-color-grey"><i class="fa fa-map-o" aria-hidden="true"></i> <?= $i->getEndereco()->getCidade()->getNome() ?></p>
                     <form method="POST" action="<?php echo DIRACTION.'funcionario-entrega/entregar'; ?>">
                       <input type="hidden" name="num_compra" value="<?= $i->getCodigo() ?>"/>
-                      <input type="submit" class="btn btn-success adm-preparation-btn" value="Enviar" />
+                      <input type="submit" class="btn btn-success adm-preparation-btn" value="Entregar" />
                     </form>
                   </div>
                 </div>

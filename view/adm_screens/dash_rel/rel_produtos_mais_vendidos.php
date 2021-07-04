@@ -1,3 +1,9 @@
+<?php
+
+    $produto_mais_vendido = $dados[0];
+
+?>
+
 <main>
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -6,7 +12,7 @@
         <ul class="navbar-nav cor-bg-salmao-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=DIRACTION.'funcionario-dashboard/home'?>">
                 <div class="sidebar-brand-text mx-3">Legumes Preciosos</div>
             </a>
 
@@ -15,7 +21,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="home.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/home'?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Desempenho</span>
                 </a>
@@ -29,28 +35,27 @@
                 Relatórios
             </div>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="rel_tmp_medio_setor.php">
+             <!-- Nav Item - Tables -->
+             <li class="nav-item">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/tempoMedioPorSetor'?>">
                     <i class="fa fa-clock-o"></i>
                     <span>Tempo médio por setor</span></a>
 
-                <a class="nav-link" href="rel_bairros_mais_atendidos.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/bairrosMaisAtendidos'?>">
                     <i class="fa fa-location-arrow"></i>
                     <span>Bairros mais atendidos</span></a>
                 
-                <a class="nav-link" href="rel_clientes_mais_compram.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/clientesMaisCompram'?>">
                     <i class="fa fa-users"></i>
                     <span>Clientes que mais compram</span></a>
                         
-                <a class="nav-link" href="rel_produtos_mais_vendidos.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/produtosMaisVendidos'?>">
                     <i class="fa fa-product-hunt"></i>
                     <span>Produtos mais vendidos</span></a>
 
                 <a class="nav-link" href="404.php">
                     <i class="fa fa-th"></i>
                     <span>Outros</span></a>
-
             </li>
 
             <!-- Divider -->
@@ -156,7 +161,7 @@
                             <!-- Area Chart -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-success">Vendas totais (ano): Tomate Orgânico</h6>
+                                    <h6 class="m-0 font-weight-bold text-success">Vendas totais (ano): <?= $produto_mais_vendido->getNome() ?></h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-area">
@@ -184,7 +189,7 @@
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-success">Tomate Orgânico relativo as vendas totais</h6>
+                                    <h6 class="m-0 font-weight-bold text-success"><?= $produto_mais_vendido->getNome() ?> relativo as vendas totais</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -194,7 +199,7 @@
                                 </div>
                                 <div class="mt-4 text-center small">
                                     <span class="mr-2">
-                                        <i class="fas fa-circle text-danger"></i> Tomate Orgânico
+                                        <i class="fas fa-circle text-danger"></i> <?= $produto_mais_vendido->getNome() ?>
                                     </span>
                                     <span class="mr-2">
                                         <i class="fas fa-circle"></i> Outros
@@ -203,19 +208,19 @@
                             </div>
                             
                              <!-- Bar Chart -->
-                             <!-- comment 
+                             
                              <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-success">Produto mais vendido: Tomate Orgânico</h6>
+                                    <h6 class="m-0 font-weight-bold text-success">Produto mais vendido: <?= $produto_mais_vendido->getNome() ?></h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <img class="img-fluid px-5" style="width: 40rem;"
-                                            src="../../img/itens/tomate.jpg" alt="">
+                                        <img class="img-fluid px-5" style="width: 25.5rem;"
+                                            src="<?= DIRIMG.'itens/'.$produto_mais_vendido->getImg() ?>" alt="">
                                     </div>
                                 </div>
                             </div>
-                            -->
+                            
 
                         </div>
                     </div>
@@ -258,28 +263,33 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'jquery/jquery.min.js'; ?>"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'bootstrap/js/bootstrap.bundle.min.js'; ?>"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'jquery-easing/jquery.easing.min.js'; ?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_JS.'sb-admin-2.min.js'; ?>"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'datatables/jquery.dataTables.min.js' ?>"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'datatables/dataTables.bootstrap4.min.js' ?>"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="<?= DIR_DASHBOARD_JS.'demo/datatables-demo.js' ?>"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'chart.js/Chart.min.js' ?>"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/area-produtos-mais-vendidos.js"></script>
-    <script src="js/demo/pie-produtos-mais-vendidos.js"></script>
-    <script src="js/demo/bar-produtos-mais-vendidos.js"></script>
+    <script src="<?= DIR_DASHBOARD_JS.'demo/area-produtos-mais-vendidos.js' ?>"></script>
+    <script src="<?= DIR_DASHBOARD_JS.'demo/pie-produtos-mais-vendidos.js' ?>"></script>
+    <script src="<?= DIR_DASHBOARD_JS.'demo/bar-produtos-mais-vendidos.js' ?>"></script>
+
+    <!-- Custom styles for this template-->
+    <link href="<?php echo DIR_DASHBOARD_CSS.'sb-admin-2.min.css'; ?>" rel="stylesheet">
+
+    <link href="<?php echo DIR_DASHBOARD_CSS.'style.min.css'; ?>" rel="stylesheet">
 
 </main>

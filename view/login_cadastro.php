@@ -28,7 +28,7 @@
                 </div>
               </div>
               <div class="form-group">
-                  <input type="submit" class="btnSubmit" value="Login" onclick="return validarFormLogin()"/>
+                  <input type="submit" class="btnSubmit" value="Login" onclick="return validar_form(['cpf_login', 'senha_login'])"/>
               </div>
               <div class="form-group">
                   <a href="#" class="ForgetPwd">Esqueceu sua senha?</a>
@@ -66,7 +66,7 @@
                 </div>
               </div>
               <div class="form-group">
-                  <input type="submit" class="btnSubmit" value="Continuar" onclick="return validarFormCadastro()"/>
+                  <input type="submit" class="btnSubmit" value="Continuar" onclick="return validar_form(['cpf_cadastro', 'email_cadastro', 'senha_cadastro', 'confirmar_senha'])"/>
               </div>
           </form>
         </div>
@@ -75,5 +75,6 @@
   </div>
 
   <script src="<?php echo DIRJS.'login_cadastro/index.js'; ?>"></script>
+  <script src="<?php echo DIRJS.'index.js'; ?>"></script>
   
 </main>

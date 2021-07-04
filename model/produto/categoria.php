@@ -19,6 +19,23 @@
             return $dao->getQntProdutosPorCategoria();
         }
 
+        
+        // métodos utilizados no dashboard...
+        public function getCategoriasMaisVendidas(){
+            $dao = new CategoriaDAO;
+
+            $categorias = $dao->getCategoriasMaisVendidas();
+
+            $contador = 0;
+            for($i = 0; $i < count($categorias); $i++)
+                $contador += $categorias[$i]['QUANTIDADE'];
+                
+            for($i = 0; $i < count($categorias); $i++)
+                $categorias[$i]['QUANTIDADE'] /= $contador;
+
+            return $categorias;
+        }
+
 
         public function getNome(){
             return $this->nome;

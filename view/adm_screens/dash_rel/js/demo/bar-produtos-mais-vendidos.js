@@ -2,6 +2,30 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
+var request = 'http://localhost/compracerta/ajax-dashboard/'
+
+function requisicao(chave){
+  var dados = []
+
+  $.ajax({
+    url: request + 'top_8_produtos_mais_vendidos',
+    type:'POST',
+    async: false,
+    success: function(data){
+      data = JSON.parse(data)
+
+      var i = 0
+      data.forEach(element => {
+        dados[i] = element[chave]
+
+        i++
+      });
+    },
+  });
+
+  return dados
+}
+
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');
   // *     return: '1 234,56'
@@ -32,16 +56,13 @@ var ctx = document.getElementById("typeBar-rel-produtos-mais-vendidos");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Tomate Orgânico", "Caqui Fuyu", 
-             "Cenoura DeBruin", "Repolho Verde", 
-             "Batata", "Banana da Prata", 
-             "Cebola Chooury", "Pimentão Restib"],
+    labels: requisicao('NOME_PRODUTO'),
     datasets: [{
       label: "Vendas",
       backgroundColor: "#058d49",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#058d49",
-      data: [1493, 982, 784, 724, 602, 594, 467, 233],
+      data: requisicao('QUANTIDADE'),
     }],
   },
   options: {
@@ -65,7 +86,7 @@ var myBarChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 1500,
+          max: parseInt(requisicao('QUANTIDADE')[0]) + 250,
           maxTicksLimit: 5,
           padding: 10,
           // Include a dollar sign in the ticks

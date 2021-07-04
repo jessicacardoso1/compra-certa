@@ -2,6 +2,31 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
+var request = 'http://localhost/compracerta/ajax-dashboard/'
+
+function requisicao(){
+  var dados = []
+
+  $.ajax({
+    url: request + 'historico_vendas_por_ano_produto_mais_vendido',
+    type:'POST',
+    async: false,
+    success: function(data){
+      data = JSON.parse(data)
+
+      for(i = 0; i < Object.keys(data).length; i++){
+        j = i + 1
+        if(j < 10)
+          j = "0" + j
+
+        dados[i] = data[j]
+      }
+    },
+  });
+
+  return dados
+}
+
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');
   // *     return: '1 234,56'
@@ -46,7 +71,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "#058d49",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [5, 55, 50, 40, 10, 60, 15, 25, 20, 30, 25, 4],
+      data: requisicao(),
     }],
   },
   options: {
@@ -74,7 +99,7 @@ var myLineChart = new Chart(ctx, {
       }],
       yAxes: [{
         ticks: {
-          maxTicksLimit: 5,
+          maxTicksLimit: 10,
           padding: 10,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {

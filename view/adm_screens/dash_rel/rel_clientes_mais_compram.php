@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Legumes Preciosos</title>
-    <link rel="icon" type="image/png" href="../../img/ref_icon.png" />
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
+<main>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -36,7 +6,7 @@
         <ul class="navbar-nav cor-bg-salmao-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=DIRACTION.'funcionario-dashboard/home'?>">
                 <div class="sidebar-brand-text mx-3">Legumes Preciosos</div>
             </a>
 
@@ -45,7 +15,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="home.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/home'?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Desempenho</span></a>
             </li>
@@ -58,28 +28,27 @@
                 Relatórios
             </div>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="rel_tmp_medio_setor.php">
+             <!-- Nav Item - Tables -->
+             <li class="nav-item">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/tempoMedioPorSetor'?>">
                     <i class="fa fa-clock-o"></i>
                     <span>Tempo médio por setor</span></a>
 
-                <a class="nav-link" href="rel_bairros_mais_atendidos.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/bairrosMaisAtendidos'?>">
                     <i class="fa fa-location-arrow"></i>
                     <span>Bairros mais atendidos</span></a>
                 
-                <a class="nav-link" href="rel_clientes_mais_compram.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/clientesMaisCompram'?>">
                     <i class="fa fa-users"></i>
                     <span>Clientes que mais compram</span></a>
                         
-                <a class="nav-link" href="rel_produtos_mais_vendidos.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/produtosMaisVendidos'?>">
                     <i class="fa fa-product-hunt"></i>
                     <span>Produtos mais vendidos</span></a>
 
                 <a class="nav-link" href="404.php">
                     <i class="fa fa-th"></i>
                     <span>Outros</span></a>
-
             </li>
 
             <!-- Divider -->
@@ -184,60 +153,34 @@
                             <h6 class="m-0 font-weight-bold text-success">Listagem de clientes</h6>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">CPF</th>
+                                        <th scope="col">Cidade</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Total em compras</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($dados as $i): ?>
                                         <tr>
-                                            <th>Nome</th>
-                                            <th>Cidade</th>
-                                            <th>Estado</th>
-                                            <th>Idade</th>
-                                            <th>Data de cadastro</th>
-                                            <th>Total em compras</th>
+                                            <th  scope="row"><?= $i['CPF'] ?></th>
+                                            <td style="text-align: left"><?= $i['CIDADE'] ?></td>
+                                            <td style="text-align: left"><?= $i['ESTADO'] ?></td>
+                                            <td style="text-align: left"><?= 'R$ '.number_format($i['TOTAL_COMPRAS'],2,',','.') ?></td>
                                         </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nome</th>
-                                            <th>Cidade</th>
-                                            <th>Estado</th>
-                                            <th>Idade</th>
-                                            <th>Data de cadastro</th>
-                                            <th>Total em compras</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>R$ 320,800</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    <?php endforeach ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
+        
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
-
-            <!-- FOOTER -->
-            <footer class="text-center text-white">
-                <!-- Copyright -->
-                <div class="text-center p-3 footer cor-bg-salmao-dark">
-                © 2021 Copyright: Legumes Preciosos
-                <br>
-                Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
-                </div>
-                <!-- Copyright -->
-            </footer>
-        <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
@@ -270,22 +213,25 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'jquery/jquery.min.js' ?>"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'bootstrap/js/bootstrap.bundle.min.js' ?>"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'jquery-easing/jquery.easing.min.js' ?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_JS.'sb-admin-2.min.js' ?>"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'datatables/jquery.dataTables.min.js' ?>"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'datatables/dataTables.bootstrap4.min.js' ?>"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="<?= DIR_DASHBOARD_JS.'demo/datatables-demo.js' ?>"></script>
 
-</body>
+    <!-- Custom styles for this template-->
+    <link href="<?= DIR_DASHBOARD_CSS.'sb-admin-2.min.css'; ?>" rel="stylesheet">
 
-</html>
+    <link href="<?= DIR_DASHBOARD_CSS.'style.min.css'; ?>" rel="stylesheet">
+
+</main>

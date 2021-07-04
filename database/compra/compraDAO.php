@@ -3,9 +3,10 @@
     namespace compra_certa\database\compra;
     use compra_certa\database\conn\Conn;
     use PDO, PDOException;
+    use DateTime;
     use compra_certa\model\compra\Compra;
-use compra_certa\model\endereco\Cidade;
-use compra_certa\model\endereco\Endereco;
+    use compra_certa\model\endereco\Cidade;
+    use compra_certa\model\endereco\Endereco;
     use compra_certa\model\produto\Item;
     use compra_certa\model\produto\Produto;
 
@@ -23,8 +24,8 @@ use compra_certa\model\endereco\Endereco;
                 ");
                 
                 $sql->bindValue(":_valor_total", $compra->getVal_total());
-                $sql->bindValue(":_data", getDatetimeNow());
-                $sql->bindValue(":_id_endereco", '1');
+                $sql->bindValue(":_data", getDatetimeNow()->format('Y\-m\-d\ H:i:s'));
+                $sql->bindValue(":_id_endereco", $compra->getEndereco()->getCodigo());
             
                 
                 $sql->execute();
@@ -236,7 +237,7 @@ use compra_certa\model\endereco\Endereco;
                     (:hora_atual, :setor)
                 ");
                 
-                $sql->bindValue("hora_atual", getDatetimeNow());
+                $sql->bindValue("hora_atual", getDatetimeNow()->format('Y\-m\-d\ H:i:s'));
                 $sql->bindParam(":setor", $_setor);
                 
                 $sql->execute();
@@ -505,6 +506,134 @@ use compra_certa\model\endereco\Endereco;
             catch(PDOException $e){
                 echo $e;
                 return false;
+            }
+        }
+
+
+        // métodos para popular o dashboard... 
+        
+        public function overviewReceita(){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    SELECT valor_total, data FROM compra_certa.compra;
+                ");
+                
+                $sql->execute();
+                
+                $compras_por_mes = array(
+                    "01" => 0.,
+                    "02" => 0.,
+                    "03" => 0.,
+                    "04" => 0.,
+                    "05" => 0.,
+                    "06" => 0.,
+                    "07" => 0.,
+                    "08" => 0.,
+                    "09" => 0.,
+                    "10" => 0.,
+                    "11" => 0.,
+                    "12" => 0.,
+                );
+
+                $sum_ano = 0.;
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $dt = new DateTime($linha['data']);
+
+                    $compras_por_mes[$dt->format('m')] += $linha['valor_total'];
+                    
+                    $sum_ano += $linha['valor_total'];
+                }
+                
+                return $compras_por_mes;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return array();
+            }
+        }
+
+        public function getReceitaAnual($ano){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = "
+                    select SUM(valor_total) as soma from compra_certa.compra
+                    where year(data) = ':_ano';
+                ";
+                
+                $sql = str_replace(":_ano", $ano, $sql);
+
+                $sql = $pdo->prepare($sql);
+                
+                $sql->execute();
+
+                $linha = $sql->fetch(PDO::FETCH_ASSOC);
+                $receita = $linha['soma'];
+                
+                return $receita;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return [];
+            }
+        }
+
+        public function getReceitaMensal($mes, $ano){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = "
+                    select SUM(valor_total) as soma from compra_certa.compra
+                    where month(data) = ':_mes' and year(data) = ':_ano';
+                ";
+
+                $sql = str_replace(":_mes", $mes, $sql);
+                $sql = str_replace(":_ano", $ano, $sql);
+                
+                $sql = $pdo->prepare($sql);
+
+                $sql->execute();
+                
+                $linha = $sql->fetch(PDO::FETCH_ASSOC);
+                $produtos = $linha['soma'];
+                
+                return $produtos;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return [];
+            }
+        }
+
+        public function getComprasMes($mes, $ano){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = "select count(id_compra) as soma from compra_certa.compra
+                        where month(data) = ':_mes' and year(data) = ':_ano';
+                ";
+                
+                $sql = str_replace(":_mes", $mes, $sql);
+                $sql = str_replace(":_ano", $ano, $sql);
+
+                $sql = $pdo->prepare($sql);
+                
+                $sql->execute();
+                
+                $linha = $sql->fetch(PDO::FETCH_ASSOC);
+                $produtos = $linha['soma'];
+                
+                return $produtos;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return [];
             }
         }
 

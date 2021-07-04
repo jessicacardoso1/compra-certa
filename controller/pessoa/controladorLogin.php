@@ -42,7 +42,7 @@
             $check_login = $this->login->efetuarLogin();
 
             if(!$check_login){
-                alert('Atenção!', 'CPF ou senha inválidos!');
+                // alert('Atenção!', 'CPF ou senha inválidos!');
                 
                 header("location: $view_failed");
 

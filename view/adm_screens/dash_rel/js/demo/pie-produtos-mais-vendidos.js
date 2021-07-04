@@ -2,6 +2,30 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
+var request = 'http://localhost/compracerta/ajax-dashboard/'
+
+function requisicao(){
+  var dados = []
+
+  $.ajax({
+    url: request + 'produto_mais_vendido_relativo_as_vendas_totais',
+    type:'POST',
+    async: false,
+    success: function(data){
+      data = JSON.parse(data)
+
+      for(let i = 0; i < Object.keys(data).length; i++){
+        data[i] = data[i].toFixed(2)
+      }
+      
+      dados = data
+    },
+  });
+
+  console.log(dados)
+  return dados
+}
+
 // Pie Chart Example
 var ctx = document.getElementById("typePie-rel-produtos-mais-vendidos");
 var myPieChart = new Chart(ctx, {
@@ -9,7 +33,7 @@ var myPieChart = new Chart(ctx, {
   data: {
     labels: ["Tomate Orgânico", "Outros"],
     datasets: [{
-      data: [23, 87],
+      data: requisicao(),
       backgroundColor: ['#e74a3b'],
       hoverBackgroundColor: [],
       hoverBorderColor: "rgba(234, 236, 244, 1)",

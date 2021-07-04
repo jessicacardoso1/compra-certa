@@ -8,7 +8,6 @@ try{
 $sql = "SELECT valor_total, dt_compra FROM cartao_credito.compra";
 $result = $pdo->query($sql);
 
-
 $compras_por_mes = array(
                             "01" => 0.,
                             "02" => 0.,

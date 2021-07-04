@@ -122,6 +122,50 @@
             return $dao->comprarNovamente($this);
         }
 
+
+        // métodos utilizados no dashboard...
+        public function overviewReceita(){
+            $dao = new CompraDAO;
+
+            return $dao->overviewReceita();            
+        }
+
+        public function getReceitaAnual($ano){
+            $dao = new CompraDAO;
+
+            return $dao->getReceitaAnual($ano);
+        }
+
+        public function getReceitaMensal($mes, $ano){
+            $dao = new CompraDAO;
+
+            return $dao->getReceitaMensal($mes, $ano);
+        }
+
+        public function getComprasMes($mes, $ano){
+            $dao = new CompraDAO;
+
+            return $dao->getComprasMes($mes, $ano);
+        }
+
+        public function getPedidosPorSetores(){
+            $dao = new CompraDAO;
+
+            $contador = 0;
+            $pedidos = [];
+            for($i = 1; $i <= 3; $i++){
+                $compras = $dao->getComprasPorSetor($i);
+                $pedidos[] = count($compras);
+                
+                $contador += count($compras);
+            }
+
+            for($i = 0; $i < count($pedidos); $i++)
+                $pedidos[$i] = $pedidos[$i] / $contador * 100;
+
+            return $pedidos;
+        }
+
         //getters and setters
         public function getCodigo()
         {

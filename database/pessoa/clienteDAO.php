@@ -143,16 +143,16 @@
                 $pdo = $conn->connect();
                 
                 $sql = $pdo->prepare("
-                    SELECT cliente.cpf, cidade.nome as cidade, estado.nome as estado, sum(produto.preco) as total_compras
+                    SELECT cliente.cpf as cpf, cidade.nome as cidade, estado.nome as estado, sum(produto.preco) as total_compras
                     FROM compra_certa.cliente
-                    INNER JOIN cliente_has_endereco
+                    INNER JOIN compra_certa.cliente_has_endereco
                     ON cliente_has_endereco.cpf = cliente.cpf
-                    INNER JOIN endereco
+                    INNER JOIN compra_certa.endereco
                     ON cliente_has_endereco.id_endereco = endereco.id_endereco
-                    INNER JOIN cidade
+                    INNER JOIN compra_certa.cidade
                     ON cidade.id_cidade = endereco.id_cidade
-                    INNER JOIN estado
-                    on estado.id_estado = cidade.estado_id_estado
+                    INNER JOIN compra_certa.estado
+                    on estado.id_estado = cidade.id_estado
                     INNER JOIN compra_certa.cliente_has_compra
                     ON cliente_has_compra.cpf = cliente.cpf
                     INNER JOIN compra_certa.compra 
@@ -166,12 +166,13 @@
                     GROUP BY cliente_has_compra.cpf
                     ORDER BY SUM(quantidade) DESC;
                 ");
+
                 $sql->execute();
 
                 $clienteMaisCompram = array(); 
                 while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
                     $arr = array(
-                        "CPF"      => $linha['cliente.cpf'],
+                        "CPF"      => $linha['cpf'],
                         "CIDADE"      => $linha['cidade'],
                         "ESTADO"           => $linha['estado'],
                         "TOTAL_COMPRAS"   => $linha['total_compras']                     
@@ -179,16 +180,15 @@
 
                     array_push($clienteMaisCompram, $arr);
                 }
+                
                 $pdo = $conn->close();
 
-                $linha = $sql->fetch(PDO::FETCH_ASSOC);
-
-                return $linha;
+                return $clienteMaisCompram;
 
             }
             catch(PDOException $e){
                 echo $e;
-                return false;
+                return array();
             }
         }
 

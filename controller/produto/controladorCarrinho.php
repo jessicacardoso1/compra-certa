@@ -18,7 +18,7 @@
         public function meuCarrinho(){
             $this->carregarNavbar();
 
-            $dados_tela[] = $lista_itens = $this->carrinho->getItens();
+            $dados_tela[] = $this->carrinho->getItens();
             $dados_tela[] = $this->carrinho->getTotal();
 
             $this->view("", "carrinho", $dados_tela);

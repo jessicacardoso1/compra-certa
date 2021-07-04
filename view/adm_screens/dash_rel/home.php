@@ -1,38 +1,18 @@
 <?php
     # variáveis para popular a tela
-    $clientes_ativos = $dados['num_total_clientes_ativos'];
-    $total_clientes  = $dados['num_total_clientes'];
+    $total_clientes           = $dados[0];
+    $total_clientes_ativos    = $dados[1];
+    $receita_anual            = $dados[2];
+    $receita_mensal           = $dados[3];
+    $total_compras_mes        = $dados[4];
+    $categorias_mais_vendidas = $dados[5];
+    $pedidos_por_setores      = $dados[6];
+
+    $porc_clientes_ativos = 100 * ($total_clientes_ativos / $total_clientes);
 ?>
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Legumes Preciosos</title>
-    <link rel="icon" type="image/png" href="../../img/ref_icon.png" />
-
-    <!-- Custom fonts for this template-->
-    <link href="<?php echo DIR_DASHBOARD_CSS.'fontawesome-free/css/all.min.css'; ?>" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="<?php echo DIR_DASHBOARD_CSS.'sb-admin-2.min.css'; ?>" rel="stylesheet">
-
-    <link href="<?php echo DIR_DASHBOARD_CSS.'style.min.css'; ?>" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -41,7 +21,7 @@
         <ul class="navbar-nav cor-bg-salmao-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=DIRACTION.'funcionario-dashboard/home'?>">
                 <div class="sidebar-brand-text mx-3">Legumes Preciosos</div>
             </a>
 
@@ -50,7 +30,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="home.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/home'?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Desempenho</span></a>
             </li>
@@ -65,15 +45,15 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="rel_tmp_medio_setor.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/tempoMedioPorSetor'?>">
                     <i class="fa fa-clock-o"></i>
                     <span>Tempo médio por setor</span></a>
 
-                <a class="nav-link" href="rel_bairros_mais_atendidos.php">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/bairrosMaisAtendidos'?>">
                     <i class="fa fa-location-arrow"></i>
                     <span>Bairros mais atendidos</span></a>
                 
-                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/produtosMaisVendidos'?>">
+                <a class="nav-link" href="<?=DIRACTION.'funcionario-dashboard/clientesMaisCompram'?>">
                     <i class="fa fa-users"></i>
                     <span>Clientes que mais compram</span></a>
                         
@@ -84,7 +64,6 @@
                 <a class="nav-link" href="404.php">
                     <i class="fa fa-th"></i>
                     <span>Outros</span></a>
-
             </li>
 
             <!-- Divider -->
@@ -163,7 +142,6 @@
                                 <i class="fa fa-user fa-2x"></i>
                             </a>
                             <!-- Dropdown - User Information -->
-                            <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -199,7 +177,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Receita (Mes)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">R$ 40.000,00</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">R$ <?= number_format($receita_mensal,2,',','.') ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-calendar-o fa-2x"></i>
@@ -217,7 +195,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Receita (Anual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">R$ 215.000,00</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">R$ <?= number_format($receita_anual,2,',','.') ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-dollar-sign fa-2x"></i>
@@ -239,19 +217,12 @@
                                                     </div>
                                                     <div class="row no-gutters align-items-center">
                                                         <div class="col-auto">
-                                                            <?php
-                                                                $porcentagem = ($clientes_ativos / $total_clientes) * 100;
-                                                                $porcentagem = round($porcentagem, 2);
-                                                                echo '<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">'.$porcentagem.'%</div>';
-                                                            ?>
+                                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= round($porc_clientes_ativos, 2) ?>%</div>
                                                         </div>
                                                         <div class="col">
                                                             <div class="progress progress-sm mr-2">
-                                                                <div class="progress-bar bg-success" role="progressbar"
-                                                                    <?php
-                                                                        echo 'style="width: '.$porcentagem.'%" aria-valuenow="'.$porcentagem.'" aria-valuemin="0"';
-                                                                    ?>
-                                                                    aria-valuemax="100"></div>
+                                                                <div class="progress-bar bg-success" role="progressbar" style="width: <?= round($porc_clientes_ativos, 2) ?>%" aria-valuenow="<?= round($porc_clientes_ativos, 2) ?>" aria-valuemin="0" aria-valuemax="100">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -272,9 +243,7 @@
                                                 <div class="col mr-2">
                                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                         Clientes</div>
-                                                    <?php
-                                                        echo '<div class="h5 mb-0 font-weight-bold text-gray-800">'.$total_clientes.'</div>'; 
-                                                    ?>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_clientes ?></div>
                                                 </div>
                                                 <div class="col-auto">
                                                     <i class="fa fa-users fa-2x"></i>
@@ -292,7 +261,7 @@
                                                 <div class="col mr-2">
                                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                         Compras neste mes</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">45</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_compras_mes ?></div>
                                                 </div>
                                                 <div class="col-auto">
                                                     <i class="fa fa-shopping-cart fa-2x"></i>
@@ -335,7 +304,7 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                        <canvas id="receita_overview"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -369,21 +338,11 @@
                                         <canvas id="myPieChart"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-danger"></i> Frutas
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Legumes
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Folhas
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Sementes
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-warning"></i> Outros
-                                        </span>
+                                        <?php foreach($categorias_mais_vendidas as $i): ?>
+                                            <span class="mr-2">
+                                                <i class="fas fa-circle text-danger"></i> <?= $i['NOME'] ?>
+                                            </span>
+                                        <?php endforeach ?>
                                     </div>
                                 </div>
                             </div>
@@ -403,22 +362,22 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="small font-weight-bold">Preparação <span
-                                            class="float-right">20%</span></h4>
+                                            class="float-right"><?= number_format($pedidos_por_setores[0],2,',','.') ?>%</span></h4>
                                     <div class="progress mb-4">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
-                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: <?= number_format($pedidos_por_setores[0],2,'.','.') ?>%"
+                                            aria-valuenow="<?= number_format($pedidos_por_setores[0],2,'.','.') ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     <h4 class="small font-weight-bold">Conferência e Embalagem <span
-                                            class="float-right">40%</span></h4>
+                                            class="float-right"><?= number_format($pedidos_por_setores[1],2,',','.') ?>%</span></h4>
                                     <div class="progress mb-4">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
-                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: <?= number_format($pedidos_por_setores[1],2,'.','.') ?>%"
+                                            aria-valuenow="<?= number_format($pedidos_por_setores[1],2,'.','.') ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     <h4 class="small font-weight-bold">Entrega <span
-                                            class="float-right">60%</span></h4>
+                                            class="float-right"><?= number_format($pedidos_por_setores[2],2,',','.') ?>%</span></h4>
                                     <div class="progress mb-4">
-                                        <div class="progress-bar" role="progressbar" style="width: 60%"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" role="progressbar" style="width: <?= number_format($pedidos_por_setores[2],2,'.','.') ?>%"
+                                            aria-valuenow="<?= number_format($pedidos_por_setores[2],2,'.','.') ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -434,8 +393,8 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 40rem;"
-                                            src="../../img/logo.png" alt="">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 22.5rem;"
+                                            src="<?= DIRIMG.'logo.png' ?>" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -448,18 +407,6 @@
 
             </div>
             <!-- End of Main Content -->
-
-            <!-- FOOTER -->
-            <footer class="text-center text-white">
-                <!-- Copyright -->
-                <div class="text-center p-3 footer cor-bg-salmao-dark">
-                © 2021 Copyright: Legumes Preciosos
-                <br>
-                Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
-                </div>
-                <!-- Copyright -->
-            </footer>
-        <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
@@ -508,6 +455,12 @@
     <script src="<?php echo DIR_DASHBOARD_JS.'demo/chart-area-demo.js'; ?>"></script>
     <script src="<?php echo DIR_DASHBOARD_JS.'demo/chart-pie-demo.js'; ?>"></script>
 
-</body>
+    <!-- Custom fonts for this template-->
+    <link href="<?php echo DIR_DASHBOARD_CSS.'fontawesome-free/css/all.min.css'; ?>" rel="stylesheet" type="text/css">
 
-</html>
+    <!-- Custom styles for this template-->
+    <link href="<?php echo DIR_DASHBOARD_CSS.'sb-admin-2.min.css'; ?>" rel="stylesheet">
+
+    <link href="<?php echo DIR_DASHBOARD_CSS.'style.min.css'; ?>" rel="stylesheet">
+
+</main>

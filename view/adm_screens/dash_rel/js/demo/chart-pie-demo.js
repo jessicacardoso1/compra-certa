@@ -2,14 +2,38 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
+var request = 'http://localhost/compracerta/ajax-dashboard/'
+
+function requisicao(chave){
+  var dados = []
+
+  $.ajax({
+    url: request + 'categorias_mais_vendidas',
+    type:'POST',
+    async: false,
+    success: function(data){
+      data = JSON.parse(data)
+
+      var i = 0
+      data.forEach(element => {
+        dados[i] = chave == 'NOME' ? element[chave] : element[chave].toFixed(2) * 100
+
+        i++
+      });
+    },
+  });
+
+  return dados
+}
+
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    labels: ["Frutas", "Legumes", "Folhas", "Sementes", "Outros"],
+    labels: requisicao('NOME'),
     datasets: [{
-      data: [30, 25, 10, 5, 30],
+      data: requisicao('QUANTIDADE'),
       backgroundColor: ['#e74a3b', '#4e73df', '#1cc88a', '#36b9cc', '#f6c23e'],
       hoverBackgroundColor: [],
       hoverBorderColor: "rgba(234, 236, 244, 1)",

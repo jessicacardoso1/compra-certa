@@ -91,14 +91,14 @@ $dados = $dados[0];
             <label>Complemento</label>
           </div>
           <div class="form-group">
-            <input type="submit" class="btnSubmit bg-success text-whitesmoke" value="Continuar" onclick="return validarFormEndereco()"/>
+            <input type="submit" class="btnSubmit bg-success text-whitesmoke" value="Continuar" onclick="return validar_form('text_name', 'text_phone', 'text_cep', 'text_bairro', 'text_adress', 'text_city', 'text_uf', 'text_numero', 'text_cmp')"/>
         </div>
         </div>
       </form>
     </div>
   
  
-    <script src="<?php echo DIRJS.'enderecos/index.js'; ?>"></script>
+    <script src="<?php echo DIRJS.'index.js'; ?>"></script>
     <script src="<?php echo DIRJS.'mask.js'; ?>"></script>
  </main>
   

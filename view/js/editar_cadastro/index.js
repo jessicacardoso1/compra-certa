@@ -3,7 +3,6 @@ function validarFormEditarCadastro(){
     var campos = [
                 document.getElementById("text_cpf").value,
                 document.getElementById("text_email").value
-                
             ]
 
     ehVazio = false

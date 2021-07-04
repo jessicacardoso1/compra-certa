@@ -35,6 +35,24 @@ function update_value(id){
         document.getElementById('qnt').value = valor
 }
 
+function validar_form(lista_campos){
+    var check = true
+
+    console.log(lista_campos)
+
+    lista_campos.forEach(campo => {
+        if(document.getElementById(campo).value == '')
+            check = false
+    })
+
+    if(!check){
+        alert("Por favor, preencha todos os campos!")
+        return false
+    }
+
+    return true
+}
+
 $(document).ready(function(){
     $(".dropdown").hover(function(){
         var dropdownMenu = $(this).children(".dropdown-menu");

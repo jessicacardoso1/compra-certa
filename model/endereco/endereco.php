@@ -46,6 +46,12 @@
             
             $dao->editarEndereco($this);
         }
+
+        public function getBairrosMaisAtendidos(){
+            $dao = new EnderecoDAO;
+
+            return $dao->getBairrosMaisAtendidos();
+        }
         
         //getters and setters
         public function getPais()

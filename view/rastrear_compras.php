@@ -31,10 +31,10 @@
         <p class="text-center"><b>Nota Fiscal:</b> <?= '#'.rand(1000000, 10000000) ?></p>
       </div>
       <?php
-      $statusPedido = ['disabled','disabled','disabled','disabled'];
-      for ($i=0; $i < $dados[0]->getSetor(); $i++)
-          $statusPedido[$i] = 'complete';
-      $statusPedido[$dados[0]->getSetor()-1] = 'active';    
+        $statusPedido = ['disabled','disabled','disabled','disabled'];
+        for ($i=0; $i < $dados[0]->getSetor(); $i++)
+            $statusPedido[$i] = 'complete';
+        $statusPedido[$dados[0]->getSetor()-1] = 'active';    
       ?>
       
       <div class="col-sm-6 mt-2">
@@ -72,8 +72,4 @@
       <div class="col-sm-2"></div>
 
     </div>
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-     </body>
 </main>

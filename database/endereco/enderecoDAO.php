@@ -202,6 +202,7 @@
                     $endereco->setCodigo($linha['id']);
                     $endereco->setPais($linha['pais']);
                     $endereco->setNome($linha['nome']);
+                    $endereco->setEndereco($linha['endereco']);
                     $endereco->setCep($linha['cep']);
                     $endereco->setBairro($linha['bairro']);
                     $endereco->setComplemento($linha['complemento']);
@@ -247,7 +248,6 @@
         }
 
         public function getDadosEndereco($endereco){
-
             try{
                 $conn = new Conn();
                 $pdo = $conn->connect();
@@ -325,6 +325,51 @@
                 echo $e;
                 return false;
             }
+        }
+
+        public function getBairrosMaisAtendidos(){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+              
+                $sql = $pdo->prepare("
+                    SELECT endereco.bairro as nome, cidade.nome as cidade, estado.nome as estado, SUM(compra.valor_total) as total
+                    FROM compra_certa.compra
+                    INNER JOIN compra_certa.endereco
+                    ON compra.id_endereco = endereco.id_endereco
+                    INNER JOIN compra_certa.cidade
+                    ON cidade.id_cidade = endereco.id_cidade
+                    INNER JOIN compra_certa.estado
+                    on estado.id_estado = cidade.id_estado
+                    group by endereco.bairro 
+                    ORDER BY count(endereco.bairro) DESC;
+                ");
+                
+                $sql->execute();
+
+                $bairros = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                        "NOME_BAIRRO"   => $linha['nome'],
+                        "CIDADE"        => $linha['cidade'],
+                        "ESTADO"        => $linha['estado'],
+                        "TOTAL_COMPRAS" => $linha['total'],
+                    );
+
+                    array_push($bairros, $arr);
+
+                }
+
+                $pdo = $conn->close();
+
+                return $bairros;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return array();
+            }
+            
         }
 
     }    

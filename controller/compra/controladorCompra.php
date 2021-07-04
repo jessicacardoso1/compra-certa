@@ -60,12 +60,34 @@
 
                 return;
             }
+
+            // enviando o carrinho para a tela, para fazer o modal com o resumo da compra
+            $carrinho = new \compra_certa\model\produto\Carrinho;
+            $dados_tela[] = $carrinho->getItens();
+            $dados_tela[] = $carrinho->getTotal();
+            $dados_tela[] = $carrinho->getQntProdutos();
+
+            // enviando o endereço 
+            $endereco = new \compra_certa\model\endereco\Endereco;
+            $lista_enderecos = $endereco->getEnderecosViaCpf($_SESSION['usuario_logado']);
+            if(isset($_POST['indice_endereco'])){ // mudar endereço da compra
+                $aux = $lista_enderecos[0];
+                $lista_enderecos[0] = $lista_enderecos[$_POST['indice_endereco']];
+                $lista_enderecos[$_POST['indice_endereco']] = $aux;
+            }
+            $dados_tela[] = $lista_enderecos;
+
             $this->carregarNavbar();
-            $this->view("", "finalizar_compra");
+            $this->view("", "finalizar_compra", $dados_tela);
         }
 
         public function finalizar(){
             $carrinho = new \compra_certa\model\produto\Carrinho;
+            $endereco = new \compra_certa\model\endereco\Endereco;
+            
+            // vinculando o endereço a compra
+            $endereco->setCodigo($_POST['endereco']);
+            $this->compra->setEndereco($endereco);
             $this->compra->setVal_total($carrinho->getTotal());
             $id_compra = $this->compra->inserirCompra($this->compra); 
             $this->compra->setCodigo($id_compra);

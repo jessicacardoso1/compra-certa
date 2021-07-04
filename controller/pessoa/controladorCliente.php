@@ -20,7 +20,7 @@
             $this->cliente->setAtivo(1);
             
             if(!$this->cliente->efetuarCadastro()){
-                alert('Erro!', 'Houve uma falha no cadastro! Contate o suporte para maiores informações.');
+                // alert('Erro!', 'Houve uma falha no cadastro! Contate o suporte para maiores informações.');
                 
                 $_SESSION['usuario_logado'] = false;
                 header('location: '.DIRACTION.'login');

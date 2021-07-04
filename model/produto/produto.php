@@ -51,6 +51,36 @@
 			return $dados_produto;
         }
 
+
+        // métodos utilizados no dashboard...
+        public function getProdutoMaisVendido(){
+            $dao = new ProdutoDAO();
+
+            return $dao->getProdutoMaisVendido();
+        }
+
+        public function historicoVendasPorAnoProdutoMaisVendido($ano){
+            $dao = new ProdutoDAO();
+
+            return $dao->historicoVendasPorAnoProdutoMaisVendido($ano);
+        }
+
+        public function qntProdutoMaisVendidoRelativoAsVendasTotais($ano){
+            $dao = new ProdutoDAO();
+            $produto_mais_vendido = $this->getProdutoMaisVendido();
+
+            $qnt_total_vendas = $dao->getQntTotalVendas($ano);
+            $qnt = $dao->getDiffProdutoMaisVendidoRelativoVendasTotais($produto_mais_vendido, $ano);
+
+            return $qnt_total_vendas / $qnt;
+        }
+
+        public function top8ProdutosMaisVendidos(){
+            $dao = new ProdutoDAO();
+
+            return $dao->top8ProdutosMaisVendidos();
+        }
+
         public function getCodigo()
         {
             return $this->codigo;

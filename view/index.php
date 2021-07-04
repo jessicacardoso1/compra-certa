@@ -32,7 +32,7 @@
                 $_SESSION['usuario_logado'] = '';
 
             $despachante = new \compra_certa\routes\Despachante;
-            
+
             require_once 'footer.php';
         ?>
     </body>
