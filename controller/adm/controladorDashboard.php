@@ -78,9 +78,9 @@
         }
 
         public function tempoMedioPorSetor(){
+            $tempos = $this->_compra->tempoMedioPorSetor();
 
-
-            $this->view("adm_screens/dash_rel/", "rel_tmp_medio_setor");
+            $this->view("adm_screens/dash_rel/", "rel_tmp_medio_setor", $tempos);
         }
 
 

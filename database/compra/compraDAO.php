@@ -637,6 +637,41 @@
             }
         }
 
+        public function tempoMedioPorSetor(){
+            try{
+                $conn = new Conn();
+                $pdo = $conn->connect();
+                
+                $sql = $pdo->prepare("
+                    select compra_has_data_setores.id_compra as id_compra, data_setores.setor as setor, data_setores.data as data FROM compra_certa.data_setores
+                    join compra_certa.compra_has_data_setores on compra_has_data_setores.id_data_setores = data_setores.id_data_setores
+                    where data_setores.setor in (1, 2, 3, 4)
+                    order by compra_has_data_setores.id_compra;
+                ");
+                
+                $sql->execute();
+
+                $compras = array();
+                while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+                    $arr = array(
+                        "ID_COMPRA" => $linha['id_compra'],
+                        "SETOR" => $linha['setor'],
+                        "DATA" => $linha['data']
+                    );
+                    
+                    array_push($compras, $arr);
+                }
+                
+                $pdo = $conn->close();
+                    
+                return $compras;
+            }
+            catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
     }
 
 ?>

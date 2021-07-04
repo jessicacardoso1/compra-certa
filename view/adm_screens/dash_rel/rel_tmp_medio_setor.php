@@ -1,33 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php   
 
-<head>
+    $preparacao  = $dados[1];
+    $conferencia = $dados[2];
+    $envio       = $dados[3];
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Legumes Preciosos</title>
-    <link rel="icon" type="image/png" href="../../img/ref_icon.png" />
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
+?>
+<main>
+    <body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -187,7 +166,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Preparação </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">612 min</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($preparacao, 2) ?> min</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-hand-o-left fa-2x"></i>
@@ -205,7 +184,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Conferência e Embalagem</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">215 min</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($conferencia, 2) ?> min</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-list fa-2x"></i>
@@ -223,7 +202,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Entrega</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">3215 min</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($envio, 2) ?> min</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa fa-truck fa-2x"></i>
@@ -235,43 +214,11 @@
 
                     </div>
 
-
-                    <div class="row">
-
-                        <div class="col-xl-12 col-lg-7">
-
-                            <!-- Area Chart -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-success">Tempo médio de todos os setores por mes de referência</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="area_0"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
-
-            <!-- FOOTER -->
-            <footer class="text-center text-white">
-                <!-- Copyright -->
-                <div class="text-center p-3 footer cor-bg-salmao-dark">
-                © 2021 Copyright: Legumes Preciosos
-                <br>
-                Linguagem de Programação III - Jéssica Rocha, Ludmila Brito e Filipe Silva
-                </div>
-                <!-- Copyright -->
-            </footer>
-        <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
@@ -304,30 +251,33 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'jquery/jquery.min.js' ?>"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'bootstrap/js/bootstrap.bundle.min.js' ?>"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'jquery-easing/jquery.easing.min.js' ?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_JS.'sb-admin-2.min.js' ?>"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'datatables/jquery.dataTables.min.js' ?>"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'datatables/dataTables.bootstrap4.min.js' ?>"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'demo/datatables-demo.js' ?>"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'chart.js/Chart.min.js' ?>"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/rel_tempo_medio_por_setor/mixed.js"></script>
-    <script src="js/demo/rel_tempo_medio_por_setor/bar.js"></script>
-    <script src="js/demo/rel_tempo_medio_por_setor/area.js"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'demo/rel_tempo_medio_por_setor/mixed.js' ?>"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'demo/rel_tempo_medio_por_setor/bar.js' ?>"></script>
+    <script src="<?= DIR_DASHBOARD_VENDOR.'demo/rel_tempo_medio_por_setor/area.js' ?>"></script>
 
-</body>
+    <!-- Custom styles for this template-->
+    <link href="<?= DIR_DASHBOARD_CSS.'sb-admin-2.min.css'; ?>" rel="stylesheet">
 
-</html>
+    <link href="<?= DIR_DASHBOARD_CSS.'style.min.css'; ?>" rel="stylesheet">
+
+</main>

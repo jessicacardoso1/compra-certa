@@ -31,6 +31,9 @@
             if(!isset($_SESSION['usuario_logado']))
                 $_SESSION['usuario_logado'] = '';
 
+            $c = new \compra_certa\model\compra\Compra;
+            $c->tempoMedioPorSetor();
+
             $despachante = new \compra_certa\routes\Despachante;
 
             require_once 'footer.php';

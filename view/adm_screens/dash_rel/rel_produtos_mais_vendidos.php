@@ -288,8 +288,8 @@
     <script src="<?= DIR_DASHBOARD_JS.'demo/bar-produtos-mais-vendidos.js' ?>"></script>
 
     <!-- Custom styles for this template-->
-    <link href="<?php echo DIR_DASHBOARD_CSS.'sb-admin-2.min.css'; ?>" rel="stylesheet">
+    <link href="<?= DIR_DASHBOARD_CSS.'sb-admin-2.min.css'; ?>" rel="stylesheet">
 
-    <link href="<?php echo DIR_DASHBOARD_CSS.'style.min.css'; ?>" rel="stylesheet">
+    <link href="<?= DIR_DASHBOARD_CSS.'style.min.css'; ?>" rel="stylesheet">
 
 </main>

@@ -1,8 +1,9 @@
 <?php 
     namespace compra_certa\model\compra;
     use compra_certa\database\compra\CompraDAO;
+use DateTime;
 
-    class Compra{
+class Compra{
 
         private $codigo;
         private $itens;
@@ -164,6 +165,47 @@
                 $pedidos[$i] = $pedidos[$i] / $contador * 100;
 
             return $pedidos;
+        }
+
+        public function tempoMedioPorSetor(){
+            $dao = new CompraDAO;
+
+            $data_setores = $dao->tempoMedioPorSetor();
+            
+            $array_tempos_setores = array('1' => 0.0, '2' => 0.0, '3' => 0.0);
+
+            // contador quantidade de compras...
+            $count = 0;
+            for($i = 0; $i < count($data_setores) - 1; $i++){
+                if($data_setores[$i]['ID_COMPRA'] != $data_setores[$i + 1]['ID_COMPRA']){
+                    $count++;
+                }
+            }
+
+            // calculando as diferenças de tempo para cada compra...
+            for($i = 0; $i < count($data_setores) - 1; $i++){
+                if($data_setores[$i]['SETOR'] != '4'){
+                    $atual   = $data_setores[$i];
+                    $proximo = $data_setores[$i + 1];
+
+                    if($atual['ID_COMPRA'] == $proximo['ID_COMPRA']){
+                        $hora_atual   = strtotime($atual['DATA']);
+                        $hora_proximo = strtotime($proximo['DATA']);
+                    }
+                    elseif($atual['SETOR'] == '3' && $atual['ID_COMPRA'] != $proximo['ID_COMPRA']){
+                        $hora_proximo = strtotime(getDatetimeNow()->format('Y-m-d H:i:s'));
+                    }
+                    
+                    $diff_mins    = ($hora_proximo - $hora_atual) / 60;
+                    $array_tempos_setores[$atual['SETOR']] += $diff_mins;
+                }
+            }
+
+            for($i = 1; $i <= count($array_tempos_setores); $i++){
+                $array_tempos_setores[$i] = $array_tempos_setores[$i] / $count;
+            }
+
+            return $array_tempos_setores;
         }
 
         //getters and setters
