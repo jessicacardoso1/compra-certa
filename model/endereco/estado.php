@@ -1,7 +1,6 @@
 <?php 
 
     namespace compra_certa\model\endereco;
-    
 
     class Estado{
 

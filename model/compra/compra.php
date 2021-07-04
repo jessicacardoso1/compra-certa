@@ -188,15 +188,16 @@ class Compra{
                     $atual   = $data_setores[$i];
                     $proximo = $data_setores[$i + 1];
 
+                    $hora_atual = strtotime($atual['DATA']);
+
                     if($atual['ID_COMPRA'] == $proximo['ID_COMPRA']){
-                        $hora_atual   = strtotime($atual['DATA']);
                         $hora_proximo = strtotime($proximo['DATA']);
                     }
-                    elseif($atual['SETOR'] == '3' && $atual['ID_COMPRA'] != $proximo['ID_COMPRA']){
+                    elseif($atual['ID_COMPRA'] != $proximo['ID_COMPRA'] && $atual['SETOR'] != '4'){
                         $hora_proximo = strtotime(getDatetimeNow()->format('Y-m-d H:i:s'));
                     }
                     
-                    $diff_mins    = ($hora_proximo - $hora_atual) / 60;
+                    $diff_mins = ($hora_proximo - $hora_atual) / 60;
                     $array_tempos_setores[$atual['SETOR']] += $diff_mins;
                 }
             }
