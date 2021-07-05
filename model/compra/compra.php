@@ -175,13 +175,13 @@ class Compra{
             $array_tempos_setores = array('1' => 0.0, '2' => 0.0, '3' => 0.0);
 
             // contador quantidade de compras...
-            $count = 0;
+            $count = 1;
             for($i = 0; $i < count($data_setores) - 1; $i++){
                 if($data_setores[$i]['ID_COMPRA'] != $data_setores[$i + 1]['ID_COMPRA']){
                     $count++;
                 }
             }
-
+            
             // calculando as diferenças de tempo para cada compra...
             for($i = 0; $i < count($data_setores) - 1; $i++){
                 if($data_setores[$i]['SETOR'] != '4'){
